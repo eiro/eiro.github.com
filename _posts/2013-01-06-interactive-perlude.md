@@ -9,7 +9,7 @@ layout: post
 
 this is a basic example 
 
-{{ highlight perl }}
+{{ highlight perl5 }}
     use Perlude;
     use Perlude::Sh ':all';
     now {say} ls "*";
