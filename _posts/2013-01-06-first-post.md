@@ -20,4 +20,7 @@ After more than a year without a post, it's time to come back to the
 blogosphere: i have a brunch of technical posts i really want to share. As i
 have no time to make wwk evolve, I finally fall back to run this blog with
 jekyll just because i can host my pages on github very quickly using [Jekyll
-Bootstrap](http://jekyllbootstrap.com/).
+Bootstrap](http://jekyllbootstrap.com/). I'm already frustrated by useless
+exception messages and my fail to make the perl support of pygments work but
+hey … half an hour to get the basics is not bad: i can focus on other problems
+(i really don't have time consuming expectations about my blog anymore).
