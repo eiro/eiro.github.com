@@ -5,4 +5,10 @@ layout: page
 ---
 {% include JB/setup %}
 
-look! Yet Another github page!
+# Blog posts
+
+{% for p in site.posts %}
+* [{{ p.title }}]({{ p.url}}), {{ p.date | date_to_string }}
+{% endfor %}
+
+
