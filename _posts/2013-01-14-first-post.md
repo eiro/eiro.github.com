@@ -5,16 +5,17 @@ tags: [linkfluence]
 ---
 {% include JB/setup %}
 
-Today is my 37th birthday: i left linkfluence just one year ago
-[Linkfluence](http://linkfluence.net) and the world ended few weeks ago. well …
-i'm in a pretty good shape.
+Today is my 37th birthday: i left [Linkfluence](http://linkfluence.net) 
+just one year ago and the world ended few weeks ago. well … i survived and i'm
+in a pretty good shape.
 
-I miss linkfluence a lot! Not only the geek factor (they all are clever people
-working on an awesome project) but the high quality management based on respect
-and confidence. They deserve their success and i'm really gratefull to Camille
-(the CTO) to had give me the chance to be a part of it.
+I miss linkfluence a lot! Not only the geek factor (i had greet time working on
+awesome project and partying with those clever people) but the high quality
+management based on respect and confidence. They deserve their success and i'm
+really gratefull to Camille (the CTO) to had give me the chance to be a part of
+it.
 
-Now i'm back to the [Strasbourg University](http://unistra.fr), working on exciting
+Now i'm back to the [Strasbourg University](http://unistra.fr), working on exciting stuff
 related to data integration, library sciences and management of huge
 information systems. I developped
 [MARC::MIR](https://metacpan.org/release/marc-mir) and
