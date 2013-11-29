@@ -1,0 +1,7 @@
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    border-bottom: solid 1px black; 
+    margin-bottom: 1em;
+}
+q { quotes: "“" "”" "‘" "’"; }
+* { font-family: Sans-Serif; text-decoration: none }
