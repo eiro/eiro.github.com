@@ -1,0 +1,27 @@
+<!DOCTYPE html><html$if(lang)$ lang="$lang$"$endif$>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="unsemantic.css" />
+<link rel="stylesheet" href="theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+$for(author-meta)$<meta name="author" content="$author-meta$">$endfor$
+$if(date-meta)$<meta name="dcterms.date" content="$date-meta$">$endif$
+<title>$if(title-prefix)$$title-prefix$ - $endif$$if(pagetitle)$$pagetitle$$endif$</title>
+$if(highlighting-css)$<style type="text/css">$highlighting-css$</style>$endif$
+$for(css)$<link rel="stylesheet" href="$css$">$endfor$
+$if(math)$$math$$endif$
+$for(header-includes)$$header-includes$$endfor$
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>eiro's brain dump</h1></div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">$if(title)$<h1>$title$</h1>$endif$
+      <section>$for(include-before)$$include-before$$endfor$</section>
+      <hr/>
+      $if(toc)$<nav id="$idprefix$TOC">$toc$</nav>$endif$
+  </div>
+<div class="grid-80"><section>$body$<span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>
