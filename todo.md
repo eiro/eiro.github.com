@@ -20,5 +20,11 @@
 * demander une spec a KIVU
 * ecrire un web bridge
 
-## suckless
+# Sympa
 
+l'avenir de sympa s'annonce plus modulaire et communiquant: cool! je note ici les choses auquelles j'aimerais l'interconnecter:
+
+* [Request Tracker](http://www.bestpractical.com/rt/)
+* [Gitalist](http://www.gitalist.com) et [gitolite](https://github.com/sitaramc/gitolite/)
+* [Colobus](http://trainedmonkey.com/projects/colobus/)
+* [fukka](https://github.com/eksopl/fuuka)
