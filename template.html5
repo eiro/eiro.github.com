@@ -16,12 +16,12 @@ $for(header-includes)$$header-includes$$endfor$
     <div id="wrapper"><header role="banner" class="grid-container">
     <div class="grid-100"><h1>(.. eiro (brain) (dump))</h1></div></header>
   <main role="main" class="grid-container">
-  <div class="grid-20">$if(title)$<h1>$title$</h1>$endif$
+  <div class="grid-20">
       <section>$for(include-before)$$include-before$$endfor$</section>
       <hr/>
       $if(toc)$<nav id="$idprefix$TOC">$toc$</nav>$endif$
   </div>
-<div class="grid-80"><section>$body$<span class="dynamic-px-width"></span></section></div> 
+<div class="grid-80">$if(title)$<h1>$title$</h1>$endif$<section>$body$<span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>
