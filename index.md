@@ -7,6 +7,3 @@ welcome anyway :). yet another useless homepage powered by
 * [git](https://git.wiki.kernel.org)
 
 and generously hosted by [github](http://github.com).
-
-those are my notes about current works.
-
