@@ -7,7 +7,7 @@
 <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
 
 
-<title></title>
+<title>Perl</title>
 
 
 
@@ -19,13 +19,17 @@
   <div class="grid-20">
       <section><ul>
                               <li><a href="opensxb.html">#opensxb</a></li>
-                              <li><a href="todo.html">stuff to do</a></li>
                               <li><a href="links.html">links and stuff</a></li>
                               </ul></section>
       <hr/>
-      
+      <nav id="TOC"><ul>
+     <li><a href="#les-flags">les flags</a></li>
+     </ul></nav>
   </div>
-<div class="grid-80"><section><span class="dynamic-px-width"></span></section></div> 
+<div class="grid-80"><h1>Perl</h1><section><p>Cet article est mon recueil de bonnes pratiques pour les perl oneliners (qui font d'ailleurs rarement une ligne). je pars du principe que vous avez des bases de sed et awk (si ca n'est pas le cas: il est temps).</p>
+         <h1 id="les-flags"><a href="#les-flags">les flags</a></h1>
+         <p>perl -wsE 'say $foo' -- -foo=bar</p>
+         <p>foo=&quot;bar&quot; perl -Menv -wsE 'say $foo'</p><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>

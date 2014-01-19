@@ -1,0 +1,44 @@
+id: tag:eiro,2014:experimental
+title: (.. eiro (brain) (news))
+author: Marc Chantreux
+alternates:
+    http://eiro.github.io/news/: {rel: alternate, type: text/html}
+    http://eiro.github.io/atom-experimental.xml: {rel: self, type: application/atom+xml }
+
+#(2014-01-18T22:08:52+01:00) atom bomb first test
+
+i decided to push a repository on github with all those tests and notes that
+can maybe become a project some day and named it
+[labo](https://github.com/eiro/labo/).
+
+this feed is generated with 
+[atom bomb](https://github.com/eiro/labo/blob/master/ab/ab.pl) and the
+[feed file](https://github.com/eiro/labo/blob/master/ab/feed) i just maintain
+manually with vim and [simple zsh helper](https://github.com/eiro/labo/blob/master/ab/zsh)
+to create headers.
+
+atom bomb (i'm not sure about the name) is written in
+[perl5](http://www.perl.org/) and [Eirotic.pm](https://github.com/eiro/p5-eirotic)
+(not released yet because dzil don't want :)), which replace my common boilerplate:
+
+* [Perlude](https://metacpan.org/release/perlude)
+* [Method::Signatures](https://metacpan.org/pod/Method::Signatures)
+* perl 5.14 with strictures
+* YAML
+
+markdown conversion is made by [pandoc](http://johnmacfarlane.net/pandoc/). 
+
+#(2014-01-17T13:24:08+01:00) new (experimental) atom feed
+
+few months ago, i decided to experiment
+[make](http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html) and
+[pandoc](http://johnmacfarlane.net/pandoc/) and [git](http://git-scm.com/)
+as a minimalistic blog/wiki engine ([werc](http://werc.cat-v.org/) was on my
+list too) to replace jekyll (i was a fan of ruby until i tried it).
+
+now i'm totally happy with the basics and i need to extend:
+
+* comment posts via sending an email to the list
+* see comments by viewing archives
+* a simple way to maintain feeds. i wrote a little perl script to test it
+

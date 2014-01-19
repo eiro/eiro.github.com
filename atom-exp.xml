@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom"><updated>2014-01-18T22:08:52+01:00</updated><id>tag:eiro,2014:experimental</id><author>Marc Chantreux</author><title>(.. eiro (brain) (news))</title><entry><id>tag:eiro,news,2014-01-18T22:08:52+01:00,atom_bomb_first_test</id><title>atom bomb first test</title><content type="html">&lt;p&gt;i decided to push a repository on github with all those tests and notes that can maybe become a project some day and named it &lt;a href=&quot;https://github.com/eiro/labo/&quot;&gt;labo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;this feed is generated with &lt;a href=&quot;https://github.com/eiro/labo/blob/master/ab/ab.pl&quot;&gt;atom bomb&lt;/a&gt; and the &lt;a href=&quot;https://github.com/eiro/labo/blob/master/ab/feed&quot;&gt;feed file&lt;/a&gt; i just maintain manually with vim and &lt;a href=&quot;https://github.com/eiro/labo/blob/master/ab/zsh&quot;&gt;simple zsh helper&lt;/a&gt; to create headers.&lt;/p&gt;
+&lt;p&gt;atom bomb (i&#39;m not sure about the name) is written in &lt;a href=&quot;http://www.perl.org/&quot;&gt;perl5&lt;/a&gt; and &lt;a href=&quot;https://github.com/eiro/p5-eirotic&quot;&gt;Eirotic.pm&lt;/a&gt; (not released yet because dzil don&#39;t want :)), which replace my common boilerplate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://metacpan.org/release/perlude&quot;&gt;Perlude&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://metacpan.org/pod/Method::Signatures&quot;&gt;Method::Signatures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;perl 5.14 with strictures&lt;/li&gt;
+&lt;li&gt;YAML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;markdown conversion is made by &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;.&lt;/p&gt;
+</content><published>2014-01-18T22:08:52+01:00</published><updated>2014-01-18T22:08:52+01:00</updated></entry><entry><id>tag:eiro,news,2014-01-17T13:24:08+01:00,new_experimental_atom_feed</id><title>new (experimental) atom feed</title><content type="html">&lt;p&gt;few months ago, i decided to experiment &lt;a href=&quot;http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html&quot;&gt;make&lt;/a&gt; and &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt; and &lt;a href=&quot;http://git-scm.com/&quot;&gt;git&lt;/a&gt; as a minimalistic blog/wiki engine (&lt;a href=&quot;http://werc.cat-v.org/&quot;&gt;werc&lt;/a&gt; was on my list too) to replace jekyll (i was a fan of ruby until i tried it).&lt;/p&gt;
+&lt;p&gt;now i&#39;m totally happy with the basics and i need to extend:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;comment posts via sending an email to the list&lt;/li&gt;
+&lt;li&gt;see comments by viewing archives&lt;/li&gt;
+&lt;li&gt;a simple way to maintain feeds. i wrote a little perl script to test it&lt;/li&gt;
+&lt;/ul&gt;
+</content><published>2014-01-17T13:24:08+01:00</published><updated>2014-01-17T13:24:08+01:00</updated></entry></feed>
