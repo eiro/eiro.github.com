@@ -1,5 +1,10 @@
 % Perl
 
+# installation de paquets perl
+
+
+# notes pour un tuto perlrun (faire le lien avec awk)
+
 Cet article est mon recueil de bonnes pratiques pour les perl oneliners (qui
 font d'ailleurs rarement une ligne). je pars du principe que vous avez des
 bases de sed et awk (si ca n'est pas le cas: il est temps).
