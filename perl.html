@@ -1,0 +1,59 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="unsemantic.css" />
+<link rel="stylesheet" href="theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>Perl</title>
+
+
+
+
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>(.. eiro (brain) (dump))</h1></div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><ul>
+                              <li><a href="opensxb.html">#opensxb</a></li>
+                              <li><a href="links.html">links and stuff</a></li>
+                              <li><a href="news.html">news</a></li>
+                              <li><a href="future.html">future</a></li>
+                              <li><a href="perl.html">perl</a></li>
+                              <li><a href="sysop.html">sysop notes</a></li>
+                              </ul></section>
+      <hr/>
+      <nav id="TOC"><ul>
+     <li><a href="#installation-de-paquets-perl">installation de paquets perl</a><ul>
+     <li><a href="#créer-des-paquets-systeme">créer des paquets systeme</a></li>
+     <li><a href="#installer-dans-son-home">installer dans son home</a></li>
+     </ul></li>
+     <li><a href="#notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk">notes pour un tuto perlrun (faire le lien avec awk)</a></li>
+     <li><a href="#les-flags">les flags</a></li>
+     </ul></nav>
+  </div>
+<div class="grid-80"><h1>Perl</h1><section><h1 id="installation-de-paquets-perl"><a href="#installation-de-paquets-perl">installation de paquets perl</a></h1>
+         <p>WARNING (a moins d'une nouveauté?): ne pas utiliser un client cpan en root pour éviter de placer dans les répertoires du système des fichiers malaisés à supprimer.</p>
+         <p>différentes solutions existent</p>
+         <h2 id="créer-des-paquets-systeme"><a href="#créer-des-paquets-systeme">créer des paquets systeme</a></h2>
+         <ul>
+         <li>sous debian, voir <a href="sysop.html">ma page sysop</a>.</li>
+         <li>sous les rpm-based, on utilisait un truc a biblibre ... je sais plus...</li>
+         <li>sous macos, j'avais écris <a href="https://trac.macports.org/wiki/howto/cpan2port">cpan2port</a> qui est tjrs utilisé par la communauté macports. toutefois:</li>
+         <li>il semble que <a href="http://brew.sh/">homebrew</a> soit maintenant plus utilisé.</li>
+         <li>comme macos est un des rares unices qui me sorte vraiment par les yeux, je ne sais pas ou tout ca en est.</li>
+         <li>sous windows, <a href="http://strawberryperl.com/">Strawberry Perl</a> et son client CPAN ou le perl de <a href="http://cygwin.org/">cygwin</a>.</li>
+         </ul>
+         <h2 id="installer-dans-son-home"><a href="#installer-dans-son-home">installer dans son home</a></h2>
+         <p>les installations de <code>cpanm</code> (un client cpan lite) sont décrites <a href="http://search.cpan.org/~miyagawa/App-cpanminus-1.7001/lib/App/cpanminus.pm#INSTALLATION">ici</a>. Le package debian s'appelle <code>cpanm</code>.</p>
+         <h1 id="notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk"><a href="#notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk">notes pour un tuto perlrun (faire le lien avec awk)</a></h1>
+         <p>Cet article est mon recueil de bonnes pratiques pour les perl oneliners (qui font d'ailleurs rarement une ligne). je pars du principe que vous avez des bases de sed et awk (si ca n'est pas le cas: il est temps).</p>
+         <h1 id="les-flags"><a href="#les-flags">les flags</a></h1>
+         <p>perl -wsE 'say $foo' -- -foo=bar</p>
+         <p>foo=&quot;bar&quot; perl -Menv -wsE 'say $foo'</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>
