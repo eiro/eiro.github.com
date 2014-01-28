@@ -2,7 +2,12 @@
 
 http://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat
 http://merrigrove.blogspot.fr/2013/12/the-occultation-of-relations-and-logic_22.html
-http://okmij.org/ftp/Computation/monadic-shell.html
+http://okmij.org/ftp/Computation/monadic-shell.html 
+
+ ${a[1]:-haha} $a[2,-1]
+ @_ ? @_ : ("haha")
+
+
 
 Il sert très bien le propos de l'auteur et l'article est d'une qualité qui se
 fait rare sur le net. Merci à son auteur.
