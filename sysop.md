@@ -55,7 +55,7 @@ aptitude me semble bien plus agréable:
 
 pourtant il semble que debian fasse machine arrière: pourquoi ? 
 
-# todo
+## todo
 
 * rediger une doc sur hybridation et pinning
 
