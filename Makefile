@@ -5,14 +5,14 @@
 htmlify  = pandoc --toc $(with_css) --template template.html5
 mdpages  = $(wildcard *.md )
 webpages = ${mdpages:.md=.html}
-feed= news.html atom-exp.xml
+feed= news.html atom.xml
 
 all: $(webpages) $(feed)
 
 news.md: feed
 	atombomb md $< > $@
 
-atom-exp.xml: feed
+atom.xml: feed
 	atombomb atom $< > $@
 
 $(webpages): menu template.html5
