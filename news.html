@@ -18,106 +18,119 @@
   <main role="main" class="grid-container">
   <div class="grid-20">
       <section><ul>
-                              <li><a href="index.html">home</a></li>
-                              <li><a href="opensxb.html">#opensxb</a></li>
-                              <li><a href="news.html">news</a></li>
-                              <li><a href="future.html">future</a></li>
-                              <li><a href="perl.html">perl</a></li>
-                              <li><a href="sysop.html">sysop notes</a></li>
-                              <li><a href="links.html">links and stuff</a></li>
-                              </ul></section>
+<li><a href="index.html">home</a></li>
+<li><a href="opensxb.html">#opensxb</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="future.html">future</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="links.html">links and stuff</a></li>
+</ul></section>
       <hr/>
       <nav id="TOC"><ul>
-     <li><a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">adieu, Jekyll (i dumped you for a 28 lines Makefile)</a></li>
-     <li><a href="#atom-bomb-first-test">atom bomb first test</a></li>
-     <li><a href="#new-experimental-atom-feed">new (experimental) atom feed</a></li>
-     </ul></nav>
+<li><a href="#fosdem-sequel-c11-scrum-...">FOSDEM sequel: C++11, scrum, ...</a></li>
+<li><a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">adieu, Jekyll (i dumped you for a 28 lines Makefile)</a></li>
+<li><a href="#atom-bomb-first-test">atom bomb first test</a></li>
+<li><a href="#new-experimental-atom-feed">new (experimental) atom feed</a></li>
+</ul></nav>
   </div>
-<div class="grid-80"><section><h1 id="adieu-jekyll-i-dumped-you-for-a-28-lines-makefile"><a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">adieu, Jekyll (i dumped you for a 28 lines Makefile)</a></h1>
-         <p class="date"> 
-         2014-01-31T10:15:57+01:00
-         </p>
-         
-         <p>Months ago, and once again, i spent hours to figure out how to do things i expected to be simple. In this case, Jekyll isn't the one to blame: the ruby ecosystem is. I'm a happy <a href="https://metacpan.org/">CPAN</a> user and contributor as well as <a href="http://www.haskell.org/cabal/">cabal</a> happy user. Coming from those world, the ruby one is quiet messy.</p>
-         <p>So i decided to throw all the blog/wiki engines away, running a temporary solution with the simplest bootstrap i can write. Following the rules of the unix <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS principles</a>, i divided the &quot;CMS&quot; problem more little ones. I needed something as simple as possible to extend coming with:</p>
-         <ul>
-         <li>a content generator</li>
-         <li>a conductor to drive it</li>
-         <li>a responsive design</li>
-         <li>a web browsable SCM</li>
-         <li>an atom generator</li>
-         <li>a discus-like comment system</li>
-         </ul>
-         <p>so i choose the simplest (or best) tools i know for each task:</p>
-         <ul>
-         <li><a href="http://johnmacfarlane.net/pandoc/">pandoc</a> to generate html content from md files. I don't know about the internals but both the CLI tool and the haskell API are very pleasant to use.</li>
-         <li><a href="http://pubs.opengroup.org/onlinepubs/000095399/utilities/make.html">make</a> is my conductor. As i really expect the every so-called unix users have the basics of make. It get the job done for many decades now. I also have a look on mk from <a href="http://tools.suckless.org/9base">the 9base</a>.</li>
-         <li><a href="https://git.wiki.kernel.org">git</a> as SCM, lot of tools out there to browse it from the web.</li>
-         <li><a href="http://unsemantic.com/">Unsemanic CSS framework</a>. I don't know a lot about web development but i was aware about <a href="http://en.wikipedia.org/wiki/Responsive_web_design">Responsive web design</a> and saw the ancestor of unsemantic was in the roadmap of <a href="http://werc.cat-v.org/">werc</a> (when it comes to simplicity, you really can trust the <a href="http://cat-v.org/">cat-v</a> Ayatollahs^wpeople)</li>
-         <li>more recently, i wrote <a href="https://github.com/eiro/app-atombomb">atombomb</a> to add atom feeds to some sites.</li>
-         </ul>
-         <p>so the workflow is:</p>
-         <ul>
-         <li>create a new md for a new page</li>
-         <li>manually maintain the atom feed ( <a href="https://github.com/eiro/eiro.github.com/blob/master/Makefile">atombomb format</a> is quiet helpfull for this part)</li>
-         <li>run make to build a section</li>
-         <li>git submodules to add subsection</li>
-         <li>rsync or git to push on the server</li>
-         </ul>
-         <p>you can see all the revision by using a git browser (like the github one) and i plan to use an ajax call the powerfull <a href="http://sympa.org">sympa list manager</a> to run a discus-like comment system.</p>
-         <p>Months passed and it became clear i will not step back: those 62 LOC (it takes less than 5 minutes to understand the whole thing) never desapointed me.</p>
-         <ul>
-         <li>the publishing process is faster and easier</li>
-         <li>i use the :make command of vim</li>
-         <li>my working directory is served by a local http server</li>
-         <li>everything is relative to the working directory: if it renders well here, it will render well offline. faster and easier local preview before pushing</li>
-         <li>so easy to extend i never was stuck by a new problem, i just had to write some few extra lines in the Makefile to get new features like</li>
-         <li><a href="http://www.graphviz.org/">graphviz</a> and <a href="http://ditaa.sourceforge.net/">ditaa</a>) support</li>
-         <li>beamer slides (using the theme of my university).</li>
-         <li>render html report from external sources (just use pandoc md as intermediate representation and run make)</li>
-         </ul>
-         <p>Actually, even my todolist/notes system is now based on it (in combination with vim and mutt i'll explain in another post) and as always, i realized how happy i am when i follow the rules of the unix <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS principles</a>.</p>
-         <pre>
-             # wc -l M* t* 
-               28 [Makefile](https://github.com/eiro/eiro.github.com/blob/master/Makefile)
-               27 [template.html5](https://github.com/eiro/eiro.github.com/blob/master/template.html5)
-                7 theme.css
-               62 total
-         </pre>
-         
-         <p>the only thing i was afraid was &quot;all is relative to the working directory&quot; thing: i copy the css files for each new section. suprisingly, it has benefic effects.</p>
-         <ul>
-         <li>i think twice before adding a section and it keep me aware of the content.</li>
-         <li>the local CSS actually import a stylesheet shared by all the sites i manage so i can easily<br /> maintain the whole stuff.</li>
-         </ul>
-         <p>So another unix principle is at work here: &quot;Premature optimization is the root of all evil&quot;. Thanks Donald!</p>
-         <h1 id="atom-bomb-first-test"><a href="#atom-bomb-first-test">atom bomb first test</a></h1>
-         <p class="date"> 
-         2014-01-18T22:08:52+01:00
-         </p>
-         
-         <p>i decided to push a repository on github with all those tests and notes that can maybe become a project some day and named it <a href="https://github.com/eiro/labo/">labo</a>.</p>
-         <p>this feed is generated with <a href="https://github.com/eiro/app-atombomb">atom bomb</a> and the <a href="https://github.com/eiro/app-atombomb/blob/master/t/feed">feed file</a> i just maintain manually with vim and <a href="https://github.com/eiro/uze/blob/master/atombomb">simple zsh helper</a> to create headers.</p>
-         <p>atom bomb (i'm not sure about the name) is written in <a href="http://www.perl.org/">perl5</a> and <a href="https://metacpan.org/pod/release/MARCC/eirotic-0.0/lib/Eirotic.pm">Eirotic.pm</a> which replace my common boilerplate:</p>
-         <ul>
-         <li><a href="https://metacpan.org/release/perlude">Perlude</a></li>
-         <li><a href="https://metacpan.org/pod/Method::Signatures">Method::Signatures</a></li>
-         <li>perl 5.14 with strictures</li>
-         <li>YAML</li>
-         </ul>
-         <p>markdown conversion is made by <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>.</p>
-         <h1 id="new-experimental-atom-feed"><a href="#new-experimental-atom-feed">new (experimental) atom feed</a></h1>
-         <p class="date"> 
-         2014-01-17T13:24:08+01:00
-         </p>
-         
-         <p>few months ago, i decided to experiment <a href="http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html">make</a> and <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> and <a href="http://git-scm.com/">git</a> as a minimalistic blog/wiki engine (<a href="http://werc.cat-v.org/">werc</a> was on my list too) to replace jekyll (i was a fan of ruby until i tried it).</p>
-         <p>now i'm totally happy with the basics and i need to extend:</p>
-         <ul>
-         <li>comment posts via sending an email to the list</li>
-         <li>see comments by viewing archives</li>
-         <li>a simple way to maintain feeds. i wrote a little perl script to test it</li>
-         </ul><span class="dynamic-px-width"></span></section></div> 
+<div class="grid-80"><section><h1 id="fosdem-sequel-c11-scrum-...">FOSDEM sequel: C++11, scrum, ...</h1>
+<p class="date"> 
+2014-02-15T11:55:23+01:00
+</p>
+
+<p>Once again, i came to <a href="https://fosdem.org/2014/">FOSDEM</a> with some talks in mind, missed them and learnt a lot of new, completly different things.</p>
+<p>Once again, FOSDEM is the echo of my internet feeds (at this point, the cultural spectrum of the people i spoke to is too large to just say we're reading the same blogs).</p>
+<pre><code>* the rise of the functionnal programming for the masses 
+* the rise of the &quot;let&#39;s fire all managers&quot; movement (coming from both
+  scrum and open source as &quot;working models&quot;)</code></pre>
+<p>The big surprise for me is a very interesting discution about the modern paradigms of C++. I realized i was acting like the &quot;perl is dead&quot; people: comparing C++ from nineties to the very last features of the langages i use daily: I was not unfair, just ignorant.</p>
+<p>So i began to read the C++ posts again and seen <a href="http://nathan.ca/2014/02/type-rich-programming/">this article</a> pointing on <a href="http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style">Bjarne Stroustrup: C++11 Style</a> which is a very interesting talk about what the &quot;good C++&quot; should be.</p>
+<h1 id="adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">adieu, Jekyll (i dumped you for a 28 lines Makefile)</h1>
+<p class="date"> 
+2014-01-31T10:15:57+01:00
+</p>
+
+<p>Months ago, and once again, i spent hours to figure out how to do things i expected to be simple. In this case, Jekyll isn't the one to blame: the ruby ecosystem is. I'm a happy <a href="https://metacpan.org/">CPAN</a> user and contributor as well as <a href="http://www.haskell.org/cabal/">cabal</a> happy user. Coming from those world, the ruby one is quiet messy.</p>
+<p>So i decided to throw all the blog/wiki engines away, running a temporary solution with the simplest bootstrap i can write. Following the rules of the unix <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS principles</a>, i divided the &quot;CMS&quot; problem more little ones. I needed something as simple as possible to extend coming with:</p>
+<ul>
+<li>a content generator</li>
+<li>a conductor to drive it</li>
+<li>a responsive design</li>
+<li>a web browsable SCM</li>
+<li>an atom generator</li>
+<li>a discus-like comment system</li>
+</ul>
+<p>so i choose the simplest (or best) tools i know for each task:</p>
+<ul>
+<li><a href="http://johnmacfarlane.net/pandoc/">pandoc</a> to generate html content from md files. I don't know about the internals but both the CLI tool and the haskell API are very pleasant to use.</li>
+<li><a href="http://pubs.opengroup.org/onlinepubs/000095399/utilities/make.html">make</a> is my conductor. As i really expect the every so-called unix users have the basics of make. It get the job done for many decades now. I also have a look on mk from <a href="http://tools.suckless.org/9base">the 9base</a>.</li>
+<li><a href="https://git.wiki.kernel.org">git</a> as SCM, lot of tools out there to browse it from the web.</li>
+<li><a href="http://unsemantic.com/">Unsemanic CSS framework</a>. I don't know a lot about web development but i was aware about <a href="http://en.wikipedia.org/wiki/Responsive_web_design">Responsive web design</a> and saw the ancestor of unsemantic was in the roadmap of <a href="http://werc.cat-v.org/">werc</a> (when it comes to simplicity, you really can trust the <a href="http://cat-v.org/">cat-v</a> Ayatollahs^wpeople)</li>
+<li>more recently, i wrote <a href="https://github.com/eiro/app-atombomb">atombomb</a> to add atom feeds to some sites.</li>
+</ul>
+<p>so the workflow is:</p>
+<ul>
+<li>create a new md for a new page</li>
+<li>manually maintain the atom feed ( <a href="https://github.com/eiro/eiro.github.com/blob/master/Makefile">atombomb format</a> is quiet helpfull for this part)</li>
+<li>run make to build a section</li>
+<li>git submodules to add subsection</li>
+<li>rsync or git to push on the server</li>
+</ul>
+<p>you can see all the revision by using a git browser (like the github one) and i plan to use an ajax call the powerfull <a href="http://sympa.org">sympa list manager</a> to run a discus-like comment system.</p>
+<p>Months passed and it became clear i will not step back: those 62 LOC (it takes less than 5 minutes to understand the whole thing) never desapointed me.</p>
+<ul>
+<li>the publishing process is faster and easier</li>
+<li>i use the :make command of vim</li>
+<li>my working directory is served by a local http server</li>
+<li>everything is relative to the working directory: if it renders well here, it will render well offline. faster and easier local preview before pushing</li>
+<li>so easy to extend i never was stuck by a new problem, i just had to write some few extra lines in the Makefile to get new features like</li>
+<li><a href="http://www.graphviz.org/">graphviz</a> and <a href="http://ditaa.sourceforge.net/">ditaa</a>) support</li>
+<li>beamer slides (using the theme of my university).</li>
+<li>render html report from external sources (just use pandoc md as intermediate representation and run make)</li>
+</ul>
+<p>Actually, even my todolist/notes system is now based on it (in combination with vim and mutt i'll explain in another post) and as always, i realized how happy i am when i follow the rules of the unix <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS principles</a>.</p>
+<pre>
+    # wc -l M* t* 
+      28 [Makefile](https://github.com/eiro/eiro.github.com/blob/master/Makefile)
+      27 [template.html5](https://github.com/eiro/eiro.github.com/blob/master/template.html5)
+       7 theme.css
+      62 total
+</pre>
+
+<p>the only thing i was afraid was &quot;all is relative to the working directory&quot; thing: i copy the css files for each new section. suprisingly, it has benefic effects.</p>
+<ul>
+<li>i think twice before adding a section and it keep me aware of the content.</li>
+<li>the local CSS actually import a stylesheet shared by all the sites i manage so i can easily<br /> maintain the whole stuff.</li>
+</ul>
+<p>So another unix principle is at work here: &quot;Premature optimization is the root of all evil&quot;. Thanks Donald!</p>
+<h1 id="atom-bomb-first-test">atom bomb first test</h1>
+<p class="date"> 
+2014-01-18T22:08:52+01:00
+</p>
+
+<p>i decided to push a repository on github with all those tests and notes that can maybe become a project some day and named it <a href="https://github.com/eiro/labo/">labo</a>.</p>
+<p>this feed is generated with <a href="https://github.com/eiro/app-atombomb">atom bomb</a> and the <a href="https://github.com/eiro/app-atombomb/blob/master/t/feed">feed file</a> i just maintain manually with vim and <a href="https://github.com/eiro/uze/blob/master/atombomb">simple zsh helper</a> to create headers.</p>
+<p>atom bomb (i'm not sure about the name) is written in <a href="http://www.perl.org/">perl5</a> and <a href="https://metacpan.org/pod/release/MARCC/eirotic-0.0/lib/Eirotic.pm">Eirotic.pm</a> which replace my common boilerplate:</p>
+<ul>
+<li><a href="https://metacpan.org/release/perlude">Perlude</a></li>
+<li><a href="https://metacpan.org/pod/Method::Signatures">Method::Signatures</a></li>
+<li>perl 5.14 with strictures</li>
+<li>YAML</li>
+</ul>
+<p>markdown conversion is made by <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>.</p>
+<h1 id="new-experimental-atom-feed">new (experimental) atom feed</h1>
+<p class="date"> 
+2014-01-17T13:24:08+01:00
+</p>
+
+<p>few months ago, i decided to experiment <a href="http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html">make</a> and <a href="http://johnmacfarlane.net/pandoc/">pandoc</a> and <a href="http://git-scm.com/">git</a> as a minimalistic blog/wiki engine (<a href="http://werc.cat-v.org/">werc</a> was on my list too) to replace jekyll (i was a fan of ruby until i tried it).</p>
+<p>now i'm totally happy with the basics and i need to extend:</p>
+<ul>
+<li>comment posts via sending an email to the list</li>
+<li>see comments by viewing archives</li>
+<li>a simple way to maintain feeds. i wrote a little perl script to test it</li>
+</ul><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>
