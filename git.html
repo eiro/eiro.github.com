@@ -1,0 +1,74 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="unsemantic.css" />
+<link rel="stylesheet" href="theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>git notes</title>
+
+
+
+
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>(.. eiro (brain) (dump))</h1></div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><ul>
+<li><a href="index.html">home</a></li>
+<li><a href="opensxb.html">#opensxb</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="future.html">future</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="links.html">links and stuff</a></li>
+</ul></section>
+      <hr/>
+      <nav id="TOC"><ul>
+<li><a href="#gitolite">gitolite</a><ul>
+<li><a href="#installation">installation</a></li>
+<li><a href="#administration">administration</a><ul>
+<li><a href="#hooks">hooks</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#git-extensions">git-extensions</a></li>
+</ul></nav>
+  </div>
+<div class="grid-80"><h1>git notes</h1><section><h1 id="gitolite">gitolite</h1>
+<h2 id="installation">installation</h2>
+<p>comprendre comment <a href="http://gitolite.com/gitolite/how.html">gitolite marche</a> et lire <a href="http://gitolite.com/gitolite/qi.html">comment l'installer</a>. inspiré de la <a href="https://github.com/sitaramc/gitolite">doc d'install.</a></p>
+<p>je pars du principe que</p>
+<ul>
+<li>je suis le sudoer <code>marc</code> sur la machine <code>deathstar</code>, je suis sur deathstar avec un agent ssh.</li>
+<li>gitolite sera dispo via <code>git@deathstar</code></li>
+<li><p>je serais admin de gitolite, connu par lui comme étant <code>eiro</code></p>
+<p>sudo adduser --disabled-password --home /srv/gitolite --shell /bin/sh git key=<sub>git/eiro.pub from=</sub>marc/.ssh/id_rsa.pub sudo install -o git <span class="math"><em>f</em><em>r</em><em>o</em><em>m</em></span>key sudo -i -u git &lt;&lt;&lt; ' set -e b=<span class="math"><em>H</em><em>O</em><em>M</em><em>E</em>/<em>b</em><em>i</em><em>n</em><em>g</em><em>i</em><em>t</em><em>c</em><em>l</em><em>o</em><em>n</em><em>e</em><em>h</em><em>t</em><em>t</em><em>p</em><em>s</em> : //<em>g</em><em>i</em><em>t</em><em>h</em><em>u</em><em>b</em>.<em>c</em><em>o</em><em>m</em>/<em>s</em><em>i</em><em>t</em><em>a</em><em>r</em><em>a</em><em>m</em><em>c</em>/<em>g</em><em>i</em><em>t</em><em>o</em><em>l</em><em>i</em><em>t</em><em>e</em>.<em>g</em><em>i</em><em>t</em><em>m</em><em>k</em><em>d</em><em>i</em><em>r</em> − <em>p</em></span>b gitolite/install -to <span class="math">$b     PATH=&quot;$</span>b:<span class="math">$PATH&quot;     gitolite setup -pk '$</span>key</p></li>
+</ul>
+<p>recommencer:</p>
+<pre><code>deluser --remove-home git </code></pre>
+<h2 id="administration">administration</h2>
+<p>depuis n'importe ou</p>
+<pre><code>git clone git@deathstar:gitolite-admin death
+cd death </code></pre>
+<p>maintenant il faut lire la doc sur <a href="http://gitolite.com/gitolite/admin.html#adminrepo">le fichier de conf et les clefs</a></p>
+<h3 id="hooks">hooks</h3>
+<ul>
+<li>mettre en place des hooks sur gitolite. la doc est <a href="http://gitolite.com/gitolite/cust.html">ici</a></li>
+<li>truc simple pour lister/supprimer les depots</li>
+<li>stats sur les depots (dernier usage)</li>
+<li><p>hooks pour differ les .doc ?</p>
+<p>$ cat &gt; hooks/common/post-receive #!/bin/sh GIT_WORK_TREE=/var/www/www.example.org git checkout -f</p></li>
+</ul>
+<h1 id="git-extensions">git-extensions</h1>
+<p>il faudrait pouvoir:</p>
+<ul>
+<li>virer le bouton donate</li>
+<li>virer menu github</li>
+<li>configurer <code>--depth</code> au moment du clone</li>
+</ul><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>
