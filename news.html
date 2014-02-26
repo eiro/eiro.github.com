@@ -28,25 +28,55 @@
 </ul></section>
       <hr/>
       <nav id="TOC"><ul>
+<li><a href="#sympa-to-comment-blog-posts-why">sympa to comment blog posts: why ?</a></li>
 <li><a href="#fosdem-sequel-c11-scrum-...">FOSDEM sequel: C++11, scrum, ...</a></li>
 <li><a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">adieu, Jekyll (i dumped you for a 28 lines Makefile)</a></li>
 <li><a href="#atom-bomb-first-test">atom bomb first test</a></li>
 <li><a href="#new-experimental-atom-feed">new (experimental) atom feed</a></li>
 </ul></nav>
   </div>
-<div class="grid-80"><section><h1 id="fosdem-sequel-c11-scrum-...">FOSDEM sequel: C++11, scrum, ...</h1>
+<div class="grid-80"><section><h1 id="sympa-to-comment-blog-posts-why">sympa to comment blog posts: why ?</h1>
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Csympatocommentblogpostswhy@eiro.github.io%3E&Subject=Re:%20to%20comment%20blog%20posts:%20why%20?">Comment</a>
+<p class="date"> 
+2014-02-25T13:22:40+01:00
+</p>
+
+<p>I maintain websites since 1997 and my motto always was &quot;as static as possible&quot;. I run my own &quot;static web&quot; engines, used open source ones and ended with <a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">a simple <code>Makefile</code></a>.</p>
+<p>The very important missing part was blog comments but it's not only about serving static pages: we're in year 2014 and still, the web failed to provide tools that can approach the productivity of mutt when it comes to share thoughts about a post: editing in textareas, navigating in the thread, tagging, archiving, ... all those basics are just jokes in a webpages! Trying to compare wikis to just editing files in your filesystem (then share them with git, rsync, seafile, whatever ..) also is.</p>
+<p>But i didn't carre for a while because i had a bigger plan (my beloved <code>mindpipe</code>) so asked commenters to send me mails instead of expecting a &quot;comment&quot; textarea. I miss <a href="http://en.wikipedia.org/wiki/Usenet">usenet</a>.</p>
+<p>Years ago, i came at a <a href="http://journeesperl.fr/">French Perl Workshop</a> and spoke about a subset of what mindpipe could be. Then i learnt (thanks to <a href="http://philippe.bruhat.net/">BooK</a> and <a href="http://lumberjaph.net/">Franck</a>) about <a href="http://disqus.com/">disqus</a>. i also was aware of <a href="http://gmane.org/">gname</a>.</p>
+<p>Finally, i'm now convinced that the technical roots of mindpipe was invented in a 80's OS named <a href="http://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs">Plan9</a>. What i want is just piping, copying and editing <a href="http://en.wikipedia.org/wiki/9P">9p</a> served files thru <a href="http://www.vim.org">vim</a>, <a href="http://en.wikipedia.org/wiki/Acme_(editor)">acme</a>) or emacs.</p>
+<p>I know web browsers are bloated enough to serve as a base of very handy editing application (cloud9 or etherpad are some moving tries to render edited content in a web page) but they need a 9p support (maybe <a href="https://github.com/mozilla/servo/">servo</a> could have one?) and i think plan9 ideas are finally spreading (i remember how sarcatic were people about linux or open source just ten years ago, they just heard about it).</p>
+<p>Nevertheless: ten years later, mindpipe is still just an idea and i changed my mind about doing software. I really think that</p>
+<ul>
+<li>nothing is perfect</li>
+<li>starting small is better than not starting at all</li>
+<li>the best code is the one you don't have to write</li>
+</ul>
+<p>thinking the unix way: what is the best tool to provide simple ways to</p>
+<ul>
+<li>subscribe a discutions that can be seen as emails?</li>
+<li>make discutions and archives public, private, moderated?</li>
+<li>avoid spams and robots using bayesians and sending scenaries to check the validity of your posts?</li>
+</ul>
+<p>I i need a battle tested, highly configurable and extendable but just a &quot;mailing list manager&quot;! I know it's not perfect but it's way better than running yet another anoying web forum.</p>
+<p>And i know the beast: <a href="http://www.sympa.org">sympa</a> is way the best mailing list manager i ever seen. Yes, i have tons of grievances about it but in the end, it's much more superior than everything i saw and is in a constant evolution since 1996 (AFAIK). Plus: it's written in <a href="http://www.perl.org">Perl</a>! not a so modern one but you don't carre if you just have to write plugins.</p>
+<h1 id="fosdem-sequel-c11-scrum-...">FOSDEM sequel: C++11, scrum, ...</h1>
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3CFOSDEMsequelC11scrum@eiro.github.io%3E&Subject=Re:%20sequel:%20C++11,%20scrum,%20...">Comment</a>
 <p class="date"> 
 2014-02-15T11:55:23+01:00
 </p>
 
 <p>Once again, i came to <a href="https://fosdem.org/2014/">FOSDEM</a> with some talks in mind, missed them and learnt a lot of new, completly different things.</p>
 <p>Once again, FOSDEM is the echo of my internet feeds (at this point, the cultural spectrum of the people i spoke to is too large to just say we're reading the same blogs).</p>
-<pre><code>* the rise of the functionnal programming for the masses 
-* the rise of the &quot;let&#39;s fire all managers&quot; movement (coming from both
-  scrum and open source as &quot;working models&quot;)</code></pre>
+<ul>
+<li>the rise of the functionnal programming for the masses</li>
+<li>the rise of the &quot;let's fire all managers&quot; movement (coming from both scrum and open source as &quot;working models&quot;)</li>
+</ul>
 <p>The big surprise for me is a very interesting discution about the modern paradigms of C++. I realized i was acting like the &quot;perl is dead&quot; people: comparing C++ from nineties to the very last features of the langages i use daily: I was not unfair, just ignorant.</p>
 <p>So i began to read the C++ posts again and seen <a href="http://nathan.ca/2014/02/type-rich-programming/">this article</a> pointing on <a href="http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style">Bjarne Stroustrup: C++11 Style</a> which is a very interesting talk about what the &quot;good C++&quot; should be.</p>
 <h1 id="adieu-jekyll-i-dumped-you-for-a-28-lines-makefile">adieu, Jekyll (i dumped you for a 28 lines Makefile)</h1>
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3CadieuJekyllidumpedyoufora28linesMakefile@eiro.github.io%3E&Subject=Re:%20Jekyll%20(i%20dumped%20you%20for%20a%2028%20lines%20Makefile)">Comment</a>
 <p class="date"> 
 2014-01-31T10:15:57+01:00
 </p>
@@ -105,6 +135,7 @@
 </ul>
 <p>So another unix principle is at work here: &quot;Premature optimization is the root of all evil&quot;. Thanks Donald!</p>
 <h1 id="atom-bomb-first-test">atom bomb first test</h1>
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Catombombfirsttest@eiro.github.io%3E&Subject=Re:%20bomb%20first%20test">Comment</a>
 <p class="date"> 
 2014-01-18T22:08:52+01:00
 </p>
@@ -120,6 +151,7 @@
 </ul>
 <p>markdown conversion is made by <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>.</p>
 <h1 id="new-experimental-atom-feed">new (experimental) atom feed</h1>
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Cnewexperimentalatomfeed@eiro.github.io%3E&Subject=Re:%20(experimental)%20atom%20feed">Comment</a>
 <p class="date"> 
 2014-01-17T13:24:08+01:00
 </p>

@@ -10,7 +10,7 @@ feed= news.html atom.xml
 all: $(webpages) $(feed)
 
 news.md: feed
-	atombomb md $< > $@
+	atombomb md $< | perl add_comment_links.pl > $@
 
 atom.xml: feed
 	atombomb atom $< > $@
