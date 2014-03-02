@@ -1,0 +1,52 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="unsemantic.css" />
+<link rel="stylesheet" href="theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>notes sur les concepts de Request Tracker</title>
+
+
+
+
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>(.. eiro (brain) (dump))</h1></div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><ul>
+<li><a href="index.html">home</a></li>
+<li><a href="opensxb.html">#opensxb</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="future.html">future</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="links.html">links and stuff</a></li>
+</ul></section>
+      <hr/>
+      <nav id="TOC"><ul>
+<li><a href="#agenda-par-jean">Agenda (par jean)</a></li>
+<li><a href="#notes">notes</a></li>
+</ul></nav>
+  </div>
+<div class="grid-80"><h1>notes sur les concepts de Request Tracker</h1><section><h1 id="agenda-par-jean">Agenda (par jean)</h1>
+<p>ticket queue</p>
+<p>archi classes DB auth conf surcharge/redefinition via /usr/local droits group user mail gateway TODO: custom fields TODO: scrips</p>
+<h1 id="notes">notes</h1>
+<ul>
+<li>rt -&gt; mail au depart, web par la suite</li>
+<li>file</li>
+<li>triage, périmètre, domain of concern</li>
+<li>ticket = transaction<em>, fields transaction = attachment</em> ,</li>
+</ul>
+<p>Le menu configurarion permet d'accederer a la conf de tous les objets des classes Users, Goupes, Files , ...</p>
+<p>Custom fields peuvent etre attachés a ce qu'on veut (ticket, file, ... )</p>
+<p>Users -&gt; User CurrentUser -&gt; permet du sudoing applicatif RT::* use base RT::Record qui use base ( RT::Base et la confif RecordBaseClass ) authentication: par mail uniquement normalement * création du compte par unseeen addr du from (UserName)</p>
+<p>Droits =<br /> system group (everyone = priv + unpriv )</p>
+<p>mailgate appellé par /etc/aliases</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>

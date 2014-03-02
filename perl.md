@@ -39,5 +39,74 @@ perl -wsE 'say $foo' -- -foo=bar
 
 foo="bar" perl -Menv -wsE 'say $foo'
 
+# Tutoriel pour Eirotic Perl
+
+De la préparation de votre environement de développement jusqu'au déployement
+de votre application, Perl vous permet d'effectuer de nombreux choix.
+
+Aucun développeur Perl confirmé ne voudrait perdre cette liberté qui permet de
+s'adapter à toutes les situations. A l'inverse, le débutant peut facilement
+perdre patience devant la richesse de l'écosystème de Perl.
+
+Ce didacticiel propose une seule voie: celle que je pratique maintenant depuis
+des années. Ca n'est peut-être pas la meilleure mais elle est le fruit de mon
+experience et utilise ce que je pense être les dernières bonnes pratiques en
+vigueur dans le monde Perl.
+
+Les prérequis sont simples:
+
+* avoir un compte utilisateur sur une machine Unix (nul besoin d'en
+  posséder les droits d'administration) avec Perl (et de préférence zsh)
+  installé.
+
+* avoir des bases de shell unix. je ne reviens pas sur des notions comme les
+  variables d'environement, le shebang ou les commandes de base de gestion de
+  fichiers.
+
+* connaitre 1 editeur de texte. J'utilise [vim](http://vim.org) pour ma part
+  mais il existe des IDEs Perl comme [padre](http://padre.perlide.org/) ou
+  [epic](http://www.epic-ide.org/). 
+
+* Avoir les bases de la syntaxe Perl et son ecosystème. le présent document
+  propose de bonnes pratiques et n'est en rien une initiation à la syntaxe. 
+  Vous devez donc savoir ce qu'est un module, le CPAN, un client CPAN.
+
+# Préparer son environement de développement
+
+Perl (et de manière induite tous les outils de l'écosystème Perl) repose sur
+des repertoires 
+
+
+Perl et la plupart de ses outils repose sur des variables d'environement 
+
+
+There is more than one way to do it in Perl. It's not only about writting code
+but also setting up your developpement environement and deploy apps.
+
+
+This tutorial use my way from zero (well, 
+
+I have the same habits for many years now and I think it would help to share
+those to have a from zero to deployement tu
+
+This
+tutorial is about my way 
+
+
+this is a from-zero to Eirotic tutorial.
+
+## setup your working environment
+
+install the cpanm client to ease installation of CPAN dependencies. everything
+would work from your home directory, no root 
+
+	curl -L http://cpanmin.us | perl - App::cpanminus
+
+it install `local::lib` 
+
+
+
+
+
 
 

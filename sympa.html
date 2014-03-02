@@ -7,7 +7,7 @@
 <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
 
 
-<title>homepages are useless</title>
+<title>sympa</title>
 
 
 
@@ -27,9 +27,18 @@
 <li><a href="links.html">links and stuff</a></li>
 </ul></section>
       <hr/>
-      
+      <nav id="TOC"><ul>
+<li><a href="#github-repo">github repo</a></li>
+</ul></nav>
   </div>
-<div class="grid-80"><h1>homepages are useless</h1><section><p>and generously hosted by <a href="http://github.com">github</a>.</p><span class="dynamic-px-width"></span></section></div> 
+<div class="grid-80"><h1>sympa</h1><section><h1 id="github-repo">github repo</h1>
+<p>i created my <a href="http://github.com/eiro.sympa">github version of the sympa trunk</a> with:</p>
+<pre><code>git svn clone -rHEAD http://svn.cru.fr/sympa/trunk sympa
+git remote add origin git@github.com:eiro/sympa.git
+git push -u origin master</code></pre>
+<p>and i sync it manually with</p>
+<pre><code>git svn rebase
+git push origin master</code></pre><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>
