@@ -1,4 +1,4 @@
-% A faire, un jour, peut-etre
+% Dump ideas … as it comes
 
 # lectures
 
@@ -63,7 +63,7 @@ CPAN pour nous: heaven
 * personnelle 
 * pour la communauté
 * les autres communautés nous imitent sans nous égaler 
-(ruby et haskell pas trop loin derriere) 
+  (ruby et haskell pas trop loin derriere) 
 
 CPAN pour les autres: hell 
 
@@ -71,9 +71,10 @@ CPAN pour les autres: hell
 * experimentation -> trop de "merde" 
 
 CPAN GTD vs BNP (Brand new projects)
-  * Modules + concision = GTD
-  * pourquoi publier des scripts de 5 lignes ? 
-  * autres technos = boulot plus gros = *new project* (Champain!) 
+
+* Modules + concision = GTD
+* pourquoi publier des scripts de 5 lignes ? 
+* autres technos = boulot plus gros = *new project* (Champain!) 
 
 Culture du "out of the box" manquante 
 
@@ -112,6 +113,27 @@ fix ?
   * no more Moore
 
 ## replude? fpw ? yapc europe ? 
+
+# links and stuff
+
+## on training
+
+* [http://rubular.com/](rubular) nice for training
+
+## on web dev
+
+* [list of js game engines](https://github.com/bebraw/jswiki/wiki/Game-Engines)
+* [nice form labels demo](http://viget.com/inspire/making-infield-form-labels-suck-less-2#jsfiddle)
+
+### go to D3
+
+[D3](http://d3js.org/) js data-driven documents and
+[C2](http://keminglabs.com/c2/) clojurescript counterpart are awesome.
+[tutorials there](https://github.com/mbostock/d3/wiki/Tutorials).
+
+sooo... needs of [kineticjs](http://kineticjs.com/) anyone ? 
+
+## i wish i'd read later
 
 
 
