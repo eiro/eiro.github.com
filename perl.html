@@ -18,43 +18,71 @@
   <main role="main" class="grid-container">
   <div class="grid-20">
       <section><ul>
-                              <li><a href="index.html">home</a></li>
-                              <li><a href="opensxb.html">#opensxb</a></li>
-                              <li><a href="news.html">news</a></li>
-                              <li><a href="future.html">future</a></li>
-                              <li><a href="perl.html">perl</a></li>
-                              <li><a href="sysop.html">sysop notes</a></li>
-                              <li><a href="links.html">links and stuff</a></li>
-                              </ul></section>
+<li><a href="index.html">home</a></li>
+<li><a href="opensxb.html">#opensxb</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="future.html">future</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="cli.html">cli tools</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="links.html">links and stuff</a></li>
+</ul></section>
       <hr/>
       <nav id="TOC"><ul>
-     <li><a href="#installation-de-paquets-perl">installation de paquets perl</a><ul>
-     <li><a href="#créer-des-paquets-systeme">créer des paquets systeme</a></li>
-     <li><a href="#installer-dans-son-home">installer dans son home</a></li>
-     </ul></li>
-     <li><a href="#notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk">notes pour un tuto perlrun (faire le lien avec awk)</a></li>
-     <li><a href="#les-flags">les flags</a></li>
-     </ul></nav>
+<li><a href="#installation-de-paquets-perl">installation de paquets perl</a><ul>
+<li><a href="#créer-des-paquets-systeme">créer des paquets systeme</a></li>
+<li><a href="#installer-dans-son-home">installer dans son home</a></li>
+</ul></li>
+<li><a href="#notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk">notes pour un tuto perlrun (faire le lien avec awk)</a></li>
+<li><a href="#les-flags">les flags</a></li>
+<li><a href="#tutoriel-pour-eirotic-perl">Tutoriel pour Eirotic Perl</a></li>
+<li><a href="#préparer-son-environement-de-développement">Préparer son environement de développement</a><ul>
+<li><a href="#setup-your-working-environment">setup your working environment</a></li>
+</ul></li>
+</ul></nav>
   </div>
-<div class="grid-80"><h1>Perl</h1><section><h1 id="installation-de-paquets-perl"><a href="#installation-de-paquets-perl">installation de paquets perl</a></h1>
-         <p>WARNING (a moins d'une nouveauté?): ne pas utiliser un client cpan en root pour éviter de placer dans les répertoires du système des fichiers malaisés à supprimer.</p>
-         <p>différentes solutions existent</p>
-         <h2 id="créer-des-paquets-systeme"><a href="#créer-des-paquets-systeme">créer des paquets systeme</a></h2>
-         <ul>
-         <li>sous debian, voir <a href="sysop.html">ma page sysop</a>.</li>
-         <li>sous les rpm-based, on utilisait un truc a biblibre ... je sais plus...</li>
-         <li>sous macos, j'avais écris <a href="https://trac.macports.org/wiki/howto/cpan2port">cpan2port</a> qui est tjrs utilisé par la communauté macports. toutefois:</li>
-         <li>il semble que <a href="http://brew.sh/">homebrew</a> soit maintenant plus utilisé.</li>
-         <li>comme macos est un des rares unices qui me sorte vraiment par les yeux, je ne sais pas ou tout ca en est.</li>
-         <li>sous windows, <a href="http://strawberryperl.com/">Strawberry Perl</a> et son client CPAN ou le perl de <a href="http://cygwin.org/">cygwin</a>.</li>
-         </ul>
-         <h2 id="installer-dans-son-home"><a href="#installer-dans-son-home">installer dans son home</a></h2>
-         <p>les installations de <code>cpanm</code> (un client cpan lite) sont décrites <a href="http://search.cpan.org/~miyagawa/App-cpanminus-1.7001/lib/App/cpanminus.pm#INSTALLATION">ici</a>. Le package debian s'appelle <code>cpanm</code>.</p>
-         <h1 id="notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk"><a href="#notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk">notes pour un tuto perlrun (faire le lien avec awk)</a></h1>
-         <p>Cet article est mon recueil de bonnes pratiques pour les perl oneliners (qui font d'ailleurs rarement une ligne). je pars du principe que vous avez des bases de sed et awk (si ca n'est pas le cas: il est temps).</p>
-         <h1 id="les-flags"><a href="#les-flags">les flags</a></h1>
-         <p>perl -wsE 'say $foo' -- -foo=bar</p>
-         <p>foo=&quot;bar&quot; perl -Menv -wsE 'say $foo'</p><span class="dynamic-px-width"></span></section></div> 
+<div class="grid-80"><h1>Perl</h1><section><h1 id="installation-de-paquets-perl">installation de paquets perl</h1>
+<p>WARNING (a moins d'une nouveauté?): ne pas utiliser un client cpan en root pour éviter de placer dans les répertoires du système des fichiers malaisés à supprimer.</p>
+<p>différentes solutions existent</p>
+<h2 id="créer-des-paquets-systeme">créer des paquets systeme</h2>
+<ul>
+<li>sous debian, voir <a href="sysop.html">ma page sysop</a>.</li>
+<li>sous les rpm-based, on utilisait un truc a biblibre ... je sais plus...</li>
+<li>sous macos, j'avais écris <a href="https://trac.macports.org/wiki/howto/cpan2port">cpan2port</a> qui est tjrs utilisé par la communauté macports. toutefois:</li>
+<li>il semble que <a href="http://brew.sh/">homebrew</a> soit maintenant plus utilisé.</li>
+<li>comme macos est un des rares unices qui me sorte vraiment par les yeux, je ne sais pas ou tout ca en est.</li>
+<li>sous windows, <a href="http://strawberryperl.com/">Strawberry Perl</a> et son client CPAN ou le perl de <a href="http://cygwin.org/">cygwin</a>.</li>
+</ul>
+<h2 id="installer-dans-son-home">installer dans son home</h2>
+<p>les installations de <code>cpanm</code> (un client cpan lite) sont décrites <a href="http://search.cpan.org/~miyagawa/App-cpanminus-1.7001/lib/App/cpanminus.pm#INSTALLATION">ici</a>. Le package debian s'appelle <code>cpanm</code>.</p>
+<h1 id="notes-pour-un-tuto-perlrun-faire-le-lien-avec-awk">notes pour un tuto perlrun (faire le lien avec awk)</h1>
+<p>Cet article est mon recueil de bonnes pratiques pour les perl oneliners (qui font d'ailleurs rarement une ligne). je pars du principe que vous avez des bases de sed et awk (si ca n'est pas le cas: il est temps).</p>
+<h1 id="les-flags">les flags</h1>
+<p>perl -wsE 'say $foo' -- -foo=bar</p>
+<p>foo=&quot;bar&quot; perl -Menv -wsE 'say $foo'</p>
+<h1 id="tutoriel-pour-eirotic-perl">Tutoriel pour Eirotic Perl</h1>
+<p>De la préparation de votre environement de développement jusqu'au déployement de votre application, Perl vous permet d'effectuer de nombreux choix.</p>
+<p>Aucun développeur Perl confirmé ne voudrait perdre cette liberté qui permet de s'adapter à toutes les situations. A l'inverse, le débutant peut facilement perdre patience devant la richesse de l'écosystème de Perl.</p>
+<p>Ce didacticiel propose une seule voie: celle que je pratique maintenant depuis des années. Ca n'est peut-être pas la meilleure mais elle est le fruit de mon experience et utilise ce que je pense être les dernières bonnes pratiques en vigueur dans le monde Perl.</p>
+<p>Les prérequis sont simples:</p>
+<ul>
+<li><p>avoir un compte utilisateur sur une machine Unix (nul besoin d'en posséder les droits d'administration) avec Perl (et de préférence zsh) installé.</p></li>
+<li><p>avoir des bases de shell unix. je ne reviens pas sur des notions comme les variables d'environement, le shebang ou les commandes de base de gestion de fichiers.</p></li>
+<li><p>connaitre 1 editeur de texte. J'utilise <a href="http://vim.org">vim</a> pour ma part mais il existe des IDEs Perl comme <a href="http://padre.perlide.org/">padre</a> ou <a href="http://www.epic-ide.org/">epic</a>.</p></li>
+<li><p>Avoir les bases de la syntaxe Perl et son ecosystème. le présent document propose de bonnes pratiques et n'est en rien une initiation à la syntaxe. Vous devez donc savoir ce qu'est un module, le CPAN, un client CPAN.</p></li>
+</ul>
+<h1 id="préparer-son-environement-de-développement">Préparer son environement de développement</h1>
+<p>Perl (et de manière induite tous les outils de l'écosystème Perl) repose sur des repertoires</p>
+<p>Perl et la plupart de ses outils repose sur des variables d'environement</p>
+<p>There is more than one way to do it in Perl. It's not only about writting code but also setting up your developpement environement and deploy apps.</p>
+<p>This tutorial use my way from zero (well,</p>
+<p>I have the same habits for many years now and I think it would help to share those to have a from zero to deployement tu</p>
+<p>This tutorial is about my way</p>
+<p>this is a from-zero to Eirotic tutorial.</p>
+<h2 id="setup-your-working-environment">setup your working environment</h2>
+<p>install the cpanm client to ease installation of CPAN dependencies. everything would work from your home directory, no root</p>
+<pre><code>curl -L http://cpanmin.us | perl - App::cpanminus</code></pre>
+<p>it install <code>local::lib</code></p><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>

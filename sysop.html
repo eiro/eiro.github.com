@@ -18,68 +18,69 @@
   <main role="main" class="grid-container">
   <div class="grid-20">
       <section><ul>
-                              <li><a href="index.html">home</a></li>
-                              <li><a href="opensxb.html">#opensxb</a></li>
-                              <li><a href="news.html">news</a></li>
-                              <li><a href="future.html">future</a></li>
-                              <li><a href="perl.html">perl</a></li>
-                              <li><a href="sysop.html">sysop notes</a></li>
-                              <li><a href="links.html">links and stuff</a></li>
-                              </ul></section>
+<li><a href="index.html">home</a></li>
+<li><a href="opensxb.html">#opensxb</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="future.html">future</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="cli.html">cli tools</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="links.html">links and stuff</a></li>
+</ul></section>
       <hr/>
       <nav id="TOC"><ul>
-     <li><a href="#debian">debian</a><ul>
-     <li><a href="#packaging">packaging</a><ul>
-     <li><a href="#pour-une-lib-perl">pour une lib perl</a></li>
-     <li><a href="#pour-une-liste-de-dépendances">pour une liste de dépendances</a></li>
-     <li><a href="#pour-modifier-violement-un-package-existant">pour modifier violement un package existant</a></li>
-     <li><a href="#depot-du-pauvre">depot du pauvre</a></li>
-     </ul></li>
-     <li><a href="#questionnement">questionnement</a></li>
-     <li><a href="#todo">todo</a></li>
-     </ul></li>
-     </ul></nav>
+<li><a href="#debian">debian</a><ul>
+<li><a href="#packaging">packaging</a><ul>
+<li><a href="#pour-une-lib-perl">pour une lib perl</a></li>
+<li><a href="#pour-une-liste-de-dépendances">pour une liste de dépendances</a></li>
+<li><a href="#pour-modifier-violement-un-package-existant">pour modifier violement un package existant</a></li>
+<li><a href="#depot-du-pauvre">depot du pauvre</a></li>
+</ul></li>
+<li><a href="#questionnement">questionnement</a></li>
+<li><a href="#todo">todo</a></li>
+</ul></li>
+</ul></nav>
   </div>
-<div class="grid-80"><h1>mes notes de sysops</h1><section><h1 id="debian"><a href="#debian">debian</a></h1>
-         <p>ces notes sont globalement toutes valides et testées sous ubuntu.</p>
-         <h2 id="packaging"><a href="#packaging">packaging</a></h2>
-         <h3 id="pour-une-lib-perl"><a href="#pour-une-lib-perl">pour une lib perl</a></h3>
-         <p>est ce qu'il y a besoin de packager?</p>
-         <ul>
-         <li>utiliser <code>corelist</code> pour savoir si le module est fourni avec la distro perl standard</li>
-         <li><code>aptitude search</code> pour savoir si le module n'est pas deja packagé (la communauté perl est forte dans le monde debian).</li>
-         </ul>
-         <p>WARNING: assurez-vous que toutes les variables d'environement en <code>$PERL*</code> soit virées avant d'utiliser les commandes suivantes</p>
-         <pre><code>dh-make-perl --build . 
-         dh-make-perl --build --cpan Perlude</code></pre>
-         <p>notez que:</p>
-         <ul>
-         <li>la création des paquets n'est pas récursive</li>
-         <li>si la création d'un paquet plante, allez dans le sous-répertoire de build et lancez <code>make test</code> pour tenter de comprendre l'erreur.</li>
-         </ul>
-         <h3 id="pour-une-liste-de-dépendances"><a href="#pour-une-liste-de-dépendances">pour une liste de dépendances</a></h3>
-         <pre><code>equivs-control unistra-sympa-perldeps
-         $EDITOR control 
-         equivs-build</code></pre>
-         <h3 id="pour-modifier-violement-un-package-existant"><a href="#pour-modifier-violement-un-package-existant">pour modifier violement un package existant</a></h3>
-         <p>interogation: comment ne pas rentrer en conflit avec le paquet offciel? pinning? prefixage du nom du paquet avec le nom de l'organisation? (genre sympa devient unistra-sympa?)</p>
-         <h3 id="depot-du-pauvre"><a href="#depot-du-pauvre">depot du pauvre</a></h3>
-         <h2 id="questionnement"><a href="#questionnement">questionnement</a></h2>
-         <p>aptitude me semble bien plus agréable:</p>
-         <ul>
-         <li>note conscienscieusement ce qu'il fait. du coup:</li>
-         <li>les paquets proposés a la purge lors de l'appel de la subcommand ne sont pas délirants.</li>
-         <li><code>aptitude why</code>, que c'est bon …</li>
-         <li>les motifs de recherche sont clairement poussés, aptitude search ou show permettent donc de chercher</li>
-         <li>paquets installés dont le nom commence par perl ou finit par python: <code>~i (~n perl$ | ~n ^python )</code></li>
-         <li>les paquets qui pourraient servir d'alternative au mta actuel: '~Dprovides:mail-transport-agent !~i'</li>
-         <li>…</li>
-         </ul>
-         <p>pourtant il semble que debian fasse machine arrière: pourquoi ?</p>
-         <h2 id="todo"><a href="#todo">todo</a></h2>
-         <ul>
-         <li>rediger une doc sur hybridation et pinning</li>
-         </ul><span class="dynamic-px-width"></span></section></div> 
+<div class="grid-80"><h1>mes notes de sysops</h1><section><h1 id="debian">debian</h1>
+<p>ces notes sont globalement toutes valides et testées sous ubuntu.</p>
+<h2 id="packaging">packaging</h2>
+<h3 id="pour-une-lib-perl">pour une lib perl</h3>
+<p>est ce qu'il y a besoin de packager?</p>
+<ul>
+<li>utiliser <code>corelist</code> pour savoir si le module est fourni avec la distro perl standard</li>
+<li><code>aptitude search</code> pour savoir si le module n'est pas deja packagé (la communauté perl est forte dans le monde debian).</li>
+</ul>
+<p>WARNING: assurez-vous que toutes les variables d'environement en <code>$PERL*</code> soit virées avant d'utiliser les commandes suivantes</p>
+<pre><code>dh-make-perl --build . 
+dh-make-perl --build --cpan Perlude</code></pre>
+<p>notez que:</p>
+<ul>
+<li>la création des paquets n'est pas récursive</li>
+<li>si la création d'un paquet plante, allez dans le sous-répertoire de build et lancez <code>make test</code> pour tenter de comprendre l'erreur.</li>
+</ul>
+<h3 id="pour-une-liste-de-dépendances">pour une liste de dépendances</h3>
+<pre><code>equivs-control unistra-sympa-perldeps
+$EDITOR control 
+equivs-build</code></pre>
+<h3 id="pour-modifier-violement-un-package-existant">pour modifier violement un package existant</h3>
+<p>interogation: comment ne pas rentrer en conflit avec le paquet offciel? pinning? prefixage du nom du paquet avec le nom de l'organisation? (genre sympa devient unistra-sympa?)</p>
+<h3 id="depot-du-pauvre">depot du pauvre</h3>
+<h2 id="questionnement">questionnement</h2>
+<p>aptitude me semble bien plus agréable:</p>
+<ul>
+<li>note conscienscieusement ce qu'il fait. du coup:</li>
+<li>les paquets proposés a la purge lors de l'appel de la subcommand ne sont pas délirants.</li>
+<li><code>aptitude why</code>, que c'est bon …</li>
+<li>les motifs de recherche sont clairement poussés, aptitude search ou show permettent donc de chercher</li>
+<li>paquets installés dont le nom commence par perl ou finit par python: <code>~i (~n perl$ | ~n ^python )</code></li>
+<li>les paquets qui pourraient servir d'alternative au mta actuel: '~Dprovides:mail-transport-agent !~i'</li>
+<li>…</li>
+</ul>
+<p>pourtant il semble que debian fasse machine arrière: pourquoi ?</p>
+<h2 id="todo">todo</h2>
+<ul>
+<li>rediger une doc sur hybridation et pinning</li>
+</ul><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>
