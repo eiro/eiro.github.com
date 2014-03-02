@@ -53,32 +53,39 @@ trame des prochains posts (en réponse a des questions posées de ci de là)
   * hello_world.py celebration vs Perl Masons
 * Ironman: more echo chamber! 
 
-CPAN pour nous
-  * un outils indispensable parceque nous savons
-      * ce qu'est CPAN
-      * comment s'en servir
-  * pas de leadership
-  * experimentation
-    * personnelle 
-    * pour la communauté
-  * les autres communautés nous imitent sans nous égaler 
-    (ruby et haskell pas trop loin derriere)
-CPAN pour les autres: confusion
-  * liberté         -> trop de choix
-  * experimentation -> trop de "merde"
+CPAN pour nous: heaven
+
+* un outils indispensable parceque nous savons
+  * ce qu'est CPAN
+  * comment s'en servir
+* pas de leadership
+* experimentation
+* personnelle 
+* pour la communauté
+* les autres communautés nous imitent sans nous égaler 
+(ruby et haskell pas trop loin derriere) 
+
+CPAN pour les autres: hell 
+
+* liberté         -> trop de choix
+* experimentation -> trop de "merde" 
+
 CPAN GTD vs BNP (Brand new projects)
   * Modules + concision = GTD
   * pourquoi publier des scripts de 5 lignes ? 
-  * autres technos = boulot plus gros = *new project* (Champain!)
-Culture du "out of the box" manquante
-  * exemples? 
-      * DBIx::Class -> phpMysqlAdmin ?
-      * Net::LDAP   -> gosa ?
-  * pourquoi ? 
-    * degres de liberté (trop faible)
-    * niveau de techninicté (sous-estimé)  
+  * autres technos = boulot plus gros = *new project* (Champain!) 
 
-WWCD (what we can do):
+Culture du "out of the box" manquante 
+
+* exemples? 
+  * DBIx::Class -> phpMysqlAdmin ?
+  * Net::LDAP   -> gosa ?
+* pourquoi ? 
+* degres de liberté (trop faible)
+* niveau de techninicté (sous-estimé)    
+
+fix ? 
+
 * more annoncement
 * more App::* 
 * more project pages
