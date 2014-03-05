@@ -1,4 +1,6 @@
-% notes sur les concepts de Request Tracker 
+% Request Tracker
+
+is a fucking good bug tracker!  
 
 # Agenda (par jean)
 
@@ -41,5 +43,10 @@ authentication: par mail uniquement normalement
 Droits =  
     system group (everyone = priv + unpriv )
 
-mailgate appellé par /etc/aliases 
+mailgate appellé par /etc/aliases  
+
+# good liens
+
+* [dirt, kanban for sympa](https://github.com/botsie/dirt) 
+
 
