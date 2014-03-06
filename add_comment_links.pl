@@ -2,6 +2,13 @@
 use Modern::Perl;
 use URI::Encode 'uri_encode';
 
+# don't spam me, bot! 
+my $MAIL_TO_MY_LIST = 
+'mailto:'
+. 'blog-comment-experiment'
+. '@'
+. 'u-strasbg.fr?';
+
 sub comment {
     my ( $header ) = map {
         s/[^a-zA-Z0-9]//g;
@@ -9,7 +16,7 @@ sub comment {
     } shift;
     my ( $title ) = map {uri_encode "Re: $_"} shift; 
 
-    'mailto:blog-comment-experiment@u-strasbg.fr?'
+    $MAIL_TO_MY_LIST
     . "In-Reply-To=$header"
     . "&Subject=$title"
 }
