@@ -14,7 +14,9 @@ $if(math)$$math$$endif$
 $for(header-includes)$$header-includes$$endfor$
 </head><body>
     <div id="wrapper"><header role="banner" class="grid-container">
-    <div class="grid-100"><h1>(.. eiro (brain) (dump))</h1></div></header>
+    <div class="grid-100"><h1>(.. eiro (brain) (dump))</h1>
+        <a href="atom.xml">(atom feed)</a>
+</div></header>
   <main role="main" class="grid-container">
   <div class="grid-20">
       <section>$for(include-before)$$include-before$$endfor$</section>
