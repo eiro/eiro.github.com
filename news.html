@@ -28,6 +28,10 @@
 </ul></section>
       <hr/>
       <nav id="TOC"><ul>
+<li><a href="#sympa-to-comment-blog-posts-how">sympa to comment blog posts: how?</a><ul>
+<li><a href="#create-a-blogcomment-scenario">create a blogcomment scenario</a></li>
+<li><a href="#create-posts-from-your-webpage">create posts from your webpage</a></li>
+</ul></li>
 <li><a href="#habitudes-pour-editer-du-texte-éfficacement">7 habitudes pour editer du texte éfficacement</a></li>
 <li><a href="#sympa-to-comment-blog-posts-why">sympa to comment blog posts: why ?</a></li>
 <li><a href="#fosdem-sequel-c11-scrum-...">FOSDEM sequel: C++11, scrum, ...</a></li>
@@ -36,7 +40,39 @@
 <li><a href="#new-experimental-atom-feed">new (experimental) atom feed</a></li>
 </ul></nav>
   </div>
-<div class="grid-80"><section><h1 id="habitudes-pour-editer-du-texte-éfficacement">7 habitudes pour editer du texte éfficacement</h1>
+<div class="grid-80"><section><h1 id="sympa-to-comment-blog-posts-how">sympa to comment blog posts: how?</h1>
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Csympatocommentblogpostshow@eiro.github.io%3E&Subject=Re:%20to%20comment%20blog%20posts:%20how?">Comment</a>
+<p class="date"> 
+2014-03-06T22:37:09+01:00
+</p>
+
+<p>I explained <a href="#sympa-to-comment-blog-posts-why">why</a> i want to use sympa to manage comments. this is the &quot;how&quot; (as an experiment)</p>
+<h2 id="create-a-blogcomment-scenario">create a blogcomment scenario</h2>
+<p>the idea of this scenario is you can publish in 2 cases:</p>
+<ul>
+<li>you are a member of the list</li>
+<li>you're commenting a blog post</li>
+</ul>
+<p>so my <code>/etc/sympa/scenari/send.blogcomment</code> file is</p>
+<pre><code>title.gettext Blogpost comment
+title.fr Blogpost Comment
+
+match([msg_header-&gt;X-Spam-Status], /^YES/)            smtp,smime,md5  -&gt; reject,quiet 
+match([msg_header-&gt;In-Reply-To], /eiro.github.io/)    smtp,smime,md5  -&gt; do_it
+match([msg_header-&gt;In-Reply-To], /blog/)              smtp,smime,md5  -&gt; do_it
+is_subscriber([listname],[sender])                    smtp,smime,md5  -&gt; do_it
+true()                                                smtp,smime,md5  -&gt; reject,quiet  </code></pre>
+<p>now the list itself is configured to use the blogcomment scenario. which means that you must have this in in the list root</p>
+<pre><code> grep &#39;^send&#39; config
+ send blogcomment</code></pre>
+<h2 id="create-posts-from-your-webpage">create posts from your webpage</h2>
+<p>what you need is add an mailto: URL with</p>
+<ul>
+<li>the subject of the post as subject</li>
+<li>a <code>Reply-To</code> header to please the <code>blogcomment</code> scenario</li>
+</ul>
+<p>i use <a href="add_comment_links.pl">this simple script</a> in combination with <a href="https://github.com/eiro/app-atombomb">atombomb</a> to achieve that on this site.</p>
+<h1 id="habitudes-pour-editer-du-texte-éfficacement">7 habitudes pour editer du texte éfficacement</h1>
 <a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3C7habitudespourediterdutextefficacement@eiro.github.io%3E&Subject=Re:%20habitudes%20pour%20editer%20du%20texte%20%C3%83%C2%A9fficacement">Comment</a>
 <p class="date"> 
 2014-03-05T10:58:35+01:00

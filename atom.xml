@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom"><updated>2014-03-05T10:58:35+01:00</updated><id>tag:eiro,2014</id><author>Marc Chantreux</author><title>... but maybe i'm wrong</title><entry><id>tag:eiro,news,2014-03-05T10:58:35+01:00,7_habitudes_pour_editer_du_texte_fficacement</id><title>7 habitudes pour editer du texte éfficacement</title><content type="html">&lt;p&gt;Nouvelle version de la conf&Atilde;&copy;rence de &lt;a href=&quot;http://fr.wikipedia.org/wiki/Bram_Moolenaar&quot;&gt;Bram Moolenaar&lt;/a&gt;, &amp;quot;&lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI&quot;&gt;7 Habits For Effective Text Editing 2.0&lt;/a&gt;&amp;quot; est sur youtube. C&#39;est m&Atilde;&copy;thodologique plus que technique. Tr&Atilde;&uml;s int&Atilde;&copy;ressant!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom"><updated>2014-03-06T22:37:09+01:00</updated><id>tag:eiro,2014</id><author>Marc Chantreux</author><title>... but maybe i'm wrong</title><entry><id>tag:eiro,news,2014-03-06T22:37:09+01:00,sympa_to_comment_blog_posts_how_</id><title>sympa to comment blog posts: how?</title><content type="html">&lt;p&gt;I explained &lt;a href=&quot;#sympa-to-comment-blog-posts-why&quot;&gt;why&lt;/a&gt; i want to use sympa to manage comments. this is the &amp;quot;how&amp;quot; (as an experiment)&lt;/p&gt;
+&lt;h2 id=&quot;create-a-blogcomment-scenario&quot;&gt;create a blogcomment scenario&lt;/h2&gt;
+&lt;p&gt;the idea of this scenario is you can publish in 2 cases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you are a member of the list&lt;/li&gt;
+&lt;li&gt;you&#39;re commenting a blog post&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;so my &lt;code&gt;/etc/sympa/scenari/send.blogcomment&lt;/code&gt; file is&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;title.gettext Blogpost comment
+title.fr Blogpost Comment
+
+match([msg_header-&amp;gt;X-Spam-Status], /^YES/)            smtp,smime,md5  -&amp;gt; reject,quiet 
+match([msg_header-&amp;gt;In-Reply-To], /eiro.github.io/)    smtp,smime,md5  -&amp;gt; do_it
+match([msg_header-&amp;gt;In-Reply-To], /blog/)              smtp,smime,md5  -&amp;gt; do_it
+is_subscriber([listname],[sender])                    smtp,smime,md5  -&amp;gt; do_it
+true()                                                smtp,smime,md5  -&amp;gt; reject,quiet  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;now the list itself is configured to use the blogcomment scenario. which means that you must have this in in the list root&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; grep &amp;#39;^send&amp;#39; config
+ send blogcomment&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;create-posts-from-your-webpage&quot;&gt;create posts from your webpage&lt;/h2&gt;
+&lt;p&gt;what you need is add an mailto: URL with&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the subject of the post as subject&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;Reply-To&lt;/code&gt; header to please the &lt;code&gt;blogcomment&lt;/code&gt; scenario&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;i use &lt;a href=&quot;add_comment_links.pl&quot;&gt;this simple script&lt;/a&gt; in combination with &lt;a href=&quot;https://github.com/eiro/app-atombomb&quot;&gt;atombomb&lt;/a&gt; to achieve that on this site.&lt;/p&gt;
+</content><published>2014-03-06T22:37:09+01:00</published><updated>2014-03-06T22:37:09+01:00</updated></entry><entry><id>tag:eiro,news,2014-03-05T10:58:35+01:00,7_habitudes_pour_editer_du_texte_fficacement</id><title>7 habitudes pour editer du texte éfficacement</title><content type="html">&lt;p&gt;Nouvelle version de la conf&Atilde;&copy;rence de &lt;a href=&quot;http://fr.wikipedia.org/wiki/Bram_Moolenaar&quot;&gt;Bram Moolenaar&lt;/a&gt;, &amp;quot;&lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI&quot;&gt;7 Habits For Effective Text Editing 2.0&lt;/a&gt;&amp;quot; est sur youtube. C&#39;est m&Atilde;&copy;thodologique plus que technique. Tr&Atilde;&uml;s int&Atilde;&copy;ressant!&lt;/p&gt;
 &lt;p&gt;je traduis une &lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI#t=2274&quot;&gt;diapo importante&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&Atilde;&copy;tape 1: d&Atilde;&copy;tecter les pratiques in&Atilde;&copy;fficaces, r&Atilde;&copy;barbatives (identifier les moments ou vous perdez du temps)&lt;/li&gt;
