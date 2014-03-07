@@ -1,6 +1,6 @@
-id: tag:eiro,2014
+id: tag:eiro.github.com,2014:blog
 title: ... but maybe i'm wrong
-author: Marc Chantreux
+author: { name: Marc Chantreux }
 alternates:
     http://eiro.github.io/news/: {rel: alternate, type: text/html}
     http://eiro.github.io/atom.xml: {rel: self, type: application/atom+xml }
