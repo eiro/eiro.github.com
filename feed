@@ -7,7 +7,7 @@ alternates:
 
 #(2014-03-06T22:37:09+01:00) sympa to comment blog posts: how?
 
-I explained [why](#sympa-to-comment-blog-posts-why) 
+I explained [why](http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why) 
 i want to use sympa to manage comments. this is the "how" (as an experiment)
 
 ## create a blogcomment scenario

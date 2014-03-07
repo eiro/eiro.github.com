@@ -1,7 +1,7 @@
 # sympa to comment blog posts: how?
 <a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Csympatocommentblogpostshow@eiro.github.io%3E&Subject=Re:%20to%20comment%20blog%20posts:%20how?">Comment</a>\n<p class="date"> 2014-03-06T22:37:09+01:00</p>
 
-I explained [why](#sympa-to-comment-blog-posts-why) 
+I explained [why](http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why) 
 i want to use sympa to manage comments. this is the "how" (as an experiment)
 
 ## create a blogcomment scenario
