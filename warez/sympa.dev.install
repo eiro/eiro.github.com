@@ -1,0 +1,12 @@
+# bootstrap with
+# https://github.com/eiro/sympa.git
+# cd sympa
+# curl http://eiro.github.io/warez/sympa.dev.install | zsh
+
+sed -i 's/-Werror//' configure.ac 
+autoreconf -i
+root=$PWD/root
+./configure \
+--prefix=$root/install \
+--with-confdir=$root/sys \
+--with-initdir=$root/init
