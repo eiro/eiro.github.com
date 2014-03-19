@@ -1,3 +1,76 @@
+# make my mind up about a sympa ListDef parser
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3CmakemymindupaboutasympaListDefparser@eiro.github.io%3E&Subject=Re:%20my%20mind%20up%20about%20a%20sympa%20ListDef%20parser">Comment</a>\n<p class="date"> 2014-03-19T11:12:11+01:00</p>
+
+within few days, i'll write a REST service to
+[CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) the 
+[sympa list defs](https://www.sympa.org/manual_6.3/list-definition#list_configuration_file). 
+
+I will not use the parser from the sympa code because:
+
+* i don't want sympa to be a a software dependency: there is no need 
+* i want to be able to extend the format without editing the sympa code
+
+i'll probably push this parser on [CPAN](http://metacpan.org) but for now,
+[TIMTOWTDI](http://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it) and i consider 3 of those:
+
+* wrap roughly copy/paste from the sympa code
+* use pegex
+* write my incremental m//cxmsg parser (i still don't understand if it's bottom/up or top/down :))
+
+all with pros and cons. 
+
+## copy/paste
+
+would be harder to maintain (the current code is a cargo cult parsing in a
+while loop) but every improvement can be contributed back to sympa.
+
+## Pegex
+
+pegex grammars are very simple to maintain and read which could be usable in 
+other languages (i haven't tested yet but javascript could be an example). It
+would add a dependency to Pegex but i really don't think it's a cons argument
+in 2014.
+
+## incremental m//cxmsg parser
+
+as i'm used to it, i think i can provide simple, extensible and readble code
+following this way but is it worth to do it just to avoid the Pegex dependency?
+does Pegex add an runtime overload ? 
+
+
+## Path 2) incrémental //g parser
+
+Pro:
+
+* no CPAN dependency (very poor argument, i admit it)
+* more hackable? 
+
+Cons:
+
+* very simple to maintain 
+* available in pegex supported targets (including javascript)
+
+
+# eiro-brain-dump to please ironman
+<a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Ceirobraindumptopleaseironman@eiro.github.io%3E&Subject=Re:%20to%20please%20ironman">Comment</a>\n<p class="date"> 2014-03-19T10:53:31+01:00</p>
+
+some days ago, i had a chat on [epo](http://www.enlightenedperl.org/)@[freenode](http://freenode.net/)
+because [my atom](/atom.xml) is completly ignored by [ironman planet](http://ironman.enlightenedperl.org/).
+this post is a reminder.
+
+[Ironman planet](http://ironman.enlightenedperl.org/) expects each entries to provide
+an alternate html address (which wasn't my initial plan but after all: every text
+can be rendered as html).
+
+So the plan is 
+
+* fix [eiro-brain-dump](http://eiro.github.io) to make it ironman compliant (i still have to decide how). 
+* install a local ironman and provide a patch to show error reports when you update your feed
+  (so you can fix your stuff without disturbing EPO people)
+
+this was an excuse create a profile on [questhub.io](https://questhub.io/)
+and create a [related quest](https://questhub.io/realm/perl/quest/531f0d326e78176e6a0000bd). 
+
 # sympa to comment blog posts: how?
 <a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Csympatocommentblogpostshow@eiro.github.io%3E&Subject=Re:%20to%20comment%20blog%20posts:%20how?">Comment</a>\n<p class="date"> 2014-03-06T22:37:09+01:00</p>
 
