@@ -38,19 +38,6 @@ following this way but is it worth to do it just to avoid the Pegex dependency?
 does Pegex add an runtime overload ? 
 
 
-## Path 2) incrémental //g parser
-
-Pro:
-
-* no CPAN dependency (very poor argument, i admit it)
-* more hackable? 
-
-Cons:
-
-* very simple to maintain 
-* available in pegex supported targets (including javascript)
-
-
 # eiro-brain-dump to please ironman
 <a href="mailto:blog-comment-experiment@u-strasbg.fr?In-Reply-To=%3Ceirobraindumptopleaseironman@eiro.github.io%3E&Subject=Re:%20to%20please%20ironman">Comment</a>\n<p class="date"> 2014-03-19T10:53:31+01:00</p>
 

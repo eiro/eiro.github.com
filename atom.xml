@@ -17,17 +17,6 @@
 &lt;p&gt;pegex grammars are very simple to maintain and read which could be usable in other languages (i haven't tested yet but javascript could be an example). It would add a dependency to Pegex but i really don't think it's a cons argument in 2014.&lt;/p&gt;
 &lt;h2 id="incremental-mcxmsg-parser"&gt;incremental m//cxmsg parser&lt;/h2&gt;
 &lt;p&gt;as i'm used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?&lt;/p&gt;
-&lt;h2 id="path-2-incrémental-g-parser"&gt;Path 2) incrémental //g parser&lt;/h2&gt;
-&lt;p&gt;Pro:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;no CPAN dependency (very poor argument, i admit it)&lt;/li&gt;
-&lt;li&gt;more hackable?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Cons:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;very simple to maintain&lt;/li&gt;
-&lt;li&gt;available in pegex supported targets (including javascript)&lt;/li&gt;
-&lt;/ul&gt;
 </content><published>2014-03-19T11:12:11+01:00</published><updated>2014-03-19T11:12:11+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-03-19:eiro_brain_dump_to_please_ironman</id><title>eiro-brain-dump to please ironman</title><content type="html">&lt;p&gt;some days ago, i had a chat on &lt;a href="http://www.enlightenedperl.org/"&gt;epo&lt;/a&gt;@&lt;a href="http://freenode.net/"&gt;freenode&lt;/a&gt; because &lt;a href="/atom.xml"&gt;my atom&lt;/a&gt; is completly ignored by &lt;a href="http://ironman.enlightenedperl.org/"&gt;ironman planet&lt;/a&gt;. this post is a reminder.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://ironman.enlightenedperl.org/"&gt;Ironman planet&lt;/a&gt; expects each entries to provide an alternate html address (which wasn't my initial plan but after all: every text can be rendered as html).&lt;/p&gt;
 &lt;p&gt;So the plan is&lt;/p&gt;
