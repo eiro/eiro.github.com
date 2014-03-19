@@ -3,5 +3,10 @@ header h1 {
     border-bottom: solid 1px black; 
     margin-bottom: 1em;
 }
-q { quotes: "“" "”" "‘" "’"; }
+q { quotes: "“" "”" "‘" "’"; } 
 * { font-family: Sans-Serif; text-decoration: none }
+
+section > h1 {
+    text-shadow: 2px 2px 30px #0f0;
+}
+
