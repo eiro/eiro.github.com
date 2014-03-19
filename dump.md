@@ -20,6 +20,12 @@ parceque base de code plus simple à étudier et bonne idée pour déployer mass
 
 trame des prochains posts (en réponse a des questions posées de ci de là) 
 
+* SPORE::Fast ? 
+* entity model: more acmeism! http://entitymodel.com/ ?  
+* Dokuwiki client
+* vote for next posts ? 
+* vim + rt + zsh + mutt : my terminal toolchain for rt
+
 ## about operating systems 
 
 * windows
