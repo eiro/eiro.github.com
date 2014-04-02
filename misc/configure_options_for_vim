@@ -1,0 +1,35 @@
+./configure \
+--prefix ~/local/opt/vim \
+--enable-fail-if-missing \
+--disable-darwin \
+--disable-selinux	 \
+--disable-xsmp \
+--disable-xsmp-interact \
+--disable-luainterp \
+--disable-mzschemeinterp \
+--enable-perlinterp \
+--disable-pythoninterp \
+--enable-python3interp \
+--disable-tclinterp \
+--disable-rubyinterp \
+--disable-cscope \
+--disable-workshop \
+--disable-netbeans \
+--disable-sniff \
+--enable-multibyte \
+--disable-hangulinput \
+--disable-xim \
+--disable-fontset \
+--disable-gui \
+--disable-gtk2-check \
+--disable-gnome-check \
+--disable-motif-check \
+--disable-athena-check \
+--disable-nextaw-check \
+--disable-carbon-check \
+--disable-gtktest \
+--disable-largefile \
+--disable-acl \
+--disable-gpm \
+--disable-sysmouse \
+--disable-nls
