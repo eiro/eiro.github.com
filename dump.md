@@ -26,7 +26,12 @@ trame des prochains posts (en réponse a des questions posées de ci de là)
 * vote for next posts ? 
 * vim + rt + zsh + mutt : my terminal toolchain for rt
 
-## about operating systems 
+## about operating systems
+
+the Microsoft positions about standards, privacy, security (DRMs, full
+disclosure, …) may keep us trying to remember how they treat the computer users
+and industry when they were in a state of egemony and how they would treat us
+today. 
 
 * windows
   * retrouver les notes prises a fosdem
