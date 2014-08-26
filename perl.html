@@ -30,6 +30,11 @@
 </ul></section>
       <hr/>
       <nav id="TOC"><ul>
+<li><a href="#feedbacks-on-parsing-with-perl">Feedbacks on Parsing with Perl</a><ul>
+<li><a href="#pegex-2014">Pegex (2014)</a></li>
+<li><a href="#regexpgrammars-2009-afair">Regexp::Grammars (2009, AFAIR)</a></li>
+<li><a href="#mcgx-functions">m//cgx functions</a></li>
+</ul></li>
 <li><a href="#installation-de-paquets-perl">installation de paquets perl</a><ul>
 <li><a href="#créer-des-paquets-systeme">créer des paquets systeme</a></li>
 <li><a href="#installer-dans-son-home">installer dans son home</a></li>
@@ -42,7 +47,32 @@
 </ul></li>
 </ul></nav>
   </div>
-<div class="grid-80"><h1>Perl</h1><section><h1 id="installation-de-paquets-perl">installation de paquets perl</h1>
+<div class="grid-80"><h1>Perl</h1><section><h1 id="feedbacks-on-parsing-with-perl">Feedbacks on Parsing with Perl</h1>
+<ul>
+<li>this is not just about pattern matching: we need nested datastructures to be returned.</li>
+<li>this is neither about optimistic cargo cult regex parsing: we need something we can rely on.</li>
+</ul>
+<h2 id="pegex-2014">Pegex (2014)</h2>
+<ul>
+<li><a href="https://metacpan.org/pod/distribution/Pegex/lib/Pegex.pod">Pegex</a> sounds very promising because of the <a href="http://acmeism.org/">acmeist</a> part (javascript for client-side validation of code would be awesome) but it seems that this part is vaporware for now (pegex command throw &quot;not implemented&quot; errors and the pegex grammars on github are mainly empty ones).</li>
+<li>very simple <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a>.</li>
+<li>welcoming and available community but only in IRC. no online archive (i think they must have a mailing list).</li>
+</ul>
+<h2 id="regexpgrammars-2009-afair">Regexp::Grammars (2009, AFAIR)</h2>
+<p><a href="https://metacpan.org/pod/Regexp::Grammars">Regexp::Grammars</a> overloads <code>qr{}</code> to add <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a> syntax.</p>
+<ul>
+<li>very pleasant to write and debug. <a href="http://perl6.org">Perl6</a> inspiration is obvious.</li>
+<li>soooo slow! (at least in 2009)</li>
+</ul>
+<h2 id="mcgx-functions">m//cgx functions</h2>
+<ul>
+<li>basic example: <a href="https://github.com/eiro/labo/tree/master/parsing_with_perl/sexpr_parser.pl">s-expr parser</a>.</li>
+<li>much more code to write than with Pegex or <a href="https://metacpan.org/pod/Regexp::Grammars">Regexp::Grammars</a> but runs much faster.</li>
+<li>not so easy to write but good habits comes fast.</li>
+<li>tried to write a collection of helpers named <a href="https://github.com/eiro/p5-persec">persec</a> but i finally never used it.</li>
+</ul>
+<p>you <em>must</em> read <a href="http://en.wikipedia.org/wiki/Communicating_sequential_processes">CSP</a></p>
+<h1 id="installation-de-paquets-perl">installation de paquets perl</h1>
 <p>WARNING (a moins d'une nouveauté?): ne pas utiliser un client cpan en root pour éviter de placer dans les répertoires du système des fichiers malaisés à supprimer.</p>
 <p>différentes solutions existent</p>
 <h2 id="créer-des-paquets-systeme">créer des paquets systeme</h2>

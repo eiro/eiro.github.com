@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom"><link rel="alternate" href="http://eiro.github.io/news.html" type="text/html"/><link rel="self" href="http://eiro.github.io/atom.xml" type="application/atom+xml"/><updated>2014-03-19T11:12:11+01:00</updated><id>tag:eiro.github.com,2014:blog</id><author><name>Marc Chantreux</name></author><title>... but maybe i'm wrong</title><entry><id>tag:eiro.github.com,2014-03-19:make_my_mind_up_about_a_sympa_listdef_parser</id><title>make my mind up about a sympa ListDef parser</title><content type="html">&lt;p&gt;within few days, i'll write a REST service to &lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete"&gt;CRUD&lt;/a&gt; the &lt;a href="https://www.sympa.org/manual_6.3/list-definition#list_configuration_file"&gt;sympa list defs&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom"><link href="http://eiro.github.io/atom.xml" rel="self" type="application/atom+xml"/><link rel="alternate" href="http://eiro.github.io/news.html" type="text/html"/><updated>2014-03-19T11:12:11+01:00</updated><id>tag:eiro.github.com,2014:blog</id><author><name>Marc Chantreux</name></author><title>... but maybe i'm wrong</title><entry><id>tag:eiro.github.com,2014-03-19:make_my_mind_up_about_a_sympa_listdef_parser</id><title>make my mind up about a sympa ListDef parser</title><content type="html">&lt;p&gt;within few days, i'll write a REST service to &lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete"&gt;CRUD&lt;/a&gt; the &lt;a href="https://www.sympa.org/manual_6.3/list-definition#list_configuration_file"&gt;sympa list defs&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I will not use the parser from the sympa code because:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;i don't want sympa to be a a software dependency: there is no need&lt;/li&gt;
@@ -67,7 +67,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;/ul&gt;
 &lt;p&gt;j'aurais tendance à ajouter:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;gitez votre conf. et n'hésitez pas a virer ce qui ne vous sert plus (au pire vous piocherais dans l'historique).&lt;/li&gt;
+&lt;li&gt;gitez votre conf. et n'hésitez pas a virer ce qui ne vous sert plus (au pire vous piocherez dans l'historique).&lt;/li&gt;
 &lt;li&gt;ne pas chercher à améliorer les choses plus de 10mn (y revenir plus tard avec des idées fraiches est souvent bien plus éfficace).&lt;/li&gt;
 &lt;li&gt;accepter les imperfections&lt;/li&gt;
 &lt;li&gt;meme si vous savez que votre macro/habitude ne traite pas tous les cas, utilisez-la.&lt;/li&gt;

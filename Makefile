@@ -1,36 +1,30 @@
-.POSIX:
-.SUFFIXES: .md .html
-# unsemantic_gr = https://raw.github.com/nathansmith/unsemantic/master/assets/stylesheets/unsemantic-grid-responsive-no-ie7.css
-# with_css = -c $(unsemantic_gr) -c theme.css
-htmlify  = pandoc --toc $(with_css) --template template.html5
-mdpages  = $(wildcard *.md )
-webpages = ${mdpages:.md=.html}
+# depth is defined in subdirectories as .., ../.. and so on. 
+depth?=.
+include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
-
 all: $(webpages) $(feed)
 
-news.md: feed
-	atombomb md $< | perl add_comment_links.pl > $@
+news.md: $(depth)/feed
+	atombomb md $< | $(can_comment) > $@
 
-atom.xml: feed
+atom.xml: $(depth)/feed
 	atombomb atom $< > $@
 
 # UGLY copy-past from previous lines, TODO: find a generic solution 
 
 unixtips.html: unixtips
-	atombomb md $< | perl add_comment_links.pl > $@
+	atombomb md $< | $(can_comment) > $@
 
 unixtips.atom.xml: unixtips
 	atombomb atom $< > $@
 
-$(webpages): menu template.html5
+$(webpages): menu $(main_html_template)
 
 .md.html: 
 	$(htmlify) -s -B menu -o $@ $<
 
 menu: menu.md.
 	pandoc -t html5 -o $@ $<
-
 
 clean:
 	rm -f menu $(webpages)

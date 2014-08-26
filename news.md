@@ -123,7 +123,7 @@ je traduis une [diapo importante](https://www.youtube.com/watch?v=p6K4iIMlouI#t=
 j'aurais tendance à ajouter:
 
 * gitez votre conf. et n'hésitez pas a virer ce qui ne vous sert plus (au pire
-  vous piocherais dans l'historique).
+  vous piocherez dans l'historique).
 * ne pas chercher à améliorer les choses plus de 10mn (y revenir plus tard avec
   des idées fraiches est souvent bien plus éfficace).
 * accepter les imperfections

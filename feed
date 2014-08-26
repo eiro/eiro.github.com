@@ -5,6 +5,7 @@ alternates:
     http://eiro.github.io/news.html: {rel: alternate, type: text/html}
     http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
 
+
 #(2014-03-19T11:12:11+01:00) make my mind up about a sympa ListDef parser
 
 within few days, i'll write a REST service to
@@ -126,7 +127,7 @@ je traduis une [diapo importante](https://www.youtube.com/watch?v=p6K4iIMlouI#t=
 j'aurais tendance à ajouter:
 
 * gitez votre conf. et n'hésitez pas a virer ce qui ne vous sert plus (au pire
-  vous piocherais dans l'historique).
+  vous piocherez dans l'historique).
 * ne pas chercher à améliorer les choses plus de 10mn (y revenir plus tard avec
   des idées fraiches est souvent bien plus éfficace).
 * accepter les imperfections

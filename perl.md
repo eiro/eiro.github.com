@@ -1,5 +1,44 @@
 % Perl
 
+#  Feedbacks on Parsing with Perl
+
+* this is not just about pattern matching: we need nested datastructures to be
+  returned.
+* this is neither about optimistic cargo cult regex parsing: we need something
+  we can rely on.
+
+## Pegex (2014)
+
+* [Pegex](https://metacpan.org/pod/distribution/Pegex/lib/Pegex.pod) sounds very
+  promising because of the [acmeist](http://acmeism.org/) part (javascript for
+  client-side validation of code would be awesome) but it seems that this part
+  is vaporware for now (pegex command throw "not implemented" errors and the
+  pegex grammars on github are mainly empty ones).
+* very simple [PEG](http://en.wikipedia.org/wiki/Parsing_expression_grammar).
+* welcoming and available community but only in IRC. no online archive (i think
+  they must have a mailing list).
+
+## Regexp::Grammars (2009, AFAIR)
+
+[Regexp::Grammars](https://metacpan.org/pod/Regexp::Grammars) overloads `qr{}`
+to add [PEG](http://en.wikipedia.org/wiki/Parsing_expression_grammar) syntax.
+
+* very pleasant to write and debug. [Perl6](http://perl6.org) inspiration is obvious.
+* soooo slow! (at least in 2009)
+
+## m//cgx functions
+
+* basic example:
+  [s-expr parser](https://github.com/eiro/labo/tree/master/parsing_with_perl/sexpr_parser.pl).
+* much more code to write than with Pegex or
+  [Regexp::Grammars](https://metacpan.org/pod/Regexp::Grammars)
+  but runs much faster.
+* not so easy to write but good habits comes fast.
+* tried to write a collection of helpers named
+  [persec](https://github.com/eiro/p5-persec) but i finally never used it.
+
+you *must* read [CSP](http://en.wikipedia.org/wiki/Communicating_sequential_processes)
+
 # installation de paquets perl
 
 WARNING (a moins d'une nouveauté?):
