@@ -28,7 +28,7 @@
 &lt;p&gt;as i&#39;m used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?&lt;/p&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/make_my_mind_up_about_a_sympa_ListDef_parser.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/make_my_mind_up_about_a_sympa_ListDef_parser.html"/>
 <published>2014-03-19T11:12:11+01:00</published><updated>2014-03-19T11:12:11+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-03-19T10:53:31+01:00:eiro-brain-dump_to_please_ironman.md</id><title>eiro-brain-dump to please ironman</title>
 <content type="html">
@@ -42,7 +42,7 @@
 &lt;p&gt;this was an excuse create a profile on &lt;a href=&quot;https://questhub.io/&quot;&gt;questhub.io&lt;/a&gt; and create a &lt;a href=&quot;https://questhub.io/realm/perl/quest/531f0d326e78176e6a0000bd&quot;&gt;related quest&lt;/a&gt;.&lt;/p&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/eiro-brain-dump_to_please_ironman.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/eiro-brain-dump_to_please_ironman.html"/>
 <published>2014-03-19T10:53:31+01:00</published><updated>2014-03-19T10:53:31+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-03-06T22:37:09+01:00:sympa_to_comment_blog_posts_how_.md</id><title>sympa to comment blog posts: how?</title>
 <content type="html">
@@ -74,7 +74,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;p&gt;i use &lt;a href=&quot;add_comment_links.pl&quot;&gt;this simple script&lt;/a&gt; in combination with &lt;a href=&quot;https://github.com/eiro/app-atombomb&quot;&gt;atombomb&lt;/a&gt; to achieve that on this site.&lt;/p&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_how_.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_how_.html"/>
 <published>2014-03-06T22:37:09+01:00</published><updated>2014-03-06T22:37:09+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-03-05T10:58:35+01:00:7_habitudes_pour_editer_du_texte_efficacement.md</id><title>7 habitudes pour editer du texte éfficacement</title>
 <content type="html">
@@ -102,7 +102,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;/ul&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/7_habitudes_pour_editer_du_texte_efficacement.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/7_habitudes_pour_editer_du_texte_efficacement.html"/>
 <published>2014-03-05T10:58:35+01:00</published><updated>2014-03-05T10:58:35+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-02-25T13:22:40+01:00:sympa_to_comment_blog_posts_why_.md</id><title>sympa to comment blog posts: why ?</title>
 <content type="html">
@@ -128,7 +128,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;p&gt;And i know the beast: &lt;a href=&quot;http://www.sympa.org&quot;&gt;sympa&lt;/a&gt; is way the best mailing list manager i ever seen. Yes, i have tons of grievances about it but in the end, it&#39;s much more superior than everything i saw and is in a constant evolution since 1996 (AFAIK). Plus: it&#39;s written in &lt;a href=&quot;http://www.perl.org&quot;&gt;Perl&lt;/a&gt;! not a so modern one but you don&#39;t carre if you just have to write plugins.&lt;/p&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_why_.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_why_.html"/>
 <published>2014-02-25T13:22:40+01:00</published><updated>2014-02-25T13:22:40+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-02-15T11:55:23+01:00:FOSDEM_sequel_C_11_scrum_.md</id><title>FOSDEM sequel: C++11, scrum, ...</title>
 <content type="html">
@@ -142,7 +142,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;p&gt;So i began to read the C++ posts again and seen &lt;a href=&quot;http://nathan.ca/2014/02/type-rich-programming/&quot;&gt;this article&lt;/a&gt; pointing on &lt;a href=&quot;http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style&quot;&gt;Bjarne Stroustrup: C++11 Style&lt;/a&gt; which is a very interesting talk about what the &amp;quot;good C++&amp;quot; should be.&lt;/p&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/FOSDEM_sequel_C_11_scrum_.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/FOSDEM_sequel_C_11_scrum_.html"/>
 <published>2014-02-15T11:55:23+01:00</published><updated>2014-02-15T11:55:23+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-01-31T10:15:57+01:00:adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.md</id><title>adieu, Jekyll (i dumped you for a 28 lines Makefile)</title>
 <content type="html">
@@ -211,7 +211,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;p&gt;markdown conversion is made by &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;.&lt;/p&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.html"/>
 <published>2014-01-31T10:15:57+01:00</published><updated>2014-01-31T10:15:57+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-01-17T13:24:08+01:00:new_experimental_atom_feed.md</id><title>new (experimental) atom feed</title>
 <content type="html">
@@ -224,7 +224,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;/ul&gt;
 </content>
 <link rel="alternate"
-        type="text/html" href="http://eiro.github.com/aposts/2014/new_experimental_atom_feed.html/>
+        type="text/html" href="http://eiro.github.com/aposts/2014/new_experimental_atom_feed.html"/>
 <published>2014-01-17T13:24:08+01:00</published><updated>2014-01-17T13:24:08+01:00</updated></entry>
 
   </feed>
