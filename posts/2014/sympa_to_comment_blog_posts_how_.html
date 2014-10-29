@@ -1,0 +1,58 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../unsemantic.css" />
+<link rel="stylesheet" href="../../theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>sympa to comment blog posts: how?</title>
+
+
+
+
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+        <a href="atom.xml">(atom feed)</a>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section></section>
+      <hr/>
+      <nav id="TOC"><ul>
+<li><a href="#create-a-blogcomment-scenario">create a blogcomment scenario</a></li>
+<li><a href="#create-posts-from-your-webpage">create posts from your webpage</a></li>
+</ul></nav>
+  </div>
+<div class="grid-80"><h1>sympa to comment blog posts: how?</h1><section><p>I explained <a href="http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why">why</a> i want to use sympa to manage comments. this is the &quot;how&quot; (as an experiment)</p>
+<h2 id="create-a-blogcomment-scenario">create a blogcomment scenario</h2>
+<p>the idea of this scenario is you can publish in 2 cases:</p>
+<ul>
+<li>you are a member of the list</li>
+<li>you're commenting a blog post</li>
+</ul>
+<p>so my <code>/etc/sympa/scenari/send.blogcomment</code> file is</p>
+<pre><code>title.gettext Blogpost comment
+title.fr Blogpost Comment
+
+match([msg_header-&gt;X-Spam-Status], /^YES/)            smtp,smime,md5  -&gt; reject,quiet 
+match([msg_header-&gt;In-Reply-To], /eiro.github.io/)    smtp,smime,md5  -&gt; do_it
+match([msg_header-&gt;In-Reply-To], /blog/)              smtp,smime,md5  -&gt; do_it
+is_subscriber([listname],[sender])                    smtp,smime,md5  -&gt; do_it
+true()                                                smtp,smime,md5  -&gt; reject,quiet  </code></pre>
+<p>now the list itself is configured to use the blogcomment scenario. which means that you must have this in in the list root</p>
+<pre><code> grep &#39;^send&#39; config
+ send blogcomment</code></pre>
+<h2 id="create-posts-from-your-webpage">create posts from your webpage</h2>
+<p>what you need is add an mailto: URL with</p>
+<ul>
+<li>the subject of the post as subject</li>
+<li>a <code>Reply-To</code> header to please the <code>blogcomment</code> scenario</li>
+</ul>
+<p>i use <a href="add_comment_links.pl">this simple script</a> in combination with <a href="https://github.com/eiro/app-atombomb">atombomb</a> to achieve that on this site.</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+depth was ../..
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../unsemantic.css" />
+<link rel="stylesheet" href="../../theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>make my mind up about a sympa ListDef parser</title>
+
+
+
+
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+        <a href="atom.xml">(atom feed)</a>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section></section>
+      <hr/>
+      <nav id="TOC"><ul>
+<li><a href="#copypaste">copy/paste</a></li>
+<li><a href="#pegex">Pegex</a></li>
+<li><a href="#incremental-mcxmsg-parser">incremental m//cxmsg parser</a></li>
+</ul></nav>
+  </div>
+<div class="grid-80"><h1>make my mind up about a sympa ListDef parser</h1><section><p>within few days, i'll write a REST service to <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> the <a href="https://www.sympa.org/manual_6.3/list-definition#list_configuration_file">sympa list defs</a>.</p>
+<p>I will not use the parser from the sympa code because:</p>
+<ul>
+<li>i don't want sympa to be a a software dependency: there is no need</li>
+<li>i want to be able to extend the format without editing the sympa code</li>
+</ul>
+<p>i'll probably push this parser on <a href="http://metacpan.org">CPAN</a> but for now, <a href="http://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it">TIMTOWTDI</a> and i consider 3 of those:</p>
+<ul>
+<li>wrap roughly copy/paste from the sympa code</li>
+<li>use pegex</li>
+<li>write my incremental m//cxmsg parser (i still don't understand if it's bottom/up or top/down :))</li>
+</ul>
+<p>all with pros and cons.</p>
+<h2 id="copypaste">copy/paste</h2>
+<p>would be harder to maintain (the current code is a cargo cult parsing in a while loop) but every improvement can be contributed back to sympa.</p>
+<h2 id="pegex">Pegex</h2>
+<p>pegex grammars are very simple to maintain and read which could be usable in other languages (i haven't tested yet but javascript could be an example). It would add a dependency to Pegex but i really don't think it's a cons argument in 2014.</p>
+<h2 id="incremental-mcxmsg-parser">incremental m//cxmsg parser</h2>
+<p>as i'm used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+depth was ../..
+</body></html>

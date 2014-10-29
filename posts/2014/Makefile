@@ -1,6 +1,6 @@
 depth= ../..
+include $(depth)/site.mk
 
-all:
-	echo $(depth)
+all: $(webpages)
 
 # include $(depth)/Makefile

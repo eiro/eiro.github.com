@@ -1,36 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?><feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom"><link href="http://eiro.github.io/atom.xml" rel="self" type="application/atom+xml"/><link rel="alternate" href="http://eiro.github.io/news.html" type="text/html"/><updated>2014-03-19T11:12:11+01:00</updated><id>tag:eiro.github.com,2014:blog</id><author><name>Marc Chantreux</name></author><title>... but maybe i'm wrong</title><entry><id>tag:eiro.github.com,2014-03-19:make_my_mind_up_about_a_sympa_listdef_parser</id><title>make my mind up about a sympa ListDef parser</title><content type="html">&lt;p&gt;within few days, i'll write a REST service to &lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete"&gt;CRUD&lt;/a&gt; the &lt;a href="https://www.sympa.org/manual_6.3/list-definition#list_configuration_file"&gt;sympa list defs&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <link href="http://eiro.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link rel="alternate" href="http://eiro.github.io/news.html" type="text/html"/>
+  <updated>easycmd(ls)</updated>
+  <id>tag:eiro.github.com,2014:blog</id>
+  <author><name>Marc Chantreux</name></author><title>The silence of Plato</title>
+  <entry><id>tag:eiro.github.com,2014-03-19T11:12:11+01:00:make_my_mind_up_about_a_sympa_ListDef_parser.md</id><title>make my mind up about a sympa ListDef parser</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;make my mind up about a sympa ListDef parser&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;make my mind up about a sympa ListDef parser&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;within few days, i&#39;ll write a REST service to &lt;a href=&quot;http://en.wikipedia.org/wiki/Create,_read,_update_and_delete&quot;&gt;CRUD&lt;/a&gt; the &lt;a href=&quot;https://www.sympa.org/manual_6.3/list-definition#list_configuration_file&quot;&gt;sympa list defs&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I will not use the parser from the sympa code because:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;i don't want sympa to be a a software dependency: there is no need&lt;/li&gt;
+&lt;li&gt;i don&#39;t want sympa to be a a software dependency: there is no need&lt;/li&gt;
 &lt;li&gt;i want to be able to extend the format without editing the sympa code&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;i'll probably push this parser on &lt;a href="http://metacpan.org"&gt;CPAN&lt;/a&gt; but for now, &lt;a href="http://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it"&gt;TIMTOWTDI&lt;/a&gt; and i consider 3 of those:&lt;/p&gt;
+&lt;p&gt;i&#39;ll probably push this parser on &lt;a href=&quot;http://metacpan.org&quot;&gt;CPAN&lt;/a&gt; but for now, &lt;a href=&quot;http://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&quot;&gt;TIMTOWTDI&lt;/a&gt; and i consider 3 of those:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;wrap roughly copy/paste from the sympa code&lt;/li&gt;
 &lt;li&gt;use pegex&lt;/li&gt;
-&lt;li&gt;write my incremental m//cxmsg parser (i still don't understand if it's bottom/up or top/down :))&lt;/li&gt;
+&lt;li&gt;write my incremental m//cxmsg parser (i still don&#39;t understand if it&#39;s bottom/up or top/down :))&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;all with pros and cons.&lt;/p&gt;
-&lt;h2 id="copypaste"&gt;copy/paste&lt;/h2&gt;
+&lt;h2 id=&quot;copypaste&quot;&gt;copy/paste&lt;/h2&gt;
 &lt;p&gt;would be harder to maintain (the current code is a cargo cult parsing in a while loop) but every improvement can be contributed back to sympa.&lt;/p&gt;
-&lt;h2 id="pegex"&gt;Pegex&lt;/h2&gt;
-&lt;p&gt;pegex grammars are very simple to maintain and read which could be usable in other languages (i haven't tested yet but javascript could be an example). It would add a dependency to Pegex but i really don't think it's a cons argument in 2014.&lt;/p&gt;
-&lt;h2 id="incremental-mcxmsg-parser"&gt;incremental m//cxmsg parser&lt;/h2&gt;
-&lt;p&gt;as i'm used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?&lt;/p&gt;
-</content><published>2014-03-19T11:12:11+01:00</published><updated>2014-03-19T11:12:11+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-03-19:eiro_brain_dump_to_please_ironman</id><title>eiro-brain-dump to please ironman</title><content type="html">&lt;p&gt;some days ago, i had a chat on &lt;a href="http://www.enlightenedperl.org/"&gt;epo&lt;/a&gt;@&lt;a href="http://freenode.net/"&gt;freenode&lt;/a&gt; because &lt;a href="/atom.xml"&gt;my atom&lt;/a&gt; is completly ignored by &lt;a href="http://ironman.enlightenedperl.org/"&gt;ironman planet&lt;/a&gt;. this post is a reminder.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://ironman.enlightenedperl.org/"&gt;Ironman planet&lt;/a&gt; expects each entries to provide an alternate html address (which wasn't my initial plan but after all: every text can be rendered as html).&lt;/p&gt;
+&lt;h2 id=&quot;pegex&quot;&gt;Pegex&lt;/h2&gt;
+&lt;p&gt;pegex grammars are very simple to maintain and read which could be usable in other languages (i haven&#39;t tested yet but javascript could be an example). It would add a dependency to Pegex but i really don&#39;t think it&#39;s a cons argument in 2014.&lt;/p&gt;
+&lt;h2 id=&quot;incremental-mcxmsg-parser&quot;&gt;incremental m//cxmsg parser&lt;/h2&gt;
+&lt;p&gt;as i&#39;m used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/make_my_mind_up_about_a_sympa_ListDef_parser.html/>
+<published>2014-03-19T11:12:11+01:00</published><updated>2014-03-19T11:12:11+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-03-19T10:53:31+01:00:eiro-brain-dump_to_please_ironman.md</id><title>eiro-brain-dump to please ironman</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;some days ago, i had a chat on &lt;a href=&quot;http://www.enlightenedperl.org/&quot;&gt;epo&lt;/a&gt;@&lt;a href=&quot;http://freenode.net/&quot;&gt;freenode&lt;/a&gt; because &lt;a href=&quot;/atom.xml&quot;&gt;my atom&lt;/a&gt; is completly ignored by &lt;a href=&quot;http://ironman.enlightenedperl.org/&quot;&gt;ironman planet&lt;/a&gt;. this post is a reminder.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://ironman.enlightenedperl.org/&quot;&gt;Ironman planet&lt;/a&gt; expects each entries to provide an alternate html address (which wasn&#39;t my initial plan but after all: every text can be rendered as html).&lt;/p&gt;
 &lt;p&gt;So the plan is&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;fix &lt;a href="http://eiro.github.io"&gt;eiro-brain-dump&lt;/a&gt; to make it ironman compliant (i still have to decide how).&lt;/li&gt;
+&lt;li&gt;fix &lt;a href=&quot;http://eiro.github.io&quot;&gt;eiro-brain-dump&lt;/a&gt; to make it ironman compliant (i still have to decide how).&lt;/li&gt;
 &lt;li&gt;install a local ironman and provide a patch to show error reports when you update your feed (so you can fix your stuff without disturbing EPO people)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;this was an excuse create a profile on &lt;a href="https://questhub.io/"&gt;questhub.io&lt;/a&gt; and create a &lt;a href="https://questhub.io/realm/perl/quest/531f0d326e78176e6a0000bd"&gt;related quest&lt;/a&gt;.&lt;/p&gt;
-</content><published>2014-03-19T10:53:31+01:00</published><updated>2014-03-19T10:53:31+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-03-06:sympa_to_comment_blog_posts_how_</id><title>sympa to comment blog posts: how?</title><content type="html">&lt;p&gt;I explained &lt;a href="http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why"&gt;why&lt;/a&gt; i want to use sympa to manage comments. this is the &amp;quot;how&amp;quot; (as an experiment)&lt;/p&gt;
-&lt;h2 id="create-a-blogcomment-scenario"&gt;create a blogcomment scenario&lt;/h2&gt;
+&lt;p&gt;this was an excuse create a profile on &lt;a href=&quot;https://questhub.io/&quot;&gt;questhub.io&lt;/a&gt; and create a &lt;a href=&quot;https://questhub.io/realm/perl/quest/531f0d326e78176e6a0000bd&quot;&gt;related quest&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/eiro-brain-dump_to_please_ironman.html/>
+<published>2014-03-19T10:53:31+01:00</published><updated>2014-03-19T10:53:31+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-03-06T22:37:09+01:00:sympa_to_comment_blog_posts_how_.md</id><title>sympa to comment blog posts: how?</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;sympa to comment blog posts: how?&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;sympa to comment blog posts: how?&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;I explained &lt;a href=&quot;http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why&quot;&gt;why&lt;/a&gt; i want to use sympa to manage comments. this is the &amp;quot;how&amp;quot; (as an experiment)&lt;/p&gt;
+&lt;h2 id=&quot;create-a-blogcomment-scenario&quot;&gt;create a blogcomment scenario&lt;/h2&gt;
 &lt;p&gt;the idea of this scenario is you can publish in 2 cases:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;you are a member of the list&lt;/li&gt;
-&lt;li&gt;you're commenting a blog post&lt;/li&gt;
+&lt;li&gt;you&#39;re commenting a blog post&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;so my &lt;code&gt;/etc/sympa/scenari/send.blogcomment&lt;/code&gt; file is&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;title.gettext Blogpost comment
@@ -44,46 +112,92 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;p&gt;now the list itself is configured to use the blogcomment scenario. which means that you must have this in in the list root&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt; grep &amp;#39;^send&amp;#39; config
  send blogcomment&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="create-posts-from-your-webpage"&gt;create posts from your webpage&lt;/h2&gt;
+&lt;h2 id=&quot;create-posts-from-your-webpage&quot;&gt;create posts from your webpage&lt;/h2&gt;
 &lt;p&gt;what you need is add an mailto: URL with&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the subject of the post as subject&lt;/li&gt;
 &lt;li&gt;a &lt;code&gt;Reply-To&lt;/code&gt; header to please the &lt;code&gt;blogcomment&lt;/code&gt; scenario&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;i use &lt;a href="add_comment_links.pl"&gt;this simple script&lt;/a&gt; in combination with &lt;a href="https://github.com/eiro/app-atombomb"&gt;atombomb&lt;/a&gt; to achieve that on this site.&lt;/p&gt;
-</content><published>2014-03-06T22:37:09+01:00</published><updated>2014-03-06T22:37:09+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-03-05:7_habitudes_pour_editer_du_texte_fficacement</id><title>7 habitudes pour editer du texte éfficacement</title><content type="html">&lt;p&gt;Nouvelle version de la conférence de &lt;a href="http://fr.wikipedia.org/wiki/Bram_Moolenaar"&gt;Bram Moolenaar&lt;/a&gt;, &amp;quot;&lt;a href="https://www.youtube.com/watch?v=p6K4iIMlouI"&gt;7 Habits For Effective Text Editing 2.0&lt;/a&gt;&amp;quot; est sur youtube. C'est méthodologique plus que technique. Très intéressant!&lt;/p&gt;
-&lt;p&gt;je traduis une &lt;a href="https://www.youtube.com/watch?v=p6K4iIMlouI#t=2274"&gt;diapo importante&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;i use &lt;a href=&quot;add_comment_links.pl&quot;&gt;this simple script&lt;/a&gt; in combination with &lt;a href=&quot;https://github.com/eiro/app-atombomb&quot;&gt;atombomb&lt;/a&gt; to achieve that on this site.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_how_.html/>
+<published>2014-03-06T22:37:09+01:00</published><updated>2014-03-06T22:37:09+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-03-05T10:58:35+01:00:7_habitudes_pour_editer_du_texte_efficacement.md</id><title>7 habitudes pour editer du texte éfficacement</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;7 habitudes pour editer du texte &Atilde;&copy;fficacement&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;7 habitudes pour editer du texte &Atilde;&copy;fficacement&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;Nouvelle version de la conf&Atilde;&copy;rence de &lt;a href=&quot;http://fr.wikipedia.org/wiki/Bram_Moolenaar&quot;&gt;Bram Moolenaar&lt;/a&gt;, &amp;quot;&lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI&quot;&gt;7 Habits For Effective Text Editing 2.0&lt;/a&gt;&amp;quot; est sur youtube. C&#39;est m&Atilde;&copy;thodologique plus que technique. Tr&Atilde;&uml;s int&Atilde;&copy;ressant!&lt;/p&gt;
+&lt;p&gt;je traduis une &lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI#t=2274&quot;&gt;diapo importante&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;étape 1: détecter les pratiques inéfficaces, rébarbatives (identifier les moments ou vous perdez du temps)&lt;/li&gt;
-&lt;li&gt;étape 2: trouver plus rapide (alternatives en cas d'échec)&lt;/li&gt;
-&lt;li&gt;chercher dans l'aide en ligne&lt;/li&gt;
-&lt;li&gt;chercher dans les quick refs, cookbooks, archives des listes, …&lt;/li&gt;
-&lt;li&gt;demander à vos amis, vos collègues&lt;/li&gt;
+&lt;li&gt;&Atilde;&copy;tape 1: d&Atilde;&copy;tecter les pratiques in&Atilde;&copy;fficaces, r&Atilde;&copy;barbatives (identifier les moments ou vous perdez du temps)&lt;/li&gt;
+&lt;li&gt;&Atilde;&copy;tape 2: trouver plus rapide (alternatives en cas d&#39;&Atilde;&copy;chec)&lt;/li&gt;
+&lt;li&gt;chercher dans l&#39;aide en ligne&lt;/li&gt;
+&lt;li&gt;chercher dans les quick refs, cookbooks, archives des listes, &acirc;&#128;&brvbar;&lt;/li&gt;
+&lt;li&gt;demander &Atilde;&nbsp; vos amis, vos coll&Atilde;&uml;gues&lt;/li&gt;
 &lt;li&gt;chercher sur internet&lt;/li&gt;
-&lt;li&gt;faites le vous-même&lt;/li&gt;
-&lt;li&gt;étape 2: faites-en une habitude&lt;/li&gt;
+&lt;li&gt;faites le vous-m&Atilde;&ordf;me&lt;/li&gt;
+&lt;li&gt;&Atilde;&copy;tape 2: faites-en une habitude&lt;/li&gt;
 &lt;li&gt;faites-le&lt;/li&gt;
-&lt;li&gt;continuer à l'améliorer&lt;/li&gt;
+&lt;li&gt;continuer &Atilde;&nbsp; l&#39;am&Atilde;&copy;liorer&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;j'aurais tendance à ajouter:&lt;/p&gt;
+&lt;p&gt;j&#39;aurais tendance &Atilde;&nbsp; ajouter:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;gitez votre conf. et n'hésitez pas a virer ce qui ne vous sert plus (au pire vous piocherez dans l'historique).&lt;/li&gt;
-&lt;li&gt;ne pas chercher à améliorer les choses plus de 10mn (y revenir plus tard avec des idées fraiches est souvent bien plus éfficace).&lt;/li&gt;
+&lt;li&gt;gitez votre conf. et n&#39;h&Atilde;&copy;sitez pas a virer ce qui ne vous sert plus (au pire vous piocherez dans l&#39;historique).&lt;/li&gt;
+&lt;li&gt;ne pas chercher &Atilde;&nbsp; am&Atilde;&copy;liorer les choses plus de 10mn (y revenir plus tard avec des id&Atilde;&copy;es fraiches est souvent bien plus &Atilde;&copy;fficace).&lt;/li&gt;
 &lt;li&gt;accepter les imperfections&lt;/li&gt;
 &lt;li&gt;meme si vous savez que votre macro/habitude ne traite pas tous les cas, utilisez-la.&lt;/li&gt;
-&lt;li&gt;ne tentez pas de l'améliorer avant de tomber &lt;em&gt;régulièrement&lt;/em&gt; sur des cas pourris.&lt;/li&gt;
+&lt;li&gt;ne tentez pas de l&#39;am&Atilde;&copy;liorer avant de tomber &lt;em&gt;r&Atilde;&copy;guli&Atilde;&uml;rement&lt;/em&gt; sur des cas pourris.&lt;/li&gt;
 &lt;/ul&gt;
-</content><published>2014-03-05T10:58:35+01:00</published><updated>2014-03-05T10:58:35+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-02-25:sympa_to_comment_blog_posts_why_</id><title>sympa to comment blog posts: why ?</title><content type="html">&lt;p&gt;I maintain websites since 1997 and my motto always was &amp;quot;as static as possible&amp;quot;. I run my own &amp;quot;static web&amp;quot; engines, used open source ones and ended with &lt;a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile"&gt;a simple &lt;code&gt;Makefile&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;The very important missing part was blog comments but it's not only about serving static pages: we're in year 2014 and still, the web failed to provide tools that can approach the productivity of mutt when it comes to share thoughts about a post: editing in textareas, navigating in the thread, tagging, archiving, ... all those basics are just jokes in a webpages! Trying to compare wikis to just editing files in your filesystem (then share them with git, rsync, seafile, whatever ..) also is.&lt;/p&gt;
-&lt;p&gt;But i didn't carre for a while because i had a bigger plan (my beloved &lt;code&gt;mindpipe&lt;/code&gt;) so asked commenters to send me mails instead of expecting a &amp;quot;comment&amp;quot; textarea. I miss &lt;a href="http://en.wikipedia.org/wiki/Usenet"&gt;usenet&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Years ago, i came at a &lt;a href="http://journeesperl.fr/"&gt;French Perl Workshop&lt;/a&gt; and spoke about a subset of what mindpipe could be. Then i learnt (thanks to &lt;a href="http://philippe.bruhat.net/"&gt;BooK&lt;/a&gt; and &lt;a href="http://lumberjaph.net/"&gt;Franck&lt;/a&gt;) about &lt;a href="http://disqus.com/"&gt;disqus&lt;/a&gt;. i also was aware of &lt;a href="http://gmane.org/"&gt;gname&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Finally, i'm now convinced that the technical roots of mindpipe was invented in a 80's OS named &lt;a href="http://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs"&gt;Plan9&lt;/a&gt;. What i want is just piping, copying and editing &lt;a href="http://en.wikipedia.org/wiki/9P"&gt;9p&lt;/a&gt; served files thru &lt;a href="http://www.vim.org"&gt;vim&lt;/a&gt;, &lt;a href="http://en.wikipedia.org/wiki/Acme_(editor)"&gt;acme&lt;/a&gt;) or emacs.&lt;/p&gt;
-&lt;p&gt;I know web browsers are bloated enough to serve as a base of very handy editing application (cloud9 or etherpad are some moving tries to render edited content in a web page) but they need a 9p support (maybe &lt;a href="https://github.com/mozilla/servo/"&gt;servo&lt;/a&gt; could have one?) and i think plan9 ideas are finally spreading (i remember how sarcatic were people about linux or open source just ten years ago, they just heard about it).&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/7_habitudes_pour_editer_du_texte_efficacement.html/>
+<published>2014-03-05T10:58:35+01:00</published><updated>2014-03-05T10:58:35+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-02-25T13:22:40+01:00:sympa_to_comment_blog_posts_why_.md</id><title>sympa to comment blog posts: why ?</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;sympa to comment blog posts: why ?&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;sympa to comment blog posts: why ?&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;I maintain websites since 1997 and my motto always was &amp;quot;as static as possible&amp;quot;. I run my own &amp;quot;static web&amp;quot; engines, used open source ones and ended with &lt;a href=&quot;#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile&quot;&gt;a simple &lt;code&gt;Makefile&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The very important missing part was blog comments but it&#39;s not only about serving static pages: we&#39;re in year 2014 and still, the web failed to provide tools that can approach the productivity of mutt when it comes to share thoughts about a post: editing in textareas, navigating in the thread, tagging, archiving, ... all those basics are just jokes in a webpages! Trying to compare wikis to just editing files in your filesystem (then share them with git, rsync, seafile, whatever ..) also is.&lt;/p&gt;
+&lt;p&gt;But i didn&#39;t carre for a while because i had a bigger plan (my beloved &lt;code&gt;mindpipe&lt;/code&gt;) so asked commenters to send me mails instead of expecting a &amp;quot;comment&amp;quot; textarea. I miss &lt;a href=&quot;http://en.wikipedia.org/wiki/Usenet&quot;&gt;usenet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Years ago, i came at a &lt;a href=&quot;http://journeesperl.fr/&quot;&gt;French Perl Workshop&lt;/a&gt; and spoke about a subset of what mindpipe could be. Then i learnt (thanks to &lt;a href=&quot;http://philippe.bruhat.net/&quot;&gt;BooK&lt;/a&gt; and &lt;a href=&quot;http://lumberjaph.net/&quot;&gt;Franck&lt;/a&gt;) about &lt;a href=&quot;http://disqus.com/&quot;&gt;disqus&lt;/a&gt;. i also was aware of &lt;a href=&quot;http://gmane.org/&quot;&gt;gname&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, i&#39;m now convinced that the technical roots of mindpipe was invented in a 80&#39;s OS named &lt;a href=&quot;http://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs&quot;&gt;Plan9&lt;/a&gt;. What i want is just piping, copying and editing &lt;a href=&quot;http://en.wikipedia.org/wiki/9P&quot;&gt;9p&lt;/a&gt; served files thru &lt;a href=&quot;http://www.vim.org&quot;&gt;vim&lt;/a&gt;, &lt;a href=&quot;http://en.wikipedia.org/wiki/Acme_(editor)&quot;&gt;acme&lt;/a&gt;) or emacs.&lt;/p&gt;
+&lt;p&gt;I know web browsers are bloated enough to serve as a base of very handy editing application (cloud9 or etherpad are some moving tries to render edited content in a web page) but they need a 9p support (maybe &lt;a href=&quot;https://github.com/mozilla/servo/&quot;&gt;servo&lt;/a&gt; could have one?) and i think plan9 ideas are finally spreading (i remember how sarcatic were people about linux or open source just ten years ago, they just heard about it).&lt;/p&gt;
 &lt;p&gt;Nevertheless: ten years later, mindpipe is still just an idea and i changed my mind about doing software. I really think that&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;nothing is perfect&lt;/li&gt;
 &lt;li&gt;starting small is better than not starting at all&lt;/li&gt;
-&lt;li&gt;the best code is the one you don't have to write&lt;/li&gt;
+&lt;li&gt;the best code is the one you don&#39;t have to write&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;thinking the unix way: what is the best tool to provide simple ways to&lt;/p&gt;
 &lt;ul&gt;
@@ -91,18 +205,64 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;li&gt;make discutions and archives public, private, moderated?&lt;/li&gt;
 &lt;li&gt;avoid spams and robots using bayesians and sending scenaries to check the validity of your posts?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I i need a battle tested, highly configurable and extendable but just a &amp;quot;mailing list manager&amp;quot;! I know it's not perfect but it's way better than running yet another anoying web forum.&lt;/p&gt;
-&lt;p&gt;And i know the beast: &lt;a href="http://www.sympa.org"&gt;sympa&lt;/a&gt; is way the best mailing list manager i ever seen. Yes, i have tons of grievances about it but in the end, it's much more superior than everything i saw and is in a constant evolution since 1996 (AFAIK). Plus: it's written in &lt;a href="http://www.perl.org"&gt;Perl&lt;/a&gt;! not a so modern one but you don't carre if you just have to write plugins.&lt;/p&gt;
-</content><published>2014-02-25T13:22:40+01:00</published><updated>2014-02-25T13:22:40+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-02-15:fosdem_sequel_c_11_scrum_</id><title>FOSDEM sequel: C++11, scrum, ...</title><content type="html">&lt;p&gt;Once again, i came to &lt;a href="https://fosdem.org/2014/"&gt;FOSDEM&lt;/a&gt; with some talks in mind, missed them and learnt a lot of new, completly different things.&lt;/p&gt;
-&lt;p&gt;Once again, FOSDEM is the echo of my internet feeds (at this point, the cultural spectrum of the people i spoke to is too large to just say we're reading the same blogs).&lt;/p&gt;
+&lt;p&gt;I i need a battle tested, highly configurable and extendable but just a &amp;quot;mailing list manager&amp;quot;! I know it&#39;s not perfect but it&#39;s way better than running yet another anoying web forum.&lt;/p&gt;
+&lt;p&gt;And i know the beast: &lt;a href=&quot;http://www.sympa.org&quot;&gt;sympa&lt;/a&gt; is way the best mailing list manager i ever seen. Yes, i have tons of grievances about it but in the end, it&#39;s much more superior than everything i saw and is in a constant evolution since 1996 (AFAIK). Plus: it&#39;s written in &lt;a href=&quot;http://www.perl.org&quot;&gt;Perl&lt;/a&gt;! not a so modern one but you don&#39;t carre if you just have to write plugins.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_why_.html/>
+<published>2014-02-25T13:22:40+01:00</published><updated>2014-02-25T13:22:40+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-02-15T11:55:23+01:00:FOSDEM_sequel_C_11_scrum_.md</id><title>FOSDEM sequel: C++11, scrum, ...</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;FOSDEM sequel: C++11, scrum, ...&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;FOSDEM sequel: C++11, scrum, ...&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;Once again, i came to &lt;a href=&quot;https://fosdem.org/2014/&quot;&gt;FOSDEM&lt;/a&gt; with some talks in mind, missed them and learnt a lot of new, completly different things.&lt;/p&gt;
+&lt;p&gt;Once again, FOSDEM is the echo of my internet feeds (at this point, the cultural spectrum of the people i spoke to is too large to just say we&#39;re reading the same blogs).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the rise of the functionnal programming for the masses&lt;/li&gt;
-&lt;li&gt;the rise of the &amp;quot;let's fire all managers&amp;quot; movement (coming from both scrum and open source as &amp;quot;working models&amp;quot;)&lt;/li&gt;
+&lt;li&gt;the rise of the &amp;quot;let&#39;s fire all managers&amp;quot; movement (coming from both scrum and open source as &amp;quot;working models&amp;quot;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The big surprise for me is a very interesting discution about the modern paradigms of C++. I realized i was acting like the &amp;quot;perl is dead&amp;quot; people: comparing C++ from nineties to the very last features of the langages i use daily: I was not unfair, just ignorant.&lt;/p&gt;
-&lt;p&gt;So i began to read the C++ posts again and seen &lt;a href="http://nathan.ca/2014/02/type-rich-programming/"&gt;this article&lt;/a&gt; pointing on &lt;a href="http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style"&gt;Bjarne Stroustrup: C++11 Style&lt;/a&gt; which is a very interesting talk about what the &amp;quot;good C++&amp;quot; should be.&lt;/p&gt;
-</content><published>2014-02-15T11:55:23+01:00</published><updated>2014-02-15T11:55:23+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-01-31:adieu_jekyll_i_dumped_you_for_a_28_lines_makefile_</id><title>adieu, Jekyll (i dumped you for a 28 lines Makefile)</title><content type="html">&lt;p&gt;Months ago, and once again, i spent hours to figure out how to do things i expected to be simple. In this case, Jekyll isn't the one to blame: the ruby ecosystem is. I'm a happy &lt;a href="https://metacpan.org/"&gt;CPAN&lt;/a&gt; user and contributor as well as &lt;a href="http://www.haskell.org/cabal/"&gt;cabal&lt;/a&gt; happy user. Coming from those world, the ruby one is quiet messy.&lt;/p&gt;
-&lt;p&gt;So i decided to throw all the blog/wiki engines away, running a temporary solution with the simplest bootstrap i can write. Following the rules of the unix &lt;a href="http://en.wikipedia.org/wiki/KISS_principle"&gt;KISS principles&lt;/a&gt;, i divided the &amp;quot;CMS&amp;quot; problem more little ones. I needed something as simple as possible to extend coming with:&lt;/p&gt;
+&lt;p&gt;So i began to read the C++ posts again and seen &lt;a href=&quot;http://nathan.ca/2014/02/type-rich-programming/&quot;&gt;this article&lt;/a&gt; pointing on &lt;a href=&quot;http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style&quot;&gt;Bjarne Stroustrup: C++11 Style&lt;/a&gt; which is a very interesting talk about what the &amp;quot;good C++&amp;quot; should be.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/FOSDEM_sequel_C_11_scrum_.html/>
+<published>2014-02-15T11:55:23+01:00</published><updated>2014-02-15T11:55:23+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-01-31T10:15:57+01:00:adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.md</id><title>adieu, Jekyll (i dumped you for a 28 lines Makefile)</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;adieu, Jekyll (i dumped you for a 28 lines Makefile)&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;adieu, Jekyll (i dumped you for a 28 lines Makefile)&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;Months ago, and once again, i spent hours to figure out how to do things i expected to be simple. In this case, Jekyll isn&#39;t the one to blame: the ruby ecosystem is. I&#39;m a happy &lt;a href=&quot;https://metacpan.org/&quot;&gt;CPAN&lt;/a&gt; user and contributor as well as &lt;a href=&quot;http://www.haskell.org/cabal/&quot;&gt;cabal&lt;/a&gt; happy user. Coming from those world, the ruby one is quiet messy.&lt;/p&gt;
+&lt;p&gt;So i decided to throw all the blog/wiki engines away, running a temporary solution with the simplest bootstrap i can write. Following the rules of the unix &lt;a href=&quot;http://en.wikipedia.org/wiki/KISS_principle&quot;&gt;KISS principles&lt;/a&gt;, i divided the &amp;quot;CMS&amp;quot; problem more little ones. I needed something as simple as possible to extend coming with:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;a content generator&lt;/li&gt;
 &lt;li&gt;a conductor to drive it&lt;/li&gt;
@@ -113,21 +273,21 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;/ul&gt;
 &lt;p&gt;so i choose the simplest (or best) tools i know for each task:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="http://johnmacfarlane.net/pandoc/"&gt;pandoc&lt;/a&gt; to generate html content from md files. I don't know about the internals but both the CLI tool and the haskell API are very pleasant to use.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://pubs.opengroup.org/onlinepubs/000095399/utilities/make.html"&gt;make&lt;/a&gt; is my conductor. As i really expect the every so-called unix users have the basics of make. It get the job done for many decades now. I also have a look on mk from &lt;a href="http://tools.suckless.org/9base"&gt;the 9base&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://git.wiki.kernel.org"&gt;git&lt;/a&gt; as SCM, lot of tools out there to browse it from the web.&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://unsemantic.com/"&gt;Unsemanic CSS framework&lt;/a&gt;. I don't know a lot about web development but i was aware about &lt;a href="http://en.wikipedia.org/wiki/Responsive_web_design"&gt;Responsive web design&lt;/a&gt; and saw the ancestor of unsemantic was in the roadmap of &lt;a href="http://werc.cat-v.org/"&gt;werc&lt;/a&gt; (when it comes to simplicity, you really can trust the &lt;a href="http://cat-v.org/"&gt;cat-v&lt;/a&gt; Ayatollahs^wpeople)&lt;/li&gt;
-&lt;li&gt;more recently, i wrote &lt;a href="https://github.com/eiro/app-atombomb"&gt;atombomb&lt;/a&gt; to add atom feeds to some sites.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt; to generate html content from md files. I don&#39;t know about the internals but both the CLI tool and the haskell API are very pleasant to use.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://pubs.opengroup.org/onlinepubs/000095399/utilities/make.html&quot;&gt;make&lt;/a&gt; is my conductor. As i really expect the every so-called unix users have the basics of make. It get the job done for many decades now. I also have a look on mk from &lt;a href=&quot;http://tools.suckless.org/9base&quot;&gt;the 9base&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://git.wiki.kernel.org&quot;&gt;git&lt;/a&gt; as SCM, lot of tools out there to browse it from the web.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://unsemantic.com/&quot;&gt;Unsemanic CSS framework&lt;/a&gt;. I don&#39;t know a lot about web development but i was aware about &lt;a href=&quot;http://en.wikipedia.org/wiki/Responsive_web_design&quot;&gt;Responsive web design&lt;/a&gt; and saw the ancestor of unsemantic was in the roadmap of &lt;a href=&quot;http://werc.cat-v.org/&quot;&gt;werc&lt;/a&gt; (when it comes to simplicity, you really can trust the &lt;a href=&quot;http://cat-v.org/&quot;&gt;cat-v&lt;/a&gt; Ayatollahs^wpeople)&lt;/li&gt;
+&lt;li&gt;more recently, i wrote &lt;a href=&quot;https://github.com/eiro/app-atombomb&quot;&gt;atombomb&lt;/a&gt; to add atom feeds to some sites.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;so the workflow is:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;create a new md for a new page&lt;/li&gt;
-&lt;li&gt;manually maintain the atom feed ( &lt;a href="https://github.com/eiro/eiro.github.com/blob/master/Makefile"&gt;atombomb format&lt;/a&gt; is quiet helpfull for this part)&lt;/li&gt;
+&lt;li&gt;manually maintain the atom feed ( &lt;a href=&quot;https://github.com/eiro/eiro.github.com/blob/master/Makefile&quot;&gt;atombomb format&lt;/a&gt; is quiet helpfull for this part)&lt;/li&gt;
 &lt;li&gt;run make to build a section&lt;/li&gt;
 &lt;li&gt;git submodules to add subsection&lt;/li&gt;
 &lt;li&gt;rsync or git to push on the server&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;you can see all the revision by using a git browser (like the github one) and i plan to use an ajax call the powerfull &lt;a href="http://sympa.org"&gt;sympa list manager&lt;/a&gt; to run a discus-like comment system.&lt;/p&gt;
+&lt;p&gt;you can see all the revision by using a git browser (like the github one) and i plan to use an ajax call the powerfull &lt;a href=&quot;http://sympa.org&quot;&gt;sympa list manager&lt;/a&gt; to run a discus-like comment system.&lt;/p&gt;
 &lt;p&gt;Months passed and it became clear i will not step back: those 62 LOC (it takes less than 5 minutes to understand the whole thing) never desapointed me.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;the publishing process is faster and easier&lt;/li&gt;
@@ -135,11 +295,11 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;li&gt;my working directory is served by a local http server&lt;/li&gt;
 &lt;li&gt;everything is relative to the working directory: if it renders well here, it will render well offline. faster and easier local preview before pushing&lt;/li&gt;
 &lt;li&gt;so easy to extend i never was stuck by a new problem, i just had to write some few extra lines in the Makefile to get new features like&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.graphviz.org/"&gt;graphviz&lt;/a&gt; and &lt;a href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;) support&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.graphviz.org/&quot;&gt;graphviz&lt;/a&gt; and &lt;a href=&quot;http://ditaa.sourceforge.net/&quot;&gt;ditaa&lt;/a&gt;) support&lt;/li&gt;
 &lt;li&gt;beamer slides (using the theme of my university).&lt;/li&gt;
 &lt;li&gt;render html report from external sources (just use pandoc md as intermediate representation and run make)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Actually, even my todolist/notes system is now based on it (in combination with vim and mutt i'll explain in another post) and as always, i realized how happy i am when i follow the rules of the unix &lt;a href="http://en.wikipedia.org/wiki/KISS_principle"&gt;KISS principles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Actually, even my todolist/notes system is now based on it (in combination with vim and mutt i&#39;ll explain in another post) and as always, i realized how happy i am when i follow the rules of the unix &lt;a href=&quot;http://en.wikipedia.org/wiki/KISS_principle&quot;&gt;KISS principles&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;
     # wc -l M* t* 
       28 [Makefile](https://github.com/eiro/eiro.github.com/blob/master/Makefile)
@@ -147,28 +307,57 @@ true()                                                smtp,smime,md5  -&amp;gt; 
        7 theme.css
       62 total
 &lt;/pre&gt;
-
 &lt;p&gt;the only thing i was afraid was &amp;quot;all is relative to the working directory&amp;quot; thing: i copy the css files for each new section. suprisingly, it has benefic effects.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;i think twice before adding a section and it keep me aware of the content.&lt;/li&gt;
 &lt;li&gt;the local CSS actually import a stylesheet shared by all the sites i manage so i can easily&lt;br /&gt; maintain the whole stuff.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So another unix principle is at work here: &amp;quot;Premature optimization is the root of all evil&amp;quot;. Thanks Donald!&lt;/p&gt;
-</content><published>2014-01-31T10:15:57+01:00</published><updated>2014-01-31T10:15:57+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-01-18:atom_bomb_first_test</id><title>atom bomb first test</title><content type="html">&lt;p&gt;i decided to push a repository on github with all those tests and notes that can maybe become a project some day and named it &lt;a href="https://github.com/eiro/labo/"&gt;labo&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;this feed is generated with &lt;a href="https://github.com/eiro/app-atombomb"&gt;atom bomb&lt;/a&gt; and the &lt;a href="https://github.com/eiro/app-atombomb/blob/master/t/feed"&gt;feed file&lt;/a&gt; i just maintain manually with vim and &lt;a href="https://github.com/eiro/uze/blob/master/atombomb"&gt;simple zsh helper&lt;/a&gt; to create headers.&lt;/p&gt;
-&lt;p&gt;atom bomb (i'm not sure about the name) is written in &lt;a href="http://www.perl.org/"&gt;perl5&lt;/a&gt; and &lt;a href="https://metacpan.org/pod/release/MARCC/eirotic-0.0/lib/Eirotic.pm"&gt;Eirotic.pm&lt;/a&gt; which replace my common boilerplate:&lt;/p&gt;
+&lt;h1 id=&quot;t2208520100-atom-bomb-first-test&quot;&gt;(2014-01-18T22:08:52+01:00) atom bomb first test&lt;/h1&gt;
+&lt;p&gt;i decided to push a repository on github with all those tests and notes that can maybe become a project some day and named it &lt;a href=&quot;https://github.com/eiro/labo/&quot;&gt;labo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;this feed is generated with &lt;a href=&quot;https://github.com/eiro/app-atombomb&quot;&gt;atom bomb&lt;/a&gt; and the &lt;a href=&quot;https://github.com/eiro/app-atombomb/blob/master/t/feed&quot;&gt;feed file&lt;/a&gt; i just maintain manually with vim and &lt;a href=&quot;https://github.com/eiro/uze/blob/master/atombomb&quot;&gt;simple zsh helper&lt;/a&gt; to create headers.&lt;/p&gt;
+&lt;p&gt;atom bomb (i&#39;m not sure about the name) is written in &lt;a href=&quot;http://www.perl.org/&quot;&gt;perl5&lt;/a&gt; and &lt;a href=&quot;https://metacpan.org/pod/release/MARCC/eirotic-0.0/lib/Eirotic.pm&quot;&gt;Eirotic.pm&lt;/a&gt; which replace my common boilerplate:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://metacpan.org/release/perlude"&gt;Perlude&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://metacpan.org/pod/Method::Signatures"&gt;Method::Signatures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://metacpan.org/release/perlude&quot;&gt;Perlude&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://metacpan.org/pod/Method::Signatures&quot;&gt;Method::Signatures&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;perl 5.14 with strictures&lt;/li&gt;
 &lt;li&gt;YAML&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;markdown conversion is made by &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;pandoc&lt;/a&gt;.&lt;/p&gt;
-</content><published>2014-01-18T22:08:52+01:00</published><updated>2014-01-18T22:08:52+01:00</updated></entry><entry><id>tag:eiro.github.com,2014-01-17:new_experimental_atom_feed</id><title>new (experimental) atom feed</title><content type="html">&lt;p&gt;few months ago, i decided to experiment &lt;a href="http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html"&gt;make&lt;/a&gt; and &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;pandoc&lt;/a&gt; and &lt;a href="http://git-scm.com/"&gt;git&lt;/a&gt; as a minimalistic blog/wiki engine (&lt;a href="http://werc.cat-v.org/"&gt;werc&lt;/a&gt; was on my list too) to replace jekyll (i was a fan of ruby until i tried it).&lt;/p&gt;
-&lt;p&gt;now i'm totally happy with the basics and i need to extend:&lt;/p&gt;
+&lt;p&gt;markdown conversion is made by &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.html/>
+<published>2014-01-31T10:15:57+01:00</published><updated>2014-01-31T10:15:57+01:00</updated></entry>
+<entry><id>tag:eiro.github.com,2014-01-17T13:24:08+01:00:new_experimental_atom_feed.md</id><title>new (experimental) atom feed</title>
+<content type="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
+  &lt;title&gt;new (experimental) atom feed&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
+  &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
+  &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;
+&lt;h1 class=&quot;title&quot;&gt;new (experimental) atom feed&lt;/h1&gt;
+&lt;/header&gt;
+&lt;p&gt;few months ago, i decided to experiment &lt;a href=&quot;http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html&quot;&gt;make&lt;/a&gt; and &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt; and &lt;a href=&quot;http://git-scm.com/&quot;&gt;git&lt;/a&gt; as a minimalistic blog/wiki engine (&lt;a href=&quot;http://werc.cat-v.org/&quot;&gt;werc&lt;/a&gt; was on my list too) to replace jekyll (i was a fan of ruby until i tried it).&lt;/p&gt;
+&lt;p&gt;now i&#39;m totally happy with the basics and i need to extend:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;comment posts via sending an email to the list&lt;/li&gt;
 &lt;li&gt;see comments by viewing archives&lt;/li&gt;
 &lt;li&gt;a simple way to maintain feeds. i wrote a little perl script to test it&lt;/li&gt;
 &lt;/ul&gt;
-</content><published>2014-01-17T13:24:08+01:00</published><updated>2014-01-17T13:24:08+01:00</updated></entry></feed>
+&lt;/body&gt;
+&lt;/html&gt;
+<link rel="alternate"
+        type="text/html" href="http://eiro.github.com/aposts/2014/new_experimental_atom_feed.html/>
+<published>2014-01-17T13:24:08+01:00</published><updated>2014-01-17T13:24:08+01:00</updated></entry>
+
+  </feed>
