@@ -2,7 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
   <link href="http://eiro.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link rel="alternate" href="http://eiro.github.io/news.html" type="text/html"/>
-  <updated>easycmd(ls)</updated>
+  <updated>2014-03-19T11:12:11+01:00</updated>
+
   <id>tag:eiro.github.com,2014:blog</id>
   <author><name>Marc Chantreux</name></author><title>The silence of Plato</title>
   <entry><id>tag:eiro.github.com,2014-03-19T11:12:11+01:00:make_my_mind_up_about_a_sympa_ListDef_parser.md</id><title>make my mind up about a sympa ListDef parser</title>
