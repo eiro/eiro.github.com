@@ -7,22 +7,6 @@
   <author><name>Marc Chantreux</name></author><title>The silence of Plato</title>
   <entry><id>tag:eiro.github.com,2014-03-19T11:12:11+01:00:make_my_mind_up_about_a_sympa_ListDef_parser.md</id><title>make my mind up about a sympa ListDef parser</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;make my mind up about a sympa ListDef parser&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;make my mind up about a sympa ListDef parser&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;within few days, i&#39;ll write a REST service to &lt;a href=&quot;http://en.wikipedia.org/wiki/Create,_read,_update_and_delete&quot;&gt;CRUD&lt;/a&gt; the &lt;a href=&quot;https://www.sympa.org/manual_6.3/list-definition#list_configuration_file&quot;&gt;sympa list defs&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I will not use the parser from the sympa code because:&lt;/p&gt;
 &lt;ul&gt;
@@ -42,26 +26,12 @@
 &lt;p&gt;pegex grammars are very simple to maintain and read which could be usable in other languages (i haven&#39;t tested yet but javascript could be an example). It would add a dependency to Pegex but i really don&#39;t think it&#39;s a cons argument in 2014.&lt;/p&gt;
 &lt;h2 id=&quot;incremental-mcxmsg-parser&quot;&gt;incremental m//cxmsg parser&lt;/h2&gt;
 &lt;p&gt;as i&#39;m used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/make_my_mind_up_about_a_sympa_ListDef_parser.html/>
 <published>2014-03-19T11:12:11+01:00</published><updated>2014-03-19T11:12:11+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-03-19T10:53:31+01:00:eiro-brain-dump_to_please_ironman.md</id><title>eiro-brain-dump to please ironman</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
 &lt;p&gt;some days ago, i had a chat on &lt;a href=&quot;http://www.enlightenedperl.org/&quot;&gt;epo&lt;/a&gt;@&lt;a href=&quot;http://freenode.net/&quot;&gt;freenode&lt;/a&gt; because &lt;a href=&quot;/atom.xml&quot;&gt;my atom&lt;/a&gt; is completly ignored by &lt;a href=&quot;http://ironman.enlightenedperl.org/&quot;&gt;ironman planet&lt;/a&gt;. this post is a reminder.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://ironman.enlightenedperl.org/&quot;&gt;Ironman planet&lt;/a&gt; expects each entries to provide an alternate html address (which wasn&#39;t my initial plan but after all: every text can be rendered as html).&lt;/p&gt;
 &lt;p&gt;So the plan is&lt;/p&gt;
@@ -70,29 +40,12 @@
 &lt;li&gt;install a local ironman and provide a patch to show error reports when you update your feed (so you can fix your stuff without disturbing EPO people)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;this was an excuse create a profile on &lt;a href=&quot;https://questhub.io/&quot;&gt;questhub.io&lt;/a&gt; and create a &lt;a href=&quot;https://questhub.io/realm/perl/quest/531f0d326e78176e6a0000bd&quot;&gt;related quest&lt;/a&gt;.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/eiro-brain-dump_to_please_ironman.html/>
 <published>2014-03-19T10:53:31+01:00</published><updated>2014-03-19T10:53:31+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-03-06T22:37:09+01:00:sympa_to_comment_blog_posts_how_.md</id><title>sympa to comment blog posts: how?</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;sympa to comment blog posts: how?&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;sympa to comment blog posts: how?&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;I explained &lt;a href=&quot;http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why&quot;&gt;why&lt;/a&gt; i want to use sympa to manage comments. this is the &amp;quot;how&amp;quot; (as an experiment)&lt;/p&gt;
 &lt;h2 id=&quot;create-a-blogcomment-scenario&quot;&gt;create a blogcomment scenario&lt;/h2&gt;
 &lt;p&gt;the idea of this scenario is you can publish in 2 cases:&lt;/p&gt;
@@ -119,29 +72,12 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;li&gt;a &lt;code&gt;Reply-To&lt;/code&gt; header to please the &lt;code&gt;blogcomment&lt;/code&gt; scenario&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;i use &lt;a href=&quot;add_comment_links.pl&quot;&gt;this simple script&lt;/a&gt; in combination with &lt;a href=&quot;https://github.com/eiro/app-atombomb&quot;&gt;atombomb&lt;/a&gt; to achieve that on this site.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_how_.html/>
 <published>2014-03-06T22:37:09+01:00</published><updated>2014-03-06T22:37:09+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-03-05T10:58:35+01:00:7_habitudes_pour_editer_du_texte_efficacement.md</id><title>7 habitudes pour editer du texte éfficacement</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;7 habitudes pour editer du texte &Atilde;&copy;fficacement&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;7 habitudes pour editer du texte &Atilde;&copy;fficacement&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;Nouvelle version de la conf&Atilde;&copy;rence de &lt;a href=&quot;http://fr.wikipedia.org/wiki/Bram_Moolenaar&quot;&gt;Bram Moolenaar&lt;/a&gt;, &amp;quot;&lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI&quot;&gt;7 Habits For Effective Text Editing 2.0&lt;/a&gt;&amp;quot; est sur youtube. C&#39;est m&Atilde;&copy;thodologique plus que technique. Tr&Atilde;&uml;s int&Atilde;&copy;ressant!&lt;/p&gt;
 &lt;p&gt;je traduis une &lt;a href=&quot;https://www.youtube.com/watch?v=p6K4iIMlouI#t=2274&quot;&gt;diapo importante&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
@@ -164,29 +100,12 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;li&gt;meme si vous savez que votre macro/habitude ne traite pas tous les cas, utilisez-la.&lt;/li&gt;
 &lt;li&gt;ne tentez pas de l&#39;am&Atilde;&copy;liorer avant de tomber &lt;em&gt;r&Atilde;&copy;guli&Atilde;&uml;rement&lt;/em&gt; sur des cas pourris.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/7_habitudes_pour_editer_du_texte_efficacement.html/>
 <published>2014-03-05T10:58:35+01:00</published><updated>2014-03-05T10:58:35+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-02-25T13:22:40+01:00:sympa_to_comment_blog_posts_why_.md</id><title>sympa to comment blog posts: why ?</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;sympa to comment blog posts: why ?&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;sympa to comment blog posts: why ?&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;I maintain websites since 1997 and my motto always was &amp;quot;as static as possible&amp;quot;. I run my own &amp;quot;static web&amp;quot; engines, used open source ones and ended with &lt;a href=&quot;#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile&quot;&gt;a simple &lt;code&gt;Makefile&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The very important missing part was blog comments but it&#39;s not only about serving static pages: we&#39;re in year 2014 and still, the web failed to provide tools that can approach the productivity of mutt when it comes to share thoughts about a post: editing in textareas, navigating in the thread, tagging, archiving, ... all those basics are just jokes in a webpages! Trying to compare wikis to just editing files in your filesystem (then share them with git, rsync, seafile, whatever ..) also is.&lt;/p&gt;
 &lt;p&gt;But i didn&#39;t carre for a while because i had a bigger plan (my beloved &lt;code&gt;mindpipe&lt;/code&gt;) so asked commenters to send me mails instead of expecting a &amp;quot;comment&amp;quot; textarea. I miss &lt;a href=&quot;http://en.wikipedia.org/wiki/Usenet&quot;&gt;usenet&lt;/a&gt;.&lt;/p&gt;
@@ -207,29 +126,12 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;/ul&gt;
 &lt;p&gt;I i need a battle tested, highly configurable and extendable but just a &amp;quot;mailing list manager&amp;quot;! I know it&#39;s not perfect but it&#39;s way better than running yet another anoying web forum.&lt;/p&gt;
 &lt;p&gt;And i know the beast: &lt;a href=&quot;http://www.sympa.org&quot;&gt;sympa&lt;/a&gt; is way the best mailing list manager i ever seen. Yes, i have tons of grievances about it but in the end, it&#39;s much more superior than everything i saw and is in a constant evolution since 1996 (AFAIK). Plus: it&#39;s written in &lt;a href=&quot;http://www.perl.org&quot;&gt;Perl&lt;/a&gt;! not a so modern one but you don&#39;t carre if you just have to write plugins.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/sympa_to_comment_blog_posts_why_.html/>
 <published>2014-02-25T13:22:40+01:00</published><updated>2014-02-25T13:22:40+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-02-15T11:55:23+01:00:FOSDEM_sequel_C_11_scrum_.md</id><title>FOSDEM sequel: C++11, scrum, ...</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;FOSDEM sequel: C++11, scrum, ...&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;FOSDEM sequel: C++11, scrum, ...&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;Once again, i came to &lt;a href=&quot;https://fosdem.org/2014/&quot;&gt;FOSDEM&lt;/a&gt; with some talks in mind, missed them and learnt a lot of new, completly different things.&lt;/p&gt;
 &lt;p&gt;Once again, FOSDEM is the echo of my internet feeds (at this point, the cultural spectrum of the people i spoke to is too large to just say we&#39;re reading the same blogs).&lt;/p&gt;
 &lt;ul&gt;
@@ -238,29 +140,12 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;/ul&gt;
 &lt;p&gt;The big surprise for me is a very interesting discution about the modern paradigms of C++. I realized i was acting like the &amp;quot;perl is dead&amp;quot; people: comparing C++ from nineties to the very last features of the langages i use daily: I was not unfair, just ignorant.&lt;/p&gt;
 &lt;p&gt;So i began to read the C++ posts again and seen &lt;a href=&quot;http://nathan.ca/2014/02/type-rich-programming/&quot;&gt;this article&lt;/a&gt; pointing on &lt;a href=&quot;http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style&quot;&gt;Bjarne Stroustrup: C++11 Style&lt;/a&gt; which is a very interesting talk about what the &amp;quot;good C++&amp;quot; should be.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/FOSDEM_sequel_C_11_scrum_.html/>
 <published>2014-02-15T11:55:23+01:00</published><updated>2014-02-15T11:55:23+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-01-31T10:15:57+01:00:adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.md</id><title>adieu, Jekyll (i dumped you for a 28 lines Makefile)</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;adieu, Jekyll (i dumped you for a 28 lines Makefile)&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;adieu, Jekyll (i dumped you for a 28 lines Makefile)&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;Months ago, and once again, i spent hours to figure out how to do things i expected to be simple. In this case, Jekyll isn&#39;t the one to blame: the ruby ecosystem is. I&#39;m a happy &lt;a href=&quot;https://metacpan.org/&quot;&gt;CPAN&lt;/a&gt; user and contributor as well as &lt;a href=&quot;http://www.haskell.org/cabal/&quot;&gt;cabal&lt;/a&gt; happy user. Coming from those world, the ruby one is quiet messy.&lt;/p&gt;
 &lt;p&gt;So i decided to throw all the blog/wiki engines away, running a temporary solution with the simplest bootstrap i can write. Following the rules of the unix &lt;a href=&quot;http://en.wikipedia.org/wiki/KISS_principle&quot;&gt;KISS principles&lt;/a&gt;, i divided the &amp;quot;CMS&amp;quot; problem more little ones. I needed something as simple as possible to extend coming with:&lt;/p&gt;
 &lt;ul&gt;
@@ -324,29 +209,12 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;li&gt;YAML&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;markdown conversion is made by &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt;.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.html/>
 <published>2014-01-31T10:15:57+01:00</published><updated>2014-01-31T10:15:57+01:00</updated></entry>
 <entry><id>tag:eiro.github.com,2014-01-17T13:24:08+01:00:new_experimental_atom_feed.md</id><title>new (experimental) atom feed</title>
 <content type="html">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;generator&quot; content=&quot;pandoc&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=yes&quot;&gt;
-  &lt;title&gt;new (experimental) atom feed&lt;/title&gt;
-  &lt;style type=&quot;text/css&quot;&gt;code{white-space: pre;}&lt;/style&gt;
-  &lt;!--[if lt IE 9]&gt;
-    &lt;script src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;
-  &lt;![endif]--&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;header&gt;
-&lt;h1 class=&quot;title&quot;&gt;new (experimental) atom feed&lt;/h1&gt;
-&lt;/header&gt;
 &lt;p&gt;few months ago, i decided to experiment &lt;a href=&quot;http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html&quot;&gt;make&lt;/a&gt; and &lt;a href=&quot;http://johnmacfarlane.net/pandoc/&quot;&gt;pandoc&lt;/a&gt; and &lt;a href=&quot;http://git-scm.com/&quot;&gt;git&lt;/a&gt; as a minimalistic blog/wiki engine (&lt;a href=&quot;http://werc.cat-v.org/&quot;&gt;werc&lt;/a&gt; was on my list too) to replace jekyll (i was a fan of ruby until i tried it).&lt;/p&gt;
 &lt;p&gt;now i&#39;m totally happy with the basics and i need to extend:&lt;/p&gt;
 &lt;ul&gt;
@@ -354,8 +222,7 @@ true()                                                smtp,smime,md5  -&amp;gt; 
 &lt;li&gt;see comments by viewing archives&lt;/li&gt;
 &lt;li&gt;a simple way to maintain feeds. i wrote a little perl script to test it&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+</content>
 <link rel="alternate"
         type="text/html" href="http://eiro.github.com/aposts/2014/new_experimental_atom_feed.html/>
 <published>2014-01-17T13:24:08+01:00</published><updated>2014-01-17T13:24:08+01:00</updated></entry>
