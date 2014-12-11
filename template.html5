@@ -27,5 +27,4 @@ $for(header-includes)$$header-includes$$endfor$
 <div class="grid-80">$if(title)$<h1>$title$</h1>$endif$<section>$body$<span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
-depth was $depth$
 </body></html>

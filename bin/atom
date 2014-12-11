@@ -1,0 +1,166 @@
+#! env perl6-m
+
+use v6;
+
+sub _attrs_str ( %attrs) { %attrs.pairs.map: { qq/{.key}="{.value}"/ } }
+
+# multi sub tag ( Str $tag, %attrs) {
+#     "<{ $tag, _attrs_str %attrs }/>";
+# }
+
+multi sub tag ( Str $tag, %attrs ) {
+    "<{ $tag, _attrs_str %attrs }/>";
+}
+
+multi sub tag ( Str $tag, Parcel $attrs=()) {
+    "<{ $tag, _attrs_str $attrs.hash }/>";
+}
+
+multi sub tag ( Parcel $spec ) { tag $spec[0], $spec[1..*] } 
+
+multi sub tag ( Str $tag, %attrs, &content) { 
+    ( "<{ $tag, _attrs_str %attrs }>"
+    , &content()
+    , "</$tag>"
+    ).join: ""
+}
+
+# multi sub tag ( *@args ) { die "what can i say about { @args.perl } ?" } 
+
+# TODO: more elegant way ? 
+# TODO: why is tag <feed> not a Parcel ?
+multi sub tag ( Str $tag, &content) { tag $tag, ().hash, &content }
+
+multi sub tag (Parcel $spec, &content) {
+    tag $spec[0]
+    , $spec[1..*].hash
+    , &content;
+}
+
+# TEST SUITE ? 
+#
+# say tag <foo id log class foo >;
+# say tag <<img src logo.png alt "i love this company">>; 
+# say tag < img src /images/logo.png >;
+# say tag <head id cool >, { "hello" }; 
+# say tag "foo";
+# say tag "foo",< id log class foo >;
+# say tag <foo id log class foo >;
+# say tag <h1 id log class foo >, {
+#     "hello", tag <span id hey>, {
+#         tag <a href />, {"too"}
+#     }
+# };
+
+# METAPROGRAMING {{{ 
+#
+# Experience 1 
+# $?PACKAGE.
+# < link meta img >.map: {
+#     $?PACKAGE.^ared routine:
+#     ( $?PACKAGE
+#     , $_
+#     , &tag.assuming( tag => $_ ) )
+# } 
+#
+
+# Experience 2
+# < html h1 >.map: -> $sym {
+#     my $code = "my \&$sym = \&tag.assuming( tag => '$sym' )";
+#     say $code;
+#     EVAL $code;
+#     CATCH {
+#         .say
+#     }
+# } 
+
+# Experience 3 
+#
+# for <joe bob> -> $mate { OUR::{'&' ~ $mate} = sub { say "hello $mate" } }; 
+
+# Experience 4 
+# macro/quasi ??
+
+# }}}
+
+# multi method to-json ( Any:U ) { 'null' } 
+sub pan_html ( Str:D $file where .IO.e ) {
+    my $script = 'print encode_entities $_,q(<>&)';
+    my $cmd    = qq{
+        pandoc -thtml5 $file |
+        perl -CSD -MHTML::Entities -lne '$script'
+    };
+    qqx/$cmd/
+}
+
+sub ls ( $pattern ) { qqx{ls $pattern}.lines } 
+
+multi sub as_xml ( %dict ) {
+    %dict.kv.map: -> $tag,$value {
+        tag $tag, {
+            if $value ~~ Str { $value }
+            else { as_xml $value }
+        }
+    }
+}
+
+multi sub as_xml ( Parcel $dict ) { as_xml $dict.hash }
+
+sub atom (@entries) {
+    '<?xml version="1.0" encoding="UTF-8"?>'
+    , tag <feed xml:lang en-US xmlns http://www.w3.org/2005/Atom >,
+        { (tag <link rel self type application/atom+xml
+                href http://eiro.github.io/atom.xml >)
+        , (tag <link rel alternate type text/html
+                href http://eiro.github.io/news.html >)
+        , (as_xml
+            { id     => 'tag:eiro.github.com,2014:blog'
+            , title  => 'The Silence of Plato'
+            , updated => "@entries[0].<published>"
+            , author => {name => 'Marc Chantreux'}})
+        , ( @entries.map: {
+            (tag <entry>, {
+                (tag <id>, {.<id>})
+                ~(tag <title>, {.<title>})
+                ~(tag <updated>, {.<published>})
+                ~(tag <published>, {.<published>})
+                ~(tag "link",
+                    %( type => 'text/html'
+                    , rel => 'alternate'
+                    , href => .<link> ))
+                ~(tag <content type html >, { .<content>.result })
+            })
+        } ) 
+
+    }
+}
+
+
+my %posts = (ls "posts/*/index").map: {
+    $_.subst(/\/index$/,"") => [ .IO.lines.map: {
+        my %h = < date file title >
+            Z .split(/<[\ \t]>+/,3);
+        {%h}
+    }]
+};
+
+# %posts.pairs.map: { .say for .key, .value.map: {.<title>.indent(4)}  }
+# @%posts.perl.say;
+# exit;
+
+my @feed = %posts.pairs.map: -> $p {
+    $p.value.map: {
+        my $path = "{$p.key}/{.<file>}";
+        my %h
+        = link      => $path.subst(/\.md$/,".html")
+        , id        => "tag:eiro.github.com,{.<date>.subst(/T.*/,"")}:$path"
+        , content   => (start {pan_html $path})
+        , published => .<date>
+        , created   => .<date>
+        , title     => .<title>
+        ; 
+        {%h}
+    }
+};
+
+say atom @feed;
