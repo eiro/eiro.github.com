@@ -1,0 +1,77 @@
+#! /usr/bin/perl
+use Eirotic;
+use URI::Encode 'uri_encode';
+use Path::Tiny;
+
+func mailto_url (%the) {
+    my $to = delete $the{to} or die;
+
+    "mailto:$to?"
+    . join '&'
+    , map "$_=$the{$_}"
+    , keys %the;
+
+}
+
+func encode_values (%the) {
+    $_ = uri_encode $_ for values %the;
+    %the
+}
+
+func encode_values_ ($the) {
+    $_ = uri_encode $_ for values %$the;
+    $the
+}
+
+func prepare_comment (%the) {
+
+    my $r = $the{template} || {};
+
+    $$r{'In-Reply-To'} ||= uri_encode join '@'
+    , map {
+        $_ || die;
+        s/[^a-zA-Z0-9]/./g;
+        s/\.+/./g;
+        $_;
+    } @the{qw( post blog )};
+
+    $$r{Subject} ||= "Re: $the{post}";
+
+    %$r , to => $the{to} 
+
+}
+
+func sympa_archive ( $sympa, $link, %params=() ) {
+
+    my %GET =
+    ( list => $$sympa{group}
+    , key_word => $$link{Subject}
+    , qw( action arcsearch body false subj true )
+    , %params );
+
+    "$$sympa{base}?"
+    . join '&'
+    , map { "$_=$GET{$_}" } keys %GET
+}
+
+func link_to ($desc, $url) { qq(<a href="$url">$desc</a>) }
+func subscribe ($sympa)    { "$$sympa{base}/subscribe/$$sympa{group}" } 
+
+func send_comment (%the) {
+    my %link = encode_values prepare_comment @_;
+    join '<br/>'
+    , (link_to "comment this post"
+        , mailto_url %link )
+    , (link_to "archived comments"
+        , sympa_archive $the{sympa}, \%link )
+    , (link_to "subscribe to the mailing list"
+        , subscribe $the{sympa} )
+}
+
+say send_comment 
+to      => 'blog-eiro@groups.perlists.pm'
+, blog  => 'eiro.github.com'
+, sympa =>
+    { group => 'blog-eiro'
+    , base  => 'https://groups.perlists.pm/sympa/' }
+, post  => @ARGV;
