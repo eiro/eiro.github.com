@@ -143,7 +143,7 @@ my %posts = (ls "posts/*/index").map: {
                 Z .split(/<[\ \t]>+/,3)
             );
             %h<source> = "$dir/{%h<file>}";
-            %h<link> = "$dir/{%h<file>.subst(/\.md$/,".html")}";
+            %h<link> = "$dir/{(%h<file>).subst(/\.md$/,".html")}";
             {%h}
         }]
 };
@@ -152,7 +152,7 @@ my %posts = (ls "posts/*/index").map: {
 # @%posts.perl.say;
 # exit;
 
-my @feed = %posts.pairs.map: -> $p {
+my @feed = %posts.pairs.sort(*.key).reverse.map: -> $p {
     $p.value.map: {
         my %h
         = link      => .<link>

@@ -7,6 +7,9 @@ alternates:
     http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
 ...
 
+# 2015
+
+* [Sympa Hackathon 1](posts/2015/Sympa_Hackathon_1.html) (2015-01-02T03:32:16+01:00)
 # 2014
 
 * [hacking on my blog again](posts/2014/hacking_on_my_blog_again.html) (2014-10-29T23:58:27+01:00)
