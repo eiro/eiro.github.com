@@ -6,13 +6,32 @@ header h1 {
 q { quotes: "“" "”" "‘" "’"; } 
 * { font-family: Sans-Serif; text-decoration: none }
 
-section > h1 {
-    border-bottom: solid 1px black;
-    // text-shadow: 2px 2px 30px #0f0;
-} 
-
 #atomLink {
-    max-width:  50px;
-    max-height: 50px;
+    max-width:  30px;
+    max-height: 30px;
 }
 
+// todo:
+// * font-face broken with ff
+// * keyframes doesn't work
+// @font-face {
+//   font-family: GlassTTYVT220;
+//   src: local("Glass TTY VT220"), local("Glass TTY VT220 Medium"), url(http://olduse.net/font/Glass_TTY_VT220.ttf) format("truetype");
+// }
+// 
+// @keyframes {
+//     from,to
+//         { color: transparent; }
+//     50% { color: red; }
+// }
+// 
+// .grid-80 > h1 {
+//   animation: 1s blink step-end infinite;
+// 
+//   text-align: center;
+//   font-size: 20px;
+//   font-family: GlassTTYVT220;
+//   background: black;
+//   color: #18d818;
+// }
+// 
