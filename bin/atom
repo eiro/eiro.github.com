@@ -131,17 +131,21 @@ sub atom (@entries) {
                 ~(tag <content type html >, { .<content>.result })
             })
         } ) 
-
     }
 }
 
-
 my %posts = (ls "posts/*/index").map: {
-    $_.subst(/\/index$/,"") => [ .IO.lines.map: {
-        my %h = < date file title >
-            Z .split(/<[\ \t]>+/,3);
-        {%h}
-    }]
+    my $dir  = $_.subst(/\/index$/,"");
+    my $year = $dir.subst(/^posts\//,"");
+    $year => [ .IO.lines.map: {
+            my %h = :$year, :$dir, (
+                < date file title >
+                Z .split(/<[\ \t]>+/,3)
+            );
+            %h<source> = "$dir/{%h<file>}";
+            %h<link> = "$dir/{%h<file>.subst(/\.md$/,".html")}";
+            {%h}
+        }]
 };
 
 # %posts.pairs.map: { .say for .key, .value.map: {.<title>.indent(4)}  }
@@ -150,11 +154,10 @@ my %posts = (ls "posts/*/index").map: {
 
 my @feed = %posts.pairs.map: -> $p {
     $p.value.map: {
-        my $path = "{$p.key}/{.<file>}";
         my %h
-        = link      => $path.subst(/\.md$/,".html")
-        , id        => "tag:eiro.github.com,{.<date>.subst(/T.*/,"")}:$path"
-        , content   => (start {pan_html $path})
+        = link      => .<link>
+        , id        => "tag:eiro.github.com,{.<date>.subst(/T.*/,"")}:{.<source>}"
+        , content   => (start {pan_html .<source>})
         , published => .<date>
         , created   => .<date>
         , title     => .<title>
@@ -163,4 +166,23 @@ my @feed = %posts.pairs.map: -> $p {
     }
 };
 
-say atom @feed;
+sub news (%posts) {
+'---
+id: tag:eiro.github.com,2014:blog
+title: The silence of Plato
+author: { name: Marc Chantreux }
+alternates:
+    http://eiro.github.io/news.html: {rel: alternate, type: text/html}
+    http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
+...
+' , %posts.pairs.sort(*.key).reverse.map: -> $year {
+        "# {$year.key}\n"
+        , $year.value.map: -> $p { "* [$p<title>]($p<link>) ($p<date>)" }
+    }
+
+}
+
+multi sub MAIN ('atom') { say atom @feed }
+multi sub MAIN () { say atom @feed }
+multi sub MAIN ('news') { .say for news %posts }
+

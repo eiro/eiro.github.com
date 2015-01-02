@@ -2,21 +2,20 @@
 depth?=.
 include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
-all: $(webpages) $(feed)
+all: FORCE $(webpages)
 
-news.md: $(depth)/feed
-	atombomb md $< | $(can_comment) > $@
+FORCE:
+	perl6 bin/atom atom > atom.xml
+	perl6 bin/atom news > news.md
+	# (cd posts/2015; make )
 
-atom.xml: $(depth)/feed
-	atombomb atom $< > $@
-
-# UGLY copy-past from previous lines, TODO: find a generic solution 
-
-unixtips.html: unixtips
-	atombomb md $< | $(can_comment) > $@
-
-unixtips.atom.xml: unixtips
-	atombomb atom $< > $@
+# # UGLY copy-past from previous lines, TODO: find a generic solution 
+# 
+# unixtips.html: unixtips
+# 	atombomb md $< | $(can_comment) > $@
+# 
+# unixtips.atom.xml: unixtips
+# 	atombomb atom $< > $@
 
 $(webpages): menu $(main_html_template)
 
