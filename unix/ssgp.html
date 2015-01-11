@@ -1,0 +1,261 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../unsemantic.css" />
+<link rel="stylesheet" href="../theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>scripting good practices</title>
+
+
+
+
+</head><body>
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><p><script type="text/javascript">
+<!--
+h='';a='&#64;';n='&#x6b;&#104;&#x61;&#116;&#x61;&#114;&#40;&#x61;&#116;&#x29;&#112;&#104;&#x65;&#x61;&#114;&#46;&#x6f;&#114;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+'email the author'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x65;&#x6d;&#x61;&#x69;&#108;&#32;&#116;&#104;&#x65;&#32;&#x61;&#x75;&#116;&#104;&#x6f;&#114;&#32;&#40;&#x6b;&#104;&#x61;&#116;&#x61;&#114;&#40;&#x61;&#116;&#x29;&#112;&#104;&#x65;&#x61;&#114;&#46;&#x6f;&#114;&#x67;&#32;&#x61;&#116;&#32;&#x29;</noscript></p></section>
+      <hr/>
+      <nav id="TOC"><ul>
+<li><a href="#global-stragegy">Global stragegy</a><ul>
+<li><a href="#choose-your-shell">Choose your shell</a></li>
+<li><a href="#read-articles-on-kiss-principles-and-the-unix-philisophy">read articles on KISS principles and the unix philisophy</a></li>
+<li><a href="#dont-take-portability-too-seriously">Don't take portability too seriously</a></li>
+</ul></li>
+<li><a href="#coding-style">Coding Style</a><ul>
+<li><a href="#be-sure-there-is-no-command-to-read-your-data">Be sure there is no command to read your data</a></li>
+<li><a href="#use-long-version-of-the-flags-mostly">use long version of the flags (mostly)</a></li>
+<li><a href="#code-aeration">Code aeration</a></li>
+<li><a href="#name-things-when-you-can">name things when you can</a><ul>
+<li><a href="#your-filters-and-generators">your filters and generators</a></li>
+<li><a href="#your-fields-using-awk">your fields (using awk)</a></li>
+<li><a href="#your-arguments">your arguments</a></li>
+</ul></li>
+<li><a href="#avoid-interpolation-as-far-as-you-can">avoid interpolation as far as you can</a></li>
+<li><a href="#take-avantage-of-the-filters-you-use">take avantage of the filters you use</a></li>
+<li><a href="#comment-and-document">Comment <em>and</em> document</a></li>
+<li><a href="#test-your-functions">test your functions</a></li>
+<li><a href="#use-modern-features-of-your-shell">Use modern features of your shell</a></li>
+<li><a href="#when-writting-libraries-use-namespaces">when writting libraries, use namespaces</a></li>
+</ul></li>
+<li><a href="#use-localoptions">use localoptions</a></li>
+<li><a href="#use-errexit-or-erreturn-make-your-script-stops-at-the-first-error">use errexit or erreturn make your script stops at the first error</a></li>
+<li><a href="#preserve-and-use-the-return-value">preserve and use the return value</a></li>
+<li><a href="#use-true-and-false-for-booleans">use true and false for booleans</a></li>
+<li><a href="#iterate-on-globs-not-command-outputs">iterate on globs, not command outputs</a></li>
+</ul></nav>
+<a href="../atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a>
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
+  </div>
+<div class="grid-80"
+    ><h1>scripting good practices</h1><section><p>there are a lot of cases when shell scripts can be easier to write and maintain than a perl/python/ruby counterpart (when dealing with system commands, simple paralelization, simple text filtering). Unfortunatly, shell scripting suffers from a lack of consideration and is blamed for unreadability when the one who actually wrote the script is the right one to blame.</p>
+<p>those are my tips to make your shell scripts better, HTH.</p>
+<h1 id="global-stragegy">Global stragegy</h1>
+<h2 id="choose-your-shell">Choose your shell</h2>
+<ul>
+<li>if memory is a critical ressource, use mksh or rc</li>
+<li>in all other situations, use zsh!</li>
+<li>&quot;this shell is not the default one&quot; is really not an excuse. frankly: do you only use tools provided by default on your system? of course not! The shell is something you'll use every day and you better choose a good one</li>
+</ul>
+<p>I didn't mention bash, dash or any member or the csh familly because i think there is no point using them as another thing as a fallback.</p>
+<h2 id="read-articles-on-kiss-principles-and-the-unix-philisophy">read articles on KISS principles and the unix philisophy</h2>
+<p><a href="http://cat-v.org/">cat-v</a> has a very well currated collection of links and papers about it. Also, Rob Pike's talk on this subject are really inspiring.</p>
+<h2 id="dont-take-portability-too-seriously">Don't take portability too seriously</h2>
+<pre><code>&quot;this is easier to port a shell than to port a shell script&quot;</code></pre>
+<p>Larry Wall is so right on that! As shell interpreters and other softwares of the toolchain doesn't complain so much when something is going wrong, portable shell scripting is the hell to write <em>and</em> debug. please don't.</p>
+<p>So choose a target architecture and stick with it! If you really need something portable, write in <a href="http://www.perl.org">perl</a>.</p>
+<p>You still want to try? You fool! So choose a portable complete portable toolchain (9base for exemple) and stick with it on all the systems. yet will have to write and maintain wrappers around platform specific system administration tools and path ... but after all: you're a gambler.</p>
+<p>you could also have a look on <a href="http://www.gnu.org/software/autoconf/manual/autoconf-2.66/html_node/Programming-in-M4sh.html">m4sh</a> :).</p>
+<h1 id="coding-style">Coding Style</h1>
+<h2 id="be-sure-there-is-no-command-to-read-your-data">Be sure there is no command to read your data</h2>
+<p>A typical example of it is querying <code>/etc/passwd</code> to get infos on a user. the very first guess will be wrong:</p>
+<pre><code>grep $1 /etc/passwd</code></pre>
+<p>latter you'll fix</p>
+<pre><code>sed -n &quot;/^$1:/{
+    p
+    q
+}&quot; /etc/passwd</code></pre>
+<p>But a bug remains: if your system uses LDAP via NSS, the john entry could be in a completly different place and your script will wrongly returns nothing.</p>
+<p>So please read the documentation of your system and you'll find <code>getent</code></p>
+<pre><code>getent john passswd</code></pre>
+<p>was the good answer (on a linux box).</p>
+<h2 id="use-long-version-of-the-flags-mostly">use long version of the flags (mostly)</h2>
+<p>when you needed the man to find a flag, prefer the long version of it (when they are available) because in 6 months, when you'll have to change something, --use-compression<code>will be much more readable than</code>-c`.</p>
+<h2 id="code-aeration">Code aeration</h2>
+<p>use every occasion to add spaces and line returns (like pipes and quoted subscripts)</p>
+<pre><code>    getent passwd | cut -f1,7 -d: | grep zsh</code></pre>
+<p>is much readable like this</p>
+<pre><code>    getent passwd     |
+        cut -f1,7 -d: |
+        grep zsh</code></pre>
+<p>the awk version</p>
+<pre><code>    getent passwd | awk -F: -vlogin=1 -vshell=7 &#39;$shell ~ /zsh/ { print $login }&#39;</code></pre>
+<p>should be written as</p>
+<pre><code>    getent passwd |
+        awk -F: -vlogin=1 -vshell=7 &#39;
+            $shell ~ /zsh/ { print $login }
+        &#39;</code></pre>
+<p>you can also use line returns when using subshells</p>
+<pre><code>translate &lt;(
+    my_computation |
+        my_filter
+)
+
+need $(
+    my_computation |
+        my_filter
+)</code></pre>
+<h2 id="name-things-when-you-can">name things when you can</h2>
+<h3 id="your-filters-and-generators">your filters and generators</h3>
+<pre><code>while ((n++)) {
+    echo $n
+} |
+    sed -n &#39;/[02468]$/&#39; |
+    sed 5q </code></pre>
+<p>will take you an effort to read while</p>
+<pre><code>nat | keep_evens | sed 5q </code></pre>
+<p>will not. please write</p>
+<pre><code>nat () {
+    local n=${1:-1}
+    while ((n++)) {echo $n}
+}
+
+keep_evens () { sed -n &#39;/[02468]$/&#39; }</code></pre>
+<p>but regexps are not the only thing to hide, uncommon expressions like</p>
+<pre><code>IFS=$&#39;\n&#39; read -d &#39;&#39; -A $1</code></pre>
+<p>should be wrapped in a function</p>
+<pre><code>slurp    () { IFS=$&#39;\n&#39; read -d &#39;&#39; -A $1 }</code></pre>
+<h3 id="your-fields-using-awk">your fields (using awk)</h3>
+<pre><code>awk -F: &#39;$7 ~ /zsh$/ { print $1 }&#39;</code></pre>
+<ul>
+<li>gives you no clue on the data you're reading</li>
+<li>will be hard to maintain if the column order are modified</li>
+</ul>
+<p>so use the -v flag instead</p>
+<pre><code>awk -vlogin=1 -v shell=7 -F: &#39;
+    $shell ~ /zsh$/ { print $login }
+&#39;</code></pre>
+<h3 id="your-arguments">your arguments</h3>
+<pre><code>print -- $1 if [[ -d $1 ]]
+local dir=$1</code></pre>
+<h2 id="avoid-interpolation-as-far-as-you-can">avoid interpolation as far as you can</h2>
+<ul>
+<li>when using awk, use -v</li>
+<li>when using perl, use -ws</li>
+</ul>
+<h2 id="take-avantage-of-the-filters-you-use">take avantage of the filters you use</h2>
+<p>keep in mind that every | introduce 2 forks and subprocesses will use read and write to communicate. So unless you hide filters on wrapped functions, please don't write things like</p>
+<pre><code>cat foo |
+    cut -d: -f1 |
+    grep -vF -- - |
+    awk &#39;{i+=$1} END { print i}&#39;</code></pre>
+<p>Because as you use awk in the process, you can ask it much more (if you spent some time to learn the basics).</p>
+<pre><code>awk -F: -v x=1 &#39;
+    $x &gt; -1 { n++ }
+    END { print n }
+&#39;</code></pre>
+<h2 id="comment-and-document">Comment <em>and</em> document</h2>
+<p>use <code>:</code> to introduce a perlpod (man <code>perlpod</code>) section</p>
+<pre><code>: &lt;&lt;=cut
+
+=head1 your documentation
+
+=over
+
+=item *
+
+with lists
+
+=item *
+
+with sections
+
+=head1 credits there
+
+thanks for reading
+
+=cut
+
+# your script starts there
+
+echo &quot;hello world&quot;</code></pre>
+<p>now you can use <code>perldoc myfile</code> to read the doc as a man or render html or pdf documentation.</p>
+<h2 id="test-your-functions">test your functions</h2>
+<p>there are some TAP generators for zsh outthere like knock or devel/TAP: use them as you would use them when writting code in other languages.</p>
+<h2 id="use-modern-features-of-your-shell">Use modern features of your shell</h2>
+<p>don't let your shell define global variables into functions or use unset values/</p>
+<pre><code>setopt warncreateglobal nounset</code></pre>
+<p>use brace expansions and extended globs</p>
+<pre><code>setopt extendedglob braceccl</code></pre>
+<h2 id="when-writting-libraries-use-namespaces">when writting libraries, use namespaces</h2>
+<p>redefining a command will success silently. to avoid stupid bugs using this &quot;feature&quot;, use namespaces. so that</p>
+<pre><code>. mathlib</code></pre>
+<p>would provide `</p>
+<pre><code>mathlib/seq </code></pre>
+<p>not</p>
+<pre><code>seq</code></pre>
+<h1 id="use-localoptions">use localoptions</h1>
+<p>when you setopt something in the function, the setting is global so you'll change the behavior of all your script, introducing some weird bugs.</p>
+<pre><code>f () {
+    setopt xtrace
+    echo hello world
+} 
+echo still xtracing now ...</code></pre>
+<p>the options can be set for your function only</p>
+<pre><code>f () {
+    setopt localoptions xtrace
+    echo hello world
+} 
+echo no more xtrace here</code></pre>
+<h1 id="use-errexit-or-erreturn-make-your-script-stops-at-the-first-error">use errexit or erreturn make your script stops at the first error</h1>
+<p>instead of writing</p>
+<pre><code>foo || exit
+bar || exit
+can_fail
+bang || exit</code></pre>
+<p>setopt errexit so you can write</p>
+<pre><code>foo 
+bar 
+can_fail || true 
+bang </code></pre>
+<p>same with return</p>
+<h1 id="preserve-and-use-the-return-value">preserve and use the return value</h1>
+<p>the last command executed by a function returns a value (stored in <code>$?</code>) which could be used by your caller</p>
+<pre><code>sanity () {
+    grep -q root /etc/passwd
+}
+
+sanity || echo &quot;no more root on your system?&quot;
+
+we_dont_care () {
+    grep root /etc/passwd
+    true
+}
+
+we_dont_care || echo &quot;this is never called :)&quot;</code></pre>
+<p>be aware that 0 (as 0 error) is true and the rest (1 to 255) is false. so you can write your own version of true: so you</p>
+<pre><code>true () { return 0 }
+false () { return 1 }</code></pre>
+<h1 id="use-true-and-false-for-booleans">use true and false for booleans</h1>
+<p>instead of writing</p>
+<pre><code>enable_compression=1
+(( enable_compression == 1 )) &amp;&amp; print &quot;content will be gzipped&quot; </code></pre>
+<p>use the interpolation of true/false</p>
+<pre><code>enable_compression=true
+$enable_compression &amp;&amp; print &quot;content will be gzipped&quot; </code></pre>
+<h1 id="iterate-on-globs-not-command-outputs">iterate on globs, not command outputs</h1>
+<pre><code>for f ($(ls *)) print $f </code></pre>
+<p>translate the output of ls into barewords (according IFS), not filenames! please use</p>
+<pre><code>for f (*) print $f</code></pre><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>
