@@ -176,7 +176,7 @@ alternates:
     http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
 ...
 ' , %posts.pairs.sort(*.key).reverse.map: -> $year {
-        "# {$year.key}\n"
+        "\n# {$year.key}\n"
         , $year.value.map: -> $p { "* [$p<title>]($p<link>) ($p<date>)" }
     }
 
