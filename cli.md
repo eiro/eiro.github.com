@@ -1,13 +1,4 @@
-
-# git notes  
-
-## gitolite   
-
-### installation
-
-comprendre comment [gitolite marche](http://gitolite.com/gitolite/how.html)
-et lire [comment l'installer](http://gitolite.com/gitolite/qi.html).
-inspiré de la [doc d'install.](https://github.com/sitaramc/gitolite) 
+# gitolite   
 
 je pars du principe que 
 
@@ -27,13 +18,13 @@ je pars du principe que
         mkdir -p $b
         gitolite/install -to $b
         PATH="$b:$PATH"
-        gitolite setup -pk '$key
+        gitolite setup -pk ' $key
 
 recommencer: 
 
     deluser --remove-home git 
 
-### administration 
+## administration 
 
 depuis n'importe ou 
 
@@ -43,8 +34,7 @@ depuis n'importe ou
 maintenant il faut lire la doc sur
 [le fichier de conf et les clefs](http://gitolite.com/gitolite/admin.html#adminrepo) 
 
-
-#### hooks 
+### hooks 
 
 * mettre en place des hooks sur gitolite. la doc est [ici](http://gitolite.com/gitolite/cust.html)
 * truc simple pour lister/supprimer les depots
@@ -55,23 +45,12 @@ maintenant il faut lire la doc sur
     #!/bin/sh 
     GIT_WORK_TREE=/var/www/www.example.org git checkout -f  
 
-## git-extensions
+# git-extensions
 
 il faudrait pouvoir: 
 
 * virer le bouton donate
 * virer menu github
-* configurer `--depth` au moment du clone  
-
-# mutt 
-
-## organisation de la configuration
-
-TODO: expliquer mon wrapper `box` et l'utilisation de `$my_account`
-
-##  
-
-
-
+* configurer `--depth` au moment du clone
 
 
