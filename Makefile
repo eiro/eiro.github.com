@@ -7,15 +7,7 @@ all: FORCE $(webpages)
 FORCE:
 	perl6 bin/atom atom > atom.xml
 	perl6 bin/atom news > news.md
-	# (cd posts/2015; make )
-
-# # UGLY copy-past from previous lines, TODO: find a generic solution 
-# 
-# unixtips.html: unixtips
-# 	atombomb md $< | $(can_comment) > $@
-# 
-# unixtips.atom.xml: unixtips
-# 	atombomb atom $< > $@
+	cd posts/2015; make
 
 $(webpages): menu $(main_html_template)
 
