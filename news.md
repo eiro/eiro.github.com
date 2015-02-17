@@ -10,6 +10,7 @@ alternates:
 
 # 2015
 
+* [et celle-là, elle est digitale ?](posts/2015/et_celle_la_elle_est_digitale.html) (2015-02-17T12:55:06+01:00)
 * [Sympa Hackathon 1](posts/2015/Sympa_Hackathon_1.html) (2015-01-02T03:32:16+01:00)
 
 # 2014
