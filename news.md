@@ -12,6 +12,7 @@ alternates:
 
 * [et celle-là, elle est digitale ?](posts/2015/et_celle_la_elle_est_digitale.html) (2015-02-17T12:55:06+01:00)
 * [Sympa Hackathon 1](posts/2015/Sympa_Hackathon_1.html) (2015-01-02T03:32:16+01:00)
+* [Host your perl project on perlists](posts/2015/Host_your_perl_project_on_perlists.html) (2015-03-05T17:00:40+01:00)
 
 # 2014
 

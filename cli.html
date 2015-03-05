@@ -2,7 +2,7 @@
 <head><meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="./unsemantic.css" />
+<link rel="stylesheet" href="./unsemantic.css"/>
 <link rel="stylesheet" href="./theme.css" />
 <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
 
@@ -24,46 +24,37 @@
 <li><a href="perl.html">perl</a></li>
 <li><a href="cli.html">cli tools</a></li>
 <li><a href="sysop.html">sysop notes</a></li>
-<li><a href="opensxb.html">#opensxb</a></li>
 <li><a href="dump.html">core dump</a></li>
 </ul></section>
       <hr/>
       <nav id="TOC"><ul>
-<li><a href="#git-notes">git notes</a><ul>
 <li><a href="#gitolite">gitolite</a><ul>
-<li><a href="#installation">installation</a></li>
-<li><a href="#administration">administration</a></li>
+<li><a href="#administration">administration</a><ul>
+<li><a href="#hooks">hooks</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#git-extensions">git-extensions</a></li>
-</ul></li>
-<li><a href="#mutt">mutt</a><ul>
-<li><a href="#organisation-de-la-configuration">organisation de la configuration</a></li>
-<li><a href="#section"></a></li>
-</ul></li>
 </ul></nav>
 <a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a>
 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
   </div>
 <div class="grid-80"
-    ><section><h1 id="git-notes">git notes</h1>
-<h2 id="gitolite">gitolite</h2>
-<h3 id="installation">installation</h3>
-<p>comprendre comment <a href="http://gitolite.com/gitolite/how.html">gitolite marche</a> et lire <a href="http://gitolite.com/gitolite/qi.html">comment l'installer</a>. inspiré de la <a href="https://github.com/sitaramc/gitolite">doc d'install.</a></p>
+    ><section><h1 id="gitolite">gitolite</h1>
 <p>je pars du principe que</p>
 <ul>
 <li>je suis le sudoer <code>marc</code> sur la machine <code>deathstar</code>, je suis sur deathstar avec un agent ssh.</li>
 <li>gitolite sera dispo via <code>git@deathstar</code></li>
 <li><p>je serais admin de gitolite, connu par lui comme étant <code>eiro</code></p>
-<p>sudo adduser --disabled-password --home /srv/gitolite --shell /bin/sh git key=<sub>git/eiro.pub from=</sub>marc/.ssh/id_rsa.pub sudo install -o git $from <span class="math"><em>k</em><em>e</em><em>y</em><em>s</em><em>u</em><em>d</em><em>o</em> − <em>i</em> − <em>u</em><em>g</em><em>i</em><em>t</em> &lt;  &lt;  &lt; ′<em>s</em><em>e</em><em>t</em> − <em>e</em><em>b</em> = </span>HOME/bin git clone https://github.com/sitaramc/gitolite.git mkdir -p $b gitolite/install -to <span class="math">$b  PATH=&quot;$</span>b:<span class="math">$PATH&quot;  gitolite setup -pk '$</span>key</p></li>
+<p>sudo adduser --disabled-password --home /srv/gitolite --shell /bin/sh git key=<sub>git/eiro.pub from=</sub>marc/.ssh/id_rsa.pub sudo install -o git $from <span class="math"><em>k</em><em>e</em><em>y</em><em>s</em><em>u</em><em>d</em><em>o</em> − <em>i</em> − <em>u</em><em>g</em><em>i</em><em>t</em> &lt;  &lt;  &lt; ′<em>s</em><em>e</em><em>t</em> − <em>e</em><em>b</em> = </span>HOME/bin git clone https://github.com/sitaramc/gitolite.git mkdir -p $b gitolite/install -to <span class="math">$b  PATH=&quot;$</span>b:$PATH&quot; gitolite setup -pk ' $key</p></li>
 </ul>
 <p>recommencer:</p>
 <pre><code>deluser --remove-home git </code></pre>
-<h3 id="administration">administration</h3>
+<h2 id="administration">administration</h2>
 <p>depuis n'importe ou</p>
 <pre><code>git clone git@deathstar:gitolite-admin death
 cd death </code></pre>
 <p>maintenant il faut lire la doc sur <a href="http://gitolite.com/gitolite/admin.html#adminrepo">le fichier de conf et les clefs</a></p>
-<h4 id="hooks">hooks</h4>
+<h3 id="hooks">hooks</h3>
 <ul>
 <li>mettre en place des hooks sur gitolite. la doc est <a href="http://gitolite.com/gitolite/cust.html">ici</a></li>
 <li>truc simple pour lister/supprimer les depots</li>
@@ -71,17 +62,13 @@ cd death </code></pre>
 <li><p>hooks pour differ les .doc ?</p>
 <p>$ cat &gt; hooks/common/post-receive #!/bin/sh GIT_WORK_TREE=/var/www/www.example.org git checkout -f</p></li>
 </ul>
-<h2 id="git-extensions">git-extensions</h2>
+<h1 id="git-extensions">git-extensions</h1>
 <p>il faudrait pouvoir:</p>
 <ul>
 <li>virer le bouton donate</li>
 <li>virer menu github</li>
 <li>configurer <code>--depth</code> au moment du clone</li>
-</ul>
-<h1 id="mutt">mutt</h1>
-<h2 id="organisation-de-la-configuration">organisation de la configuration</h2>
-<p>TODO: expliquer mon wrapper <code>box</code> et l'utilisation de <code>$my_account</code></p>
-<h2 id="section"></h2><span class="dynamic-px-width"></span></section></div> 
+</ul><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>
