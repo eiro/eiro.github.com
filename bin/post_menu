@@ -62,10 +62,12 @@ func send_comment (%the) {
     join '<br/>'
     , (link_to "comment this post"
         , mailto_url %link )
-    , (link_to "archived comments"
+    , (link_to "see other comments"
         , sympa_archive $the{sympa}, \%link )
-    , (link_to "subscribe to the mailing list"
+    , (link_to "stay tuned"
         , subscribe $the{sympa} )
+    , (link_to "other news" , "/news.html" )
+    , (link_to "the author" , "/" )
 }
 
 say send_comment 
