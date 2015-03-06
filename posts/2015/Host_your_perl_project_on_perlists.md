@@ -44,7 +44,7 @@ Si vous avez des questions sur l'utilisation de
 
 Au plaisir de vous lire bientot sur Perlists.
 
-[david]:img/talks/14/yapc-eu/david_verdin.png
+[david]:/img/talks/14/yapc-eu/david_verdin.png
 ![David Verdin, YAPC::Europe 2013][david]
 
 
