@@ -6,12 +6,13 @@ direction informatique de l'[unistra](http://www.unistra.fr) ou je travaille.
 
 Il reste quelques jours avant la cloture des CfP pour les
 [JRES 2015](https://www.jres.org/en) et faute d'avoir des sujets plus en
-raccord avec l'audience (que je crois peu technique) de l'évenement, j'ai une
-soudaine envie de posters (ou de présentations format lightning talks). Voilà
-donc qq idées que je partage avec vous histoire de récolter vos avis.
-n'hésitez pas à me faire parvenir vos remarques (et meme vos [pull
-requests](https://github.com/eiro/eiro.github.com/)). Lequel présenter? les
-approches et thèmes sont ils-bons ? autres remarques ? D) réponse D? 
+raccord avec l'audience de l'évenement et mon travail quotidien de hotliner
+surpayé, j'ai une soudaine envie de posters (ou de présentations format
+lightning talks). Voilà donc qq idées que je partage avec vous histoire de
+récolter vos avis.  n'hésitez pas à me faire parvenir vos remarques (et meme
+vos [pull requests](https://github.com/eiro/eiro.github.com/)). Lequel
+présenter? les approches et thèmes sont ils-bons ? autres remarques ? D)
+réponse D? 
 
 # L'écosystème perl, le paradis des administrateur
 
