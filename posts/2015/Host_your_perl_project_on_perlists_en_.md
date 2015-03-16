@@ -4,7 +4,7 @@ In order to support the Perl community, the
 french "Research and Education Network" ([RENATER](http://renater.fr))
 hosts [Perlists](https://groups.perlists.pm/sympa), 
 a free mailing list infrastructure based on 
-[Sympa](http://wwww.sympa.org). [London.pm](http://london.pm/)
+[Sympa](http://www.sympa.org). [London.pm](http://london.pm/)
 recently moved their lists on it and you should do the same if you need a free, 
 simple and powerfull way to manage mailing lists and working groups for a perl
 related project.
