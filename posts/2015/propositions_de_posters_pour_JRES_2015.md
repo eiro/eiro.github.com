@@ -46,7 +46,7 @@ directement en passant par le webscrapping et l'utilisation de "sympa.pl", j'ai
 tout tenté en attendant la prochaine version majeure de Sympa et son API REST.
 
 Ce poster présente les avantages et inconvenients de chaques méthodes, les
-bonnes et mauvaises surprises que m'a réserver sympa, mes espoirs et idées pour
+bonnes et mauvaises surprises que m'a réserve sympa, mes espoirs et idées pour
 la prochaine version.
 
 # vim, la console d'administation qui vous manquait
