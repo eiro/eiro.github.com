@@ -15,6 +15,7 @@ alternates:
 * [Host your perl project on perlists ](posts/2015/Host_your_perl_project_on_perlists.html) (2015-03-05T17:00:40+01:00)
 * [Host your perl project on perlists (en)](posts/2015/Host_your_perl_project_on_perlists_en_.html) (2015-03-06T19:12:22+01:00)
 * [propositions de posters pour JRES 2015](posts/2015/propositions_de_posters_pour_JRES_2015.html) (2015-03-16T21:29:24+01:00)
+* [A strange bug in Scrappy (or Moose?)](posts/2015/A_strange_bug_in_Scrappy.html) (2015-03-26T22:41:29+01:00)
 
 # 2014
 
