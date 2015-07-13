@@ -1,70 +1,16 @@
 % Dump ideas … as it comes
 
-# lectures
+# Why isn't perl so popular
 
-listes de liens conceptuellement intéressants le jour ou j'aurais du temps pour
-ces sujet (si un jour ...).
+* lot of trolls outthere
+  * unfair compares based on a lost unix culture
+  * syntaxes are awesome but unreadable
+  * we grown up with those, the youth grown up with windows
+* hello_world.py celebration vs Perl Masons
+* our ecosystem is stong and lack of entry points
+* Ironman: more echo chamber! PerlWeekly: not distributed
 
-## os et vms
-
-parceque base de code plus simple à étudier et bonne idée pour déployer massivement? 
-(plan9, nqp, moarvm, ...), non lu:
-
-* [yalo](https://github.com/whily/yalo) me rappelle un truc identique en haskell
-
-## suckless
-
-* [xerox PARC](https://www.youtube.com/watch?v=c6SUOeAqOjU): root of all evil? 
-
-# posts 
-
-trame des prochains posts (en réponse a des questions posées de ci de là) 
-
-* SPORE::Fast ? 
-* entity model: more acmeism! http://entitymodel.com/ ?  
-* Dokuwiki client
-* vote for next posts ? 
-* vim + rt + zsh + mutt : my terminal toolchain for rt
-
-## about operating systems
-
-the Microsoft positions about standards, privacy, security (DRMs, full
-disclosure, …) may keep us trying to remember how they treat the computer users
-and industry when they were in a state of egemony and how they would treat us
-today. 
-
-* windows
-  * retrouver les notes prises a fosdem
-  * registry hacks
-  * strawberry + cpanm + Prima 
-  * Powershell vs replude
-* macos 
-  * le pire rapport qualité/prix de l'histoire d'unix
-    * proprio
-    * cher
-    * l'approche Next parait dépassé si on pense en terme de packaging.
-      pe lire un peu plus ? 
-    * ruby vs appletalk ? 
-    * automator? 
-  * merci apple quand meme (avec google) d'avoir mis fin a l'égémonie de microsoft
-
-## choose your 
-
-* shell (tcsh, dash, mksh, bash, zsh, powershell, replude)
-* linux distribution
-* editor
-* scripting langage
-
-## CPAN est une partie du pb
-
-* lightning talk (Paris 2011) -> image pitoresque
-  * 3 ans plus tard: rien de fait
-* dans les mondes ruby et python
-  * unfair comparaisons 
-  * hello_world.py celebration vs Perl Masons
-* Ironman: more echo chamber! 
-
-CPAN pour nous: heaven
+## CPAN 
 
 * un outils indispensable parceque nous savons
   * ce qu'est CPAN
@@ -123,8 +69,6 @@ fix ?
   * unix shell (stateless et monadic)
   * no more Moore
 
-## replude? fpw ? yapc europe ? 
-
 # links and stuff
 
 ## on training
@@ -144,7 +88,23 @@ fix ?
 
 sooo... needs of [kineticjs](http://kineticjs.com/) anyone ? 
 
-## i wish i'd read later
+# Screencasts
 
+## découpage de fichiers `.ts` avec `dd`
 
+soit
 
+* `source.ts` le fichier enregistrement
+* `target.ts` la sous-partie de `source.ts` a isoler
+* `n` la taille en `bs` (ici 4Mo) de toutes les sous-parties précédentes
+* `m` la taille de la présente sous-partie
+
+la commande 
+
+    dd if=source.ts of=target.ts bs=4M skip=n count=m
+
+produit le nouveau ts.
+
+le resultat d'un encodage video n'étant pas linéaire en taille, il faut découper
+par un découpage empirique (générer des vignettes avec vlc aiderait pe). 
+On peut jouer sur la taille du bs pour avoir plus ou moins de précision.
