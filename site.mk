@@ -1,5 +1,6 @@
 .POSIX:
 .SUFFIXES: .md .html
+SHELL=/bin/zsh
 
 mdpages  = $(wildcard *.md)
 webpages = ${mdpages:.md=.html}
