@@ -10,6 +10,11 @@ those are my tips to make your shell scripts better, HTH.
 
 # Global stragegy
 
+## read articles on KISS principles and the unix philosophy
+
+[cat-v](http://cat-v.org/) has a very well currated collection of links and
+papers about it. Also, Rob Pike's talk on this subject are really inspiring.
+
 ## Choose your shell
 
 * if memory is a critical ressource, use mksh or rc
@@ -21,10 +26,6 @@ those are my tips to make your shell scripts better, HTH.
 I didn't mention bash, dash or any member or the csh familly because i think
 there is no point using them as another thing as a fallback.
 
-## read articles on KISS principles and the unix philisophy
-
-[cat-v](http://cat-v.org/) has a very well currated collection of links and
-papers about it. Also, Rob Pike's talk on this subject are really inspiring. 
 
 ## Don't take portability too seriously
 
@@ -53,7 +54,7 @@ very first guess will be wrong:
 
     grep $1 /etc/passwd
 
-latter you'll fix
+later you'll fix
 
     sed -n "/^$1:/{
         p
