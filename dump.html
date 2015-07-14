@@ -29,23 +29,18 @@
 </ul></section>
       <hr/>
       <nav id="TOC"><ul>
-<li><a href="#lectures">lectures</a><ul>
-<li><a href="#os-et-vms">os et vms</a></li>
-<li><a href="#suckless">suckless</a></li>
-</ul></li>
-<li><a href="#posts">posts</a><ul>
-<li><a href="#about-operating-systems">about operating systems</a></li>
-<li><a href="#choose-your">choose your</a></li>
-<li><a href="#cpan-est-une-partie-du-pb">CPAN est une partie du pb</a></li>
+<li><a href="#why-isnt-perl-so-popular">Why isn't perl so popular</a><ul>
+<li><a href="#cpan">CPAN</a></li>
 <li><a href="#de-lenseignement-de-linformatique">de l'enseignement de l'informatique</a></li>
-<li><a href="#replude-fpw-yapc-europe">replude? fpw ? yapc europe ?</a></li>
 </ul></li>
 <li><a href="#links-and-stuff">links and stuff</a><ul>
 <li><a href="#on-training">on training</a></li>
 <li><a href="#on-web-dev">on web dev</a><ul>
 <li><a href="#go-to-d3">go to D3</a></li>
 </ul></li>
-<li><a href="#i-wish-id-read-later">i wish i'd read later</a></li>
+</ul></li>
+<li><a href="#screencasts">Screencasts</a><ul>
+<li><a href="#découpage-de-fichiers-.ts-avec-dd">découpage de fichiers <code>.ts</code> avec <code>dd</code></a></li>
 </ul></li>
 </ul></nav><pre style="background-color: white">
 <a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a> 
@@ -63,62 +58,17 @@
 </pre>
   </div>
 <div class="grid-80"
-    ><h1>Dump ideas … as it comes</h1><section><h1 id="lectures">lectures</h1>
-<p>listes de liens conceptuellement intéressants le jour ou j'aurais du temps pour ces sujet (si un jour ...).</p>
-<h2 id="os-et-vms">os et vms</h2>
-<p>parceque base de code plus simple à étudier et bonne idée pour déployer massivement? (plan9, nqp, moarvm, ...), non lu:</p>
+    ><h1>Dump ideas … as it comes</h1><section><h1 id="why-isnt-perl-so-popular">Why isn't perl so popular</h1>
 <ul>
-<li><a href="https://github.com/whily/yalo">yalo</a> me rappelle un truc identique en haskell</li>
-</ul>
-<h2 id="suckless">suckless</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=c6SUOeAqOjU">xerox PARC</a>: root of all evil?</li>
-</ul>
-<h1 id="posts">posts</h1>
-<p>trame des prochains posts (en réponse a des questions posées de ci de là)</p>
-<ul>
-<li>SPORE::Fast ?</li>
-<li>entity model: more acmeism! http://entitymodel.com/ ?<br /></li>
-<li>Dokuwiki client</li>
-<li>vote for next posts ?</li>
-<li>vim + rt + zsh + mutt : my terminal toolchain for rt</li>
-</ul>
-<h2 id="about-operating-systems">about operating systems</h2>
-<p>the Microsoft positions about standards, privacy, security (DRMs, full disclosure, …) may keep us trying to remember how they treat the computer users and industry when they were in a state of egemony and how they would treat us today.</p>
-<ul>
-<li>windows</li>
-<li>retrouver les notes prises a fosdem</li>
-<li>registry hacks</li>
-<li>strawberry + cpanm + Prima</li>
-<li>Powershell vs replude</li>
-<li>macos</li>
-<li>le pire rapport qualité/prix de l'histoire d'unix
-<ul>
-<li>proprio</li>
-<li>cher</li>
-<li>l'approche Next parait dépassé si on pense en terme de packaging. pe lire un peu plus ?</li>
-<li>ruby vs appletalk ?</li>
-<li>automator?</li>
-</ul></li>
-<li>merci apple quand meme (avec google) d'avoir mis fin a l'égémonie de microsoft</li>
-</ul>
-<h2 id="choose-your">choose your</h2>
-<ul>
-<li>shell (tcsh, dash, mksh, bash, zsh, powershell, replude)</li>
-<li>linux distribution</li>
-<li>editor</li>
-<li>scripting langage</li>
-</ul>
-<h2 id="cpan-est-une-partie-du-pb">CPAN est une partie du pb</h2>
-<ul>
-<li>lightning talk (Paris 2011) -&gt; image pitoresque</li>
-<li>3 ans plus tard: rien de fait</li>
-<li>dans les mondes ruby et python</li>
-<li>unfair comparaisons</li>
+<li>lot of trolls outthere</li>
+<li>unfair compares based on a lost unix culture</li>
+<li>syntaxes are awesome but unreadable</li>
+<li>we grown up with those, the youth grown up with windows</li>
 <li>hello_world.py celebration vs Perl Masons</li>
-<li>Ironman: more echo chamber!</li>
+<li>our ecosystem is stong and lack of entry points</li>
+<li>Ironman: more echo chamber! PerlWeekly: not distributed</li>
 </ul>
-<p>CPAN pour nous: heaven</p>
+<h2 id="cpan">CPAN</h2>
 <ul>
 <li>un outils indispensable parceque nous savons</li>
 <li>ce qu'est CPAN</li>
@@ -177,7 +127,6 @@
 <li>unix shell (stateless et monadic)</li>
 <li><p>no more Moore</p></li>
 </ul>
-<h2 id="replude-fpw-yapc-europe">replude? fpw ? yapc europe ?</h2>
 <h1 id="links-and-stuff">links and stuff</h1>
 <h2 id="on-training">on training</h2>
 <ul>
@@ -191,7 +140,19 @@
 <h3 id="go-to-d3">go to D3</h3>
 <p><a href="http://d3js.org/">D3</a> js data-driven documents and <a href="http://keminglabs.com/c2/">C2</a> clojurescript counterpart are awesome. <a href="https://github.com/mbostock/d3/wiki/Tutorials">tutorials there</a>.</p>
 <p>sooo... needs of <a href="http://kineticjs.com/">kineticjs</a> anyone ?</p>
-<h2 id="i-wish-id-read-later">i wish i'd read later</h2><span class="dynamic-px-width"></span></section></div> 
+<h1 id="screencasts">Screencasts</h1>
+<h2 id="découpage-de-fichiers-.ts-avec-dd">découpage de fichiers <code>.ts</code> avec <code>dd</code></h2>
+<p>soit</p>
+<ul>
+<li><code>source.ts</code> le fichier enregistrement</li>
+<li><code>target.ts</code> la sous-partie de <code>source.ts</code> a isoler</li>
+<li><code>n</code> la taille en <code>bs</code> (ici 4Mo) de toutes les sous-parties précédentes</li>
+<li><code>m</code> la taille de la présente sous-partie</li>
+</ul>
+<p>la commande</p>
+<pre><code>dd if=source.ts of=target.ts bs=4M skip=n count=m</code></pre>
+<p>produit le nouveau ts.</p>
+<p>le resultat d'un encodage video n'étant pas linéaire en taille, il faut découper par un découpage empirique (générer des vignettes avec vlc aiderait pe). On peut jouer sur la taille du bs pour avoir plus ou moins de précision.</p><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>
