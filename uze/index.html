@@ -5,52 +5,53 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
-  <body><h2 id="uze">uze</h2>
+  <body><p>: &lt;&lt;'=cut'</p>
+<p>=head1 uze</p>
 <p>uze is my attempt to organize my zsh environment into libraries that can be shared and loaded when needed.</p>
-<p>sources for the project are available on <a href="https://github.com/eiro/uze">my github</a>.</p>
-<h3 id="uze-is-just-a-convention">uze is just a convention</h3>
-<p>zsh can source any file from the <code>$path</code>. so when you write</p>
+<p>sources for the project are available on L<my github|https://github.com/eiro/uze>.</p>
+<p>=head2 uze is just a convention</p>
+<p>zsh can source any file from the C&lt;$path&gt;. so when you write</p>
 <pre><code>. mylib</code></pre>
-<p>zsh will find <code>mylib</code> whereever in the <code>$path</code>. in addition, you can setopt <code>pathdirs</code> to permit zsh to use commands and source files in subdirs so you can now write</p>
+<p>zsh will find C<mylib> whereever in the C&lt;$path&gt;. in addition, you can setopt C<pathdirs> to permit zsh to use commands and source files in subdirs so you can now write</p>
 <pre><code>. company/std</code></pre>
-<p>if there is a directory in your <code>$path</code> that contains a subdirectory <code>company</code> with a <code>std</code> in it.</p>
-<p>as example, if <code>~/bin</code> is in your <code>$path</code>, you can store your functions into <code>~/bin/company/std</code> then source them by typing</p>
+<p>if there is a directory in your C&lt;$path&gt; that contains a subdirectory C<company> with a C<std> in it.</p>
+<p>as example, if C&lt;~/bin&gt; is in your C&lt;$path&gt;, you can store your functions into C&lt;~/bin/company/std&gt; then source them by typing</p>
 <pre><code>. company/std</code></pre>
-<h3 id="my-own-uze">(my own) uze</h3>
-<p>my <code>uze</code> file does some setopt that add warnings when missusing variable</p>
+<p>=head2 (my own) uze</p>
+<p>my C<uze> file does some setopt that add warnings when missusing variable</p>
 <pre><code>setopt warncreateglobal nounset</code></pre>
 <p>it also activate extended globs and brace expansions</p>
 <pre><code>setopt extendedglob braceccl</code></pre>
 <p>then it loads some functions that i use so commonly they became first class citizem of my scripting</p>
-<h4 id="shush-shush1-shush2">shush, shush1, shush2</h4>
+<p>=head3 shush, shush1, shush2</p>
 <p>shush redirect all content of stderr and stdout to /dev/null so you can run command silently.</p>
 <p>but sometime you need something to show: shush1 remove only stdout while shush2 removes only stderr.</p>
-<h4 id="warn">warn</h4>
-<p>warn prints a message in stderr without changing the last command return (<code>$?</code>).</p>
-<h4 id="die">die</h4>
+<p>=head3 warn</p>
+<p>warn prints a message in stderr without changing the last command return (C&lt;$?&gt;).</p>
+<p>=head3 die</p>
 <p>die warns and exit.</p>
-<h4 id="fill">fill</h4>
+<p>=head3 fill</p>
 <p>read multiple lines into a list of variables</p>
 <pre><code>date +&quot;%Y\n%m&quot; | fill year month
 echo $year</code></pre>
-<h4 id="slurp">slurp</h4>
+<p>=head3 slurp</p>
 <p>read multiple lines in an array</p>
 <pre><code>getent passwd | slurp users
 print &quot;entry of root is&quot; $users[1]</code></pre>
-<h4 id="uzu-ns-symbols">uzu $ns $symbols[@]</h4>
-<p>asuming you have a file named <code>foo/bar</code> or <code>uze/foo/bar</code> somewhere in your <code>$path</code></p>
+<p>=head3 uzu $ns $symbols[@]</p>
+<p>asuming you have a file named C<foo/bar> or C<uze/foo/bar> somewhere in your C&lt;$path&gt;</p>
 <pre><code>uzu foo/bar tic tac</code></pre>
 <p>will</p>
 <pre><code>. foo/bar
 alias tic=foo/bar/tic
 alias tac=foo/bar/tac</code></pre>
-<p>Note there is nothing like the perl <code>Exporter</code> equivalent but this would be possible. i just have to figure out a good way to do it.</p>
-<h2 id="fatpacking">FATPACKING</h2>
-<p>if you don't want to deploy scripts via distribution tarballs or git repositories, you can fatpack (this is an idea stolen from <a href="https://metacpan.org/pod/App::FatPacker">App::Fatpacker</a>) modules in a large self-contained files.</p>
-<p>Fatpacking local files using <code>cat</code>:</p>
+<p>Note there is nothing like the perl C<Exporter> equivalent but this would be possible. i just have to figure out a good way to do it.</p>
+<p>=head1 FATPACKING</p>
+<p>if you don't want to deploy scripts via distribution tarballs or git repositories, you can fatpack (this is an idea stolen from L<App::Fatpacker|https://metacpan.org/pod/App::FatPacker>) modules in a large self-contained files.</p>
+<p>Fatpacking local files using C<cat>:</p>
 <pre><code>cd path/to/my/uze
 cat uze devel/TAP openssl mir &gt; fatpacked.zshenv</code></pre>
-<p>Fatpacking distant files using <code>curl</code>:</p>
+<p>Fatpacking distant files using C<curl>:</p>
 <pre><code>for lib ( uze devel/TAP openssl mir ) { 
     curl -sL https://raw.githubusercontent.com/eiro/uze/master/$lib
 } &gt; fatpacked.zshenv</code></pre>
@@ -61,78 +62,105 @@ https://raw.githubusercontent.com/eiro/uze/master/devel/TAP
 https://raw.githubusercontent.com/eiro/uze/master/openssl
 https://raw.githubusercontent.com/eiro/uze/master/mir
 LIBs</code></pre>
-<h2 id="awk-tools">awk tools</h2>
-<h3 id="awknew">awk/new</h3>
-<p>wraps awk with named fields</p>
-<pre><code>. uze/awk
-awk/new apwd login pwd uid gid gecos home shell -- -F: 
-getent passwd | apwd &#39;$login == &quot;root&quot; { print $shell }&#39;</code></pre>
-<h3 id="debianrepoupdate">debian/repo/update</h3>
-<p>Rewrite the <code>Packages.gz</code> of the current directory</p>
-<h2 id="usage">Usage</h2>
-<ul>
-<li>write your test suite in a function (using |&amp;: to not ruin the report)</li>
-<li>devel/TAP/prove this test suite</li>
-</ul>
-<h2 id="example">Example</h2>
-<p>see the output at the end of the section</p>
-<pre><code>. uze/devel/TAP
+<p>=cut</p>
+<p>setopt warncreateglobal nounset extendedglob braceccl pathdirs</p>
+<p>shush1 () { &quot;<span class="math">$@&quot; 1&gt; /dev/null } shush2 () { &quot;$</span>@&quot; 2&gt; /dev/null } shush () { &quot;<span class="math">$@&quot; &amp;&gt; /dev/null } warn () { local r=$</span>?; print -u2 &quot;$<em>&quot;; return <span class="math">$r } die () { local r=$</span>?; print -u2 &quot;$</em>&quot;; exit <span class="math">$r } slurp () { IFS=$</span>'' read -d '' -A <span class="math">$1 } fill () { local garbage; IFS=$</span>'' read -d '' &quot;$@&quot; garbage }</p>
+<p>uzu/alias () { local uzu_al for uzu_al { alias <span class="math"><em>u</em><em>z</em><em>u</em><sub><em>a</em></sub><em>l</em> = </span>uzu_ns/$uzu_al } }</p>
+<p>uzu () {</p>
+<pre><code>local uzu_ns=$1 uzu_does
+shift
+typeset -a uzu_can
+uzu_can=( ${^path}/{,uze/}$uzu_ns(N) )
 
-# alias
-for REPLY (note ok prove)
-    alias $REPLY=devel/TAP/$REPLY
-
-test_multios () { 
-
-    note &quot;create temporary files&quot; 
-
-    local a b
-    a=`mktemp` b=`mktemp` 
-
-    [[ -f $a ]]; ok &quot;mktemp a worked fine&quot;
-    [[ -f $b ]]; ok &quot;mktemp b worked fine&quot;
-
-    note &quot;the actual use of multios redirection&quot;
-    echo foo &gt; $a &gt; $b  
-
-    cmp $a $b; ok &quot;files are the same&quot;  
-    
-    note &quot;removing temp files&quot;
-    rm $a $b |&amp;:
+((#uzu_can)) || {
+    warn &quot;can&#39;t find $uzu_ns in \$path&quot;
+    return
 }
 
-prove test_multios</code></pre>
-<p>if setopt is activated, you'll see</p>
-<pre><code># create temporary files
-ok 1 - mktemp a worked fine
-ok 2 - mktemp b worked fine
-# the actual use of multios redirection
-ok 3 - files are the same
-# removing temp files
-1..3</code></pre>
-<h2 id="entry">entry</h2>
-<p>transform a title read from stdin or in &quot;$@&quot; to an index entry in the blog posts directories of eiro.github.io.</p>
-<h2 id="ldapfilter-functions">ldap/filter functions</h2>
-<h3 id="minify">minify</h3>
-<p>transform human readable version of an ldap query to a program readable one by removing all extra spaces and line returns. so</p>
-<pre><code>(| (uid=a)
-   (uid=b)) </code></pre>
-<p>is minified as</p>
-<pre><code>(|(uid=a)(uid=b))</code></pre>
-<h3 id="oneof">oneOf</h3>
-<p>prepare (|(uid=a)(uid=b))</p>
-<h2 id="micro-mailing-list-format">micro Mailing-List format</h2>
-<p>when the first bareword of each lines is an email adress, everything else is up to you.</p>
-<p>so it can be a contact list, a list of data for a template placeholder, ...</p>
-<h3 id="t_to">T_/to</h3>
-<p>transform a muml stream to a To: field (usefull in mutt, for example)</p>
-<h2 id="query-httpannaire.unistra.frchercher">query http://annaire.unistra.fr/chercher</h2>
-<p>is a form to query the University of Strasbourg Yellow Page this uze provide wrappers and filters on it</p>
-<p>unistra/annuaire/search lynx dumps a result of a search</p>
-<pre><code>parameters are 
-p: firstname (prenom)
-n: lastname  (name)
-s: structure name </code></pre>
-<p>in most cases, you don't want the whole page, so we have helpers and filters: unistra/annuaire/cards for complete informations about found people unistra/annuaire/emails for just emails</p>
-<p>as example, you can find me with unistra/annuaire/cards p marc m chant</p><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script></body>
+. $uzu_can[1]
+typeset -a UZU_EXPORT
+local uzu_exporter=uzu/$uzu_ns  
+if {shush which $uzu_exporter} {
+    if {$uzu_exporter $@} { uzu/alias $UZU_EXPORT }
+} else { uzu/alias $@ }</code></pre>
+<p>}</p>
+<p>: &lt;&lt;'=cut'</p>
+<p>=head1 uze</p>
+<p>uze is my attempt to organize my zsh environment into libraries that can be shared and loaded when needed.</p>
+<p>sources for the project are available on L<my github|https://github.com/eiro/uze>.</p>
+<p>=head2 uze is just a convention</p>
+<p>zsh can source any file from the C&lt;$path&gt;. so when you write</p>
+<pre><code>. mylib</code></pre>
+<p>zsh will find C<mylib> whereever in the C&lt;$path&gt;. in addition, you can setopt C<pathdirs> to permit zsh to use commands and source files in subdirs so you can now write</p>
+<pre><code>. company/std</code></pre>
+<p>if there is a directory in your C&lt;$path&gt; that contains a subdirectory C<company> with a C<std> in it.</p>
+<p>as example, if C&lt;~/bin&gt; is in your C&lt;$path&gt;, you can store your functions into C&lt;~/bin/company/std&gt; then source them by typing</p>
+<pre><code>. company/std</code></pre>
+<p>=head2 (my own) uze</p>
+<p>my C<uze> file does some setopt that add warnings when missusing variable</p>
+<pre><code>setopt warncreateglobal nounset</code></pre>
+<p>it also activate extended globs and brace expansions</p>
+<pre><code>setopt extendedglob braceccl</code></pre>
+<p>then it loads some functions that i use so commonly they became first class citizem of my scripting</p>
+<p>=head3 shush, shush1, shush2</p>
+<p>shush redirect all content of stderr and stdout to /dev/null so you can run command silently.</p>
+<p>but sometime you need something to show: shush1 remove only stdout while shush2 removes only stderr.</p>
+<p>=head3 warn</p>
+<p>warn prints a message in stderr without changing the last command return (C&lt;$?&gt;).</p>
+<p>=head3 die</p>
+<p>die warns and exit.</p>
+<p>=head3 fill</p>
+<p>read multiple lines into a list of variables</p>
+<pre><code>date +&quot;%Y\n%m&quot; | fill year month
+echo $year</code></pre>
+<p>=head3 slurp</p>
+<p>read multiple lines in an array</p>
+<pre><code>getent passwd | slurp users
+print &quot;entry of root is&quot; $users[1]</code></pre>
+<p>=head3 uzu $ns $symbols[@]</p>
+<p>asuming you have a file named C<foo/bar> or C<uze/foo/bar> somewhere in your C&lt;$path&gt;</p>
+<pre><code>uzu foo/bar tic tac</code></pre>
+<p>will</p>
+<pre><code>. foo/bar
+alias tic=foo/bar/tic
+alias tac=foo/bar/tac</code></pre>
+<p>Note there is nothing like the perl C<Exporter> equivalent but this would be possible. i just have to figure out a good way to do it.</p>
+<p>=head1 FATPACKING</p>
+<p>if you don't want to deploy scripts via distribution tarballs or git repositories, you can fatpack (this is an idea stolen from L<App::Fatpacker|https://metacpan.org/pod/App::FatPacker>) modules in a large self-contained files.</p>
+<p>Fatpacking local files using C<cat>:</p>
+<pre><code>cd path/to/my/uze
+cat uze devel/TAP openssl mir &gt; fatpacked.zshenv</code></pre>
+<p>Fatpacking distant files using C<curl>:</p>
+<pre><code>for lib ( uze devel/TAP openssl mir ) { 
+    curl -sL https://raw.githubusercontent.com/eiro/uze/master/$lib
+} &gt; fatpacked.zshenv</code></pre>
+<p>or</p>
+<pre><code>xargs -n1 curl -sL &lt;&lt;LIBs &gt; fatpacked.zshenv
+https://raw.githubusercontent.com/eiro/uze/master/uze
+https://raw.githubusercontent.com/eiro/uze/master/devel/TAP
+https://raw.githubusercontent.com/eiro/uze/master/openssl
+https://raw.githubusercontent.com/eiro/uze/master/mir
+LIBs</code></pre>
+<p>=cut</p>
+<p>setopt warncreateglobal nounset extendedglob braceccl pathdirs</p>
+<p>shush1 () { &quot;<span class="math">$@&quot; 1&gt; /dev/null } shush2 () { &quot;$</span>@&quot; 2&gt; /dev/null } shush () { &quot;<span class="math">$@&quot; &amp;&gt; /dev/null } warn () { local r=$</span>?; print -u2 &quot;$<em>&quot;; return <span class="math">$r } die () { local r=$</span>?; print -u2 &quot;$</em>&quot;; exit <span class="math">$r } slurp () { IFS=$</span>'' read -d '' -A <span class="math">$1 } fill () { local garbage; IFS=$</span>'' read -d '' &quot;$@&quot; garbage }</p>
+<p>uzu/alias () { local uzu_al for uzu_al { alias <span class="math"><em>u</em><em>z</em><em>u</em><sub><em>a</em></sub><em>l</em> = </span>uzu_ns/$uzu_al } }</p>
+<p>uzu () {</p>
+<pre><code>local uzu_ns=$1 uzu_does
+shift
+typeset -a uzu_can
+uzu_can=( ${^path}/{,uze/}$uzu_ns(N) )
+
+((#uzu_can)) || {
+    warn &quot;can&#39;t find $uzu_ns in \$path&quot;
+    return
+}
+
+. $uzu_can[1]
+typeset -a UZU_EXPORT
+local uzu_exporter=uzu/$uzu_ns  
+if {shush which $uzu_exporter} {
+    if {$uzu_exporter $@} { uzu/alias $UZU_EXPORT }
+} else { uzu/alias $@ }</code></pre>
+<p>}</p><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script></body>
 </html>
