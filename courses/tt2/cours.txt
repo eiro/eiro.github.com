@@ -1,0 +1,41 @@
+% Intro a Template Toolkit
+
+en introduction:
+
+* l'extension `tt2` est courament usité pour les 
+  fichiers contenant des templates au format Template Toolkit.
+  par abus de langage, je parle de "fichiers tt2" dans la présente doc.
+* tpage interprete les fichiers tt2 
+
+pour commencer, affichons "hello world". dans le reste de la doc, je
+
+
+
+[%
+
+FILTER loc = html; END;
+"haha"|loc;
+
+BLOCK page;
+    INCLUDE widget/menu;
+    INCLUDE widget/$optional IF optional;
+    IF user.is_admin; INCLUDE widget/admin/panel; END;
+    INCLUDE widget/panel; 
+    content;
+    INCLUDE widget/footer;
+END;
+
+WRAPPER page title="mon website kikoo"; "hahaah"; END;
+WRAPPER page+foo  title="mon website kikoo"; "hahaah"; END;
+
+BLOCK foo; "<foo>$content</foo>" END;
+BLOCK bar; "<bar>$content</bar>" END;
+
+WRAPPER foo;
+    WRAPPER bar;
+        "hello world"
+    END;
+ENDi;
+
+WRAPPER foo+bar; "hello world"; END;
+
