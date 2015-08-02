@@ -1,64 +1,110 @@
 % About me
 
-As we all have to introduce ourselves when we join a community, i was bored of
-copy/pasting or very incomplete presentations so this page is my clipboard.
-
-I'm always ready to speak of one of those topics or 
+As we all have to introduce ourselves when we join a community, i was bored to
+copy/paste partial descriptions of me, written with de mood of the day.
+This page are informations on me which was already usefull to tell.
 
 # My live
+
+I'm maried and got 2 beloved children (pre-teenagers).
  
-* I live at Strasbourg, France (very close to a decent country)
-* I work as product manager at the local University
-* I have children (since 2003 and 2004)
-* I'm "ethical vegetarian" since 2008, wannabe vegan and activist at some point.
-* I am linux used and member of OSS community since circa 1995 (both for
-  ethical and technical reasons)
+I live at Strasbourg, France (very close to a decent country)
+work as IT production manager at _UNISTRA, the local University.
+This is not a very technical position but my coworkers are awesome.
 
-# as member of the OSS community
+I'm "ethical vegetarian" since 2008, wannabe vegan and activist at some point.
+[Earthlings](http://earthlings.com) reflects my position. But i don't judge
+anyone as i'm guitly, myself, not beeing vegan.
 
-I'm an open source contributor, mainly by providing patches and bugs
-in various projects i use (i was payed for those in koha and sympa).
+I am linux user and member of free software community since circa 1995 (both
+for ethical and technical reasons).
 
-I authored and i maintain some modules on CPAN, wrote cpan2port, have some
-projects on github.
+# As member of the OSS community
 
-Vice-president of the "Mongueurs de Perl", I'm also involved in the OSS events
-(as organizer or/and speaker).
+I authored and i maintain some modules on _CPAN, wrote
+[cpan2port](https://trac.macports.org/wiki/howto/cpan2port)
+as a helper while installing [koha](http://koha-community.org/)
+on mac using [macports](https://www.macports.org/)
+(i worked at [Biblibrel](http://www.biblibre.com/en) then).
 
-about Perl, Unix and acmeism at
+I got some projects, modules and rcfiles on _GHEIRO.
 
-* Rencontres mondiales du logiciel libre (2009)
+I'm vice-president of the "_MONGUEURS",
+I'm also involved in the OSS events (as organizer or/and speaker).
+
+about _PERL, Unix and _ACMEISM at
+
+* _RMLL(2009)
 * German Perl Workshop (2011?)
 * Belgium Perl Workshop (2011?)
-* French Perl Workshop (2009,...,2015)
-* Fosdem (2012)
-* PyconFr (2012,2013)
-* YAPC::Europe (2011,2012)
+* [French Perl Workshop](http://journeesperl.fr/fpw2015/) (2009,...,2015)
+* _FOSDEM (2012)
+* _PYCONFR (2012,2013)
+* _YAPC (2011,2012)
+
 
 # my programming journey
 
-* started learning with logo and basic (circa 1984)
-* made my first "real programs" with pascal and C (circa 1990),
-  loved C
-* started unix installing my first linux (circa 1995), felt in love with
-  unix toolchain (shell, filters, vi, make, ...)
-* discover perl one year later, felt in love again
-* the rise of other dynamic langages (beginning of the 2000 years) made me give
-  a try to ruby, python or lua which are actually simpler to understand if you
-  come from java. i didn't and even if there are some features i really liked in ruby,
-  missing the power of Perl frustated me very fast. 
-* also, i tried Haskell and other functionnal programming at the end of this decade.
-  it made me really jalous of people who wasn't brain-damaged by the paradigms we use
-  but at the end of the day, i'm not productive enought with those langages.
-* i was a cat-v lurker so i saw go coming, wrote some code and where quicky
-  boring by the moto "error are just values". This may seem to be a detail but
-  error handling is spend a lot of time on, right?
+today, i'm aware that
 
-my future is about Perl (5 and 6) and exploring a way to develop web apps
-without loosing my mind.
+* there is _NOSILVERBULLET and we all have to be polyglot.
+* _ACMEISM is a good thing
+* documentations and tests must preceed implementation
+* if you want to learn to program, learn to "not program" instead
+  (i mean: are you sure you're already a poweruser of the already available tools?)
+
+it started long time ago
+
+* '80: programming useless stuff in logo, basic: just learning.
+* early '90: gave a chance to pascal before choosing C
+* late '90: discovered unix toolchain (shell, build automations, editors ...)
+  and fall in love with _PERL.
+* early 2000s, i gave a chance to _PYTHON, _RUBY and _LUA. Ruby has some
+  things perl5 can be jalous of (_PERL6 push them even further) but all
+  of them miss all the good things we learnt from
+  unix culture and the awesome [perl ecosystem](http://cpan.io/). Perl and vim
+  are very similar in the way that there was a time you didn't learn "_PERL"
+  or "_VIM" but "the unix ecosystem", a set of tools sharing the same culture,
+  _PERL and _VIM where just parts of this ecosystem so it was much more easier
+  to learn than nowadays (because newcomers are comming with a completly
+  different cultural background). Unix culture is not hard: it's just
+  misunderstood and poorly taught.
+* late 2000s: a colleague of mine introduced me to the _PLAN9 world and _CATV.
+  I read some more conceptual papers on unix philosophy from people like
+  [Rob Pike](https://en.wikipedia.org/wiki/Rob_Pike),
+  [Russ Cox](https://swtch.com/~rsc/) (also known for _GOLANG).
+  [acme](https://www.youtube.com/watch?v=dP1xVpMPn8M) completly changed the way.
+  i use _VIM
+  (it's much more than an editor, it's my GUI for driving everything i need).
+* late 2000s: a colleague of mine introduced me to the _PLAN9 world and _CATV.
+  [the pugs project](https://en.wikipedia.org/wiki/Pugs) made me aware of the
+  rise of functionnal paradigm. I jumped in playing with _HASKELL and i have to
+  admit i'm not productive with it but i changed the way i write my programs.
+  i wrote _PERLUDE. [Nils](https://github.com/ngrunwald) introduced me to _CLOJURE
+  and now i keep a eye on _LIVESCRIPT and _ELM.
+
+Now i'm not a developper anymore and i code for fun (when i have enought time
+and motivation). The [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson)'s
+_COMPUTERCYNICS lectures also changed the way i think computer industry.
+
+i'm interested improving skills in many fields without having enought time.
+including GUI/DataViz, low level (plan9 kernel?), functionnal programming
+(finally be productive with haskell, clojure and so on). 
 
 # the tools i use
 
-daily user of zsh, perl, debian (stable and unstable), vim (as much more than an editor).
-fan of suckless technologies for myself and GNOME for the end-users.
+* my prefered shell is _ZSH. _UZE is my attempt to build an ecosystem on it
+ (using namespaces, tests and shippable libraries).
+* my prefered linux distributions are _DEBIAN when the main purpose
+  is stability and _ARCH to experiment very new stuff. rpm based distributions
+  desapointed me every time i tried them and the next distro i'll give a chance
+  to will be _NIXOS. If i have an opportunity to work with a BSD again
+  (i loved the experience), it would be _NETBSD.
+* _VIM is my only one editor for much more than editing (i use it as
+  interactive client for RT, SQL and LDAP servers, mail composition, ...).
+* my prefered window manager is _DWM but i use _GNOME at work because
+  it is a much better candidate to promote linux as a desktop-ready solution
+  (i actually found it much better than Mac)
+* under , i use _CYGWIN, _VIM, _PUTTY, powershell,
+  [git extensions](https://git-extensions-documentation.readthedocs.org/en/latest/?)
 
