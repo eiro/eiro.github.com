@@ -26,6 +26,7 @@
 <li><a href="cli.html">cli tools</a></li>
 <li><a href="sysop.html">sysop notes</a></li>
 <li><a href="dump.html">core dump</a></li>
+<li><a href="aboutme.html">about me</a></li>
 </ul></section>
       <hr/>
       <nav id="TOC"><ul>
@@ -39,23 +40,11 @@
 <li><a href="#go-to-d3">go to D3</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#screencasts">Screencasts</a><ul>
-<li><a href="#découpage-de-fichiers-.ts-avec-dd">découpage de fichiers <code>.ts</code> avec <code>dd</code></a></li>
-</ul></li>
-</ul></nav><pre style="background-color: white">
-<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a> 
-
+</ul></nav>
+<img src="logos/hackers.svg"/>
+<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
 <a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
-
 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
-┌─┬─┬─┐
-│ │●│ │
-├─┼─┼─┤
-│ │ │●│
-├─┼─┼─┤
-│●│●│●│
-└─┴─┴─┘
-</pre>
   </div>
 <div class="grid-80"
     ><h1>Dump ideas … as it comes</h1><section><h1 id="why-isnt-perl-so-popular">Why isn't perl so popular</h1>
@@ -139,20 +128,7 @@
 </ul>
 <h3 id="go-to-d3">go to D3</h3>
 <p><a href="http://d3js.org/">D3</a> js data-driven documents and <a href="http://keminglabs.com/c2/">C2</a> clojurescript counterpart are awesome. <a href="https://github.com/mbostock/d3/wiki/Tutorials">tutorials there</a>.</p>
-<p>sooo... needs of <a href="http://kineticjs.com/">kineticjs</a> anyone ?</p>
-<h1 id="screencasts">Screencasts</h1>
-<h2 id="découpage-de-fichiers-.ts-avec-dd">découpage de fichiers <code>.ts</code> avec <code>dd</code></h2>
-<p>soit</p>
-<ul>
-<li><code>source.ts</code> le fichier enregistrement</li>
-<li><code>target.ts</code> la sous-partie de <code>source.ts</code> a isoler</li>
-<li><code>n</code> la taille en <code>bs</code> (ici 4Mo) de toutes les sous-parties précédentes</li>
-<li><code>m</code> la taille de la présente sous-partie</li>
-</ul>
-<p>la commande</p>
-<pre><code>dd if=source.ts of=target.ts bs=4M skip=n count=m</code></pre>
-<p>produit le nouveau ts.</p>
-<p>le resultat d'un encodage video n'étant pas linéaire en taille, il faut découper par un découpage empirique (générer des vignettes avec vlc aiderait pe). On peut jouer sur la taille du bs pour avoir plus ou moins de précision.</p><span class="dynamic-px-width"></span></section></div> 
+<p>sooo... needs of <a href="http://kineticjs.com/">kineticjs</a> anyone ?</p><span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
 </body></html>

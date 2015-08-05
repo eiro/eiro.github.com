@@ -1,5 +1,10 @@
 % Dump ideas … as it comes
 
+# Permaculture
+
+[some pdfs](http://www.permatheque.fr/2015/07/12/quelques-livres-en-pdf-sur-la-permaculture/)
+
+
 # Why isn't perl so popular
 
 * lot of trolls outthere
