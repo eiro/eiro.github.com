@@ -2,7 +2,10 @@
 depth?=.
 include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
-all: FORCE $(webpages)
+
+all: $(webpages) theme.css
+
+website: FORCE $(webpages) 
 
 FORCE:
 	perl6 bin/atom atom > atom.xml
@@ -16,3 +19,6 @@ menu: menu.md.
 
 clean:
 	rm -f menu $(webpages)
+
+%.css: %.styl
+	stylus -c $<
