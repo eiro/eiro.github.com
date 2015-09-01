@@ -36,6 +36,12 @@ m4_macros_are_working () {
     '_POD4(Moo)'
     '<a href="https://metacpan.org/pod/Moo">Moo</a>'  
 
+    "_PERLFLAG(E,commandline)"
+    '<a href="http://perldoc.perl.org/perlrun.html#*-E*_commandline_">-E</a>'
+
+    "_PERLFLAG(w)"
+    '<a href="http://perldoc.perl.org/perlrun.html#*-w*">-w</a>'
+
     ) {
         got="$( render "$from" )"
         expected='<p>'"$expected"'</p>'
