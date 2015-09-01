@@ -21,8 +21,14 @@ clean:
 %.css: %.styl
 	stylus -c $<
 
+r.html: test_defs.zsh
+	zsh test_defs.zsh > r.tap
+	tapprouve r.tap > r.html
+
 $(keywords_m4): $(depth)/keywords
 	perl bin/m4keys  $< > $@
 	
 .md.html: $(basics)
 	$(htmlify) < $< > $@
+
+	
