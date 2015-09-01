@@ -3,7 +3,7 @@ depth?=.
 include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
 
-all: $(webpages) theme.css
+all: $(basics) $(webpages) theme.css
 
 website: FORCE $(webpages) 
 
@@ -12,13 +12,17 @@ FORCE:
 	perl6 bin/atom news > news.md
 	cd posts/2015; make
 
-$(webpages): menu $(main_html_template)
-
 menu: menu.md.
-	pandoc -t html5 -o $@ $<
+	m4 -I$(depth)/m4 post defs render $< | pandoc -t html5 -o $@ 
 
 clean:
 	rm -f menu $(webpages)
 
 %.css: %.styl
 	stylus -c $<
+
+$(keywords_m4): $(depth)/keywords
+	perl bin/m4keys  $< > $@
+	
+.md.html: $(basics)
+	$(htmlify) < $< > $@

@@ -1,0 +1,14 @@
+use strict;
+use warnings;
+use 5.20.0;
+
+map {
+    chomp;
+
+    my ($key,$url,$desc) = split /\s+/, $_, 3;
+    $desc ||='WHAT????';
+    # $desc ||= lc substr $key,1;
+    say
+    'define({' ,$key, , '}'
+    , ',{<a href="' ,$url, '">ifelse($1,,{' ,$desc, '},$1)</a>})'
+} <>;

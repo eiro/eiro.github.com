@@ -1,5 +1,6 @@
 !.gitkeep
 *.sw?
+m4/defs
 logos/*.aux
 logos/*.dvi
 logos/*.log

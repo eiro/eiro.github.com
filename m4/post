@@ -1,0 +1,9 @@
+divert(-1)
+changequote({,})
+
+dnl define(_SNIPPET,``$1'')
+dnl define(_LINK2,`<a href="$1">$2</a>')
+dnl define(_DEFL,`_LINK2(_$1,$2)') 
+define(_PERLDOC,dnl
+{<a href="http://perldoc.perl.org/ifelse($1,,,$1.html)ifelse($2,,#$2)">ifelse($3,,ifelse($2,,$1,$2),$3)</a>})
+dnl define(`_DEFL',`defin`'e(`$1',`<a href="$2">ifelse(`$1',,`$3',`$1')</a>')')
