@@ -12,7 +12,7 @@
 
 
 
-</head><body>
+</head><body >
     <div id="wrapper"><header role="banner" class="grid-container">
     <div class="grid-100"><h1>The silence of Plato</h1>
 </div></header>
@@ -28,25 +28,25 @@
 <li><a href="dump.html">core dump</a></li>
 <li><a href="aboutme.html">about me</a></li>
 </ul></section>
-      <hr/>
       <nav id="TOC"><ul>
 <li><a href="#le">le</a></li>
 </ul></nav>
-<img src="logos/hackers.svg"/>
+<img src="./logos/hackers.svg"/>
 <a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
 <a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
   </div>
-<div class="grid-80"
-    ><h1>Shell et théories</h1><section><p>http://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat http://merrigrove.blogspot.fr/2013/12/the-occultation-of-relations-and-logic_22.html http://okmij.org/ftp/Computation/monadic-shell.html</p>
-<p>${a[1]:-haha} $a[2,-1] <span class="citation">@_</span> ? <span class="citation">@_</span> : (&quot;haha&quot;)</p>
+<div class="grid-80"><h1>Shell et théories</h1>
+    <section class="content"
+    ><p>http://en.wikipedia.org/wiki/Cat_(Unix)#Useless_use_of_cat http://merrigrove.blogspot.fr/2013/12/the-occultation-of-relations-and-logic_22.html http://okmij.org/ftp/Computation/monadic-shell.html</p>
+<p>$a[1]:-haha $a[2,-1] <span class="citation">@_</span> ? <span class="citation">@_</span> : (&quot;haha&quot;)</p>
 <p>Il sert très bien le propos de l'auteur et l'article est d'une qualité qui se fait rare sur le net. Merci à son auteur.</p>
 <p>Toutefois, le script est tiré d'une réponse qui fut donnée sur serverfault (je n'ose même pas regarder l'original) et l'auteur évoque un Jedi qui montre le vrai pouvoir d'unix … elle est loin la république.</p>
 <p>A titre personnel, je refuserais que ce genre de scripts soient</p>
 <h2 id="le">le</h2>
 <pre><code>cat /var/log/nginx-access.log |
                    grep &quot;GET&quot; |
-       awk -F&#39;&quot;&#39; &#39;{print $6}&#39; |
+       awk -F&#39;&quot;&#39; &#39;print $6&#39; |
                 cut -d&#39; &#39; -f1 | 
        grep -E &#39;^[[:alnum:]]&#39; |
                          sort |
@@ -57,17 +57,17 @@
 
 $F[2] ~~ /^GET/ or next;
 ($_) = split &quot; &quot;, $F[5];
-$M{$_}++ if /[[:alnum:]]/;
+$M$_++ if /[[:alnum:]]/;
 
-END {
+END 
 
-} </code></pre>
+ </code></pre>
 <p>cat &lt;&lt; EOT 127.0.0.1 - - [19/Jun/2012:09:16:22 +0100] &quot;GET /GO.jpg HTTP/1.1&quot; 499 0 &quot;http://domain.com/htm_data/7/1206/758536.html&quot; &quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; SE 2.X MetaSr 1.0)&quot; 127.0.0.1 - - [19/Jun/2012:09:16:25 +0100] &quot;GET /Zyb.gif HTTP/1.1&quot; 499 0 &quot;http://domain.com/htm_data/7/1206/758536.html&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; QQDownload 711; SV1; .NET4.0C; .NET4.0E; 360SE)&quot; 127.0.0.1 - - [19/Jun/2012:09:16:25 +0100] &quot;GET /Yyb.gif HTTP/1.1&quot; 499 0 &quot;http://domain.com/htm_data/7/1206/758536.html&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; QQDownload 711; SV1; .NET4.0C; .NET4.0E; 360SE)&quot; 127.0.0.1 - - [19/Jun/2012:09:16:25 +0100] &quot;GET /GO.jpg HTTP/1.1&quot; 499 0 &quot;http://domain.com/htm_data/7/1206/758536.html&quot; &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; QQDownload 711; SV1; .NET4.0C; .NET4.0E; 360SE)&quot; 127.0.0.1 - - [19/Jun/2012:09:16:30 +0100] &quot;GET /Zyb.gif HTTP/1.1&quot; 499 0 &quot;http://domain.com/htm_data/7/1206/758536.html&quot; &quot;Opera/9.80 (Android; Opera Mini/6.7.29878/27.1667; U; zh) Presto/2.8.119 Version/11.10&quot; 127.0.0.1 - - [19/Jun/2012:09:16:30 +0100] &quot;GET /GO.jpg HTTP/1.1&quot; 499 0 &quot;http://domain.com/htm_data/7/1206/758536.html&quot; &quot;Opera/9.80 (Android; Opera Mini/6.7.29878/27.1667; U; zh) Presto/2.8.119 Version/11.10&quot;</p>
-<p>awk '$3 ~ /^GET / { print $6 }' /var/log/nginx-access.log | sed -rn ' s/ .*// /<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>/p' | sort | uniq -c | sort -rn</p>
-<p>$HTTP ~ /^GET / { print $UA }</p>
-<p>user_agents_ () { awk '$3 ~ /^GET / { print <span class="math">$6 }' &quot;$</span>@&quot; } user</p>
-<p>sort_by_occurrence () { }</p>
-<p>awk '$3 ~ /^GET / { print $6 }' /var/log/nginx-access.log | sed -rn ' s/ .*// /<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>/p ' | sort | uniq -c | sort -rn</p>
+<p>awk '$3 ~ /^GET /  print $6 ' /var/log/nginx-access.log | sed -rn ' s/ .*// /<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>/p' | sort | uniq -c | sort -rn</p>
+<p>$HTTP ~ /^GET /  print $UA </p>
+<p>user_agents_ ()  awk '$3 ~ /^GET / { print <span class="math">$6 }' &quot;$</span>@&quot;  user</p>
+<p>sort_by_occurrence ()  </p>
+<p>awk '$3 ~ /^GET /  print $6 ' /var/log/nginx-access.log | sed -rn ' s/ .*// /<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>/p ' | sort | uniq -c | sort -rn</p>
 <p>/var/log/nginx-access.log</p>
 <p>cat | grep &quot;GET&quot; | grep -E '<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>]' | sort | uniq -c | sort -rn ]</p>
 <div class="footnotes">

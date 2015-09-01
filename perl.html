@@ -7,12 +7,12 @@
 <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
 
 
-<title>Perl</title>
+<title>My own Perl cookbook</title>
 
 
 
 
-</head><body>
+</head><body >
     <div id="wrapper"><header role="banner" class="grid-container">
     <div class="grid-100"><h1>The silence of Plato</h1>
 </div></header>
@@ -28,11 +28,15 @@
 <li><a href="dump.html">core dump</a></li>
 <li><a href="aboutme.html">about me</a></li>
 </ul></section>
-      <hr/>
       <nav id="TOC"><ul>
-<li><a href="#feedbacks-on-parsing-with-perl">Feedbacks on Parsing with Perl</a><ul>
-<li><a href="#pegex-2014">Pegex (2014)</a></li>
-<li><a href="#regexpgrammars-2009-afair">Regexp::Grammars (2009, AFAIR)</a></li>
+<li><a href="#first-steps-with-perl">first steps with Perl</a><ul>
+<li><a href="#understand-that">understand that</a></li>
+<li><a href="#should">should</a></li>
+</ul></li>
+<li><a href="#deploying">Deploying</a></li>
+<li><a href="#parsing">Parsing</a></li>
+<li><a href="#pegex">Pegex</a><ul>
+<li><a href="#regexpgrammars">Regexp::Grammars</a></li>
 <li><a href="#mcgx-functions">m//cgx functions</a></li>
 </ul></li>
 <li><a href="#installation-de-paquets-perl">installation de paquets perl</a><ul>
@@ -46,25 +50,41 @@
 <li><a href="#setup-your-working-environment">setup your working environment</a></li>
 </ul></li>
 </ul></nav>
-<img src="logos/hackers.svg"/>
+<img src="./logos/hackers.svg"/>
 <a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
 <a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
   </div>
-<div class="grid-80"
-    ><h1>Perl</h1><section><h1 id="feedbacks-on-parsing-with-perl">Feedbacks on Parsing with Perl</h1>
+<div class="grid-80"><h1>My own Perl cookbook</h1>
+    <section class="content"
+    ><h1 id="first-steps-with-perl">first steps with Perl</h1>
+<p>If you are totally newcommers to <a href="http://perl.org/">Perl</a> 5 (but confortable with programming at large) those are the steps.</p>
+<h2 id="understand-that">understand that</h2>
 <ul>
-<li>this is not just about pattern matching: we need nested datastructures to be returned.</li>
-<li>this is neither about optimistic cargo cult regex parsing: we need something we can rely on.</li>
+<li><p>perl is a very strong, well geared community: everything you need to learn, write, enjoy <a href="http://perl.org/">Perl</a> is provided by the <a href="http://perldoc.perl.org/perlcommunity"></a> itself. the official documentation (<a href="http://perldoc.perl.org/">Perldoc</a>) comes with very well written references and tutorials (also available on your system, see <code>man perl</code>).</p></li>
+<li><p>even if <a href="http://perl.org/">Perl</a> is a very modern dynamic langage, <a href="https://en.wikipedia.org/wiki/Backward_compatibility">Backward compatibility</a> is very important to the <a href="http://perldoc.perl.org/perlcommunity"></a> so try to not learn perl reading 20 years old scripts.</p></li>
 </ul>
-<h2 id="pegex-2014">Pegex (2014)</h2>
+<h2 id="should">should</h2>
 <ul>
-<li><a href="https://metacpan.org/pod/distribution/Pegex/lib/Pegex.pod">Pegex</a> sounds very promising because of the <a href="http://acmeism.org/">acmeist</a> part (javascript for client-side validation of code would be awesome) but it seems that this part is vaporware for now (pegex command throw &quot;not implemented&quot; errors and the pegex grammars on github are mainly empty ones).</li>
-<li>very simple <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a>.</li>
-<li>welcoming and available community but only in IRC. no online archive (i think they must have a mailing list).</li>
+<li>about object oriented programming using <a href="https://metacpan.org/pod/Moo">Moo</a> and <a href="https://metacpan.org/pod/Type::Tiny">Type::Tiny</a></li>
+<li>about authoring modules reading <a href="http://perldoc.perl.org/perlmodstyle"></a> and using <a href="https://metacpan.org/pod/Dist::Zilla">Dist::Zilla</a></li>
+<li>deploying using <a href="https://metacpan.org/pod/App::cpanminus">App::cpanminus</a>, <a href="https://metacpan.org/pod/Carton">Carton</a>, <a href="https://metacpan.org/pod/Pinto">Pinto</a></li>
+<li>use the <a href="https://metacpan.org/pod/experimental">experimental</a> <a href="http://perldoc.perl.org/perlsub">Signatures</a></li>
 </ul>
-<h2 id="regexpgrammars-2009-afair">Regexp::Grammars (2009, AFAIR)</h2>
-<p><a href="https://metacpan.org/pod/Regexp::Grammars">Regexp::Grammars</a> overloads <code>qr{}</code> to add <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a> syntax.</p>
+<p>so the sites to know are * <a href="http://metacpan.org">MetaCPAN</a>, which is the search engine/social network over <a href="http://cpan.org">CPAN</a> * <a href="http://perldoc.perl.org/">Perldoc</a>, the perl documentation site (also available on your machine by typing <code>man perl</code>). Especially <a href="http://perldoc.perl.org/perlintro"></a></p>
+<h1 id="deploying">Deploying</h1>
+<h1 id="parsing">Parsing</h1>
+<p>don't bet on recursive Regexps: as perl isn't</p>
+<p>this is not just about pattern matching: * to parse complex structures * to return rich nested datastructures like AST in result.</p>
+<p>while it isn't hard to write your own parser based on <code>//nxsmg</code> (i still do it for very simple cases)</p>
+<ul>
+<li>I tried and succeeded it by myself using an experiment of mine called <a href="https://github.com/eiro/p5-persec">Persec</a> but there are now awesome <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a> modules outthere, each are maintained by well known perl hackers.</li>
+</ul>
+<h1 id="pegex">Pegex</h1>
+<p><a href="https://metacpan.org/pod/distribution/Pegex/lib/Pegex.pod">Pegex</a> (by <a href="http://ingy.net/">Ingy döt Net</a>) wasn't finished when i testd it (in 2014) but sounds very promising because of its <a href="http://acmeism.org/">acmeic</a> nature (the same grammar could be used to generate emitters in <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">javascript</a> and <a href="http://www.perl.org">Python</a>).</p>
+<p>Notes: * welcoming and available community but reachable only via IRC * no online archive (i think they must have a mailing list).</p>
+<h2 id="regexpgrammars">Regexp::Grammars</h2>
+<p><a href="https://metacpan.org/pod/Regexp::Grammars">Regexp::Grammars</a> (by <a href="https://en.wikipedia.org/wiki/Damian_Conway">Damian Conway</a>) overloads <code>qr</code> to add a <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">PEG</a> featured syntax inspired to the Perl6's <a href="http://design.perl6.org/S05.html">Synopsis 5: Regexes and Rules</a>.</p>
 <ul>
 <li>very pleasant to write and debug. <a href="http://perl6.org">Perl6</a> inspiration is obvious.</li>
 <li>soooo slow! (at least in 2009)</li>
