@@ -1,27 +1,66 @@
-% Perl
+% My own Perl cookbook
 
-#  Feedbacks on Parsing with Perl
+# first steps with Perl
 
-* this is not just about pattern matching: we need nested datastructures to be
-  returned.
-* this is neither about optimistic cargo cult regex parsing: we need something
-  we can rely on.
+If you are totally newcommers to _PERL 5 (but confortable with programming at
+large) those are the steps. 
 
-## Pegex (2014)
+## understand that
 
-* [Pegex](https://metacpan.org/pod/distribution/Pegex/lib/Pegex.pod) sounds very
-  promising because of the [acmeist](http://acmeism.org/) part (javascript for
-  client-side validation of code would be awesome) but it seems that this part
-  is vaporware for now (pegex command throw "not implemented" errors and the
-  pegex grammars on github are mainly empty ones).
-* very simple [PEG](http://en.wikipedia.org/wiki/Parsing_expression_grammar).
-* welcoming and available community but only in IRC. no online archive (i think
-  they must have a mailing list).
+* perl is a very strong, well geared community: everything you
+  need to learn, write, enjoy _PERL is provided by the _PERLDOC(perlcommunity)
+  itself. the official documentation (_PERLDOC) comes with very well written 
+  references and tutorials (also available on your system, see `man perl`).
 
-## Regexp::Grammars (2009, AFAIR)
+* even if _PERL is a very modern dynamic langage,
+  [Backward compatibility](https://en.wikipedia.org/wiki/Backward_compatibility)
+  is very important to the _PERLDOC(perlcommunity) so try to not learn perl
+  reading 20 years old scripts.
 
-[Regexp::Grammars](https://metacpan.org/pod/Regexp::Grammars) overloads `qr{}`
-to add [PEG](http://en.wikipedia.org/wiki/Parsing_expression_grammar) syntax.
+## should
+
+* about object oriented programming using _POD4(Moo) and _POD4(Type::Tiny)
+* about authoring modules reading _PERLDOC(perlmodstyle)
+and using _POD4(Dist::Zilla)
+* deploying using _POD4(App::cpanminus), _POD4(Carton), _POD4(Pinto)
+* use the _POD4(experimental) _PERLDOC(perlsub,Signatures)
+
+so the sites to know are
+* _METACPAN, which is the search engine/social network over _CPAN
+* _PERLDOC, the perl documentation site (also available on your machine by
+typing `man perl`). Especially _PERLDOC(perlintro)
+
+# Deploying
+
+# Parsing
+
+don't bet on recursive Regexps: as perl isn't 
+
+this is not just about pattern matching:
+* to parse complex structures
+* to return rich nested datastructures like AST in result.
+
+while it isn't hard to write your own parser based on `//nxsmg` (i still do it
+for very simple cases) 
+
+* I tried and succeeded it by myself using an experiment of mine
+  called _PERSEC but there are now awesome _PEG modules outthere, each are
+  maintained by well known perl hackers.
+
+# Pegex
+
+_PEGEX (by _INGY) wasn't finished when i testd it (in 2014) but sounds very
+promising because of its _ACMEISM(acmeic) nature (the same grammar could be used to
+generate emitters in _JS and _PYTHON).
+
+Notes:
+* welcoming and available community but reachable only via IRC
+* no online archive (i think they must have a mailing list).
+
+## Regexp::Grammars
+
+_POD4(Regexp::Grammars) (by _DCONWAY) overloads `qr{}` to add a _PEG featured syntax
+inspired to the Perl6's _P6S05.
 
 * very pleasant to write and debug. [Perl6](http://perl6.org) inspiration is obvious.
 * soooo slow! (at least in 2009)
