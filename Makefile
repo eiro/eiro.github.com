@@ -31,4 +31,6 @@ $(keywords_m4): $(depth)/keywords
 .md.html: $(basics)
 	$(htmlify) < $< > $@
 
-	
+snitch:
+	@echo mdpages:  $(mdpages)
+	@echo webpages: $(webpages)
