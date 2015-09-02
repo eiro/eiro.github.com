@@ -177,7 +177,7 @@ alternates:
 ...
 ' , %posts.pairs.sort(*.key).reverse.map: -> $year {
         "\n# {$year.key}\n"
-        , $year.value.map: -> $p { "* [$p<title>]($p<link>) ($p<date>)" }
+        , $year.value.map: -> $p { "* [$p<title>]($p<link>) ($p<date>)\n" }
     }
 
 }
