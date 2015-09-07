@@ -40,7 +40,7 @@ about _PERL, Unix and _ACMEISM at
 * [French Perl Workshop](http://journeesperl.fr/fpw2015/) (2009,...,2015)
 * _FOSDEM (2012)
 * _PYCONFR (2012,2013)
-* _YAPC (2011,2012)
+* _YAPCEU (2011,2012)
 
 
 # my programming journey

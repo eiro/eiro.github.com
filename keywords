@@ -23,7 +23,6 @@ _JS                     https://developer.mozilla.org/en-US/docs/Web/JavaScript 
 _RMLL                   https://rmll.info/ RMLL
 _FOSDEM                 https://fosdem.org/ FOSDEM
 _PYCONFR                http://www.pycon.fr/ Pycon-fr
-_YAPC                   http://act.yapc.eu/ YAPC
 _VIM                    http://www.vim.org vim
 _PLAN9                  http://plan9.bell-labs.com/plan9/ plan9
 _GOLANG                 https://golang.org/ go lang
@@ -48,3 +47,9 @@ _M4                     http://pubs.opengroup.org/onlinepubs/9699919799/utilitie
 _MAKE                   http://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html make
 _PANDOC                 http://pandoc.org/ pandoc
 _TIKZ                   https://en.wikipedia.org/wiki/PGF/TikZ PGF/TikZ
+_JNTHN                  http://www.jnthn.net/ Jonathan Worthington
+_RUST                   https://www.rust-lang.org/ Rust
+_FP                     https://en.wikipedia.org/wiki/Functional_programming functionnal programming
+_YAPCA                  http://yapcasia.org YAPC Asia
+_YAPCEU                 http://act.yapc.eu/ YAPC::Europe
+_YAPCNA                 http://www.yapcna.org/ YAPC::NA
