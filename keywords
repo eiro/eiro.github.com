@@ -38,7 +38,7 @@ _DEBIAN                 https://debian.org/ debian
 _ARCH                   https://www.archlinux.org/ arch linux
 _NIXOS                  http://nixos.org/ nixos 
 _DWM                    http://dwm.suckless.org/ dwm
-_GNOME                  https://www.gnome.org/ Gnome
+_GNOME                  https://www.gnome.org/ GNOME
 _NETBSD                 https://www.netbsd.org/ NetBSD
 _PUTTY                  http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html Putty
 _WIN32                  https://en.wikipedia.org/wiki/Hell Microsoft windows
