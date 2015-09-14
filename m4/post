@@ -8,6 +8,7 @@ dnl define({_PERLDOC},{<a href="http://perldoc.perl.org/$1">{ifelse($1,,Perldoc,
 
 define(`_PERLDOC',`<a href="http://perldoc.perl.org/$1">ifelse($1,,Perldoc,$2)</a>')
 define(`_POD4',`<a href="https://metacpan.org/pod/$1">$1</a>')
+define(`_TWITTER',`<a href="https://twitter.com/$1">@$1</a>')
 define(`_PERLFUNC',`<a href="http://perldoc.perl.org/functions/$1.html">$1</a>')
 define(`_PERLFLAG',`<a href="http://perldoc.perl.org/perlrun.html#*-$1*ifelse($2,,,_$2_)">-$1</a>')
 define(`_PERLDOCSEC',`_PERLDOC($1.html{}ifelse($3,,,#$3),$2)')
