@@ -7,7 +7,7 @@ me rendre avec deux nouveaux mongueurs (_JEF et Julien "kernel" Simonet de l'_AR
 
 # "We need to talk about SPORE"
 
-Au début du hackathon, je me rends compte que se trouvent dans la même pièce :
+Au début du hackathon, je me rends compte que se trouvent dans la même pièce :
 
 * _LIZMAT, une experte Perl6
 * [François Perrad](https://github.com/fperrad), contributeur de la première
@@ -38,7 +38,7 @@ est vrai que cette idée simple fait gagner un temps fou (et d'autant que des
 spécifications qui nous semblent moins intéressantes conceptuellement sont
 apparues par la suite).
 
-Afin de réactiver cette communauté, François nous a ajouté (Arnaud et moi-même)
+Afin de réactiver cette communauté, François nous a ajoutés (Arnaud et moi-même)
 comme membres de [l'organisation SPORE](https://github.com/spore)
 de [github](https://github.com/).
 
