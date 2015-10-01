@@ -28,3 +28,8 @@ _JNTHN's talk about
 at _YAPCA isn't just about the awesomeness of _PERL6 in those realms, it's also about the concepts
 themselves and _JNTHN is a very good teacher when it comes to conceptual things.
 
+## Feelings
+
+if you want to know why IT people try to avoid meetings, the answer is [there](https://www.youtube.com/watch?v=BKorP55Aqvg)
+
+
