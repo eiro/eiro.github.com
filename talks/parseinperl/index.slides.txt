@@ -1,0 +1,58 @@
+₍ Parse in Perl(5)
+
+    ● sxb.so session pour l'évolution de dns-manager
+    ● Marc Chantreux
+    ● Strasbourg, jeudi 10 septembre 2015
+
+₎
+₍ En mode Hardcore
+    ₍ use /xms
+
+        m/RE/i = ignorecase
+        s/RE/chaine de replacement/
+        s/RE/code de remplacement/e
+
+        /ms = Multiligne
+        /x  = xtendu
+
+        | \A et \z | ^ et $
+        | \N       | .
+
+    ₎
+    ₍ m(\G)cg
+
+    ● $str =~ //g
+        ●  positionne pos($str)
+        ●  pos est :lvalue (ex:  pos $str = 34)
+    ● $str =~/\G/g trouve pos($str)
+    ● //c laisse le pos intact si le motif foire
+
+    ₎
+    ₍ use named captures
+
+        (   foo  | bar )
+        (?: foo [ ]  | bar )
+        //n depuis perl 5.22
+        /(?<op> [-+*/] )/ and print $+{op} 
+
+        ● man perlre
+
+             /(?<NAME>(?&NAME_PAT))(?<ADDR>(?&ADDRESS_PAT))
+              (?(DEFINE)
+                (?<NAME_PAT>....)
+                (?<ADDRESS_PAT>....)
+              )/x
+
+    ₎
+
+    ● example.pl
+₎
+₍ PEG
+    ● Pegex
+        ● Acmeic vaporware? 
+        ● https://metacpan.org/pod/Pegex
+    ● Regexp::Grammars
+        ● Perl6 PEG porté dans qr{}
+        ● https://metacpan.org/release/Regexp-Grammars
+₎
+
