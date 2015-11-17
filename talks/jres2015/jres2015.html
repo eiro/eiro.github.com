@@ -1,0 +1,126 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="./unsemantic.css"/>
+<link rel="stylesheet" href="./theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>Vim, la console d'administration qui vous manquait</title>
+
+
+
+
+</head><body >
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><ul>
+<li><a href="index.html">home</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="uze/">uze documentation</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="cli.html">cli tools</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="dump.html">core dump</a></li>
+<li><a href="aboutme.html">about me</a></li>
+</ul></section>
+      <nav id="TOC"><ul>
+<li><a href="#pourquoi">Pourquoi?</a><ul>
+<li><a href="#problème">problème</a><ul>
+<li><a href="#approche-graphique">Approche graphique</a></li>
+<li><a href="#le-scripting">le scripting</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#vim-pour-tirer-le-meilleur-parti-des-deux-approches">vim pour tirer le meilleur parti des deux approches</a><ul>
+<li><a href="#anatomie-dune-gui">Anatomie d'une GUI</a></li>
+<li><a href="#reproduire-ces-élements-sous-vim">reproduire ces élements sous vim</a><ul>
+<li><a href="#communication">communication</a></li>
+</ul></li>
+</ul></li>
+</ul></nav>
+<img src="./logos/hackers.svg"/>
+<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
+<a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
+  </div>
+<div class="grid-80"><h1>Vim, la console d'administration qui vous manquait</h1>
+    <section class="content"
+    ><h1 id="pourquoi">Pourquoi?</h1>
+<h2 id="problème">problème</h2>
+<p>(SI): Système d'information</p>
+<p>Les SI de grande taille sont, par leur richesse et la rapidité avec laquelle ils évoluent, des objets difficiles à représenter dans des interfaces d'administration qui se voudraient homogènes et complètes.</p>
+<p>Les éditeurs sont alors incapables de fournir des outils qui soient tout à la fois génériques et pertinents. Les DSI intègrent alors un ensemble d'outils qui coéxistent pour corriger, administrer et visualiser des parties du SI. Nous maintenons alors un SI dans le SI qui a son propre cout de maintenance.</p>
+<p>Dans le spectre des possibles, on constate alors deux extrêmes (la réalité étant souvent une combinaison historique des deux approches).</p>
+<h3 id="approche-graphique">Approche graphique</h3>
+<p>ces outils graphiques (bien souvent web) sont des développements locaux (très adaptés mais couteux à maintenir) ou de l'adaptation (via extensions, configuration, détournement et parfois modification du code) de logiciels issus de l'écosystème open-source.</p>
+<p>En partant du principe qu'un soin suffisant y est apporté, ces outils ont l'avantage de permettre à des personnels peu techniques de réaliser <em>rapidement</em> des taches tout en assurant une robustesse offerte par le cadre applicatif.</p>
+<p>Ce même cadre fait malheureusement preuve de rigidité et des taches à peine plus complexes sont impossibles sauf a mobiliser des ressources de développement dans des délais qui rendent le besoin caduc.</p>
+<h3 id="le-scripting">le scripting</h3>
+<pre><code>&quot;At its heart is the idea that the power of a system comes more from the
+relationships among programs than from the programs themselves&quot;
+        -- Rob Pike</code></pre>
+<p>Se débarasser de ces cadres applicatifs et exposer de manière simple et puissante les outils qui tirent directement partie des differentes expositions du SI en utilisant les outils d'administration, APIs (remote ou non), outils d'administration des différents éléments permettent de donner acces aux taches courantes sous la forme de scripts.</p>
+<p>même accompagnés par des conventions fortes et une documentation claire, l'utilisation de ces scripts ne permettent pas de rivaliser avec la productivité et la robustesse des applications graphiques pour tous les cas prévus par ces dernières (sauf modifications par lots).</p>
+<h1 id="vim-pour-tirer-le-meilleur-parti-des-deux-approches">vim pour tirer le meilleur parti des deux approches</h1>
+<h2 id="anatomie-dune-gui">Anatomie d'une GUI</h2>
+<p>les GUIs de gestion sont un ensemble fini de vues interactives telles que</p>
+<ul>
+<li>ces vues sont majoritairement
+<ul>
+<li>des tableaux de bord</li>
+<li>des rendus de collections d'objets du SI (avec la possibilité de filtrer et requêter)</li>
+<li>des rendus détaillés d'objets du SI</li>
+</ul></li>
+<li>ces interactions sont majoritairement
+<ul>
+<li>la navigation entre les vues</li>
+<li>la commande de CRUD sur les objects et les collections</li>
+</ul></li>
+</ul>
+<h2 id="reproduire-ces-élements-sous-vim">reproduire ces élements sous vim</h2>
+<h3 id="communication">communication</h3>
+<p>le verbe '!' de vi permet de</p>
+<ul>
+<li>écrire la sortie d'un pipe dans un buffer</li>
+<li>lire tout ou partie d'un buffer pour alimenter un pipe</li>
+<li>filtrer tout ou partie d'un buffer avec un pipe</li>
+</ul>
+<p>toutes les commandes du SI peuvent donc</p>
+<ul>
+<li>alimenter et modifier le contenu d'un buffer (une vue)</li>
+<li>utiliser le contenu d'un buffer pour paramètrer une action</li>
+</ul>
+<p>les mappings permettent d'associer des touches à des actions</p>
+<p>=== GARBAGE ....</p>
+<p>== FR</p>
+<p>Le temps est à la fois ce qui nous manque pour mettre en place des outils adaptés à la gestion de nos SI et ce que nous perdons à ne pas en disposer.</p>
+<p>Faute de mieux, j'ai commencé à utiliser vim comme glue interactive entre des scripts incomplets et des procédures mal cernées. La capacité de lire et écrire dans les pipes et la facilité avec laquelle il est possible de configurer une nouvelle interaction permettent d'appréhender vim comme un squelette applicatif respectant le principe MVC:</p>
+<ul>
+<li>M: les scripts d'exploitation</li>
+<li>V: les buffers sont une représentation textuelle de collections ou d'objets</li>
+<li>C: les interactions définies pour chaque type de vue et permettant les opérations courantes (CRUD) et la navigation en profondeur des éléments organisationnels (tickets, listes de taches, notes, documentation ) ou structurels (fichiers de configuration de serveurs, entrées LDAP, enregistrements applicatifs, journaux d'évenement, consommation d'API REST ...).</li>
+</ul>
+<p>Ce bricolage occasionnel est devenu une pratique quotidienne qui me permet d'adapter facilement mes outils a mes nouvelles demandes. Ce poster est l'occasion de décrire la logique et les avantages de cette méthode qui me permet de disposer d'une configuration générique, modulaire, extensible au fil des demandes.)))</p>
+<p>== EN</p>
+<p>We miss time to spare time. this is the tale of all our information systems as they reach a certain size or level of complexity.</p>
+<p>Missing the good tools while deadlines approaches, i started to use vim as an interactive glue over unfinished scripts in fuzzy workflows and it turns out to be a very pleasant and productive way to work around the lack of conventions and tools.</p>
+<p>Since then, i took an increasing time of my daily work switching from buffers to buffers inside my editor, building a complete visual application while using it. there is no boundary between using and extending my environment using the MVC method where:</p>
+<ul>
+<li>M are the maintainance scripts (providing CRUD operations)</li>
+<li>V are buffers where texts are rendering collections and objects and providing mappings related to the type of rendered things</li>
+<li>C are all the operations defined by the vim keybindings that call maintainance scripts with relevant parameters and output filtering.</li>
+</ul>
+<p>so clicks on my GUI are replaced by two letters mappings</p>
+<pre><code>,d to delete
+,s to show
+,e to edit
+,x to execute
+... </code></pre>
+<p>to do the right things on entries of request trackers, ldap entries, logs, REST API results, system log chunks and so on.</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>
