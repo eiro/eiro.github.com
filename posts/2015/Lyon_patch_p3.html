@@ -1,0 +1,51 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../unsemantic.css"/>
+<link rel="stylesheet" href="../../theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>Lyon patch -p3 et les suites possibles</title>
+
+
+
+
+</head><body >
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><a href="mailto:blog-eiro@groups.perlists.pm?Subject=Re:%20posts.2015.Lyon.patch.p3.md&In-Reply-To=posts.2015.Lyon.patch.p3.md@eiro.github.com">comment this post</a><br/><a href="https://groups.perlists.pm/sympa/?key_word=Re:%20posts.2015.Lyon.patch.p3.md&body=false&list=blog-eiro&subj=true&action=arcsearch">see other comments</a><br/><a href="https://groups.perlists.pm/sympa//subscribe/blog-eiro">stay tuned</a><br/><a href="/news.html">other news</a><br/><a href="/">the author</a></section>
+      <nav id="TOC"><ul>
+<li><a href="#we-need-to-talk-about-spore">&quot;We need to talk about SPORE&quot;</a></li>
+<li><a href="#coté-code">coté code</a></li>
+</ul></nav>
+<img src="../../logos/hackers.svg"/>
+<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
+<a href="../../atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
+  </div>
+<div class="grid-80"><h1>Lyon patch -p3 et les suites possibles</h1>
+    <section class="content"
+    ><p>Avec le soutien financier des <a href="http://mongueurs.pm/">Mongueurs de Perl</a> (que je remercie au passage), j'ai pu me rendre avec deux nouveaux mongueurs (<a href="https://github.com/geoffroybeck">jef</a> et Julien &quot;kernel&quot; Simonet de l'<a href="http://www.arn-fai.net/">ARN (Alsace réseau neutre)</a>) à Lyon avec dans l'idée de faire avancer des <a href="http://patch.pm/p3/wiki?node=Projets">des modules existants</a>. Et là...</p>
+<h1 id="we-need-to-talk-about-spore">&quot;We need to talk about SPORE&quot;</h1>
+<p>Au début du hackathon, je me rends compte que se trouvent dans la même pièce :</p>
+<ul>
+<li><a href="irc://lizmat@freenode">lizmat</a>, une experte Perl6</li>
+<li><a href="https://github.com/fperrad">François Perrad</a>, contributeur de la première version de la spécification de <a href="https://github.com/SPORE/specifications">SPORE</a>, auteur et mainteneur de <a href="https://github.com/fperrad/lua-Spore">l'implémentation Lua</a>.</li>
+<li><a href="https://github.com/geoffroybeck">jef</a>, auteur et mainteneur de l'implémentation <a href="http://www.groovy-lang.org/">groovy</a> (<a href="https://github.com/unistra/gspore">gspore</a>) et probablement co-auteur de la <a href="https://github.com/unistra/ls-spore">version livescript</a>. Il travaille dans l'équipe de <a href="https://github.com/agrausem">Arnaud Grausem</a> à l'<a href="http://www.unistra.fr">Université de Strasbourg</a>, ce dernier étant le papa de <a href="https://github.com/agrausem/britney">Britney</a>, la version <a href="http://python.org">python</a>.</li>
+<li>moi-même, intermittent du spectacle à la recherche d'emploi, presque diplomé de la <a href="http://perdu.com/">Zavatta school of bullshit</a>.</li>
+</ul>
+<p>Rapidement, donc, les discutions se sont orientées vers <a href="https://github.com/SPORE/specifications">SPORE</a>. <a href="https://github.com/geoffroybeck">jef</a> explique que la simplicité et la souplesse de <a href="https://github.com/SPORE/specifications">SPORE</a> ont permis à cette spécification de s'inserer dans des parties centrales du système d'information de l'<a href="http://www.unistra.fr">Université de Strasbourg</a> et que la popularité de la solution est grandissante. Il rapporte toutefois quelques manques dans la spécification qui ont été rapportés par <a href="https://github.com/agrausem">Arnaud Grausem</a> il y a quelques années. Les <em>pull request</em> sont restées lettre morte.</p>
+<p>François explique que ces manques sont connus, qu'une spécification a été discutée lors des <a href="http://journeesperl.fr/fpw2012/">Journées Perl 2012</a> sans avoir été complètement rédigée mais les idées se voient déjà implémentées dans <a href="https://github.com/fperrad/lua-Spore">lua-spore</a>. À cette occasion, l'équipe se demandait pourquoi <a href="https://github.com/SPORE/specifications">SPORE</a> n'avait pas rencontré un plus large succès tant il est vrai que cette idée simple fait gagner un temps fou (et d'autant que des spécifications qui nous semblent moins intéressantes conceptuellement sont apparues par la suite).</p>
+<p>Afin de réactiver cette communauté, François nous a ajoutés (Arnaud et moi-même) comme membres de <a href="https://github.com/spore">l'organisation SPORE</a> de <a href="https://github.com/">github</a>.</p>
+<p>Cette réactivation (la définition d'objectifs sur lequels je reviendrai dans un prochain billet) est à mes yeux un motif suffisant de satisfaction.</p>
+<h1 id="coté-code">coté code</h1>
+<p>J'ai profité des moments de la discution sur les manques de <a href="https://github.com/SPORE/specifications">SPORE</a> nécessitait d'avoir un peu d'experience en la matière pour écrire un micro <a href="https://metacpan.org/pod/Dist::Zilla">Dist::Zilla</a> pour <a href="http://perl6.org/">Perl6</a>: <a href="https://github.com/eiro/p6-p6sm">p6sm</a> est sur github.</p>
+<p>Ensuite, nous avons profité de l'expertise et la patience de <a href="irc://lizmat@freenode">lizmat</a> pour expérimenter les possibilités de metaprogrammation de Perl6 (ou pour être plus franc nous avons simplement appliqué sans varier les idées qu'elle nous a proposées) ce qui nous a rassuré : même si les namespaces sont immutables une fois clos, il est possible de créer des classes anonymes. en plus d'avoir un embryon d'implémentation que j'ai <a href="https://github.com/eiro/p6-spore">poussé sur github</a>, nous avons surtout été satisfait par l'élégance des concepts et de la syntaxe de <a href="http://perl6.org/">Perl6</a>.</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>

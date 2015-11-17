@@ -1,87 +1,7 @@
 #! env perl6-m
 
 use v6;
-
-sub _attrs_str ( %attrs) { %attrs.pairs.map: { qq/{.key}="{.value}"/ } }
-
-# multi sub tag ( Str $tag, %attrs) {
-#     "<{ $tag, _attrs_str %attrs }/>";
-# }
-
-multi sub tag ( Str $tag, %attrs ) {
-    "<{ $tag, _attrs_str %attrs }/>";
-}
-
-multi sub tag ( Str $tag, Parcel $attrs=()) {
-    "<{ $tag, _attrs_str $attrs.hash }/>";
-}
-
-multi sub tag ( Parcel $spec ) { tag $spec[0], $spec[1..*] } 
-
-multi sub tag ( Str $tag, %attrs, &content) { 
-    ( "<{ $tag, _attrs_str %attrs }>"
-    , &content()
-    , "</$tag>"
-    ).join: ""
-}
-
-# multi sub tag ( *@args ) { die "what can i say about { @args.perl } ?" } 
-
-# TODO: more elegant way ? 
-# TODO: why is tag <feed> not a Parcel ?
-multi sub tag ( Str $tag, &content) { tag $tag, ().hash, &content }
-
-multi sub tag (Parcel $spec, &content) {
-    tag $spec[0]
-    , $spec[1..*].hash
-    , &content;
-}
-
-# TEST SUITE ? 
-#
-# say tag <foo id log class foo >;
-# say tag <<img src logo.png alt "i love this company">>; 
-# say tag < img src /images/logo.png >;
-# say tag <head id cool >, { "hello" }; 
-# say tag "foo";
-# say tag "foo",< id log class foo >;
-# say tag <foo id log class foo >;
-# say tag <h1 id log class foo >, {
-#     "hello", tag <span id hey>, {
-#         tag <a href />, {"too"}
-#     }
-# };
-
-# METAPROGRAMING {{{ 
-#
-# Experience 1 
-# $?PACKAGE.
-# < link meta img >.map: {
-#     $?PACKAGE.^ared routine:
-#     ( $?PACKAGE
-#     , $_
-#     , &tag.assuming( tag => $_ ) )
-# } 
-#
-
-# Experience 2
-# < html h1 >.map: -> $sym {
-#     my $code = "my \&$sym = \&tag.assuming( tag => '$sym' )";
-#     say $code;
-#     EVAL $code;
-#     CATCH {
-#         .say
-#     }
-# } 
-
-# Experience 3 
-#
-# for <joe bob> -> $mate { OUR::{'&' ~ $mate} = sub { say "hello $mate" } }; 
-
-# Experience 4 
-# macro/quasi ??
-
-# }}}
+use XML::Writer;
 
 # multi method to-json ( Any:U ) { 'null' } 
 sub pan_html ( Str:D $file where .IO.e ) {
@@ -93,80 +13,65 @@ sub pan_html ( Str:D $file where .IO.e ) {
     qqx/$cmd/
 }
 
-sub ls ( $pattern ) { qqx{ls $pattern}.lines } 
-
-multi sub as_xml ( %dict ) {
-    %dict.kv.map: -> $tag,$value {
-        tag $tag, {
-            if $value ~~ Str { $value }
-            else { as_xml $value }
-        }
-    }
-}
-
-multi sub as_xml ( Parcel $dict ) { as_xml $dict.hash }
-
 sub atom (@entries) {
+    return say @entries[0].perl;
     '<?xml version="1.0" encoding="UTF-8"?>'
-    , tag <feed xml:lang en-US xmlns http://www.w3.org/2005/Atom >,
-        { (tag <link rel self type application/atom+xml
-                href http://eiro.github.io/atom.xml >)
-        , (tag <link rel alternate type text/html
-                href http://eiro.github.io/news.html >)
-        , (as_xml
-            { id     => 'tag:eiro.github.com,2014:blog'
+    , XML::Writer.serialize :feed[
+        "xml:lang" => "en-US"
+        , :xmlns<http://www.w3.org/2005/Atom>
+        , :link[ :rel<self>
+            , :type<application/atom+xml>
+            , :href<http://eiro.github.io/atom.xml> ]
+        , :link[ :rel<alternate>
+            , :type<text/html>
+            , :href<http://eiro.github.io/news.html> ]
+            , id     => 'tag:eiro.github.com,2014:blog'
             , title  => 'The Silence of Plato'
-            , updated => "@entries[0].<published>"
-            , author => {name => 'Marc Chantreux'}})
-        , ( @entries.map: {
-            (tag <entry>, {
-                (tag <id>, {.<id>})
-                ~(tag <title>, {.<title>})
-                ~(tag <updated>, {.<published>})
-                ~(tag <published>, {.<published>})
-                ~(tag "link",
-                    %( type => 'text/html'
-                    , rel => 'alternate'
-                    , href => .<link> ))
-                ~(tag <content type html >, { .<content>.result })
-            })
-        } ) 
-    }
+            #, updated => "@entries[0].<published>"
+            #, updated => @entries[0]
+        ]
 }
 
-my %posts = (ls "posts/*/index").map: {
-    my $dir  = $_.subst(/\/index$/,"");
-    my $year = $dir.subst(/^posts\//,"");
-    $year => [ .IO.lines.map: {
-            my %h = :$year, :$dir, (
-                < date file title >
-                Z .split(/<[\ \t]>+/,3)
-            );
-            %h<source> = "$dir/{%h<file>}";
-            %h<link> = "$dir/{(%h<file>).subst(/\.md$/,".html")}";
-            {%h}
-        }]
-};
+# sub _atom (@entries) {
+#     '<?xml version="1.0" encoding="UTF-8"?>'
+#     , tag <feed xml:lang en-US xmlns http://www.w3.org/2005/Atom >,
+#         { (tag <link rel self type application/atom+xml
+#                 href http://eiro.github.io/atom.xml >)
+#         , (tag <link rel alternate type text/html
+#                 href http://eiro.github.io/news.html >)
+#         , (as_xml
+#             { id     => 'tag:eiro.github.com,2014:blog'
+#             , title  => 'The Silence of Plato'
+#             , updated => "@entries[0].<published>"
+#             , author => {name => 'Marc Chantreux'}})
+#         , ( @entries.map: {
+#             (tag <entry>, {
+#                 (tag <id>, {.<id>})
+#                 ~(tag <title>, {.<title>})
+#                 ~(tag <updated>, {.<published>})
+#                 ~(tag <published>, {.<published>})
+#                 ~(tag "link",
+#                     %( type => 'text/html'
+#                     , rel => 'alternate'
+#                     , href => .<link> ))
+#                 ~(tag <content type html >, { .<content>.result })
+#             })
+#         } ) 
+#     }
+# }
 
-# %posts.pairs.map: { .say for .key, .value.map: {.<title>.indent(4)}  }
-# @%posts.perl.say;
-# exit;
-
-my @feed = %posts.pairs.sort(*.key).reverse.map: -> $p {
-    $p.value.map: {
-        my %h
-        = link      => .<link>
-        , id        => "tag:eiro.github.com,{.<date>.subst(/T.*/,"")}:{.<source>}"
-        , content   => (start {pan_html .<source>})
-        , published => .<date>
-        , created   => .<date>
-        , title     => .<title>
-        ; 
-        {%h}
-    }
-};
+my %posts = dir("posts").map( -> $year {
+        ( my $index = "$year/index".IO ).f or next;
+        $year => $index.lines.map: {
+            my %p = %(< created file title > Z=> .split(/<[\ \t]>+/,3));
+            %p<source> = join '/', $year, %p<file>;
+            %p<link>   = %p<source>.subst(/\.md$/,".html");
+            %p
+        }
+    }); 
 
 sub news (%posts) {
+    join '', 
 '---
 id: tag:eiro.github.com,2014:blog
 title: The silence of Plato
@@ -175,14 +80,25 @@ alternates:
     http://eiro.github.io/news.html: {rel: alternate, type: text/html}
     http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
 ...
-' , %posts.pairs.sort(*.key).reverse.map: -> $year {
-        "\n# {$year.key}\n"
-        , $year.value.map: -> $p { "* [$p<title>]($p<link>) ($p<date>)\n" }
-    }
+' , %posts.pairs.sort(*.key).reverse.map( -> $year {
+        "\n\n# {$year.key}\n\n"
+        , $year.value.reverse.map: -> $p { "* [$p<title>]($p<link>) ($p<created>)\n" }
+    })
 
 }
 
-multi sub MAIN ('atom') { say atom @feed }
-multi sub MAIN () { say atom @feed }
-multi sub MAIN ('news') { .say for news %posts }
+multi sub MAIN ('atom') {
+    say atom %posts.pairs.sort(*.key).reverse.map: -> $p {
+        $p.value.map: -> %p {
+            %( id => "tag:eiro.github.com,{%p<created>.subst(/T.*/,"")}:{%p<source>}"
+            , published => %p<created>
+            , < link created title >.map({ $_ => %p{$_} })
+            # , content   => start {pan_html .<source>}
+            , content   => "haha"
+            )
+        }
+    };
+}
+
+multi sub MAIN ('news') { say news %posts }
 
