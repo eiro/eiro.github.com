@@ -1,0 +1,34 @@
+BLOCK html/alternate; "<link rel="alternate" type="application/xml" title="$title" href="$href" [% options %]/>"; END;
+
+BLOCK sympa/alternate;
+    IF arc_public_access;
+        title = "RSS Lastest messages"|loc;
+        href  = "$base_url/$path_cgi/rss/latest_arc/$list?count=20";
+    ELIF;
+        href  = "$base_url/$path_cgi/rss/latest_d_read/$list?count=20";
+        title = "RSS Lastest documents"|loc;
+    END;
+    INCLUDE html/alternate;
+END;
+INCLUDE sympa/alternate base_url="toto" path_cgi ="haha" arc_public_access=true;
+
+END;
+
+
+<!-- RSS chanel -->
+   [% IF list -%] 
+     [% IF arc_public_access %]
+     
+     [% END -%]
+     [% IF shared_public_access %]<link rel="alternate" type="application/xml" title="[%|loc%]RSS Latest documents[%END%]" href="[% base_url%][% path_cgi %]/rss/latest_d_read/[%list%]?count=20"/>[% END -%]
+   [% ELSE -%]
+     [% IF (action == 'lists') && topic -%]
+       <link rel="alternate" type="application/xml" title="[%|loc%]RSS Latest lists[%END%]" href="[% base_url%][% path_cgi %]/rss/latest_lists/[%topic%]?count=20"/>
+       <link rel="alternate" type="application/xml" title="[%|loc%]RSS Active lists[%END%]" href="[% base_url%][% path_cgi %]/rss/active_lists/[%topic%]?count=20"/>
+     [% ELSE -%]
+     <link rel="alternate" type="application/xml" title="[%|loc%]RSS Latest lists[%END%]" href="[% base_url%][% path_cgi %]/rss/latest_lists?count=20"/>
+     <link rel="alternate" type="application/xml" title="[%|loc%]RSS Active lists[%END%]" href="[% base_url%][% path_cgi %]/rss/active_lists?count=20"/>
+     [% END -%]
+   [% END -%]
+
+

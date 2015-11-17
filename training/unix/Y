@@ -1,0 +1,59 @@
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+syslog:x:101:103::/home/syslog:/bin/false
+messagebus:x:102:105::/var/run/dbus:/bin/false
+whoopsie:x:103:106::/nonexistent:/bin/false
+sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin
+ntp:x:106:113::/home/ntp:/bin/false
+postfix:x:107:115::/var/spool/postfix:/bin/false
+mc:x:1002:100:Marc Chantreux,,,:/home/mc:/bin/zsh
+dovecot:x:108:109:Dovecot mail server,,,:/usr/lib/dovecot:/bin/false
+dovenull:x:109:65534:Dovecot login user,,,:/nonexistent:/bin/false
+dnsmasq:x:110:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+lxc-dnsmasq:x:111:117:LXC dnsmasq,,,:/var/lib/lxc:/bin/false
+colord:x:112:119:colord colour management daemon,,,:/var/lib/colord:/bin/false
+yd:x:1000:1000:Yannick,,,:/home/yd:/bin/bash
+usbmux:x:113:46:usbmux daemon,,,:/home/usbmux:/bin/false
+git:x:1001:1001:gitolite user,,,:/srv/gitolite:/bin/sh
+od:x:1003:1002:Olivier Dive,,,:/home/od:/bin/zsh
+mongodb:x:104:65534::/home/mongodb:/bin/false
+uuidd:x:100:101::/run/uuidd:/bin/false
+debarchiver:x:114:123:Deb archiving tool,,,:/var/lib/debarchiver:/bin/false
+sepa:x:1005:1004:User for sepa software,,,:/home/sepa:/bin/zsh
+systemd-timesync:x:115:126:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:116:127:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:117:128:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:118:129:systemd Bus Proxy,,,:/run/systemd:/bin/false
+rt4:x:1006:100:test for RT4 deployment,,,:/home/rt4:/bin/zsh
+perlci:x:1007:100:Perl CI account,,,:/home/perlci:/bin/zsh
+rtlauce:x:1008:100:Laurence teste RT4 deploy,,,:/home/rtlauce:/bin/zsh
+wj:x:1011:100:WIDEMANN Jimmy,,,:/home/wj:/root/adios
+bg:x:1009:100:BECK Geoffroy,,,:/home/bg:/bin/zsh
+fe:x:1010:100:FINKBEINER Emilie,,,:/home/fe:/root/adios
+wl:x:1012:100:WILHELM Laurence,,,:/home/wl:/root/adios
+dm:x:1013:100:DELBANY Maya,,,:/home/dm:/root/adios
+md:x:1014:100:MANGEL Denis,,,:/home/md:/root/adios
+tt:x:1015:100:TRUR Thomas,,,:/home/tt:/root/adios
+za:x:1016:100:ZERIG Amar,,,:/home/za:/root/adios
+cyrus:x:119:8:Cyrus Mailsystem User,,,:/var/spool/cyrus:/bin/sh
+gearman:x:120:130:Gearman Job Server,,,:/var/lib/gearman:/bin/false
+memcache:x:121:131:Memcached,,,:/nonexistent:/bin/false
+services:x:1017:100:Compte des restricted shells de ramirez,,,:/home/services:/bin/zsh
+redis:x:122:132::/var/lib/redis:/bin/false
+sympaform:x:1004:100:compte de formation sympa,,,:/home/sympaform:/bin/zsh

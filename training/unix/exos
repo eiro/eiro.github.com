@@ -1,0 +1,20 @@
+mais non non non non non non non
+oui
+
+repeat 100 {yes mais non{,,,,,,} |sed 3000q; echo oui } > A 
+
+echo 'yes mais non{,}| sed 2q ; echo oui'
+
+yes 'yes mais non{,} | sed 2q ; echo oui' |
+    sed 3q |
+    zsh
+
+yes 'yes mais non{,,,} | sed 3000q; echo enfin oui, peut-etre' |
+    sed 10q |
+    zsh > A
+cat A{,,,,,,,,,,} > B
+
+
+while {sleep 2} {echo sleep2} |
+    while {read line} {echo hello from inside:`date +%T` ; sleep 1} |
+    while {read end}  {print $end recu a `date +%T`}

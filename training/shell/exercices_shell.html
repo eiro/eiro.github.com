@@ -1,0 +1,114 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../unsemantic.css"/>
+<link rel="stylesheet" href="../../theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>exercices</title>
+
+
+
+
+</head><body >
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><a href="mailto:blog-eiro@groups.perlists.pm?In-Reply-To=posts.2014.corrections.md@eiro.github.com&Subject=Re:%20posts.2014.corrections.md">comment this post</a><br/><a href="https://groups.perlists.pm/sympa/?key_word=Re:%20posts.2014.corrections.md&subj=true&list=blog-eiro&body=false&action=arcsearch">see other comments</a><br/><a href="https://groups.perlists.pm/sympa//subscribe/blog-eiro">stay tuned</a><br/><a href="/news.html">other news</a><br/><a href="/">the author</a></section>
+      <nav id="TOC"><ul>
+<li><a href="#tmpgetcert">/tmp/getcert</a></li>
+<li><a href="#list">list</a></li>
+<li><a href="#table-de-7">table de 7</a></li>
+<li><a href="#votre-serveur-de-fichiers">votre serveur de fichiers</a></li>
+<li><a href="#des-logs-a-une-liste-de-paquets-debian">des logs a une liste de paquets debian</a></li>
+<li><a href="#extra-perl-as-filter">extra: perl as filter</a></li>
+</ul></nav>
+<img src="../../logos/hackers.svg"/>
+<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
+<a href="../../atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
+  </div>
+<div class="grid-80"><h1>exercices</h1>
+    <section class="content"
+    ><h1 id="tmpgetcert">/tmp/getcert</h1>
+<p>le fichier <code>/tmp/getcert</code> contient un script zsh qui permet d'afficher les données SSL du serveur IMAP de l'unistra.</p>
+<ul>
+<li>lancez ce script</li>
+<li>extraire le certificat du contenu ainsi affiché.</li>
+<li>stocker le dit certificat dans ~/imaps.u-strasbg.fr.pem</li>
+</ul>
+<h1 id="list">list</h1>
+<p>creez une commande list telle que</p>
+<pre><code># seq 5|list
+[ 1
+, 2
+, 3
+, 4
+, 5 ]
+
+seq 5</code></pre>
+<h1 id="table-de-7">table de 7</h1>
+<p>Afficher la table de 7 avec le format</p>
+<pre><code>1 * 7 = 7
+...
+10 * 7 = 70</code></pre>
+<h1 id="votre-serveur-de-fichiers">votre serveur de fichiers</h1>
+<p>créez dans votre home un répertoire users qui contient un sous répertoire par utilisateur de zsh de votre systeme.</p>
+<p>ce sous-répertoire aura le meme nom que l'utilisateur et contiendra</p>
+<ul>
+<li>1 fichier uid contenant l'uid de l'utilisateur</li>
+<li>1 fichier display contenant les noms et prenoms de l'utilisateur</li>
+</ul>
+<p>ainsi</p>
+<pre><code># grep . users/mc
+users/mc/display: Marc Chantreux
+users/mc/uid: 1000</code></pre>
+<h1 id="des-logs-a-une-liste-de-paquets-debian">des logs a une liste de paquets debian</h1>
+<p>transformez</p>
+<pre><code>SOME DEPENDENCIES WERE MISSING.
+MAILGATE missing dependencies:
+        Mozilla::CA ...MISSING
+CORE missing dependencies:
+        Crypt::Eksblowfish ...MISSING
+        Time::ParseDate ...MISSING
+        Encode &gt;= 2.64 ...MISSING
+GD missing dependencies:
+        GD::Graph &gt;= 1.47 ...MISSING
+GPG missing dependencies:
+        PerlIO::eol ...MISSING
+PG missing dependencies:
+        DBD::Pg &gt;= 1.43 ...MISSING
+        DBIx::SearchBuilder &gt;= 1.66 ...MISSING
+DEVELOPER missing dependencies:
+        Plack::Middleware::Test::StashWarnings &gt;= 0.08 ...MISSING  </code></pre>
+<p>en</p>
+<pre><code>mozilla-ca
+crypt-eksblowfish
+time-parsedate
+encode
+gd-graph
+perlio-eol
+dbd-pg
+dbix-searchbuilder
+plack-middleware-test-stashwarnings  </code></pre>
+<p>avec vim</p>
+<pre><code>/^\t
+v##d
+s#
+s# .*
+s#::#-#
+gvu</code></pre>
+<p>en shell</p>
+<pre><code>sed -nr &#39;
+    s/::/-/g
+    s/^\s+(\S+).*/lib\1-perl/p
+&#39;  </code></pre>
+<h1 id="extra-perl-as-filter">extra: perl as filter</h1>
+<p>'&lt;,'&gt;!perl -lnE'/^/ &amp;&amp; say map {s/::/-/g;lc} /(+)/'<br />'&lt;,'&gt;!perl -lnE '<span class="math">$a = lc join &quot;&quot;, /\b\w/g; print &quot;$</span>a $_&quot;'</p><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>

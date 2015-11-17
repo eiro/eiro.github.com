@@ -1,0 +1,108 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="../../unsemantic.css"/>
+<link rel="stylesheet" href="../../theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title></title>
+
+
+
+
+</head><body class="exo">
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><a href="mailto:blog-eiro@groups.perlists.pm?In-Reply-To=posts.2014.corrections.md@eiro.github.com&Subject=Re:%20posts.2014.corrections.md">comment this post</a><br/><a href="https://groups.perlists.pm/sympa/?key_word=Re:%20posts.2014.corrections.md&subj=true&list=blog-eiro&body=false&action=arcsearch">see other comments</a><br/><a href="https://groups.perlists.pm/sympa//subscribe/blog-eiro">stay tuned</a><br/><a href="/news.html">other news</a><br/><a href="/">the author</a></section>
+      <nav id="TOC"><ul>
+<li><a href="#death-row">Death row</a></li>
+<li><a href="#solutions">Solutions</a></li>
+</ul></nav>
+<img src="../../logos/hackers.svg"/>
+<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
+<a href="../../atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
+  </div>
+<div class="grid-80">
+    <section class="content"
+    ><h1 id="death-row">Death row</h1>
+<p>Soit le script suivant</p>
+<pre><code>death_row () {
+    curl -s \
+    &#39;http://www.lemonde.fr/ameriques/visuel/2014/10/10/voix-d-outretombe-les-derniers-mots-de-condamnes-a-mort-executes-au-texas_4501418_3222.html&#39;
+}
+
+show_victims () {
+    sed -rn &#39;s!.*&lt;(h[23])&gt;#?(.*)&lt;/\1&gt;.*!\2!p&#39;|
+    sed -n &#39;
+        1 x
+        2,$ {G;s/\n/\t/p;n;x}
+    &#39;
+}
+
+death_row|show_victims</code></pre>
+<p>Réimplémentez show_victims en</p>
+<ul>
+<li>pur shell (en utilisant <code>(#b)</code>)</li>
+<li>en un seul script sed</li>
+<li>avec un langage dynamique (python, perl, ruby, ...)</li>
+</ul>
+<h1 id="solutions">Solutions</h1>
+<div class="solution">
+<h2>
+en pur shell
+</h2>
+<pre><code>show_victims () {
+    local line
+    while {read line} {
+       if   [[ $line = (#b)*\&lt;h2\&gt;(*)\&lt;/h2\&gt;*   ]] { dn=$match[1] } \
+       elif [[ $line = (#b)*\&lt;h3\&gt;\#(*)\&lt;/h3\&gt;* ]] { print $match[1] $dn }
+    }
+}</code></pre>
+</div>
+<div class="solution">
+<h2>
+sed en 1 passe
+</h2>
+<pre><code>show_victims () {
+    sed -rn &#39;
+
+        : matchDisplayName
+        s!.*&lt;h2&gt;(.*)&lt;/h2&gt;.*!\1!
+        T matchID
+        x
+        b
+
+        : matchID
+        s!.*&lt;h3&gt;(.*)&lt;/h3&gt;.*!\1!
+        T
+        G
+        s/\n/ /
+        p
+
+
+    &#39;
+}</code></pre>
+</div>
+<div class="solution">
+<h2>
+en <a href="http://www.perl.org">Perl</a>
+</h2>
+<pre><code>use LWP::Simple;
+
+my %people =
+    map m{ &lt;h[23]&gt; \#? ([^&lt;]+) }xmsg,
+    get @ARGV;
+
+map {say &quot;$people{$_}\t$_&quot;}
+    sort {$people{$a} &lt;=&gt; $people{$b} }
+    keys %people;</code></pre>
+</div><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>

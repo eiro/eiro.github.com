@@ -1,0 +1,69 @@
+execve("/bin/grep", ["grep", "zsh", "/etc/passwd"], [/* 44 vars */]) = 0
+brk(0)                                  = 0x7fe9aa01d000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe9a8273000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=91036, ...}) = 0
+mmap(NULL, 91036, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe9a825c000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\16\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=14592, ...}) = 0
+mmap(NULL, 2109712, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe9a7e4e000
+mprotect(0x7fe9a7e51000, 2093056, PROT_NONE) = 0
+mmap(0x7fe9a8050000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7fe9a8050000
+close(3)                                = 0
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\v\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1869392, ...}) = 0
+mmap(NULL, 3972864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7fe9a7a84000
+mprotect(0x7fe9a7c44000, 2097152, PROT_NONE) = 0
+mmap(0x7fe9a7e44000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7fe9a7e44000
+mmap(0x7fe9a7e4a000, 16128, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fe9a7e4a000
+close(3)                                = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe9a825b000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe9a825a000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe9a8259000
+arch_prctl(ARCH_SET_FS, 0x7fe9a825a700) = 0
+mprotect(0x7fe9a7e44000, 16384, PROT_READ) = 0
+mprotect(0x7fe9a8050000, 4096, PROT_READ) = 0
+mprotect(0x7fe9a84a8000, 8192, PROT_READ) = 0
+mprotect(0x7fe9a8275000, 4096, PROT_READ) = 0
+munmap(0x7fe9a825c000, 91036)           = 0
+brk(0)                                  = 0x7fe9aa01d000
+brk(0x7fe9aa03e000)                     = 0x7fe9aa03e000
+open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=1613376, ...}) = 0
+mmap(NULL, 1613376, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7fe9a80cf000
+close(3)                                = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 3), ...}) = 0
+open("/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=26258, ...}) = 0
+mmap(NULL, 26258, PROT_READ, MAP_SHARED, 3, 0) = 0x7fe9a826c000
+close(3)                                = 0
+ioctl(1, SNDCTL_TMR_TIMEBASE or SNDRV_TIMER_IOCTL_NEXT_DEVICE or TCGETS, {B38400 opost isig icanon echo ...}) = 0
+openat(AT_FDCWD, "/etc/passwd", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=3275, ...}) = 0
+ioctl(3, SNDCTL_TMR_TIMEBASE or SNDRV_TIMER_IOCTL_NEXT_DEVICE or TCGETS, 0x7ffd156466d0) = -1 ENOTTY (Inappropriate ioctl for device)
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 32768) = 3275
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(136, 3), ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fe9a826b000
+write(1, "mc:x:1002:100:Marc Chantreux,,,:"..., 50) = 50
+write(1, "od:x:1003:1002:Olivier Dive,,,:/"..., 49) = 49
+write(1, "sepa:x:1005:1004:User for sepa s"..., 63) = 63
+write(1, "rt4:x:1006:100:test for RT4 depl"..., 61) = 61
+write(1, "perlci:x:1007:100:Perl CI accoun"..., 59) = 59
+write(1, "rtlauce:x:1008:100:Laurence test"..., 71) = 71
+write(1, "bg:x:1009:100:BECK Geoffroy,,,:/"..., 49) = 49
+write(1, "services:x:1017:100:Compte des r"..., 87) = 87
+write(1, "sympaform:x:1004:100:compte de f"..., 75) = 75
+read(3, "", 28672)                      = 0
+close(3)                                = 0
+close(1)                                = 0
+munmap(0x7fe9a826b000, 4096)            = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
