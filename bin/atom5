@@ -2,10 +2,11 @@
 use Eirotic;
 use Rototo::Atom;
 use HTML::Entities;
+use List::UtilsBy qw( sort_by);
 
 sub pan_html ($file) {
     -e $file or die;
-    encode_entities "".qx{pandoc -thtml5 $file}
+    encode_entities "".qx{m4 -Im4 post defs render $file |pandoc -t html5}
     , q(<>&);
 }
 
@@ -65,7 +66,7 @@ sub atom (@entries) {
             , ( Rototo::tag updated => $$e{published} )
             , ( link_ qw<  type text/html rel alternate href > => $$e{link}||die YAML::Dump {$count => $e })
             , ( content +{qw( type html )}, $$e{content} ))
-            } @entries)
+            } reverse sort_by {$$_{published}} @entries)
 }
 
 sub news (%posts) {
@@ -81,8 +82,9 @@ alternates:
      "\n# $_\n\n"
      , map +(
          sprintf '* [%s](%s) (%s)'."\n"
-         , @{$_}{qw( title link created )}
-     ), reverse @{ $posts{$_} };
+         , @{$_}{qw( title link )}
+         , join ', ', map /(.*)T(.{4})/, $$_{created}
+     ), reverse  @{ $posts{$_} };
 } reverse sort keys %posts }
 
 sub usage { say STDERR $_ for @_, "subcommands are atom|news" }
