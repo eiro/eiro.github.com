@@ -34,3 +34,8 @@ $(keywords_m4): $(depth)/keywords
 snitch:
 	@echo mdpages:  $(mdpages)
 	@echo webpages: $(webpages)
+
+test:
+	zsh tests.zsh > t/results
+
+	@echo webpages: $(webpages)

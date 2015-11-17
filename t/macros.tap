@@ -1,0 +1,12 @@
+ok 1 correct render of _CATV
+ok 2 correct render of _PERLDOC
+ok 3 correct render of _PERLDOC()
+ok 4 correct render of _PERLDOC(perlsub.html#Signatures,signatures)
+ok 5 correct render of _PERLDOCSEC(perlsub,signatures,Signatures)
+ok 6 correct render of _PERLDOCSEC(perlsub,perl subroutines)
+ok 7 correct render of _PERLDOCSEC(perlsub,perl subroutines)
+ok 8 correct render of _POD4(Module::Runtime)
+ok 9 correct render of _POD4(Moo)
+ok 10 correct render of _PERLFLAG(E,commandline)
+ok 11 correct render of _PERLFLAG(w)
+1..11
