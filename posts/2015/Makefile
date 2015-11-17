@@ -1,10 +1,10 @@
 depth= ../..
-corpus=posts/2014
+corpus=posts/2015
 include $(depth)/site.mk
 
 .md.html: $(main_html_template)
 	perl $(depth)/bin/post_menu $(corpus)/$< > menu
-	$(buildpage) $@ $<
+	$(htmlify) < $< > $@
 
 all: $(webpages)
 
