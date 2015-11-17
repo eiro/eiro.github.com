@@ -8,8 +8,8 @@ all: $(basics) $(webpages) theme.css
 website: FORCE $(webpages) 
 
 FORCE:
-	perl6 bin/atom atom > atom.xml
-	perl6 bin/atom news > news.md
+	perl bin/atom5 atom > atom.xml
+	perl bin/atom5 news > news.md
 	cd posts/2015; make
 
 menu: menu.md.
