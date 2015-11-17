@@ -36,6 +36,6 @@ snitch:
 	@echo webpages: $(webpages)
 
 test:
-	zsh tests.zsh > t/results
+	for t (t/*zsh) {zsh $$t > $${t%zsh}tap}
+	tapprouve t/*tap > t/report.html
 
-	@echo webpages: $(webpages)
