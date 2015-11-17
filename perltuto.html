@@ -1,0 +1,93 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="./unsemantic.css"/>
+<link rel="stylesheet" href="./theme.css" />
+<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
+
+
+<title>le tuto minimal pour Perl</title>
+
+
+
+
+</head><body >
+    <div id="wrapper"><header role="banner" class="grid-container">
+    <div class="grid-100"><h1>The silence of Plato</h1>
+</div></header>
+  <main role="main" class="grid-container">
+  <div class="grid-20">
+      <section><ul>
+<li><a href="index.html">home</a></li>
+<li><a href="news.html">news</a></li>
+<li><a href="uze/">uze documentation</a></li>
+<li><a href="perl.html">perl</a></li>
+<li><a href="cli.html">cli tools</a></li>
+<li><a href="sysop.html">sysop notes</a></li>
+<li><a href="dump.html">core dump</a></li>
+<li><a href="aboutme.html">about me</a></li>
+</ul></section>
+      <nav id="TOC"><ul>
+<li><a href="#linterpreteur-perl">l'interpreteur perl</a></li>
+<li><a href="#section"></a></li>
+</ul></nav>
+<img src="./logos/hackers.svg"/>
+<a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
+<a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
+<a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
+  </div>
+<div class="grid-80"><h1>le tuto minimal pour Perl</h1>
+    <section class="content"
+    ><h1 id="linterpreteur-perl">l'interpreteur perl</h1>
+<pre><code>getent passwd nobody root |
+    perl <a href="http://perldoc.perl.org/perlrun.html#*-n*">-n</a> <a href="http://perldoc.perl.org/perlrun.html#*-l*">-l</a> <a href="http://perldoc.perl.org/perlrun.html#*-F*_pattern_">-F</a>: <a href="http://perldoc.perl.org/perlrun.html#*-E*_commandline_">-E</a>&#39;
+        say if $F[-1] =~ /sh$/
+    &#39;</code></pre>
+<p><a href="http://perldoc.perl.org/perlrun">perlrun</a> et <a href="http://perldoc.perl.org/index-pragmas">les pragmas</a> par l'exemple et le lien.</p>
+<pre><code>perl <a href="http://perldoc.perl.org/perlrun.html#*-w*">-w</a> <a href="http://perldoc.perl.org/perlrun.html#*-E*_commandline_">-E</a> &#39; <a href="http://perldoc.perl.org/functions/say.html">say</a> &quot;hello world&quot;&#39;</code></pre>
+<p>ou plus simplement</p>
+<pre><code>perl -wE&#39; say &quot;hello world&quot;&#39;</code></pre>
+<p>ou encore</p>
+<pre><code>perl hello.pl</code></pre>
+<p>si <code>hello.pl</code> contient</p>
+<pre><code>use <a href="http://perldoc.perl.org/feature.html#FEATURE-BUNDLES">v5.20</a>;
+use <a href="https://metacpan.org/pod/strict">strict</a>;
+say &quot;hello world&quot;;</code></pre>
+<p>un boilerplate plus classique</p>
+<pre><code>use <a href="http://perldoc.perl.org/feature.html#FEATURE-BUNDLES">v5.20</a>;
+use <a href="https://metacpan.org/pod/strict">strict</a>;
+use <a href="https://metacpan.org/pod/warnings">warnings</a>;
+use <a href="https://metacpan.org/pod/diagnostics">diagnostics</a>; # au début du moins
+use <a href="https://metacpan.org/pod/utf8">utf8</a>;
+use <a href="https://metacpan.org/pod/open">open</a> qw&lt; :std :utf8 &gt;;
+use <a href="https://metacpan.org/pod/experimental">experimental</a> &#39;signatures&#39;;
+use <a href="https://metacpan.org/pod/mro">mro</a>;</code></pre>
+<p>Certains modules (comme <a href="https://metacpan.org/pod/Modern::Perl">Modern::Perl</a>) réduisent ce boilerplate en chargant tout ça pour toi. si tu n'es pas content de ce qui existe, fais le tient en utilisant des modules comme <a href="https://metacpan.org/pod/Import::Into">Import::Into</a> ou <a href="https://metacpan.org/pod/Import::Base">Import::Base</a> (c'est comme ça que j'ai écris <a href="https://metacpan.org/pod/Eirotic">Eirotic</a>).</p>
+<p>Pour en venir à <a href="http://perldoc.perl.org/perlrun"></a>, il est très facile de voir <a href="http://perl.org/">Perl</a> comme un enfant sous stréroides de sed et awk.</p>
+<p>A titre d'exemple, serialiser/désérialiser du YAML au milieu d'un pipe se fait très facilement</p>
+<pre><code>echo &#39;firstname marc
+lastname  chantreux
+uid       mc&#39; |
+    perl -MYAML=Dump -wlnE&#39;say Dump + grep $_, map +(split/\s+/), &lt;&gt; &#39; |
+    perl -0 -MYAML=Load -wlnE&#39;say for keys %Load &lt;&gt;</code></pre>
+<p><code>-E</code> permet d'écrire un script directement sur la ligne de commande. dans un fichier (disons <code>hello.pl</code>), il nous faut ajouter la version de Perl que nous voulons utiliser (TODO: parler de retrocompatibilité).</p>
+<p>soit donc le fichier <code>hello.pl</code> contenant</p>
+<p>qui peut être exécuté avec</p>
+<pre><code>perl hello.pl</code></pre>
+<p>possède de nombreuses options décrites dans <a href="http://perldoc.perl.org/perlrun"></a>.</p>
+<h1 id="section"></h1>
+<p><a href="http://cpan.org">CPAN</a> est le dépots de bibliothèques <a href="http://perl.org/">Perl</a> prêts à l'emploi. un &quot;client <a href="http://cpan.org">CPAN</a>&quot; est un outils qui télécharge, décompresse et installe une de ces bibliothèque.</p>
+<p>Nous allons utiliser <a href="https://metacpan.org/pod/App::cpanminus">App::cpanminus</a>, ce client</p>
+<ul>
+<li>ne nécessite aucune configuration.</li>
+<li>permet de spécifier un dépot <a href="http://cpan.org">CPAN</a> par un simple argument sur la cli (ce dépot peut être un des <a href="http://www.cpan.org/SITES.html">mirroirs du CPAN</a> ou votre dépot privé (construit avec <a href="https://metacpan.org/pod/Pinto">Pinto</a> par exemple).</li>
+<li>gère les dépendances (en plus de votre bibliothèque, il installera toutes celles nécessaire à son bon fonctionnement).</li>
+<li>permet d'installer des bibliothèques depuis une archive présent sur le système sans que celle-ci n'aie besoin d'exister sur un dépot (la gestion des dépendances est gérée même dans ce cas).</li>
+</ul>
+<p>Se faisant, la plupart des clients <a href="http://cpan.org">CPAN</a> installe toutes les autres bibliothèques nécessaires au fonctionnement</p>
+<p>installer cpanm</p>
+<pre><code>apt-get install cpanm</code></pre><span class="dynamic-px-width"></span></section></div> 
+  </main>
+</div> 
+</body></html>
