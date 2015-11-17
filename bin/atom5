@@ -1,0 +1,96 @@
+#! env perl
+use Eirotic;
+use Rototo::Atom;
+use HTML::Entities;
+
+sub pan_html ($file) {
+    -e $file or die;
+    encode_entities "".qx{pandoc -thtml5 $file}
+    , q(<>&);
+}
+
+my %posts = map {
+    my ( $index, $dirname, $year ) = ( $_, m{(posts/(.*))/} );
+    $year => [ map {
+        chomp;
+        my %r;
+        @r{qw( created file title )} =
+            split / +/, $_, 3;
+        @r{qw( source link )} =
+            map +(  $_, s/\.md$/.html/r )
+            , "$dirname/$r{file}";
+        \%r
+    } path($index)->lines  ]
+} glob 'posts/*/index';
+
+my @entries = map +(
+    map 
+    +{ %{$_}{qw< link created title >}
+    , id => ( "tag:eiro.github.com,"
+            . ( $$_{created} =~ s/T.*//r )
+            . ':'
+            . $$_{created} )
+    , published => $$_{created}
+    , content   => pan_html $$_{source} }, @$_
+), values %posts;
+
+sub as_simple_xml;
+
+sub as_simple_xml ($struct) {
+    if ( my $r = ref $struct ) {
+        if    ('ARRAY' eq $r ) { map +( as_simple_xml $_ ), @$struct }
+        elsif ('HASH'  eq $r ) {
+            map +( Rototo::tag $_ => as_simple_xml $$struct{$_} )
+            , keys %$struct
+        }
+    } else { $struct }
+}
+
+sub atom (@entries) {
+    '<?xml version="1.0" encoding="UTF-8"?>'
+    , feed +{qw<xml:lang en-US xmlns http://www.w3.org/2005/Atom >}
+    , ( link_ qw<rel self type application/atom+xml href http://eiro.github.io/atom.xml > )
+        , ( link_ qw< rel alternate type text/html href http://eiro.github.io/news.html > )
+        , ( as_simple_xml
+            { id     => 'tag:eiro.github.com,2014:blog'
+            , title  => 'The Silence of Plato'
+            , updated => $entries[0]{published}
+            , author => {name => 'Marc Chantreux'}} )
+        , ( map {
+            state $count=0;
+            my $e = $_;
+            $count++;
+            entry
+            ( ( map +( Rototo::tag $_ => $$e{$_} ), qw( id title published ))
+            , ( Rototo::tag updated => $$e{published} )
+            , ( link_ qw<  type text/html rel alternate href > => $$e{link}||die YAML::Dump {$count => $e })
+            , ( content +{qw( type html )}, $$e{content} ))
+            } @entries)
+}
+
+sub news (%posts) {
+'---
+id: tag:eiro.github.com,2014:blog
+title: The silence of Plato
+author: { name: Marc Chantreux }
+alternates:
+    http://eiro.github.io/news.html: {rel: alternate, type: text/html}
+    http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
+...
+' , map {
+     "\n# $_\n\n"
+     , map +(
+         sprintf '* [%s](%s) (%s)'."\n"
+         , @{$_}{qw( title link created )}
+     ), reverse @{ $posts{$_} };
+} reverse sort keys %posts }
+
+sub usage { say STDERR $_ for @_, "subcommands are atom|news" }
+
+my $subcommand = shift or exit usage;
+my %fn_for =
+    ( atom => sub {print atom @entries}
+    , news => sub {print news %posts  } );
+my $code = $fn_for{ $subcommand }
+    or exit usage "$subcommand subcommand not found";
+$code->(@ARGV);
