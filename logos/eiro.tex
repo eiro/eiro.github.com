@@ -1,0 +1,15 @@
+% \ProvidePackage{eiro}[2015/07/01 mes macros]
+
+% \documentclass[convert={density=300,size=1080x800,outext=.png}]{standalone}
+% \documentclass[convert={outext=.svg,outfile=hackers.svg}]{standalone} 
+% \documentclass[convert]{standalone}
+
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shadows.blur}
+
+\newcommand{\logo}[1]{
+    \begin{document}
+    \begin{tikzpicture}#1\end{tikzpicture}
+    \end{document}
+}

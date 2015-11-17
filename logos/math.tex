@@ -1,0 +1,31 @@
+\include{eiro}
+
+% stolen from http://tex.stackexchange.com/questions/102250/how-to-position-one-node-relative-to-another-node-at-a-certain-angle-in-tikz-tak
+
+\usetikzlibrary{positioning}
+
+% \tikzset{
+%     position/.style args={#1:#2 from #3}{
+%         at=(#3.#1), anchor=#1+180, shift=(#1:#2)
+%     }
+% }
+
+\logo{ 
+
+% [
+%     node/.style={%
+%       draw,
+%       circle,
+%       inner sep=0,
+%       outer sep=0,
+%       minimum size=6mm,
+%       node distance=1cm
+%     },
+%   ]
+
+    \node (O) at (0,0) {O};
+    \node [at=(O) shift=(5:5)] (T) {T};
+    % \node [node,position=90:5cm from O] (T);
+    \draw (O) circle (T);
+    % \draw (O) -- (T);
+}

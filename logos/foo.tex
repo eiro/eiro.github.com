@@ -1,0 +1,59 @@
+\include{eiro}
+
+\def\V{
+    % branche gauche  
+    (1,1) -- (1,4) -- (0,4) -- (0,5) -- (2,5)
+
+    % point central
+    -- (2,3)
+    -- (3,4)
+    -- (3,5)
+    -- (5,5)
+    -- cycle
+}
+
+\def\Blason{ (0,0) rectangle (5,5) }
+
+\logo{
+    [ contour/.style =
+        { help lines
+        , color=#1
+        , rounded corners = .5cm
+        , line width = .1cm }
+    , contour/.default = black ]
+
+    % [ foo/.style     ={help lines,color=#1,thick}
+    % , foo/.default   =red
+    % , bar/.style     ={help lines,color=#1,thin}
+    % , bak/.style     ={adius=3cm} ]
+    % \draw[foo]
+    % (0,0) -- (1,3)
+    % (3,3) -- (0,1)
+    % (2,2) circle [bak]
+    % (2,2) -- (3,3);
+
+    \shade
+        [ top color=green!100
+        , bottom color=green!10!black
+        , thick
+    , xshift = -4cm
+        , rounded corners=.5cm
+        , rotate=45 
+        , color=green ] \Blason ;
+    \draw [contour
+    , xshift = -4cm
+    , rotate=45] \Blason ;
+
+    \shade
+        [ bottom color=white
+        , top color=white!40!black
+        , rounded corners=.5cm
+    , xshift=-5cm
+        , color=green ] \V;
+
+    \draw [contour
+    , xshift=-5cm
+    ] \V;
+
+
+}

@@ -2,4 +2,7 @@ TEX= latex --shell-escape
 # --interaction=batchmode
 
 %.svg: %.dvi
-	dvisvgm $< 
+	dvisvgm $<
+
+%.png: %.dvi
+	dvipng $< 
