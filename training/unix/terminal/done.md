@@ -1,17 +1,16 @@
-# Unix
+# Initiation au "terminal unix"
 
-* une philosophie
-* une co-évolution d'un écosystème et de sa culture
-* la famille dominante de systèmes d'exploitation
+## Unix
+
+* la famille de systèmes d'exploitation
   (macOS, les BSD, linux, android, ...)
-* des "standards" (POSIX, ...) a des degrés d'adoption
-  et d'implémentation très variables
+* cultures
+* des "standards" (POSIX, ...) et différents des degrés d'adoption
 
-# Buts de cette formation
+## buts de cette formation
 
-* comprendre (et intégrer) les bases culturelles par l'utilisation d'outils
-  standard.
-* pas le temps d'approfondir, jamais ...
+* comprendre et intégrer les bases culturelles par l'utilisation
+  par la manipulation des outils standard.
 * 3 jours de modernité (distribution, parallèlisme, ...) sans souris:
   bienvenu dans "le terminal"
 
@@ -19,14 +18,62 @@
 
 |outils |fonction|
 |-:|:-| 
-|putty  |émulateur de terminal            |
-|       |client ssh                       |
-|zsh    |shell                            |
-|tmux   |un multiplexeur de terminaux     |
+|putty               |émulateur de terminal            |
+|                    |client ssh                       |
+|zsh                 |shell                            |
+|vi                  |editeur de texte                 |
+|tmux                |un multiplexeur de terminaux     | 
 
-# connexion
+# shells 
 
-live demo avec putty ... depuis unix:
+\begin{tikzpicture}[
+    sibling distance=7em,
+    every node/.style = {shape=rectangle,
+        rounded corners, draw,
+        align=center, top color=white, bottom color=blue!20}]
+
+    \node {?}
+        child {
+        node (bourne) {Bourne shell\\ (\texttt{/bin/sh})}
+            child { node (ksh) {Korn Shell}
+                child { node (ksh88) {Korn Shell 88}
+                    child { node (ksh93) {Korn Shell 93}
+                    child { node (bash)  {Bourne\\ Again Shell\\ (bash)} }
+                    child { node (zsh)   {Z shell, (\texttt{zsh})} }
+                    }
+                }
+            }
+        }
+        child { node (csh) {C-shell (csh)} 
+            child {node (tcsh) {TENEX C-shell\\ (\texttt{tcsh})}}
+        }
+        child { node (rc) {rc} 
+            child {node (es) {es}}
+        };
+    \draw [dotted] (tcsh) -- (zsh);
+
+\end{tikzpicture}
+
+# shells actuels
+
+*  zsh et bash ont le tronc `ksh` en commun
+* `dash` se veut compatible avec le Bourne shell et fourni le `/bin/sh` sous
+   certaines distributions linux
+* `ksh` est spécifié dans `POSIX.2` et plusieurs implémentations
+   sont actuellement maintenues (shell par défaut sur certains BSD)
+
+
+# et d'autres outils standard
+
+|outils |fonction|
+|-:|:-| 
+|gestion des fichiers  | mv, cp, rm, chown, chmod, ...|
+|filtres|cut, join, cmp, grep, sed, awk, m4|
+|build automation|make|
+
+# connexion {.fragile}
+
+live demo avec putty ...  mais depuis unix:
 
     ssh user@machine
     ssh user@machine echo hello world
@@ -38,67 +85,61 @@ live demo avec putty ... depuis unix:
 
 # en pratique {.fragile}
 
-* le prompt
-
 \begin{zsh}
-    <@\textbf{\color{red}PS1>}@>
-\end{zsh}
-
-* vous tappez
-
-\begin{zsh}
-    <@\textbf{\color{red}PS1>}\keys{\return}@>
-    <@\textbf{\color{red}PS1>}@> echo hello world <@\keys{\return}@>
+    <@\prompt@> <@\keys{\return}@>
+    <@\prompt@> echo hello world <@\keys{\return}@>
     hello world
-    <@\textbf{\color{red}PS1>}\keys{\ctrl + d}@>
+    <@\prompt@> echo welcome to "the shell" <@\keys{\return}@>
+    welcome to the shell
+    <@\prompt@> echo bye; echo world <@\keys{\return}@>
+    bye
+    world
+    <@\prompt@> <@\keys{\ctrl + d }@>
 \end{zsh}
 
-* sur les diapositives
-
-\begin{zsh}
-    echo hello world
-\end{zsh}
-
-# premières instructions
-
-    echo hello world
-    id
-    pwd
-
-    echo hello world; id; pwd
-
-# édition {.fragile}
+# edition (les touches essentielles)
 
 |||
 |-:|:-|
-| \keys{\return}                             | valider une instruction                 | 
-| \keys{\backspace}                          | supprimer le caractère avant le curseur | 
-| \keys{\arrowkeyleft},\keys{\arrowkeyright} | déplacer le buffer dans l'instruction   | 
-| \keys{\arrowkeyup},\keys{\arrowkeydown}    | naviguer dans l'historique              |
-| \keys{\ctrl + d}                           | quitter le shell courant |
+| \keys{\arrowkeyleft},\keys{\arrowkeyright} | déplacer le curseur dans l'instruction | 
+| \keys{\backspace}                          | supprimer un caractère                 | 
+| \keys{\return}                             | valider les instructions               | 
+| \keys{\arrowkeyup},\keys{\arrowkeydown}    | naviguer dans l'historique             | 
+| \keys{\ctrl + d}                           | quitter                                | 
+| \keys{tab}                                 | completion (contextuelle?)             |
+
+# edition (les autres touches)
+
+* être exhaustif est chronophage et inutile
+* dépend du shell 
+* configurable et extensible
+* paramètrages par défaut inspirés de emacs et vi
+
+# conventions typographiques
+
+vous tappez
+
+\begin{zsh}
+    <@\prompt@> echo bye; echo world <@\keys{\return}@>
+    bye
+    world
+\end{zsh}
+
+sur la diapositives
+
+    z> echo bye; echo world
+    bye
+    word 
+
+et même
+
+    echo bye; echo world
 
 
-de nombreux raccourcis paramètrables
-des jeux de raccourcis prets a l'emploi
+# les variables
 
-    bindkey -v # mime vi 
-    bindkey -e # mime emacs
+    z> echo $USER
+    mc
 
-# RTFM (read the fine manual)
-
-* documentation en ligne
-    * man
-    * apropos
-    * whatis
-    * info
-
-* FAQ (Frequently Asked Questions)
-
-* Don't ask to ask, just ask
-    * [poser une question](http://www.catb.org/esr/faqs/smart-questions.html)
-    * IRC, listes de diffusion, groupes d'utilisateurs
-    * user groups
-        * [Flammekueche Connection](http://strasbourg.linuxfr.org/listes/index)
-
-* UTSL (Use The Source, Luke)
+# les variables
 

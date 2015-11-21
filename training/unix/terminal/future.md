@@ -1,30 +1,4 @@
----
-# title: dans ton term
-# author: Marc Chantreux
-#
-header-includes:
-    - >
 
-        \usetheme{Berlin}
-
-        \usepackage{tikz}
-        \usepackage{smartdiagram}
-        \usepackage{menukeys}
-
-        \usepackage{listings}
-        
-        \lstdefinestyle{shared}{
-            numbersep=20pt,
-         }
-
-        \lstnewenvironment{zsh}{\lstset{
-        escapeinside={<@}{@>},
-        style=shared,
-        gobble=4,
-        }}{}
-
-
----
 # variables
 
     do=hello who=world
@@ -34,16 +8,14 @@ header-includes:
     read who
     echo hello $who
 
-# hello world {.fragile}
+# hello world {.fragile} 
 
-\begin{block}{terminal}
 \begin{zsh}
     <@\textbf{\color{red}PS1>}\keys{\return}@>
     <@\textbf{\color{red}PS1>}@> echo hello world <@\keys{\return}@>
     hello world
     <@\textbf{\color{red}PS1>}\keys{\ctrl + d}@>
 \end{zsh}
-\end{block}
 
 | | | |
 |-|-|-|

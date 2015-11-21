@@ -1,27 +1,6 @@
 ---
 # title: dans ton term
 # author: Marc Chantreux
-#
-header-includes:
-    - >
-
-        \usetheme{Berlin}
-
-        \usepackage{tikz}
-        \usepackage{smartdiagram}
-        \usepackage{menukeys}
-
-        \usepackage{listings}
-        
-        \lstdefinestyle{shared}{
-            numbersep=20pt,
-         }
-
-        \lstnewenvironment{zsh}{\lstset{
-        escapeinside={<@}{@>},
-        style=shared,
-        gobble=4,
-        }}{}
-
-
+header-includes: [ '\input{prelude}' ]
 ---
+

@@ -1,0 +1,21 @@
+\usetheme{Goettingen}
+\usecolortheme{dove} 
+
+
+\usepackage{tikz,tikz-qtree,tikz-qtree-compat}
+\usepackage{smartdiagram}
+\usepackage{menukeys}
+\usepackage{listings}
+
+\lstdefinestyle{shared}{numbersep=20pt,}
+
+\lstnewenvironment{zsh}{\lstset{
+    frameround=tttt,
+    basicstyle= \ttfamily,
+    frame = single,
+    escapeinside={<@}{@>},
+    style=shared,
+    gobble=4,
+    }}{}
+
+\newcommand{\prompt}{\textbf{\color{blue}zsh>}}
