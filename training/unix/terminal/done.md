@@ -2,10 +2,11 @@
 
 ## Unix
 
-* la famille de systèmes d'exploitation
+* la famille de systèmes d'exploitations\
   (macOS, les BSD, linux, android, ...)
-* cultures
-* des "standards" (POSIX, ...) et différents des degrés d'adoption
+* culture
+* des "standards" (POSIX, ...)\
+  et différents des degrés d'adoption
 
 ## buts de cette formation
 
@@ -17,14 +18,14 @@
 # "le terminal" ?
 
 |outils |fonction|
-|-:|:-| 
+|-:|:-|
 |putty               |émulateur de terminal            |
 |                    |client ssh                       |
 |zsh                 |shell                            |
 |vi                  |editeur de texte                 |
-|tmux                |un multiplexeur de terminaux     | 
+|tmux                |un multiplexeur de terminaux     |
 
-# shells 
+# shells
 
 \begin{tikzpicture}[
     sibling distance=7em,
@@ -44,10 +45,10 @@
                 }
             }
         }
-        child { node (csh) {C-shell (csh)} 
+        child { node (csh) {C-shell (csh)}
             child {node (tcsh) {TENEX C-shell\\ (\texttt{tcsh})}}
         }
-        child { node (rc) {rc} 
+        child { node (rc) {rc}
             child {node (es) {es}}
         };
     \draw [dotted] (tcsh) -- (zsh);
@@ -62,11 +63,46 @@
 * `ksh` est spécifié dans `POSIX.2` et plusieurs implémentations
    sont actuellement maintenues (shell par défaut sur certains BSD)
 
+# exemple de différence syntaxique
+
+\newcol
+\column{.4\textwidth}
+
+sh, ksh, bash, zsh
+
+~~~{.zsh}
+
+for t in *txt; do
+    for i in indexes*; do
+        echo "$t $i"
+    done
+done
+
+~~~
+
+\column{.2\textwidth}
+
+
+\column{.4\textwidth}
+
+zsh
+
+~~~{.zsh}
+
+for t (*txt)
+    for i (indexes*)
+        echo "$t $i"
+
+
+
+~~~
+
+\delcol
 
 # et d'autres outils standard
 
 |outils |fonction|
-|-:|:-| 
+|-:|:-|
 |gestion des fichiers  | mv, cp, rm, chown, chmod, ...|
 |filtres|cut, join, cmp, grep, sed, awk, m4|
 |build automation|make|
@@ -101,17 +137,17 @@ live demo avec putty ...  mais depuis unix:
 
 |||
 |-:|:-|
-| \keys{\arrowkeyleft},\keys{\arrowkeyright} | déplacer le curseur dans l'instruction | 
-| \keys{\backspace}                          | supprimer un caractère                 | 
-| \keys{\return}                             | valider les instructions               | 
-| \keys{\arrowkeyup},\keys{\arrowkeydown}    | naviguer dans l'historique             | 
-| \keys{\ctrl + d}                           | quitter                                | 
+| \keys{\arrowkeyleft},\keys{\arrowkeyright} | déplacer le curseur dans l'instruction |
+| \keys{\backspace}                          | supprimer un caractère                 |
+| \keys{\return}                             | valider les instructions               |
+| \keys{\arrowkeyup},\keys{\arrowkeydown}    | naviguer dans l'historique             |
+| \keys{\ctrl + d}                           | quitter                                |
 | \keys{tab}                                 | completion (contextuelle?)             |
 
 # edition (les autres touches)
 
 * être exhaustif est chronophage et inutile
-* dépend du shell 
+* dépend du shell
 * configurable et extensible
 * paramètrages par défaut inspirés de emacs et vi
 
@@ -129,12 +165,13 @@ sur la diapositives
 
     z> echo bye; echo world
     bye
-    word 
+    word
 
 et même
 
     echo bye; echo world
 
+# documentation en ligne
 
 # les variables
 
@@ -142,4 +179,3 @@ et même
     mc
 
 # les variables
-
