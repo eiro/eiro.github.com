@@ -1,14 +1,10 @@
 DONE= terminal/done.md
-#DONE= 
 FINAL= terminal/yaml $(DONE) terminal/wip.md
 
 all: terminal.pdf
 
-%.latex: %.md
-	pandoc -s -t beamer+pipe_tables -o $@ $<
-
-%.pdf: %.md
-	pandoc -s -t beamer+pipe_tables -o $@ $<
+%.latex %.pdf: %.md
+	pandoc -s -t beamer+pipe_tables+grid_tables+multiline_tables+escaped_line_breaks -o $@ $<
 
 %.pgf: %.gv
 	dot -Txdot $< | dot2tex --codeonly > $@
