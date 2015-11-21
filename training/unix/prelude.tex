@@ -1,6 +1,6 @@
 \usetheme{Goettingen}
 \usecolortheme{dove} 
-
+% \usetheme{Unistra} % procedures d'installation sur r/@work
 
 \usepackage{tikz,tikz-qtree,tikz-qtree-compat}
 \usepackage{smartdiagram}
@@ -19,3 +19,10 @@
     }}{}
 
 \newcommand{\prompt}{\textbf{\color{blue}zsh>}}
+
+% nécessaire pour ne pas avoir de \begin direct dans le pandoc 
+% sinon le md est ignoré jusqu'au \end
+\newcommand{\newcol}{\begin{columns}}
+\newcommand{\delcol}{\end{columns}}
+
+
