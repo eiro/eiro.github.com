@@ -1,0 +1,24 @@
+\usepackage{menukeys}
+\usepackage{multirow}
+\usepackage{wasysym,marvosym}
+
+\newcommand{\cmdAnatomy}[4]{\begin{tabular}{ l l l l l } 
+\texttt{print} & \texttt{-l}    & \texttt{lorem}
+       & \texttt{ipsum} & dolor \\
+\cline{#1}#2\texttt{\textit{#3}}#4\\
+\end{tabular} }
+
+\newcommand{\cmdAnatomyWholeStory}{
+    % \only<1>{\cmdAnatomy{1-1}{}{commande}{&&&}}
+    % \only<2>{\cmdAnatomy{2-2}{&}{flag}{&&&}}
+    % \only<3>{\cmdAnatomy{2-5}{&}{parametres}{&&&}}
+}
+
+\usepackage{newunicodechar}
+\newunicodechar{☹}{\frownie{}}
+\newunicodechar{☺}{\smiley{}}
+\newunicodechar{♥}{\Heart}
+
+
+
+
