@@ -1,5 +1,7 @@
-DONE= terminal/done.md
-FINAL= terminal/yaml $(DONE) terminal/wip.md
+DONE= terminal/introduction.md
+DONE=
+FINAL= terminal/yaml $(DONE) terminal/zsh.md
+
 
 all: terminal.pdf
 

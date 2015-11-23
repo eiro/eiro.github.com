@@ -1,6 +1,4 @@
-# Initiation au "terminal unix"
-
-## Unix
+# Unix
 
 * la famille de systèmes d'exploitations\
   (macOS, les BSD, linux, android, ...)
@@ -8,12 +6,17 @@
 * des "standards" (POSIX, ...)\
   et différents des degrés d'adoption
 
-## buts de cette formation
+# buts de cette formation
 
 * comprendre et intégrer les bases culturelles par l'utilisation
   par la manipulation des outils standard.
-* 3 jours de modernité (distribution, parallèlisme, ...) sans souris:
-  bienvenu dans "le terminal"
+* aquérir les bases pratiques permettant de réaliser et automatiser
+  des taches simples sous Unix grace à des outils standard
+  (si possible tels que définis par
+  →[POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/idx/xcu.html)).
+
+3 jours de modernité (distribution, parallèlisme, ...) dans un monde sans souris: 
+bienvenu dans "le terminal"
 
 # "le terminal" ?
 
@@ -22,8 +25,14 @@
 |putty               |émulateur de terminal            |
 |                    |client ssh                       |
 |zsh                 |shell                            |
-|vi                  |editeur de texte                 |
 |tmux                |un multiplexeur de terminaux     |
+
+|outils |fonction|
+|-:|:-|
+|editeur de texte|vi                 |
+|gestion des fichiers  | mv, cp, rm, chown, chmod, ...|
+|filtres|cut, join, cmp, grep, sed, awk, m4|
+|build automation|make|
 
 # shells
 
@@ -55,14 +64,6 @@
 
 \end{tikzpicture}
 
-# shells actuels
-
-*  zsh et bash ont le tronc `ksh` en commun
-* `dash` se veut compatible avec le Bourne shell et fourni le `/bin/sh` sous
-   certaines distributions linux
-* `ksh` est spécifié dans `POSIX.2` et plusieurs implémentations
-   sont actuellement maintenues (shell par défaut sur certains BSD)
-
 # exemple de différence syntaxique
 
 \newcol
@@ -81,8 +82,6 @@ done
 ~~~
 
 \column{.2\textwidth}
-
-
 \column{.4\textwidth}
 
 zsh
@@ -99,15 +98,24 @@ for t (*txt)
 
 \delcol
 
-# et d'autres outils standard
+# shells actuels
 
-|outils |fonction|
-|-:|:-|
-|gestion des fichiers  | mv, cp, rm, chown, chmod, ...|
-|filtres|cut, join, cmp, grep, sed, awk, m4|
-|build automation|make|
+* minimalistes: strict respect du standard
+* fonctionnels: ajout de fonctionnalités utiles (completion, coloration syntaxique,...)
 
-# connexion {.fragile}
+|dialecte|implementation|orientation|notes|
+|:-|:-|:-|:-|
+|sh|dash|minimaliste|`/bin/sh` par defaut\
+dans certaines distro linux|
+|ksh|pdksh|minimaliste|`ksh`par defaut\
+dans openBSD|
+|ksh|mksh|fonctionnel|`ksh`par defaut\
+dans mirOS|
+|sh,ksh|bash|fonctionnel|`/bin/sh` par defaut\
+dans certaines distro linux|
+|sh,ksh,csh|\textbf{\color{red}zsh}|fonctionnel|de loin le plus avancé|
+
+# connexion
 
 live demo avec putty ...  mais depuis unix:
 
@@ -121,6 +129,13 @@ live demo avec putty ...  mais depuis unix:
 
 # en pratique {.fragile}
 
+le prompt (`$PS1`)
+
+\begin{zsh}
+    <@\prompt@>
+\end{zsh}
+
+
 \begin{zsh}
     <@\prompt@> <@\keys{\return}@>
     <@\prompt@> echo hello world <@\keys{\return}@>
@@ -133,7 +148,9 @@ live demo avec putty ...  mais depuis unix:
     <@\prompt@> <@\keys{\ctrl + d }@>
 \end{zsh}
 
-# edition (les touches essentielles)
+# edition
+
+les touches essentielles
 
 |||
 |-:|:-|
@@ -143,8 +160,6 @@ live demo avec putty ...  mais depuis unix:
 | \keys{\arrowkeyup},\keys{\arrowkeydown}    | naviguer dans l'historique             |
 | \keys{\ctrl + d}                           | quitter                                |
 | \keys{tab}                                 | completion (contextuelle?)             |
-
-# edition (les autres touches)
 
 * être exhaustif est chronophage et inutile
 * dépend du shell
@@ -171,11 +186,3 @@ et même
 
     echo bye; echo world
 
-# documentation en ligne
-
-# les variables
-
-    z> echo $USER
-    mc
-
-# les variables
