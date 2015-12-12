@@ -1,11 +1,8 @@
 !.gitkeep
 *.sw?
 m4/defs
-logos/*.aux
-logos/*.dvi
-logos/*.log
-logos/*.out
-logos/*.pdf
-logos/*.png
-logos/*.ps
+**/*.aux
+**/*.dvi
+**/*.log
+**/*.out
 menu
