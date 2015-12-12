@@ -2,8 +2,8 @@
 <head><meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-<link rel="stylesheet" href="./unsemantic.css"/>
-<link rel="stylesheet" href="./theme.css" />
+<link rel="stylesheet" href="../../unsemantic.css"/>
+<link rel="stylesheet" href="../../theme.css" />
 <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> 
 
 
@@ -18,22 +18,11 @@
 </div></header>
   <main role="main" class="grid-container">
   <div class="grid-20">
-      <section><ul>
-<li><a href="index.html">home</a></li>
-<li><a href="news.html">news</a></li>
-<li><a href="uze/">uze documentation</a></li>
-<li><a href="perl.html">perl</a></li>
-<li><a href="cli.html">cli tools</a></li>
-<li><a href="sysop.html">sysop notes</a></li>
-<li><a href="dump.html">core dump</a></li>
-<li><a href="aboutme.html">about me</a></li>
-</ul></section>
+      <section></section>
       <nav id="TOC"><ul>
 <li><a href="#pourquoi">Pourquoi?</a><ul>
-<li><a href="#problème">problème</a><ul>
 <li><a href="#approche-graphique">Approche graphique</a></li>
 <li><a href="#le-scripting">le scripting</a></li>
-</ul></li>
 </ul></li>
 <li><a href="#vim-pour-tirer-le-meilleur-parti-des-deux-approches">vim pour tirer le meilleur parti des deux approches</a><ul>
 <li><a href="#anatomie-dune-gui">Anatomie d'une GUI</a></li>
@@ -41,20 +30,29 @@
 <li><a href="#communication">communication</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#wip">WIP</a></li>
 </ul></nav>
-<img src="./logos/hackers.svg"/>
+<img src="../../logos/hackers.svg"/>
 <a href="http://mongueurs.net/"><img src="http://mongueurs.net/img/logo_100x100_idx.png" alt="Perl, what else?" title="powered by perl" /></a>
-<a href="./atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
+<a href="../../atom.xml"><img src="http://upload.wikimedia.org/wikipedia/en/4/43/Feed-icon.svg" alt="[Valid Atom 1.0]" title="my atom" id="atomLink" /></a> 
 <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//eiro.github.io/atom.xml"><img src="http://validator.w3.org/feed/images/valid-atom.png" alt="[Valid Atom 1.0]" title="Validate my Atom 1.0 feed" /></a>
   </div>
 <div class="grid-80"><h1>Vim, la console d'administration qui vous manquait</h1>
     <section class="content"
     ><h1 id="pourquoi">Pourquoi?</h1>
-<h2 id="problème">problème</h2>
-<p>(SI): Système d'information</p>
-<p>Les SI de grande taille sont, par leur richesse et la rapidité avec laquelle ils évoluent, des objets difficiles à représenter dans des interfaces d'administration qui se voudraient homogènes et complètes.</p>
-<p>Les éditeurs sont alors incapables de fournir des outils qui soient tout à la fois génériques et pertinents. Les DSI intègrent alors un ensemble d'outils qui coéxistent pour corriger, administrer et visualiser des parties du SI. Nous maintenons alors un SI dans le SI qui a son propre cout de maintenance.</p>
-<p>Dans le spectre des possibles, on constate alors deux extrêmes (la réalité étant souvent une combinaison historique des deux approches).</p>
+<p>votre SI est une somme d'outils qui n'ont jamais été pensés pour interagir ensemble et même si vous avez mis en place une tétrachiée de connecteurs, batches de synchro et autres connecteurs, il vous manque de quoi administrer le tout en construisant une console d'administration qui permette la consultation et la mise a jours de données dans des systèmes parfois très différents (ldap, sql, fichiers plats). la gestion de votre production (maintenance préventive et corrective, assistance, gestion des incidents,...).</p>
+<p>pour résoudre le problème, il vous faut des outils qui permettent une vue consistente. il vous faut convaincre vos décideurs, planifier et implémenter une des solutions suivantes:</p>
+<ul>
+<li>soit la mise en place d'un outils &quot;générique&quot;, avec</li>
+<li>longue prise en main</li>
+<li>adaptation &quot;accrobatiques&quot; au SI</li>
+<li><p>risque de penser le SI pour l'outils et non l'inverse</p></li>
+<li>soit un développement local</li>
+<li>difficile à cadrer</li>
+<li>long a développer</li>
+<li><p>pénible à maintenir</p></li>
+</ul>
+<p>quoi qu'il en soit: les mois vont passer avant que vous ne disposiez d'un de ces outils. en permettant de vim peut alors devenir une solution temporaire (voir alternative).</p>
 <h3 id="approche-graphique">Approche graphique</h3>
 <p>ces outils graphiques (bien souvent web) sont des développements locaux (très adaptés mais couteux à maintenir) ou de l'adaptation (via extensions, configuration, détournement et parfois modification du code) de logiciels issus de l'écosystème open-source.</p>
 <p>En partant du principe qu'un soin suffisant y est apporté, ces outils ont l'avantage de permettre à des personnels peu techniques de réaliser <em>rapidement</em> des taches tout en assurant une robustesse offerte par le cadre applicatif.</p>
@@ -94,7 +92,8 @@ relationships among programs than from the programs themselves&quot;
 <li>alimenter et modifier le contenu d'un buffer (une vue)</li>
 <li>utiliser le contenu d'un buffer pour paramètrer une action</li>
 </ul>
-<p>les mappings permettent d'associer des touches à des actions</p>
+<p>les mappings permettent d'associer des touches à des actions.</p>
+<h1 id="wip">WIP</h1>
 <p>=== GARBAGE ....</p>
 <p>== FR</p>
 <p>Le temps est à la fois ce qui nous manque pour mettre en place des outils adaptés à la gestion de nos SI et ce que nous perdons à ne pas en disposer.</p>

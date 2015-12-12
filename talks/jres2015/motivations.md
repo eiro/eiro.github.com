@@ -2,21 +2,31 @@
 
 # Pourquoi?
 
-## problème
+votre SI est une somme d'outils qui n'ont jamais été pensés pour interagir
+ensemble et même si vous avez mis en place une tétrachiée de connecteurs,
+batches de synchro et autres connecteurs, il vous manque de quoi administrer 
+le tout en construisant une console d'administration qui permette la
+consultation et la mise a jours de données dans des systèmes parfois très
+différents (ldap, sql, fichiers plats). la gestion de votre production 
+(maintenance préventive et corrective, assistance, gestion des incidents,...).
 
-(SI): Système d'information
+pour résoudre le problème, il vous faut des outils qui permettent une vue
+consistente. il vous faut convaincre vos décideurs, planifier et implémenter
+une des solutions suivantes:
 
-Les SI de grande taille sont, par leur richesse et la rapidité avec laquelle
-ils évoluent, des objets difficiles à représenter dans des interfaces
-d'administration qui se voudraient homogènes et complètes.
+* soit la mise en place d'un outils "générique", avec 
+  * longue prise en main
+  * adaptation "accrobatiques" au SI
+  * risque de penser le SI pour l'outils et non l'inverse
 
-Les éditeurs sont alors incapables de fournir des outils qui soient tout à la
-fois génériques et pertinents. Les DSI intègrent alors un ensemble d'outils qui
-coéxistent pour corriger, administrer et visualiser des parties du SI. Nous
-maintenons alors un SI dans le SI qui a son propre cout de maintenance. 
+* soit un développement local
+  * difficile à cadrer
+  * long a développer
+  * pénible à maintenir
 
-Dans le spectre des possibles, on constate alors deux extrêmes (la réalité
-étant souvent une combinaison historique des deux approches).
+quoi qu'il en soit: les mois vont passer avant que vous ne disposiez d'un de
+ces outils. en permettant de 
+vim peut alors devenir une solution temporaire (voir alternative).
 
 ### Approche graphique
 
@@ -81,8 +91,9 @@ toutes les commandes du SI peuvent donc
 * alimenter et modifier le contenu d'un buffer (une vue)
 * utiliser le contenu d'un buffer pour paramètrer une action
 
-les mappings permettent d'associer des touches à des actions
+les mappings permettent d'associer des touches à des actions. 
 
+# WIP
 
 === GARBAGE ....
 
