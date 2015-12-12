@@ -63,7 +63,7 @@ sub atom (@entries) {
 my %posts = dir("posts").map( -> $year {
         ( my $index = "$year/index".IO ).f or next;
         $year => $index.lines.map: {
-            my %p = %(< created file title > Z=> .split(/<[\ \t]>+/,3));
+            my %p = < created file title > Z=> .split(/<[\ \t]>+/,3);
             %p<source> = join '/', $year, %p<file>;
             %p<link>   = %p<source>.subst(/\.md$/,".html");
             %p
