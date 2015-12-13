@@ -9,6 +9,7 @@ alternates:
 
 # 2015
 
+* [Je vote Coluche](posts/2015/Je_vote_Coluche.html) (2015-12-13, 10:1)
 * [Lyon patch -p3](posts/2015/Lyon_patch_p3.html) (2015-09-14, 12:0)
 * [Let's build a Perlists that reflects the perl community](posts/2015/Lets_build_a_Perlists_that_reflects_the_perl_community.html) (2015-05-07, 18:0)
 * [propositions de posters pour JRES 2015](posts/2015/propositions_de_posters_pour_JRES_2015.html) (2015-03-16, 21:2)
