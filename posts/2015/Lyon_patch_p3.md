@@ -2,8 +2,7 @@
 
 Avec le soutien financier des _MONGUEURS (que je remercie au passage), j'ai pu
 me rendre avec deux nouveaux mongueurs (_JEF et Julien "kernel" Simonet de l'_ARN)
-à Lyon avec dans l'idée de faire avancer des
-[des modules existants](http://patch.pm/p3/wiki?node=Projets). Et là...
+à Lyon avec dans l'idée de faire avancer [des modules existants](http://patch.pm/p3/wiki?node=Projets). Et là...
 
 # "We need to talk about SPORE"
 
@@ -24,7 +23,7 @@ Au début du hackathon, je me rends compte que se trouvent dans la même pièce�
 
 Rapidement, donc, les discutions se sont orientées vers _SPORE. _JEF explique
 que la simplicité et la souplesse de _SPORE ont permis à cette spécification de
-s'inserer dans des parties centrales du système d'information de l'_UNISTRA et
+s'insérer dans des parties centrales du système d'information de l'_UNISTRA et
 que la popularité de la solution est grandissante. Il rapporte toutefois
 quelques manques dans la spécification qui ont été rapportés par _AGRAUSEM il y
 a quelques années. Les *pull request* sont restées lettre morte.
@@ -38,7 +37,7 @@ est vrai que cette idée simple fait gagner un temps fou (et d'autant que des
 spécifications qui nous semblent moins intéressantes conceptuellement sont
 apparues par la suite).
 
-Afin de réactiver cette communauté, François nous a ajoutés (Arnaud et moi-même)
+Afin de réactiver cette communauté, François nous a ajouté (Arnaud et moi-même)
 comme membres de [l'organisation SPORE](https://github.com/spore)
 de [github](https://github.com/).
 
@@ -47,15 +46,15 @@ prochain billet) est à mes yeux un motif suffisant de satisfaction.
 
 # coté code
 
-J'ai profité des moments de la discution sur les manques de _SPORE nécessitait
+J'ai profité des moments de la discution sur les manques de _SPORE afin
 d'avoir un peu d'experience en la matière pour écrire un micro _POD4(Dist::Zilla)
 pour _PERL6: [p6sm](https://github.com/eiro/p6-p6sm) est sur github.
 
 Ensuite, nous avons profité de l'expertise et la patience de _LIZMAT pour
 expérimenter les possibilités de metaprogrammation de Perl6 (ou pour être plus
 franc nous avons simplement appliqué sans varier les idées qu'elle nous a
-proposées) ce qui nous a rassuré : même si les namespaces sont immutables une fois
-clos, il est possible de créer des classes anonymes. en plus d'avoir un embryon
+proposées), ce qui nous a rassuré : même si les namespaces sont immutables une fois
+clos, il est possible de créer des classes anonymes. En plus d'avoir un embryon
 d'implémentation que j'ai [poussé sur
 github](https://github.com/eiro/p6-spore), nous avons surtout été satisfait par
 l'élégance des concepts et de la syntaxe de _PERL6.
