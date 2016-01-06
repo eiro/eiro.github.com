@@ -1,0 +1,17 @@
+terminal/fs.md
+terminal/programming.md
+terminal/globs.md
+terminal/yaml
+terminal/future.md
+terminal/zsh.md
+terminal/vim.md
+terminal/introduction.md
+terminal/sed_awk.md 
+
+
+fichier=in.dex.txt.gz
+basename=${fichier%.txt.gz}
+ext=${fichier#*.}
+print fichier=$fichier basename=$basename ext=$ext  
+
+

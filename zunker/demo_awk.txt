@@ -1,0 +1,14 @@
+
+getent passwd | awk -vlogin=1 -vshell=7 -vhost=`hostname` -F: '
+    $shell ~ /zsh/  { i++; print $login }
+    END { print i" users are nice on "host }
+' 
+
+getent passwd | perl -F: -E '
+    my ( $login, $shell ) = @F[0,6];
+    if ( $shell =~ /zsh/ ) {
+        say $login;
+        $cool++
+    }
+    END {print "$cool people are cool on `hostname`"}
+' 
