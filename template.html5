@@ -28,4 +28,4 @@ $for(header-includes)$$header-includes$$endfor$
     >$body$<span class="dynamic-px-width"></span></section></div> 
   </main>
 </div> 
-</body></html>
+</body><script src="$depth$/behave.js"></script></html>
