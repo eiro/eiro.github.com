@@ -1,0 +1,166 @@
+\documentclass[ignorenonframetext,]{beamer}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{longtable,booktabs}
+\usepackage{caption}
+% These lines are needed to make table captions work with longtable:
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \let\insertsectionnumber\relax
+  \let\sectionname\relax
+  \frame{\sectionpage}
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+\title{GNOME™ et ton clavier}
+\author{Marc Chantreux}
+\date{}
+\usepackage{menukeys}
+\titlegraphic{\includegraphics[width=\textwidth,height=.5\textheight]{gnome2-fancy-pat.pdf}}
+\usepackage{wasysym} \usepackage{newunicodechar}
+\newunicodechar{☹}{\frownie{}} \newunicodechar{☺}{\smiley{}}
+\newunicodechar{♥}{\heartsuit}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{mon experience}
+
+\begin{itemize}
+\tightlist
+\item
+  windows (♥ keyboard friendly)
+\item
+  macOS (☹ la gestion des fenêtres surtout)
+\item
+  icewm (♥ simple, efficace), xcfe ☹, fluxbox ☹, afterstep ☹, \ldots{}.
+\item
+  tiling managers ♥ (\href{http://dwm.suckless.org/}{dwm} surtout)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{GNOME™ est un user desktop}
+
+vs tiling managers:
+
+\begin{itemize}
+\tightlist
+\item
+  ☺ tout fonctionne par défaut
+\item
+  ☺ courbe d'apprentissage nulle
+\item
+  ☺ des extensions installables par un simple lien web
+\item
+  ☹ temps de réponse
+\item
+  ☹ gestion des fenêtres
+\end{itemize}
+
+vs les desktops
+
+\begin{itemize}
+\tightlist
+\item
+  ☺ moins lent et consommateur en ressources
+\item
+  ☺ window management
+\item
+  ☹ Microsoft windows est plus ``keyboard friendly''
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{positionnement des fenêtres}
+
+\end{frame}
+
+\begin{frame}{tiling managers}
+
+\begin{itemize}
+\tightlist
+\item
+  {[}dwm
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{les fenêtres}
+
+\begin{longtable}[c]{@{}rl@{}}
+\toprule
+\keys{\arrowkeyleft},\keys{\arrowkeyright} & déplacer le curseur dans
+l'instruction\tabularnewline
+\keys{\backspace} & supprimer un caractère\tabularnewline
+\keys{\return} & valider les instructions\tabularnewline
+\keys{\arrowkeyup},\keys{\arrowkeydown} & naviguer dans
+l'historique\tabularnewline
+\keys{\ctrl + d} & quitter\tabularnewline
+\keys{tab} & completion (contextuelle?)\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{gnome2-fancy-pat.pdf}
+\caption{}
+\end{figure}
+
+hehe
+
+\end{frame}
+
+\end{document}

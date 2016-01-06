@@ -1,0 +1,31 @@
+\frametitle{one two, one two}
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+
+~~~{.zsh}
+
+ksh, bash, zsh
+
+
+for t in *txt; do
+    for i in indexes*; do
+        echo t i
+    done
+done
+
+~~~
+
+\end{column}
+\begin{column}{.5\textwidth}
+
+~~~{.zsh}
+
+for t (*txt)
+    for i (indexes*)
+        echo "t i"
+~~~
+
+\end{column}
+\end{columns}
+
