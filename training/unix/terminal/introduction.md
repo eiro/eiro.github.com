@@ -2,9 +2,13 @@
 
 * la famille de systèmes d'exploitations\
   (macOS, les BSD, linux, android, ...)
-* culture
-* des "standards" (POSIX, ...)\
-  et différents des degrés d'adoption
+* culture (des symboles, des pratiques communes)
+* des "standards" (POSIX, ...) et différents des degrés d'adoption
+
+# chaque diapo ...
+
+* j'ai du faire des choix (pratiques courantes, intéressantes, ...)
+* être exhaustif est inutile est chronophage (RTFM)
 
 # buts de cette formation
 
@@ -30,7 +34,8 @@ bienvenu dans "le terminal"
 |outils |fonction|
 |-:|:-|
 |editeur de texte|vi                 |
-|gestion des fichiers  | mv, cp, rm, chown, chmod, ...|
+|fichiers |navigation, manipulation, edition|
+|processus|les I/Os|
 |filtres|cut, join, cmp, grep, sed, awk, m4|
 |build automation|make|
 
@@ -103,17 +108,13 @@ for t (*txt)
 * minimalistes: strict respect du standard
 * fonctionnels: ajout de fonctionnalités utiles (completion, coloration syntaxique,...)
 
-|dialecte|implementation|orientation|notes|
+|dialecte|implementation|orientation|par défaut sous|
 |:-|:-|:-|:-|
-|sh|dash|minimaliste|`/bin/sh` par defaut\
-dans certaines distro linux|
-|ksh|pdksh|minimaliste|`ksh`par defaut\
-dans openBSD|
-|ksh|mksh|fonctionnel|`ksh`par defaut\
-dans mirOS|
-|sh,ksh|bash|fonctionnel|`/bin/sh` par defaut\
-dans certaines distro linux|
-|sh,ksh,csh|\textbf{\color{red}zsh}|fonctionnel|de loin le plus avancé|
+|sh|dash|minimaliste|`/bin/sh` (certains linux)|
+|ksh|pdksh|minimaliste|`ksh` (certains bsd)|
+|ksh|mksh|fonctionnel|`ksh` (certains bsd)|
+|sh,ksh|bash|fonctionnel|`/bin/sh` (certains linux)|
+|sh,ksh,csh|\textbf{\color{red}zsh}|fonctionnel|`/bin/sh` et  `/bin/ksh` (certains linux)|
 
 # connexion
 
@@ -134,7 +135,6 @@ le prompt (`$PS1`)
 \begin{zsh}
     <@\prompt@>
 \end{zsh}
-
 
 \begin{zsh}
     <@\prompt@> <@\keys{\return}@>
@@ -185,4 +185,8 @@ sur la diapositives
 et même
 
     echo bye; echo world
+
+# pager, documentation
+
+`less`, `apropos`, `man`
 

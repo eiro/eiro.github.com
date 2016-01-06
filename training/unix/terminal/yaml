@@ -1,6 +1,6 @@
 ---
-title: Initiation au "terminal unix"
-author: Marc Chantreux
+# title: Initiation au "terminal unix"
+# author: Marc Chantreux
 header-includes: [ '\input{prelude}' ]
 ---
 
