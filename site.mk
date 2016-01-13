@@ -3,7 +3,7 @@
 SHELL=/bin/zsh
 
 mdpages  = $(wildcard *.md)
-webpages = ${mdpages:.md=.html}
+webpages = $(mdpages:.md=.html)
 template_html=$(depth)/template.html5
 keywords_m4=$(depth)/m4/defs
 basics= $(template_html) $(keywords_m4) menu
