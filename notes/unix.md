@@ -31,6 +31,20 @@ de base, le keyboard de plan9 est en anglais. fix:
     # selection fr
     acme ~/lib/profile
 
+# successeurs possibles à zsh
+
+* toujours concis pour les taches simples
+* piper des scalaires (obj, struct ref ou string)
+* cmd-let
+
+candidats:
+
+* [Perlude](https://metacpan.org/pod/distribution/perlude/lib/Perlude.pod) +
+ + [Reply](https://metacpan.org/pod/distribution/Reply/bin/reply)
+* [Perl6] (http://perl6.org) has strong arguments (concurrency, parallism, native code, ...)
+* [Ammonite](http://lihaoyi.github.io/Ammonite/) Scala REPL so all the JVM is ready.
+  maybe using a [Nailgun](http://www.martiansoftware.com/nailgun/)
+
 # plan du cours unix
 
 ## généralités
