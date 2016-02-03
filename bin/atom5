@@ -5,7 +5,7 @@ use HTML::Entities;
 use List::UtilsBy qw( sort_by);
 
 sub pan_html ($file) {
-    -e $file or die;
+    -e $file or die "$file isn't a file";
     encode_entities "".qx{m4 -Im4 post defs render $file |pandoc -t html5}
     , q(<>&);
 }
@@ -83,7 +83,7 @@ alternates:
      , map +(
          sprintf '* [%s](%s) (%s)'."\n"
          , @{$_}{qw( title link )}
-         , join ', ', map /(.*)T(.{4})/, $$_{created}
+         , join ', ', map /(.*)T(.{5})/, $$_{created}
      ), reverse  @{ $posts{$_} };
 } reverse sort keys %posts }
 
