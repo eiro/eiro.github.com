@@ -10,7 +10,7 @@ website: FORCE $(webpages)
 FORCE:
 	perl bin/atom5 atom > atom.xml
 	perl bin/atom5 news > news.md
-	cd posts/2015; make
+	cd posts/2016; make
 
 menu: menu.md.
 	m4 -I$(depth)/m4 post defs render $< | pandoc -t html5 -o $@ 
