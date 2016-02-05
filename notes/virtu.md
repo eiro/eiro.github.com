@@ -1,5 +1,15 @@
-olivier, vendredi prochain 
+# les containers, VMs et tout ça
 
+# Docker est incontournable
+
+parfait pour faire des trucs jetables en 2 minutes, docker est utilisé par les
+runners gitlab-ci pour isoler les taches.
+
+# Notes en vrac
+
+`8.8.8.8` c'est le serveur DNS de google. remoooooove ya.
+
+# LXC, bare solution
 
     $ ls /usr/share/lxc/templates/*alp*
     lxc-alpine
@@ -33,6 +43,45 @@ autoriser le fowarding v4 dans /etc/sysctl.conf
 
 voir les containers lancés
 
-sudo lxc-ls -f 
+    sudo lxc-ls -f 
+
+# Docker (sous sid)
+
+installation de docker
+
+    apt-get install docker.io
+
+se vautre parceque manque AUFS. 
+
+    grep -RFh OPT /etc/defaults/docker sur RAMIREZ
+
+then lancer le daemon a la main 
+
+    docker daemon --help
+    docker daemon 
+
+ou depuis la compatibilité systemV
+
+    service docker stop
+    service docker start
+
+install une image ubuntu
+
+    docker pull ubuntu
+    docker run -it bash
+
+lister les images 
+
+sauver/restaurer image
+
+
+
+    docker save server-name > srv.tgz
+    docker load < srv.tgz 
+
+j'en suis a: https://docs.docker.com/linux/step_four/
+
+
+
 
 
