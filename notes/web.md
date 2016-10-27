@@ -52,5 +52,5 @@ i just installed it
     sudo aptitude install libwebsockets-dev &&
         make TARGET=~/bin/webpipe
 
-now need to play, now 
-
+now need to play, now.  [this mojolicious gist](https://gist.github.com/jberger/4744482)
+is interesting as well as it shows the implementation of a client-side part.
