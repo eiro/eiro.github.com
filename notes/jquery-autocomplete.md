@@ -31,7 +31,9 @@ settings:
 
 if you want something more complicated based on more than one key (for example
 by splitting informations contained in the field value up), i was missing
-an entry point. so i just wrote this patch on my local version of autocomplete.
+an entry point. so i just wrote
+[this patch](https://github.com/eiro/jQuery-Autocomplete/commit/f7e87a09797b5eddd994a00cba46e32a2a674f04)
+on my local copy.
 
 i'm aware of an introduced bug i don't need to deal with for the moment: the
 cacheKey can be inapproriate as it doesn't take care of the whole query.
@@ -43,6 +45,7 @@ for example
             ajaxSetter: (q,settings) !->
                 settings.data.structure = $ \#structure_id .value
         }
+
 
 will only work if the value of the `structure_id` wasn't edited. there is more
 than one way to adress this problem so i send my pull request as it for further
