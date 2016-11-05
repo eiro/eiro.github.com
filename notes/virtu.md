@@ -55,6 +55,7 @@ partagent mes inquiétudes sur docker. cf.
 * [docker the right way](http://thenewstack.io/hyper-docker-done-right-way/)
 * [Docker in Production: A History of Failure](https://thehftguy.wordpress.com/2016/11/01/docker-in-production-an-history-of-failure/)
 * [boycott docker](http://www.boycottdocker.org/)
+* [docker in production](http://patrobinson.github.io/2016/11/05/docker-in-production/)
 
 
 docker    | POO
