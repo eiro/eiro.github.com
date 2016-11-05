@@ -1,15 +1,13 @@
 # les containers, VMs et tout ça
 
-# Docker est incontournable
+## a tester
 
-parfait pour faire des trucs jetables en 2 minutes, docker est utilisé par les
-runners gitlab-ci pour isoler les taches.
+* cf LXD: rest API over LXC (aie ... projet canonical ...)
+* cloonix? cluster management simple ?
+* dokku?
 
-# Notes en vrac
 
-`8.8.8.8` c'est le serveur DNS de google. remoooooove ya.
-
-# LXC, bare solution
+## LXC
 
     $ ls /usr/share/lxc/templates/*alp*
     lxc-alpine
@@ -45,43 +43,60 @@ voir les containers lancés
 
     sudo lxc-ls -f 
 
-# Docker (sous sid)
+## Docker
 
-installation de docker
+on lance un programme contenu dans une image, ca crée un container qui sera
+détruit à la mort du processus. c'est tres cool pour le dev (tests rapides,
+CI) ... pour ce qui est de la production, je trouve anxiogène de lancer des
+images dont je ne sais rien avec des volumes qui peuvent etre réutilisés par
+mégarde par des images incompatibles... y'a des alternatives et des gens qui
+partagent mes inquiétudes sur docker. cf.
 
-    apt-get install docker.io
-
-se vautre parceque manque AUFS. 
-
-    grep -RFh OPT /etc/defaults/docker sur RAMIREZ
-
-then lancer le daemon a la main 
-
-    docker daemon --help
-    docker daemon 
-
-ou depuis la compatibilité systemV
-
-    service docker stop
-    service docker start
-
-install une image ubuntu
-
-    docker pull ubuntu
-    docker run -it bash
-
-lister les images 
-
-sauver/restaurer image
+* [docker the right way](http://thenewstack.io/hyper-docker-done-right-way/)
+* [Docker in Production: A History of Failure](https://thehftguy.wordpress.com/2016/11/01/docker-in-production-an-history-of-failure/)
+* [boycott docker](http://www.boycottdocker.org/)
 
 
+docker    | POO
+image     | classe
+isa       | FROM (dans le Dockerfile)
+container | instance
+hub       | cpan server
 
+manip des images
+
+    docker pull  # telecharger une definition d'image
+    docker build # build une image (pull si nécessaire)
+    docker run   # lancer une instance d'image (build si nécessaire)
+    docker images -qa # lister
+    docker rmi        # supprimer
     docker save server-name > srv.tgz
     docker load < srv.tgz 
+    docker commit ???
 
-j'en suis a: https://docs.docker.com/linux/step_four/
+manip des containers
 
+    docker run   # lancer une instance d'image (build si nécessaire)
+    docker run -it bash # interactive
 
+    docker ps -qa
+    docker rm
 
+les containers peuvent etre liés a des volumes et networks virtuels
 
+    docker volume
+    docker network
+
+décrire start, run, exec ... 
+ 
+install
+
+    aptitude install docker.io
+    # pour sid. en stable: ajouter le depot prometheus et aptitude install docker
+    copier le binaire de docker-compose depuis gh:
+    https://github.com/docker/compose/releases/tag/1.8.1
+
+Troobleshooting:
+
+* le réseau merde? vous arrivez pas a supprimer des volumes ?
 
