@@ -53,4 +53,22 @@ i just installed it
         make TARGET=~/bin/webpipe
 
 now need to play, now.  [this mojolicious gist](https://gist.github.com/jberger/4744482)
-is interesting as well as it shows the implementation of a client-side part.
+is interesting as well as it shows the implementation of a client-side part. 
+
+# a voir
+
+* implementation light des  webcomponents?
+  [skate](https://github.com/skatejs/skatejs)
+
+
+* [redux](...)
+  * sandhose dit "ca fait ce que tu veux, ca fait 200 lignes et c'est une réécriture de flux"
+  * mobo dit "c'est inspiré par elm"
+
+* framework complet? 
+    * [vue js](...)
+    * [riot](...)
+    * [skate](https://github.com/skatejs/skatejs)
+
+
+
