@@ -11,3 +11,6 @@
     dpkg-buildpackage -us -uc
     sudo dpkg -i ../*deb
 
+# security
+
+* is [lynis](https://github.com/CISOfy/lynis) worth to test ?
