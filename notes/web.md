@@ -70,5 +70,24 @@ is interesting as well as it shows the implementation of a client-side part.
     * [riot](...)
     * [skate](https://github.com/skatejs/skatejs)
 
+# do not html !!!
+
+* hard to write and maintain
+* don't tell you when you brake the tree
+* produce spaced html
+
+## do
+
+* pugjs.org
+* Rototo
+
+## debug rendered
+
+* from vim
+
+    .!xmlstarlet fo -H -o -D and dom inspector
+
+* html dom inspector
+
 
 
