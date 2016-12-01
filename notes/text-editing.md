@@ -1,23 +1,50 @@
-# les gateaux SALES, les traits d'union, 1.000.000 de vieux qui ralent, vim latex
+# Bonnes pratiques: orthographe, typographe et formats
 
-Je devrais plutôt écrire
+C'est par pragmatisme, ignorance et test
 
-<quote>les gâteaux SALÉS, les traits d'union, 1_000_000 de vieux qui ralent, `vim`
+Un pragmatisme ignorant et ont fait que pendant deux décennies, je préférais écrire
+
+    les gateaux SALES, les traits d'union, 1.000.000
+    vieux qui ralent, vim latex
+
+Plutôt que
+
+<quote>les gâteaux SALÉS, les traits d'union, 1_000_000 vieux qui ralent, `vim`
 et ![logo de latex, le système de composition de documents](../../img/latex.svg =100px)
 </quote>
 
-Mais les limites technologiques introduisent des mauvaises pratiques qui leur
-survivent. Exemples:
+Et récement, j'ai eu droit à une sensibilisation à la 
 
-* a disparition de l'accentuation des majuscule à cause de problèmes de tailles
-  de plombs dans l'imprimerie de Gutenberg. 
-* la boucherie de l'orthographe française par le langage SMS
-  (né de la difficulté)
-* l'organisation des fichiers sur nos disques
+Aussi, je saisis une soustraction comme ça
+
+
+Les limites technologiques introduisent des mauvaises pratiques qui leur
+survivent. Ainsi
+
+* nous utilisons pratiquement tous des claviers AZERTY pour des problèmes
+  méchaniques de machines à écrire.
+* nous n'accentuons pas les majuscules à cause de problèmes de taille de plombs
+  du temps de l'imprimerie de Gutenberg.
+* Nous utilisons des systèmes de fichiers organisés hierarchiquement parceque
+  c'était simple à sérialiser sur les bandes magnétiques
   (cf. les vidéos "Computers for the cynics" de Ted Nelson)
-  des touches de notre clavier (pour satisfaire la mécanique des
-  machines à écrire), du code dans nos programmes (non-adoption du paradigme
-  fonctionnel pour des questions de perf.), ...
+* Le langage SMS a explosé à l'époque des premiers terminaux mobiles (imposant
+  parfois 3 pressions de touches pour saisir une lettre)
+* le frein majeur pour l'adoption des langages fonctionnels est l'inertie
+  intellectuelle (et non plus la naiveté des implémentations ou le manque de RAM)
+
+la discipline nécessaire pour accepter le surplus de travail et d'attention
+que réclament les bonnes pratiques est souvent difficile à accepter. D'autant
+plus lorsqu'elle est perçue comme de la sophistication inutile.
+
+
+
+Les avantages de 
+La précision typographique ,par exemple, est une bonne pratique dont l'intéret
+a été peu perceptible
+
+
+
 
 Les bonnes pratiques ont souvent un cout (temps, ressources, contraintes
 techniques) qu'il faut réussir à faire entendre par des raisons pragmatiques
@@ -27,6 +54,9 @@ techniques) qu'il faut réussir à faire entendre par des raisons pragmatiques
 -
 -
 -
+
+a
+‾
 
 10 − 5
 10 - 5
@@ -75,16 +105,6 @@ Quelques illustrations du 2ème point
 
 
 
-
-
-
-
-
-
-est due à la pénébilité de saisie des
-  caractères (presser trois fois la même touche pour une seule lettre saisie?)
-  ...
-
 Lorsque j'ai appris ![logo de latex, le système de composition de
 documents](../../img/latex.svg =100px), nous prenions l'habitude d'utiliser
 l'expressivité de la typographie, et nous faisions la différence entre
@@ -100,13 +120,15 @@ les symbôles -,‐,−. Ces bonnes pratiques se sont perdues pour deux raisons.
   * sous latex
 
 
+perl6 -e 'say 3 − 1'
+print 3 - 1 
 
 avantage: 1_000_000 et les accents.
 
 
-
-
 Même si la partie technique m'échappait totalement, ma réflexion sur le sujet
 n'est pas nouvelle et 
+
+sub counter ($start) { sub {$start++} }
 
 
