@@ -1,4 +1,11 @@
+# sympa 
+
+https://www.youtube.com/channel/UCq-8pBMM3I40QlrhM9ExXJQ
+t/request.t .................... # If you want extra speed, install URL::Encode::XS
+  If you want extra speed, install CGI::Deurl::XS 
+
 # human
+
 
 ls -h | sort -h # idiot computing in action 
 ls -s | sort | human '%Mo' # unix philosophy made right 
@@ -39,3 +46,7 @@ theme "deathrow"
     # #702
     # #551 
 
+# read later
+http://www.theguardian.com/theobserver/1999/dec/19/2
+http://loige.co/to-promise-or-to-callback-that-is-the-question/
+http://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to
