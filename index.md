@@ -28,8 +28,10 @@ _JNTHN's talk about
 at _YAPCA isn't just about the awesomeness of _PERL6 in those realms, it's also about the concepts
 themselves and _JNTHN is a very good teacher when it comes to conceptual things.
 
+Nore about concurrency? At [Concurrency is not Parallelism. Rob Pike at Waza 2012](https://blog.heroku.com/archives/2013/2/24/concurrency_is_not_parallelism/),
+Rob mentioned [Communicating Sequential Processes (CSP)](http://www.usingcsp.com/)
+as a "must read" (3'55). Obviously, he right.
+
 ## Feelings
 
 if you want to know why IT people try to avoid meetings, the answer is [there](https://www.youtube.com/watch?v=BKorP55Aqvg)
-
-
