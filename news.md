@@ -7,6 +7,11 @@ alternates:
     http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
 ...
 
+# 2017
+
+* [](posts/2017/) ()
+* [](posts/2017/sympa_20th_birthday_hackathon.html) (2017-03-13, 13:01)
+
 # 2016
 
 * [Accéssibilité et typographie](posts/2016/Accessibilite_et_typographie.html) (2016-02-01, 16:38)

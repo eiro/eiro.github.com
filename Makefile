@@ -8,9 +8,9 @@ all: $(basics) $(webpages) theme.css
 website: FORCE $(webpages) 
 
 FORCE:
+	# cd posts/2017; make
 	perl bin/atom5 atom > atom.xml
 	perl bin/atom5 news > news.md
-	cd posts/2016; make
 
 menu: menu.md.
 	m4 -I$(depth)/m4 post defs render $< | pandoc -t html5 -o $@ 
