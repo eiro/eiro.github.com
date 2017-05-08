@@ -1,11 +1,17 @@
-# depth is defined in subdirectories as .., ../.. and so on. 
+# depth is defined in subdirectories as .., ../.. and so on.
 depth?=.
 include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
 
 all: $(basics) $(webpages) theme.css
 
-website: FORCE $(webpages) 
+website: FORCE $(webpages)
+
+fix:
+	perl bin/atom5 atom > atom2.xml
+
+val: xmlstarlet val -e -s atom.xsd atom2.xml
+
 
 FORCE:
 	# cd posts/2017; make
@@ -13,7 +19,7 @@ FORCE:
 	perl bin/atom5 news > news.md
 
 menu: menu.md.
-	m4 -I$(depth)/m4 post defs render $< | pandoc -t html5 -o $@ 
+	m4 -I$(depth)/m4 post defs render $< | pandoc -t html5 -o $@
 
 clean:
 	rm -f menu $(webpages)

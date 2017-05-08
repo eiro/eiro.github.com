@@ -2,7 +2,7 @@
 use Eirotic;
 use Rototo::Atom;
 use HTML::Entities;
-use List::UtilsBy qw( sort_by);
+use List::UtilsBy qw( sort_by );
 
 sub pan_html ($file) {
     -e $file or die "$file isn't a file";
@@ -25,7 +25,7 @@ my %posts = map {
 } glob 'posts/*/index';
 
 my @entries = map +(
-    map 
+    map
     +{ %{$_}{qw< link created title >}
     , id => ( "tag:eiro.github.com,"
             . ( $$_{created} =~ s/T.*//r )

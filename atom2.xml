@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <link href="http://eiro.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="http://eiro.github.io/news.html" type="text/html" rel="alternate"/>
+  <updated>2016-02-01T16:38:47+01:00</updated>
+  <title>The Silence of Plato</title>
+  <author>
+    <name>Marc Chantreux</name>
+  </author>
+  <id>tag:eiro.github.com,2014:blog</id>
+  <entry>
+    <id>tag:eiro.github.com,2017-03-13:2017-03-13T13:01:33+01:00</id>
+    <title>le 20eme hackathon sympa</title>
+    <published>2017-03-13T13:01:33+01:00</published>
+    <updated>2017-03-13T13:01:33+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2017/sympa_20th_birthday_hackathon.html"/>
+    <content type="html">&lt;p&gt;Less than 2 weeks then before the &amp;quot;Sympa 20th birthday Hackathon&amp;quot;, 25 people subscribed to the list and i have tto&lt;/p&gt;
+&lt;p&gt;and i finally have some time to explain why is sympa so important to me (and its community).&lt;/p&gt;
+&lt;p&gt;During the last hackathon, we we&lt;/p&gt;
+&lt;p&gt;the &lt;a href="http://eiro.github.io/posts/2015/Sympa_Hackathon_1.html"&gt;last hackathon&lt;/a&gt; took place in 2015 and we were thinking about a good gift for sympa to&lt;/p&gt;
+&lt;p&gt;celebrate its 20th birthday.&lt;/p&gt;
+&lt;p&gt;I really&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Communauté, Tribu, Domaine 
+Community , Tribe, Realm &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Votre avis nous intéresse: n'hésitez pas à réagir sur les listes de diffusion &lt;a href="https://listes.renater.fr/sympa/info/sympa-users"&gt;sympa-users&lt;/a&gt;, &lt;a href="https://listes.renater.fr/sympa/info/sympa-fr"&gt;sympa-fr&lt;/a&gt; ou en commentant ce post.&lt;/p&gt;
+&lt;h1 id="travail-commencé-durant-le-workshop"&gt;Travail commencé durant le Workshop&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;rendre sympa7 installable en l'état (afin d'avoir une version utilisable en pour test le plus rapidement possible)&lt;/li&gt;
+&lt;li&gt;installer et tester l'UI développé par l'université de Massey (Nouvelle-Zelande)&lt;/li&gt;
+&lt;li&gt;discutions autour d'un système de hooks ou de middleware pour la gestion des différents evenements de Sympa. L'idée est de permettre aux développeurs Perl de pouvoir développer des fonctionnalités sour la forme de modules. Etienne penche pour une approche de Hooks à la Drupal. Pour ma part, un cycle de vie aller-retour me semble plus pertinente et répandue (Plack et ses middleware, DOM Level 2 et le bubbling/capturing, la stack PAM, ...). La discution est restée ouverte. Quoi qu'il en soit: l'enrichissement des scenarii (déjà utilisé partout dans sympa) permetterait de dépasser de nombreuses restrictions actuelles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="liste-de-mes-attentes-en-vrac"&gt;Liste de mes attentes en vrac&lt;/h1&gt;
+&lt;p&gt;(discutées ou non lors du workshop, plus ou moins catégorisée par priorité)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Améliorer la convivialité de l'interface et prioritairement&lt;/li&gt;
+&lt;li&gt;donner un aspect webforum aux archives et à la page de publication (toutes les fonctionnalités existent déjà dans l'interface actuelle)&lt;/li&gt;
+&lt;li&gt;permettre du drag and drop dans le depot de document partagé&lt;/li&gt;
+&lt;li&gt;simplifier la page d'administration de la liste (ajouter plusieurs modérateurs est par exemple une action tres malaisée pour le moment)&lt;/li&gt;
+&lt;li&gt;permettre facilement de mettre un répondeur en place depuis l'interface&lt;/li&gt;
+&lt;li&gt;Si possible, permettre aux utilisateurs de conserver l'ancienne interface (pour les utilisateurs les plus réticents au changement)&lt;/li&gt;
+&lt;li&gt;exposer les fonctionnalités de Sympa via une API REST et une spécification SPORE&lt;/li&gt;
+&lt;li&gt;utilisation de sympa pour alimenter des ACL de wiki, des groupes seafile, des conférences Jitsi&lt;/li&gt;
+&lt;li&gt;documentation: fournir un guide pour chacune des audiences que sont les développeurs, les administrateurs système, les listmasters et les usagers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="notes-pour-plus-tard"&gt;Notes pour plus tard&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;expliquer le (VERP: Variable Enveloppe Return Path)&lt;/li&gt;
+&lt;li&gt;expliquer le tracking:
+&lt;ul&gt;
+&lt;li&gt;récuperer les accusés de réception&lt;/li&gt;
+&lt;li&gt;récuperer les mail delivery notification&lt;/li&gt;
+&lt;li&gt;utilisation des MDN (mail delivery notification) quand serveur accepte&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2016-02-01:2016-02-01T16:38:47+01:00</id>
+    <title>Accéssibilité et typographie</title>
+    <published>2016-02-01T16:38:47+01:00</published>
+    <updated>2016-02-01T16:38:47+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2016/Accessibilite_et_typographie.html"/>
+    <content type="html">&lt;h1 id="accessibilité-et-typographie"&gt;Accessibilité et typographie&lt;/h1&gt;
+&lt;p&gt;une sensibilisation à l'&lt;a href="https://fr.wikipedia.org/wiki/Accessibilit%C3%A9"&gt;accessibilité&lt;/a&gt; numérique, prélude à une formation technique de deux jours sur les solutions techniques pour le web.&lt;/p&gt;
+&lt;h1 id="en-résumé-de-la-présentation"&gt;En résumé de la présentation&lt;/h1&gt;
+&lt;p&gt;L'accessibilité est la capacité d'un usager à accéder à une ressource (consulter un document, utiliser un service, ...). Cette accessibilité peut être gênée ou rendue impossible par des handicaps de diverses natures:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;physiques (visuels, moteurs, ...)&lt;/li&gt;
+&lt;li&gt;intellectuelles (troubles ou limitations)&lt;/li&gt;
+&lt;li&gt;technologiques (faible débit, terminaux incapables de rendre certains contenus)&lt;/li&gt;
+&lt;li&gt;culturelles (non compréhension des codes, ...)&lt;/li&gt;
+&lt;li&gt;multiples (par exemple: une video sous-titrée en francais reste compliquée à déchiffrer pour un sourd-muet parceque sa langue maternelle est celles des signes: il n'a jamais entendu le francais)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;La politique d'accessibilité est l'ensemble des stratégies&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fonctionnelles&lt;/li&gt;
+&lt;li&gt;graphiques&lt;/li&gt;
+&lt;li&gt;techniques&lt;/li&gt;
+&lt;li&gt;éditoriales&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Qui améliorent le confort d'usage de tous en tenant compte des adaptations possibles pour les handicaps connus et pertinents. Il s'agit d'adapter la ressource elle-même ou de modifier/compléter la chaine de dispositifs permettant son accès.&lt;/p&gt;
+&lt;p&gt;Le coût de cette politique respecte une distribution de Pareto et les mesures de base (pour le web, respecter le niveau &lt;a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/conformance.html#uc-levels-head"&gt;A&lt;/a&gt; est une nécessité).&lt;/p&gt;
+&lt;p&gt;De plus, ce coût sera pondéré par:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;l'adoption de la problématique en amont des projets&lt;/li&gt;
+&lt;li&gt;les choix technologiques adéquats&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="notes-et-réflexions"&gt;Notes et réflexions&lt;/h1&gt;
+&lt;p&gt;Il me semble que de manière générale, le confort d'utilisateur repose dans sa capacité à choisir les modalités d'accès à une ressource. Il faut donc lui fournir un contenu qui soit&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;le plus neutre possible en terme de mise en forme&lt;/li&gt;
+&lt;li&gt;le plus riche possible en terme de métadonnées ou de liens vers les métadonnées&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Je suis handicapé idéologique (handicapé technologique par choix) et ce handicap m'a toujours poussé à avoir une réflexion personnelle sur l'accessibilité. Ce que j'ai entendu conforte les pratiques développées intuitivement mais me semble en inadéquation totale avec l'économie du web actuel du web (à mes yeux un immense panneau de pub).&lt;/p&gt;
+&lt;h2 id="wow-moments"&gt;wow moments&lt;/h2&gt;
+&lt;p&gt;La présentation étaient ponctuées d'informations qui font réfléchir. Par exemple&lt;/p&gt;
+&lt;p&gt;Seulement 20% des aveugles lisent le braille: les progrès de la médecine actuelle font que la cécité infantile est faible: on devient aveugle. Le braille est alors difficile à apprendre et sa mise en œuvre a des coûts pratiques et économiques importants.&lt;/p&gt;
+&lt;p&gt;Le français n'est &lt;em&gt;pas&lt;/em&gt; la langue maternelle des sourds-muets des pays francophones. Ils l'ont jamais entendu parlé cette langue et du coup, les sous-titres en français sont aussi compliqués pour nous que la lecture de langues étrangère pour nous.&lt;/p&gt;
+&lt;p&gt;Les &lt;em&gt;langues&lt;/em&gt; (parce que du coup de sont bien des langues) sont fortement empruntes des cultures dans lesquelles elles vivent.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;pour signer &amp;quot;autorité&amp;quot;, l'américain bombera fièrement le torse pour tapoter à l'endroit ou on porte habituellement l'étoile de shérif alors qu'en France, c'est la place du galon qui sera pointé.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;bonne chance pour trouver un signe universel pour &amp;quot;maison&amp;quot; …&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="conclusion"&gt; Conclusion&lt;/h1&gt;
+&lt;p&gt;Même si je suis sensible à l'idée, je n'avais jamais envisager d'autres démarches que celles que me dictaient mon bon sens. J'attends donc avec impatience les 2 jours de formation technique sur la partie web.&lt;/p&gt;
+&lt;p&gt;En attendant, je vais tenter de trouver des lectures sur les stratégies générales et la possibilité d'automatiser ce qui peut l'être dans la contrôle de la qualité au mieux des contrôles.&lt;/p&gt;
+&lt;p&gt;À voir: &lt;a href="http://asqatasun.org/"&gt;asqatasun&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-12-13:2015-12-13T10:16:36+01:00</id>
+    <title>Je vote Coluche</title>
+    <published>2015-12-13T10:16:36+01:00</published>
+    <updated>2015-12-13T10:16:36+01:00</updated>
+    <link rel="alternate" type="text/html" href="posts/2015/Je_vote_Coluche.html"/>
+    <content type="html">&lt;h1 id="je-vote-coluche"&gt;Je vote Coluche&lt;/h1&gt;
+&lt;p&gt;En 1981 (j'avais 5 ans), les chars russes sont aux portes de Paris d'après les les observateurs les plus subtiles. Pour une grande partie de la France, c'est l'espoir d'un renouveau. cette bonne blague ...&lt;/p&gt;
+&lt;p&gt;depuis,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;on me parle de cette crise qui demande que chaque français fasse un effort&lt;/li&gt;
+&lt;li&gt;on tente de me faire croire que voter pour l'oposition permettera l'avenement de gens plus compétents ou plus honnêtes.&lt;/li&gt;
+&lt;li&gt;on nous propose toujours plus de sévérité, moins de tolérance à l'égard de ceux qui s'écartent de la loi alors que de nombreux politiques devraient être en prison.&lt;/li&gt;
+&lt;li&gt;on me propose de voter entre bonnet blanc et blanc bonnet afin d'éviter le retour de Staline ou d'Hitler.&lt;/li&gt;
+&lt;li&gt;on continue de voir notre drapeau et notre honneur souillés par le sang de leurs affaires. Ils sont prets a organiser des genocides pour vendre des armes ou mettre la main sur de l'uranium, du pétrole.&lt;/li&gt;
+&lt;li&gt;on subit leurs leçons de morale quand un artiste demande la dépénalisation du canabis ou insulte notre police devenue le bras armé de leurs injustices. (les policiers sont à compter parmis les victimes: comme nous, ils sont désabusés et ont peur de l'avenir).&lt;/li&gt;
+&lt;li&gt;...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;la liste est encore longue et je dois partir voter ... mais cette fois: je vote Coluche, le seul candidat honête de la 5ème république. le seul pour qui j'aurais aimé voté. il aurait eu 71 ans aujourd'hui.&lt;/p&gt;
+&lt;p&gt;Le vote blanc ne veut rien dire pour eux? Alors voilà le message explicite que je fais passer en votant Coluche:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;Vous n&amp;#39;êtes pas légitimes à mes yeux si vous n&amp;#39;obtenez pas 50% des inscrits.
+Si vous accepter votre charge malgré un suffrage plus faible, vous
+appellez ma désobeissance civique et l&amp;#39;application des décisions que vous
+prendrez seront autant de rapels de la violation des principes pour
+lesquels nos ancêtres se sont battus.&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aux armes, citoyens! Allons voter contre nous de la tyranie!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-09-14:2015-09-14T12:04:52+01:00</id>
+    <title>Lyon patch -p3</title>
+    <published>2015-09-14T12:04:52+01:00</published>
+    <updated>2015-09-14T12:04:52+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2015/Lyon_patch_p3.html"/>
+    <content type="html">&lt;p&gt;Avec le soutien financier des &lt;a href="http://mongueurs.pm/"&gt;Mongueurs de Perl&lt;/a&gt; (que je remercie au passage), j'ai pu me rendre avec deux nouveaux mongueurs (&lt;a href="https://github.com/geoffroybeck"&gt;Geoffroy &amp;quot;Jef&amp;quot; Beck&lt;/a&gt; et Julien &amp;quot;kernel&amp;quot; Simonet de l'&lt;a href="http://www.arn-fai.net/"&gt;ARN (Alsace réseau neutre)&lt;/a&gt;) à Lyon avec dans l'idée de faire avancer des &lt;a href="http://patch.pm/p3/wiki?node=Projets"&gt;des modules existants&lt;/a&gt;. Et là...&lt;/p&gt;
+&lt;h1 id="we-need-to-talk-about-spore"&gt;&amp;quot;We need to talk about SPORE&amp;quot;&lt;/h1&gt;
+&lt;p&gt;Au début du hackathon, je me rends compte que se trouvent dans la même pièce :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="irc://lizmat@freenode"&gt;lizmat&lt;/a&gt;, une experte Perl6&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/fperrad"&gt;François Perrad&lt;/a&gt;, contributeur de la première version de la spécification de &lt;a href="https://github.com/SPORE/specifications"&gt;SPORE&lt;/a&gt;, auteur et mainteneur de &lt;a href="https://github.com/fperrad/lua-Spore"&gt;l'implémentation Lua&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/geoffroybeck"&gt;Geoffroy &amp;quot;Jef&amp;quot; Beck&lt;/a&gt;, auteur et mainteneur de l'implémentation &lt;a href="http://www.groovy-lang.org/"&gt;groovy&lt;/a&gt; (&lt;a href="https://github.com/unistra/gspore"&gt;gspore&lt;/a&gt;) et probablement co-auteur de la &lt;a href="https://github.com/unistra/ls-spore"&gt;version livescript&lt;/a&gt;. Il travaille dans l'équipe de &lt;a href="https://github.com/agrausem"&gt;Arnaud Grausem&lt;/a&gt; à l'&lt;a href="http://www.unistra.fr"&gt;Université de Strasbourg&lt;/a&gt;, ce dernier étant le papa de &lt;a href="https://github.com/agrausem/britney"&gt;Britney&lt;/a&gt;, la version &lt;a href="http://python.org"&gt;python&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;moi-même, intermittent du spectacle à la recherche d'emploi, presque diplomé de la &lt;a href="http://perdu.com/"&gt;Zavatta school of bullshit&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Rapidement, donc, les discutions se sont orientées vers &lt;a href="https://github.com/SPORE/specifications"&gt;SPORE&lt;/a&gt;. &lt;a href="https://github.com/geoffroybeck"&gt;Geoffroy &amp;quot;Jef&amp;quot; Beck&lt;/a&gt; explique que la simplicité et la souplesse de &lt;a href="https://github.com/SPORE/specifications"&gt;SPORE&lt;/a&gt; ont permis à cette spécification de s'inserer dans des parties centrales du système d'information de l'&lt;a href="http://www.unistra.fr"&gt;Université de Strasbourg&lt;/a&gt; et que la popularité de la solution est grandissante. Il rapporte toutefois quelques manques dans la spécification qui ont été rapportés par &lt;a href="https://github.com/agrausem"&gt;Arnaud Grausem&lt;/a&gt; il y a quelques années. Les &lt;em&gt;pull request&lt;/em&gt; sont restées lettre morte.&lt;/p&gt;
+&lt;p&gt;François explique que ces manques sont connus, qu'une spécification a été discutée lors des &lt;a href="http://journeesperl.fr/fpw2012/"&gt;Journées Perl 2012&lt;/a&gt; sans avoir été complètement rédigée mais les idées se voient déjà implémentées dans &lt;a href="https://github.com/fperrad/lua-Spore"&gt;lua-spore&lt;/a&gt;. À cette occasion, l'équipe se demandait pourquoi &lt;a href="https://github.com/SPORE/specifications"&gt;SPORE&lt;/a&gt; n'avait pas rencontré un plus large succès tant il est vrai que cette idée simple fait gagner un temps fou (et d'autant que des spécifications qui nous semblent moins intéressantes conceptuellement sont apparues par la suite).&lt;/p&gt;
+&lt;p&gt;Afin de réactiver cette communauté, François nous a ajoutés (Arnaud et moi-même) comme membres de &lt;a href="https://github.com/spore"&gt;l'organisation SPORE&lt;/a&gt; de &lt;a href="https://github.com/"&gt;github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cette réactivation (la définition d'objectifs sur lequels je reviendrai dans un prochain billet) est à mes yeux un motif suffisant de satisfaction.&lt;/p&gt;
+&lt;h1 id="coté-code"&gt;coté code&lt;/h1&gt;
+&lt;p&gt;J'ai profité des moments de la discution sur les manques de &lt;a href="https://github.com/SPORE/specifications"&gt;SPORE&lt;/a&gt; nécessitait d'avoir un peu d'experience en la matière pour écrire un micro &lt;a href="https://metacpan.org/pod/Dist::Zilla"&gt;Dist::Zilla&lt;/a&gt; pour &lt;a href="http://perl6.org/"&gt;Perl6&lt;/a&gt;: &lt;a href="https://github.com/eiro/p6-p6sm"&gt;p6sm&lt;/a&gt; est sur github.&lt;/p&gt;
+&lt;p&gt;Ensuite, nous avons profité de l'expertise et la patience de &lt;a href="irc://lizmat@freenode"&gt;lizmat&lt;/a&gt; pour expérimenter les possibilités de metaprogrammation de Perl6 (ou pour être plus franc nous avons simplement appliqué sans varier les idées qu'elle nous a proposées) ce qui nous a rassuré : même si les namespaces sont immutables une fois clos, il est possible de créer des classes anonymes. en plus d'avoir un embryon d'implémentation que j'ai &lt;a href="https://github.com/eiro/p6-spore"&gt;poussé sur github&lt;/a&gt;, nous avons surtout été satisfait par l'élégance des concepts et de la syntaxe de &lt;a href="http://perl6.org/"&gt;Perl6&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-05-07:2015-05-07T18:01:42+01:00</id>
+    <title>Let's build a Perlists that reflects the perl community</title>
+    <published>2015-05-07T18:01:42+01:00</published>
+    <updated>2015-05-07T18:01:42+01:00</updated>
+    <link href="posts/2015/Lets_build_a_Perlists_that_reflects_the_perl_community.html" type="text/html" rel="alternate"/>
+    <content type="html">&lt;h1 id="lets-build-a-perlists-that-reflects-the-perl-community"&gt;Let's build a Perlists that reflects the perl community&lt;/h1&gt;
+&lt;p&gt;Perl is our community and i would like &lt;a href="https://groups.perlists.pm/sympa"&gt;Perlists&lt;/a&gt; to reflect it. I &lt;a href="eiro.github.io/posts/2015/Host_your_perl_project_on_perlists_en_.html"&gt;recently presented&lt;/a&gt; the new shiny [perlists platform] and hope a lot of perl mongers around the world will benefit from it. To make things more attractive, we still have some work:&lt;/p&gt;
+&lt;p&gt;First, we have find and fix all the rendering bugs of the new interface (i suspect there are lot of them hidden in the corner) so feedbacks and wishlists are very welcomed, please write to &lt;a href="mailto:listmaster@groups.perlists.pm"&gt;us&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We also need to &amp;quot;shape&amp;quot; the site to fit your needs. David built a geographical herarchy which is great for the perl monger groups but i also would like something like a &amp;quot;project pack&amp;quot;: when you declare a project &amp;quot;foo&amp;quot;, it will automatically&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;creates and gives you ownership yo foo, foo-devel, foo-users and foo-announce.&lt;/li&gt;
+&lt;li&gt;include foo-devel, foo-users and foo-announces in foo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We need more features, more ideas and any suggestion of any kind would be considered by the &lt;a href="mailto:listmaster@groups.perlists.pm"&gt;listmasters&lt;/a&gt;. i can share mine:&lt;/p&gt;
+&lt;p&gt;I did a simple experiment to use sympa as a comment platform (&amp;quot;à la&amp;quot; &lt;a href="https://disqus.com/about/"&gt;disqus&lt;/a&gt;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you click on &amp;quot;comment the post&amp;quot;, you actually send a mail to a mailing list.&lt;/li&gt;
+&lt;li&gt;If you click on &amp;quot;see comments&amp;quot;, you actually go to the archives page (i expect something more &amp;quot;ajaxy&amp;quot; on the future).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I also would like more interactions with the &lt;a href="http://metacpan.org"&gt;metacpan&lt;/a&gt; ecosystem. For example: a [https://metacpan.org/pod/Dist::Zilla][dzil] plugin to post on &amp;quot;foo-announce&amp;quot; when i &lt;code&gt;dzil release&lt;/code&gt; a new version of foo.&lt;/p&gt;
+&lt;p&gt;i hope to read from you.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-03-16:2015-03-16T21:29:24+01:00</id>
+    <title>propositions de posters pour JRES 2015</title>
+    <published>2015-03-16T21:29:24+01:00</published>
+    <updated>2015-03-16T21:29:24+01:00</updated>
+    <link rel="alternate" type="text/html" href="posts/2015/propositions_de_posters_pour_JRES_2015.html"/>
+    <content type="html">&lt;p&gt;&amp;quot;tu parles? tu pars!&amp;quot;. ce gros facteur de motivation était la règle à &lt;a href="http://linkfluence.net"&gt;linkfluence&lt;/a&gt; et l'est maintenant dans le pôle de la direction informatique de l'&lt;a href="http://www.unistra.fr"&gt;unistra&lt;/a&gt; ou je travaille.&lt;/p&gt;
+&lt;p&gt;Il reste quelques jours avant la cloture des CfP pour les &lt;a href="https://www.jres.org/en"&gt;JRES 2015&lt;/a&gt; et faute d'avoir des sujets plus en raccord avec l'audience de l'évenement et mon travail quotidien de hotliner surpayé, j'ai une soudaine envie de posters (ou de présentations format lightning talks). Voilà donc qq idées que je partage avec vous histoire de récolter vos avis. n'hésitez pas à me faire parvenir vos remarques (et meme vos &lt;a href="https://github.com/eiro/eiro.github.com/"&gt;pull requests&lt;/a&gt;). Lequel présenter? les approches et thèmes sont ils-bons ? autres remarques ? D) réponse D?&lt;/p&gt;
+&lt;h1 id="lécosystème-perl-le-paradis-des-administrateur"&gt;L'écosystème perl, le paradis des administrateur&lt;/h1&gt;
+&lt;p&gt;A l'heure ou j'écris ces lignes (lundi 16 mars 2015, 20:35:41), le CPAN (The Comprehensive Perl Archive Network) propose 144,578 modules Perl répartis dans 31,486 distributions maintenues par 12,089 authors et disponibles sur 251 mirroirs. ce sera probablement plus dans quelques heures (et c'est ainsi depuis octobre 1995).&lt;/p&gt;
+&lt;p&gt;Perl est communauté experimentée de professionnels (soutenus par un nombre croissant d'entreprises qui choisissent d'utiliser et soutenir Perl) et d'une miriade de composants logiciels qui exploitent de solides infrastructures et des conventions bien établies, reposant sur une forte culture unix et servie par 20 années de rétrocompatiblité l'interpréteur.&lt;/p&gt;
+&lt;p&gt;Que faut-t'il savoir aujourd'hui pour utiliser perl ?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;quels sont les outils pour déployer simplement ?&lt;/li&gt;
+&lt;li&gt;quelles sont les pratiques et outils modernes de développement ?&lt;/li&gt;
+&lt;li&gt;quels sont les bonnes sources de documentation et d'information ?&lt;/li&gt;
+&lt;li&gt;comment trouver de l'assistance ou un support professionnel ?&lt;/li&gt;
+&lt;li&gt;comment intégrer la communauté ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(3 modules ont été mis à jour sur CPAN pendant la rédaction de ces quelques lignes)&lt;/p&gt;
+&lt;h1 id="automatiser-sympa-les-leçons-apprises"&gt;Automatiser Sympa: les leçons apprises&lt;/h1&gt;
+&lt;p&gt;De l'édition brutale des fichiers de configuration et des données contenues dans la base à la redaction de scripts Perl utilisant l'API de sympa directement en passant par le webscrapping et l'utilisation de &amp;quot;sympa.pl&amp;quot;, j'ai tout tenté en attendant la prochaine version majeure de Sympa et son API REST.&lt;/p&gt;
+&lt;p&gt;Ce poster présente les avantages et inconvenients de chaques méthodes, les bonnes et mauvaises surprises que m'a réserve sympa, mes espoirs et idées pour la prochaine version.&lt;/p&gt;
+&lt;h1 id="vim-la-console-dadministation-qui-vous-manquait"&gt;vim, la console d'administation qui vous manquait&lt;/h1&gt;
+&lt;p&gt;Contraints par le temps, les cultures de sites, la taille et le caractère mouvant de nos systèmes d'informations, nous peinons à développer et maintenir des interfaces simples et cohérentes nous permettant de débarasser nos quotidiens de taches chronophages, répétitives ou complexes (y compris en partant de solutions &amp;quot;clef en main&amp;quot; qu'on se retrouve à adapter en permanence pendant que ces dernières s'éloignent de nos besoins au fil des versions).&lt;/p&gt;
+&lt;p&gt;Nos trousses à outils se réduisent bien souvent à quelques scripts, de bonnes habitudes qui s'appuient sur des logiciels génériques (la documentation étant parfois la cerise sur le gateau) et l'esperance de ne pas retomber dans les embuches courantes. Le temps est à la fois ce qui nous manque pour disposer d'interface plus construite et ce que nous perdons à ne pas en disposer.&lt;/p&gt;
+&lt;p&gt;En utilisant vim comme point d'entrée sur notre SI (et en adoptant la méthode que je propose dans ce poster), chaque tache réalisée est l'occasion de laisser des tuteurs facilitant une prochaine itération. Petit à petit, vous construisez simplement des documentations ou des vues du SI qui soient interactives, simples et dynamiques.&lt;/p&gt;
+&lt;p&gt;Pour ma part, vim me permet d'échanger des informations entre ma messagerie, ma liste des taches, le bug tracker et le wiki du service, les differents outils d'administration et bases de données (relationnelles, ldap, flat files, REST APIs ...), des dépots git ... Rien n'est parfait mais mon niveau de satisfaction dépasse de loin toutes les autres approches que j'ai experimenté au cours de ma carrière.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-03-06:2015-03-06T19:12:22+01:00</id>
+    <title>Host your perl project on perlists (en)</title>
+    <published>2015-03-06T19:12:22+01:00</published>
+    <updated>2015-03-06T19:12:22+01:00</updated>
+    <link rel="alternate" type="text/html" href="posts/2015/Host_your_perl_project_on_perlists_en_.html"/>
+    <content type="html">&lt;h1 id="host-your-perl-project-on-perlists-en"&gt;Host your perl project on perlists (en)&lt;/h1&gt;
+&lt;p&gt;In order to support the Perl community, the french &amp;quot;Research and Education Network&amp;quot; (&lt;a href="http://renater.fr"&gt;RENATER&lt;/a&gt;) hosts &lt;a href="https://groups.perlists.pm/sympa"&gt;Perlists&lt;/a&gt;, a free mailing list infrastructure based on &lt;a href="http://www.sympa.org"&gt;Sympa&lt;/a&gt;. &lt;a href="http://london.pm/"&gt;London.pm&lt;/a&gt; recently moved their lists on it and you should do the same if you need a free, simple and powerfull way to manage mailing lists and working groups for a perl related project.&lt;/p&gt;
+&lt;p&gt;Any Perl-related community, monger group or software project is welcome to create mailing lists on this server so you will be able to, from a simple web interace:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create and manage lists and subscriptions,&lt;/li&gt;
+&lt;li&gt;configure and customize lists using the many parameters available&lt;/li&gt;
+&lt;li&gt;and much more! (David Verdin (lead developer) gave a talk about all the sympa features at &lt;a href="https://www.youtube.com/watch?v=-JMg1wdYdOU"&gt;YAPC::Europe 2014&lt;/a&gt; (en) and &lt;a href="https://www.youtube.com/watch?v=q70XBXZ8yE8"&gt;FPW 2013&lt;/a&gt; (fr)). Sympa is much more than a list manager and provides basic groupware system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sympa is written in &lt;a href="http://www.perl.org"&gt;perl&lt;/a&gt; and supported by &lt;a href="http://renater.fr"&gt;RENATER&lt;/a&gt;, its community is very welcoming and the user base is very large: 90% of the french universities, organizations like UNESCO, NASA, ... it is designed for very large infrastructures and usages.&lt;/p&gt;
+&lt;p&gt;The project is as active as it can with a very small team, you can see the &lt;a href="http://www.sympa.org/distribution/latest-unstable/NEWS"&gt;news from 6.2 version&lt;/a&gt; and the &lt;a href="https://www.sympa.org/dev/project_direction"&gt;ambitious 7.0 roadmap&lt;/a&gt;. Every contributor is welcome!&lt;/p&gt;
+&lt;p&gt;Any questions about &lt;a href="https://groups.perlists.pm/sympa"&gt;Perlists&lt;/a&gt; or &lt;a href="http://www.sympa.org"&gt;sympa&lt;/a&gt;? please ask &lt;a href="mailto:listmaster@groups.perlists.pm"&gt;the sysops&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;See you on perlists!&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/img/talks/14/yapc-eu/david_verdin.png" alt="David Verdin, YAPC::Europe 2013" /&gt;&lt;figcaption&gt;David Verdin, YAPC::Europe 2013&lt;/figcaption&gt;
+&lt;/figure&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-03-05:2015-03-05T17:00:40+01:00</id>
+    <title>Host your perl project on perlists </title>
+    <published>2015-03-05T17:00:40+01:00</published>
+    <updated>2015-03-05T17:00:40+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2015/Host_your_perl_project_on_perlists.html"/>
+    <content type="html">&lt;h1 id="host-your-perl-project-on-perlists"&gt;Host your perl project on perlists&lt;/h1&gt;
+&lt;p&gt;RENATER (le &amp;quot;Research and Education Network&amp;quot; français) soutient la communauté Perl et met gratuitement à disposition de ses membres une plate-forme &lt;a href="http://wwww.sympa.org"&gt;sympa&lt;/a&gt; nommée &lt;a href="https://groups.perlists.pm/sympa"&gt;Perlists&lt;/a&gt;. &lt;a href="http://london.pm/"&gt;London.pm&lt;/a&gt; y a récement transféré ses listes et vous pourriez faire de même gratuitement.&lt;/p&gt;
+&lt;p&gt;Vous n'étiez pas au courant? Bien sur que non: nous sommes nuls en marketing!&lt;/p&gt;
+&lt;p&gt;David Verdin (le lead developper) l'avait annoncé durant sa présentation lors de &lt;a href="http://act.yapc.eu/ye2014/"&gt;YAPC::Europe 2014&lt;/a&gt;: &lt;a href="https://groups.perlists.pm/sympa"&gt;Perlists&lt;/a&gt; permet à quiconque possédant une adresse email de disposer d'une interface web pour:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;créer des listes de diffusion&lt;/li&gt;
+&lt;li&gt;gérer les abonnés&lt;/li&gt;
+&lt;li&gt;disposer d'une archive&lt;/li&gt;
+&lt;li&gt;disposer d'un espace de documents publics ou partagés avec vos seuls co-listiers&lt;/li&gt;
+&lt;li&gt;gérer finement les droits d'accès à toutes ces ressources&lt;/li&gt;
+&lt;li&gt;bien d'autres choses (je vous renvoie aux présentations de David en &lt;a href="http://act.yapc.eu/ye2014/"&gt;anglais&lt;/a&gt; ou en &lt;a href="http://journeesperl.fr/fpw2013/talk/4789"&gt;français&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sympa est évidement développé en &lt;a href="http://www.perl.org"&gt;perl&lt;/a&gt; par une communauté très réduite et fort accueillante. Il sert les listes de 90% des universités françaises, d'organismes tels que l'UNESCO ou la NASA avec des volumes de mail traités assez impressionnants. C'est donc un logiciel conçu pour les grosses infrastructures. Fonctionnellement, sympa est maintenant plus proche d'une plate-forme de groupware minimaliste que d'un serveur de listes de diffusion (voir la &lt;a href="https://www.sympa.org/overview/features"&gt;liste des fonctionnalités&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Le projet reste &lt;a href="http://www.sympa.org/distribution/latest-unstable/NEWS"&gt;actif&lt;/a&gt; (sympa 6.2 est sur le point de sortir et la &lt;a href="https://www.sympa.org/dev/project_direction"&gt;roadmap&lt;/a&gt; de la version 7 est très ambitieuse). tous les nouveaux utilisateurs et contributeurs sont les bienvenus.&lt;/p&gt;
+&lt;p&gt;Si vous avez des questions sur l'utilisation de &lt;a href="https://groups.perlists.pm/sympa"&gt;Perlists&lt;/a&gt;, n'hésitez pas à contacter les &lt;a href="mailto:listmaster@groups.perlists.pm"&gt;administrateurs de la plate-forme&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Au plaisir de vous lire bientot sur Perlists.&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src="/img/talks/14/yapc-eu/david_verdin.png" alt="David Verdin, YAPC::Europe 2013" /&gt;&lt;figcaption&gt;David Verdin, YAPC::Europe 2013&lt;/figcaption&gt;
+&lt;/figure&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-02-17:2015-02-17T12:55:06+01:00</id>
+    <title>et celle-là, elle est digitale ?</title>
+    <published>2015-02-17T12:55:06+01:00</published>
+    <updated>2015-02-17T12:55:06+01:00</updated>
+    <link rel="alternate" type="text/html" href="posts/2015/et_celle_la_elle_est_digitale.html"/>
+    <content type="html">&lt;figure&gt;
+&lt;img src="/img/fun/digitale.png" alt="En français, on dit &amp;quot;numérique&amp;quot;" /&gt;&lt;figcaption&gt;En français, on dit &amp;quot;numérique&amp;quot;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;En français, on dit &lt;a href="http://fr.wikipedia.org/wiki/Num%C3%A9rique"&gt;Numérique&lt;/a&gt; et pas &lt;a href="http://fr.wikipedia.org/wiki/Digital"&gt;Digital&lt;/a&gt;!&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2015-01-02:2015-01-02T03:32:16+01:00</id>
+    <title>Sympa Hackathon 1</title>
+    <published>2015-01-02T03:32:16+01:00</published>
+    <updated>2015-01-02T03:32:16+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2015/Sympa_Hackathon_1.html"/>
+    <content type="html">&lt;p&gt;Le premier &amp;quot;Sympa Hackathon&amp;quot; a eu lieu les 4 et 5 novembre à l'antenne parisienne de &lt;a href="http://www.inria.fr"&gt;l'INRIA&lt;/a&gt;. Le présent compte-rendu est une compilation des idées dont j'ai pris note pendant et après l'évenement. Certaines de ces notes correspondent à des réflexions personnelles qui n'ont pas été livrées lors des réunions.&lt;/p&gt;
+&lt;p&gt;Ont participé&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;* David Verdin et Etienne Méléard (RENATER)
+* Guillaume Rousse (INRIA)
+* Marc Chantreux (Université de Strasbourg)&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id="retour-sur-les-usages-et-évolution-de-sympa"&gt;Retour sur les usages et évolution de sympa&lt;/h1&gt;
+&lt;h2 id="les-nouveaux-usages-de-sympa-groupware"&gt;les nouveaux usages de sympa (groupware)&lt;/h2&gt;
+&lt;p&gt;Nous avons évoqué la vie des instances que nous gérons (à Strasbourg: presque 9400 listes réparties dans 17 robots) et observons unanimement des changements dans les usages et les attentes des utilisateurs relatives à sympa.&lt;/p&gt;
+&lt;p&gt;En effet, les usagers commandent aux listmasters des configurations avancées et font usage des outils périphériques à la liste de diffusion (les archives, les documents partagés, pages de réponses, circuit de modération, ...) et organisent de véritables groupes de travail autour des outils proposés malgré la relative austérité de l'interface.&lt;/p&gt;
+&lt;p&gt;La version prochaine de sympa (6.2) sera l'occasion de fournir une nouvelle interface plus aggréable: ca n'est qu'un début.&lt;/p&gt;
+&lt;h2 id="lintégration-dans-les-systèmes-dinformation"&gt;L'intégration dans les systèmes d'information&lt;/h2&gt;
+&lt;p&gt;L'intégration dans les systèmes d'information ne se fait plus uniquement dans le sens de la consommation: sympa permet aux utilisateurs de produire de l'information valorisable dans tous le système (A Strasbourg, il est couplé avec Sogo et permet d'alimenter des groupes dans notre annuaire).&lt;/p&gt;
+&lt;h1 id="sympa-7"&gt;Sympa 7&lt;/h1&gt;
+&lt;h2 id="techniquement"&gt;Techniquement&lt;/h2&gt;
+&lt;h3 id="pour-les-développeurs"&gt;Pour les développeurs&lt;/h3&gt;
+&lt;p&gt;Afin d'accélérer le développement de Sympa, il était nécessaire de rendre la base de code plus simple à comprendre et à faire évoluer. Ainsi, la réorganisation complète du code (travail de longue date de Guillaume Rousse) s'accompagne d'une large batterie de tests unitaires afin de détecter plus facilement les éventuels bugs et régréssions que les développements futurs pourraient introduire.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un refactoring complet sur lequel Guillaume Rousse travaille de longue date. L'idée n'est pas seulement de nettoyer et réorganiser le code: Guillaume introduit aussi des pratiques de développement qui manquaient généralement pour permettre aux développeurs de travailler plus confortablement et rapidement sans introduire de régréssions ou de bugs. Cette version se vera accompagnée d'une large batterie de tests unitaires.&lt;/li&gt;
+&lt;li&gt;Nous rendrons le fonctionnement interne de Sympa plus strict, il est acté que les fonctions qui n'aboutissent pas provoqueront un &lt;code&gt;die&lt;/code&gt; plutot que de renvoyer &lt;code&gt;undef&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Nous passsons sous git (toujours hebergé sur &lt;a href="https://sourcesup.renater.fr/projects/sympa-ng/"&gt;sourcesup&lt;/a&gt;), ce qui permettera de simplifier les experimentations et les contributions externes (je compte créer un repo sur &lt;a href="http://github.com/"&gt;github&lt;/a&gt; qui est utilisé par de nombreux développeurs Perl).&lt;/li&gt;
+&lt;li&gt;Nous experimentons l'introduction de modules CPAN afin de profiter du dynamisme de la communauté et nous défaire de la maintenance de code spécifique à sympa. Ainsi, &lt;a href="https://metacpan.org/pod/Plack"&gt;plack&lt;/a&gt; replacera le code FastCGI maison. J'ai aussi suggéré l'utilisation de &lt;a href="https://metacpan.org/pod/Moo"&gt;Moo&lt;/a&gt; puisque ce dernier est conforme aux décisions prises pour le passage d'arguments des methodes.&lt;/li&gt;
+&lt;li&gt;Concernant les dépendances que nous allons ajouter, Guillaume insiste sur un point: pas de XS qui qu'il en coute (afin de s'assurer que les déploiements de sympa restent simples et sans problème).&lt;/li&gt;
+&lt;li&gt;Je note a posteriori que nous n'avons pas parlé de la version minimale de Perl sur laquelle Sympa doit tourner. J'aurais tendance à pousser le curseur vers le haut (beaucoup de distributions récentes fournissent 5.18) mais de nombreux administrateurs de la communauté semblent bloqués par les Perl standards fournis par des versions assez anciennes de RHEL (que c'est triste!).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="pour-les-administrateurs"&gt;Pour les administrateurs&lt;/h3&gt;
+&lt;p&gt;le wizzard va disparaitre au profit&lt;/p&gt;
+&lt;p&gt;Nous allons simplifier l'installation en remplacant le wizzard&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;un module Perl &lt;code&gt;Sympa::Task&lt;/code&gt; qui sera disponible sur le CPAN. Pour peu que le client CPAN soit correctement installé sur la machine cible, l'intégralité des dépendances de sympa s'installera par la saisie d'une seule commande standard (laissant au passage à l'adminitrateur le choix de l'utilisation de &lt;code&gt;local::lib&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;un sample de &lt;code&gt;sympa.conf&lt;/code&gt; largement documenté qui pourra servir de base à la configuration.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="fonctionnellement"&gt;Fonctionnellement&lt;/h2&gt;
+&lt;p&gt;Le terme Robot (qui était mal choisi de toute façon), doit lui aussi disparaitre mais nous n'avons là rien de tranché. quelques propositions faites par des collègues de l'université:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Communauté, Tribu, Domaine 
+Community , Tribe, Realm &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Votre avis nous intéresse: n'hésitez pas à réagir sur les listes de diffusion &lt;a href="https://listes.renater.fr/sympa/info/sympa-users"&gt;sympa-users&lt;/a&gt;, &lt;a href="https://listes.renater.fr/sympa/info/sympa-fr"&gt;sympa-fr&lt;/a&gt; ou en commentant ce post.&lt;/p&gt;
+&lt;h1 id="travail-commencé-durant-le-workshop"&gt;Travail commencé durant le Workshop&lt;/h1&gt;
+&lt;p&gt;David et Guillaume ont travaillé sur le refactoring pendant qu'Etienne et moi nous chargions de:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rendre sympa7 installable en l'état (afin d'avoir une version utilisable en pour test le plus rapidement possible)&lt;/li&gt;
+&lt;li&gt;installer et tester l'UI développé par l'université de Massey (Nouvelle-Zelande)&lt;/li&gt;
+&lt;li&gt;discutions autour d'un système de hooks ou de middleware pour la gestion des différents evenements de Sympa. L'idée est de permettre aux développeurs Perl de pouvoir développer des fonctionnalités sour la forme de modules. Etienne penche pour une approche de Hooks à la Drupal. Pour ma part, un cycle de vie aller-retour me semble plus pertinente et répandue (Plack et ses middleware, DOM Level 2 et le bubbling/capturing, la stack PAM, ...). La discution est restée ouverte. Quoi qu'il en soit: l'enrichissement des scenarii (déjà utilisé partout dans sympa) permetterait de dépasser de nombreuses restrictions actuelles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="liste-de-mes-attentes-en-vrac"&gt;Liste de mes attentes en vrac&lt;/h1&gt;
+&lt;p&gt;(discutées ou non lors du workshop, plus ou moins catégorisée par priorité)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Améliorer la convivialité de l'interface et prioritairement&lt;/li&gt;
+&lt;li&gt;donner un aspect webforum aux archives et à la page de publication (toutes les fonctionnalités existent déjà dans l'interface actuelle)&lt;/li&gt;
+&lt;li&gt;permettre du drag and drop dans le depot de document partagé&lt;/li&gt;
+&lt;li&gt;simplifier la page d'administration de la liste (ajouter plusieurs modérateurs est par exemple une action tres malaisée pour le moment)&lt;/li&gt;
+&lt;li&gt;permettre facilement de mettre un répondeur en place depuis l'interface&lt;/li&gt;
+&lt;li&gt;Si possible, permettre aux utilisateurs de conserver l'ancienne interface (pour les utilisateurs les plus réticents au changement)&lt;/li&gt;
+&lt;li&gt;exposer les fonctionnalités de Sympa via une API REST et une spécification SPORE&lt;/li&gt;
+&lt;li&gt;utilisation de sympa pour alimenter des ACL de wiki, des groupes seafile, des conférences Jitsi&lt;/li&gt;
+&lt;li&gt;documentation: fournir un guide pour chacune des audiences que sont les développeurs, les administrateurs système, les listmasters et les usagers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="notes-pour-plus-tard"&gt;Notes pour plus tard&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;expliquer le (VERP: Variable Enveloppe Return Path)&lt;/li&gt;
+&lt;li&gt;expliquer le tracking:
+&lt;ul&gt;
+&lt;li&gt;récuperer les accusés de réception&lt;/li&gt;
+&lt;li&gt;récuperer les mail delivery notification&lt;/li&gt;
+&lt;li&gt;utilisation des MDN (mail delivery notification) quand serveur accepte&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-10-29:2014-10-29T23:58:27+01:00</id>
+    <title>hacking on my blog again</title>
+    <published>2014-10-29T23:58:27+01:00</published>
+    <updated>2014-10-29T23:58:27+01:00</updated>
+    <link href="posts/2014/hacking_on_my_blog_again.html" type="text/html" rel="alternate"/>
+    <content type="html">&lt;p&gt;as i have nothing to report to the perl community this year, nothing happened to &amp;quot;please ironman&amp;quot; (as i wrote in a &lt;a href="http://eiro.github.com/posts/2014/eiro-brain-dump_to_please_ironman.html"&gt;previous post&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Things could change quickly (i'll be able to hack on &lt;a href="http://sympa.org/"&gt;sympa&lt;/a&gt; next week) so i just wrote a m4 powered kludge to be sure my new plan will work. I had no time for the &amp;quot;testing on local instance part&amp;quot; but hey! if you read this throught Ironman, it worked.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-03-19:2014-03-19T11:12:11+01:00</id>
+    <title>make my mind up about a sympa ListDef parser</title>
+    <published>2014-03-19T11:12:11+01:00</published>
+    <updated>2014-03-19T11:12:11+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2014/make_my_mind_up_about_a_sympa_ListDef_parser.html"/>
+    <content type="html">&lt;p&gt;within few days, i'll write a REST service to &lt;a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete"&gt;CRUD&lt;/a&gt; the &lt;a href="https://www.sympa.org/manual_6.3/list-definition#list_configuration_file"&gt;sympa list defs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will not use the parser from the sympa code because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;i don't want sympa to be a a software dependency: there is no need&lt;/li&gt;
+&lt;li&gt;i want to be able to extend the format without editing the sympa code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;i'll probably push this parser on &lt;a href="http://metacpan.org"&gt;CPAN&lt;/a&gt; but for now, &lt;a href="http://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it"&gt;TIMTOWTDI&lt;/a&gt; and i consider 3 of those:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;wrap roughly copy/paste from the sympa code&lt;/li&gt;
+&lt;li&gt;use pegex&lt;/li&gt;
+&lt;li&gt;write my incremental m//cxmsg parser (i still don't understand if it's bottom/up or top/down :))&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;all with pros and cons.&lt;/p&gt;
+&lt;h2 id="copypaste"&gt;copy/paste&lt;/h2&gt;
+&lt;p&gt;would be harder to maintain (the current code is a cargo cult parsing in a while loop) but every improvement can be contributed back to sympa.&lt;/p&gt;
+&lt;h2 id="pegex"&gt;Pegex&lt;/h2&gt;
+&lt;p&gt;pegex grammars are very simple to maintain and read which could be usable in other languages (i haven't tested yet but javascript could be an example). It would add a dependency to Pegex but i really don't think it's a cons argument in 2014.&lt;/p&gt;
+&lt;h2 id="incremental-mcxmsg-parser"&gt;incremental m//cxmsg parser&lt;/h2&gt;
+&lt;p&gt;as i'm used to it, i think i can provide simple, extensible and readble code following this way but is it worth to do it just to avoid the Pegex dependency? does Pegex add an runtime overload ?&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-03-19:2014-03-19T10:53:31+01:00</id>
+    <title>eiro-brain-dump to please ironman</title>
+    <published>2014-03-19T10:53:31+01:00</published>
+    <updated>2014-03-19T10:53:31+01:00</updated>
+    <link href="posts/2014/eiro-brain-dump_to_please_ironman.html" rel="alternate" type="text/html"/>
+    <content type="html">&lt;p&gt;some days ago, i had a chat on &lt;a href="http://www.enlightenedperl.org/"&gt;epo&lt;/a&gt;@&lt;a href="http://freenode.net/"&gt;freenode&lt;/a&gt; because &lt;a href="/atom.xml"&gt;my atom&lt;/a&gt; is completly ignored by &lt;a href="http://ironman.enlightenedperl.org/"&gt;ironman planet&lt;/a&gt;. this post is a reminder.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://ironman.enlightenedperl.org/"&gt;Ironman planet&lt;/a&gt; expects each entries to provide an alternate html address (which wasn't my initial plan but after all: every text can be rendered as html).&lt;/p&gt;
+&lt;p&gt;So the plan is&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fix &lt;a href="http://eiro.github.io"&gt;eiro-brain-dump&lt;/a&gt; to make it ironman compliant (i still have to decide how).&lt;/li&gt;
+&lt;li&gt;install a local ironman and provide a patch to show error reports when you update your feed (so you can fix your stuff without disturbing EPO people)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;this was an excuse create a profile on &lt;a href="https://questhub.io/"&gt;questhub.io&lt;/a&gt; and create a &lt;a href="https://questhub.io/realm/perl/quest/531f0d326e78176e6a0000bd"&gt;related quest&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-03-06:2014-03-06T22:37:09+01:00</id>
+    <title>sympa to comment blog posts: how?</title>
+    <published>2014-03-06T22:37:09+01:00</published>
+    <updated>2014-03-06T22:37:09+01:00</updated>
+    <link href="posts/2014/sympa_to_comment_blog_posts_how_.html" type="text/html" rel="alternate"/>
+    <content type="html">&lt;p&gt;I explained &lt;a href="http://eiro.github.io/news.html#sympa-to-comment-blog-posts-why"&gt;why&lt;/a&gt; i want to use sympa to manage comments. this is the &amp;quot;how&amp;quot; (as an experiment)&lt;/p&gt;
+&lt;h2 id="create-a-blogcomment-scenario"&gt;create a blogcomment scenario&lt;/h2&gt;
+&lt;p&gt;the idea of this scenario is you can publish in 2 cases:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you are a member of the list&lt;/li&gt;
+&lt;li&gt;you're commenting a blog post&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;so my &lt;code&gt;/etc/sympa/scenari/send.blogcomment&lt;/code&gt; file is&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;title.gettext Blogpost comment
+title.fr Blogpost Comment
+
+match([msg_header-&amp;gt;X-Spam-Status], /^YES/)            smtp,smime,md5  -&amp;gt; reject,quiet 
+match([msg_header-&amp;gt;In-Reply-To], /eiro.github.io/)    smtp,smime,md5  -&amp;gt; do_it
+match([msg_header-&amp;gt;In-Reply-To], /blog/)              smtp,smime,md5  -&amp;gt; do_it
+is_subscriber([listname],[sender])                    smtp,smime,md5  -&amp;gt; do_it
+true()                                                smtp,smime,md5  -&amp;gt; reject,quiet  &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;now the list itself is configured to use the blogcomment scenario. which means that you must have this in in the list root&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; grep &amp;#39;^send&amp;#39; config
+ send blogcomment&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="create-posts-from-your-webpage"&gt;create posts from your webpage&lt;/h2&gt;
+&lt;p&gt;what you need is add an mailto: URL with&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the subject of the post as subject&lt;/li&gt;
+&lt;li&gt;a &lt;code&gt;Reply-To&lt;/code&gt; header to please the &lt;code&gt;blogcomment&lt;/code&gt; scenario&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;i use &lt;a href="add_comment_links.pl"&gt;this simple script&lt;/a&gt; in combination with &lt;a href="https://github.com/eiro/app-atombomb"&gt;atombomb&lt;/a&gt; to achieve that on this site.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-03-05:2014-03-05T10:58:35+01:00</id>
+    <title>7 habitudes pour editer du texte efficacement</title>
+    <published>2014-03-05T10:58:35+01:00</published>
+    <updated>2014-03-05T10:58:35+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2014/7_habitudes_pour_editer_du_texte_efficacement.html"/>
+    <content type="html">&lt;p&gt;Nouvelle version de la conférence de &lt;a href="http://fr.wikipedia.org/wiki/Bram_Moolenaar"&gt;Bram Moolenaar&lt;/a&gt;, &amp;quot;&lt;a href="https://www.youtube.com/watch?v=p6K4iIMlouI"&gt;7 Habits For Effective Text Editing 2.0&lt;/a&gt;&amp;quot; est sur youtube. C'est méthodologique plus que technique. Très intéressant!&lt;/p&gt;
+&lt;p&gt;je traduis une &lt;a href="https://www.youtube.com/watch?v=p6K4iIMlouI#t=2274"&gt;diapo importante&lt;/a&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;étape 1: détecter les pratiques inefficaces, rébarbatives (identifier les moments ou vous perdez du temps)&lt;/li&gt;
+&lt;li&gt;étape 2: trouver plus rapide (alternatives en cas d'échec)&lt;/li&gt;
+&lt;li&gt;chercher dans l'aide en ligne&lt;/li&gt;
+&lt;li&gt;chercher dans les quick refs, cookbooks, archives des listes, …&lt;/li&gt;
+&lt;li&gt;demander à vos amis, vos collègues&lt;/li&gt;
+&lt;li&gt;chercher sur internet&lt;/li&gt;
+&lt;li&gt;faites le vous-même&lt;/li&gt;
+&lt;li&gt;étape 2: faites-en une habitude&lt;/li&gt;
+&lt;li&gt;faites-le&lt;/li&gt;
+&lt;li&gt;continuer à l'améliorer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;j'aurais tendance à ajouter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gitez votre conf. et n'hésitez pas a virer ce qui ne vous sert plus (au pire vous piocherez dans l'historique).&lt;/li&gt;
+&lt;li&gt;ne pas chercher à améliorer les choses plus de 10mn (y revenir plus tard avec des idées fraiches est souvent bien plus efficace).&lt;/li&gt;
+&lt;li&gt;accepter les imperfections&lt;/li&gt;
+&lt;li&gt;meme si vous savez que votre macro/habitude ne traite pas tous les cas, utilisez-la.&lt;/li&gt;
+&lt;li&gt;ne tentez pas de l'améliorer avant de tomber &lt;em&gt;régulièrement&lt;/em&gt; sur des cas pourris.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-02-25:2014-02-25T13:22:40+01:00</id>
+    <title>sympa to comment blog posts: why ?</title>
+    <published>2014-02-25T13:22:40+01:00</published>
+    <updated>2014-02-25T13:22:40+01:00</updated>
+    <link rel="alternate" type="text/html" href="posts/2014/sympa_to_comment_blog_posts_why_.html"/>
+    <content type="html">&lt;p&gt;I maintain websites since 1997 and my motto always was &amp;quot;as static as possible&amp;quot;. I run my own &amp;quot;static web&amp;quot; engines, used open source ones and ended with &lt;a href="#adieu-jekyll-i-dumped-you-for-a-28-lines-makefile"&gt;a simple &lt;code&gt;Makefile&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The very important missing part was blog comments but it's not only about serving static pages: we're in year 2014 and still, the web failed to provide tools that can approach the productivity of mutt when it comes to share thoughts about a post: editing in textareas, navigating in the thread, tagging, archiving, ... all those basics are just jokes in a webpages! Trying to compare wikis to just editing files in your filesystem (then share them with git, rsync, seafile, whatever ..) also is.&lt;/p&gt;
+&lt;p&gt;But i didn't carre for a while because i had a bigger plan (my beloved &lt;code&gt;mindpipe&lt;/code&gt;) so asked commenters to send me mails instead of expecting a &amp;quot;comment&amp;quot; textarea. I miss &lt;a href="http://en.wikipedia.org/wiki/Usenet"&gt;usenet&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Years ago, i came at a &lt;a href="http://journeesperl.fr/"&gt;French Perl Workshop&lt;/a&gt; and spoke about a subset of what mindpipe could be. Then i learnt (thanks to &lt;a href="http://philippe.bruhat.net/"&gt;BooK&lt;/a&gt; and &lt;a href="http://lumberjaph.net/"&gt;Franck&lt;/a&gt;) about &lt;a href="http://disqus.com/"&gt;disqus&lt;/a&gt;. i also was aware of &lt;a href="http://gmane.org/"&gt;gname&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally, i'm now convinced that the technical roots of mindpipe was invented in a 80's OS named &lt;a href="http://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs"&gt;Plan9&lt;/a&gt;. What i want is just piping, copying and editing &lt;a href="http://en.wikipedia.org/wiki/9P"&gt;9p&lt;/a&gt; served files thru &lt;a href="http://www.vim.org"&gt;vim&lt;/a&gt;, &lt;a href="http://en.wikipedia.org/wiki/Acme_(editor)"&gt;acme&lt;/a&gt;) or emacs.&lt;/p&gt;
+&lt;p&gt;I know web browsers are bloated enough to serve as a base of very handy editing application (cloud9 or etherpad are some moving tries to render edited content in a web page) but they need a 9p support (maybe &lt;a href="https://github.com/mozilla/servo/"&gt;servo&lt;/a&gt; could have one?) and i think plan9 ideas are finally spreading (i remember how sarcatic were people about linux or open source just ten years ago, they just heard about it).&lt;/p&gt;
+&lt;p&gt;Nevertheless: ten years later, mindpipe is still just an idea and i changed my mind about doing software. I really think that&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;nothing is perfect&lt;/li&gt;
+&lt;li&gt;starting small is better than not starting at all&lt;/li&gt;
+&lt;li&gt;the best code is the one you don't have to write&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;thinking the unix way: what is the best tool to provide simple ways to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;subscribe a discutions that can be seen as emails?&lt;/li&gt;
+&lt;li&gt;make discutions and archives public, private, moderated?&lt;/li&gt;
+&lt;li&gt;avoid spams and robots using bayesians and sending scenaries to check the validity of your posts?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I i need a battle tested, highly configurable and extendable but just a &amp;quot;mailing list manager&amp;quot;! I know it's not perfect but it's way better than running yet another anoying web forum.&lt;/p&gt;
+&lt;p&gt;And i know the beast: &lt;a href="http://www.sympa.org"&gt;sympa&lt;/a&gt; is way the best mailing list manager i ever seen. Yes, i have tons of grievances about it but in the end, it's much more superior than everything i saw and is in a constant evolution since 1996 (AFAIK). Plus: it's written in &lt;a href="http://www.perl.org"&gt;Perl&lt;/a&gt;! not a so modern one but you don't carre if you just have to write plugins.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-02-15:2014-02-15T11:55:23+01:00</id>
+    <title>FOSDEM sequel: C++11, scrum, ...</title>
+    <published>2014-02-15T11:55:23+01:00</published>
+    <updated>2014-02-15T11:55:23+01:00</updated>
+    <link type="text/html" rel="alternate" href="posts/2014/FOSDEM_sequel_C_11_scrum_.html"/>
+    <content type="html">&lt;p&gt;Once again, i came to &lt;a href="https://fosdem.org/2014/"&gt;FOSDEM&lt;/a&gt; with some talks in mind, missed them and learnt a lot of new, completly different things.&lt;/p&gt;
+&lt;p&gt;Once again, FOSDEM is the echo of my internet feeds (at this point, the cultural spectrum of the people i spoke to is too large to just say we're reading the same blogs).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the rise of the functionnal programming for the masses&lt;/li&gt;
+&lt;li&gt;the rise of the &amp;quot;let's fire all managers&amp;quot; movement (coming from both scrum and open source as &amp;quot;working models&amp;quot;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The big surprise for me is a very interesting discution about the modern paradigms of C++. I realized i was acting like the &amp;quot;perl is dead&amp;quot; people: comparing C++ from nineties to the very last features of the langages i use daily: I was not unfair, just ignorant.&lt;/p&gt;
+&lt;p&gt;So i began to read the C++ posts again and seen &lt;a href="http://nathan.ca/2014/02/type-rich-programming/"&gt;this article&lt;/a&gt; pointing on &lt;a href="http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style"&gt;Bjarne Stroustrup: C++11 Style&lt;/a&gt; which is a very interesting talk about what the &amp;quot;good C++&amp;quot; should be.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-01-31:2014-01-31T10:15:57+01:00</id>
+    <title>adieu, Jekyll (i dumped you for a 28 lines Makefile)</title>
+    <published>2014-01-31T10:15:57+01:00</published>
+    <updated>2014-01-31T10:15:57+01:00</updated>
+    <link href="posts/2014/adieu_Jekyll_i_dumped_you_for_a_28_lines_Makefile_.html" type="text/html" rel="alternate"/>
+    <content type="html">&lt;p&gt;Months ago, and once again, i spent hours to figure out how to do things i expected to be simple. In this case, Jekyll isn't the one to blame: the ruby ecosystem is. I'm a happy &lt;a href="https://metacpan.org/"&gt;CPAN&lt;/a&gt; user and contributor as well as &lt;a href="http://www.haskell.org/cabal/"&gt;cabal&lt;/a&gt; happy user. Coming from those world, the ruby one is quiet messy.&lt;/p&gt;
+&lt;p&gt;So i decided to throw all the blog/wiki engines away, running a temporary solution with the simplest bootstrap i can write. Following the rules of the unix &lt;a href="http://en.wikipedia.org/wiki/KISS_principle"&gt;KISS principles&lt;/a&gt;, i divided the &amp;quot;CMS&amp;quot; problem more little ones. I needed something as simple as possible to extend coming with:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a content generator&lt;/li&gt;
+&lt;li&gt;a conductor to drive it&lt;/li&gt;
+&lt;li&gt;a responsive design&lt;/li&gt;
+&lt;li&gt;a web browsable SCM&lt;/li&gt;
+&lt;li&gt;an atom generator&lt;/li&gt;
+&lt;li&gt;a discus-like comment system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;so i choose the simplest (or best) tools i know for each task:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://johnmacfarlane.net/pandoc/"&gt;pandoc&lt;/a&gt; to generate html content from md files. I don't know about the internals but both the CLI tool and the haskell API are very pleasant to use.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://pubs.opengroup.org/onlinepubs/000095399/utilities/make.html"&gt;make&lt;/a&gt; is my conductor. As i really expect the every so-called unix users have the basics of make. It get the job done for many decades now. I also have a look on mk from &lt;a href="http://tools.suckless.org/9base"&gt;the 9base&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://git.wiki.kernel.org"&gt;git&lt;/a&gt; as SCM, lot of tools out there to browse it from the web.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://unsemantic.com/"&gt;Unsemanic CSS framework&lt;/a&gt;. I don't know a lot about web development but i was aware about &lt;a href="http://en.wikipedia.org/wiki/Responsive_web_design"&gt;Responsive web design&lt;/a&gt; and saw the ancestor of unsemantic was in the roadmap of &lt;a href="http://werc.cat-v.org/"&gt;werc&lt;/a&gt; (when it comes to simplicity, you really can trust the &lt;a href="http://cat-v.org/"&gt;cat-v&lt;/a&gt; Ayatollahs^wpeople)&lt;/li&gt;
+&lt;li&gt;more recently, i wrote &lt;a href="https://github.com/eiro/app-atombomb"&gt;atombomb&lt;/a&gt; to add atom feeds to some sites.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;so the workflow is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;create a new md for a new page&lt;/li&gt;
+&lt;li&gt;manually maintain the atom feed ( &lt;a href="https://github.com/eiro/eiro.github.com/blob/master/Makefile"&gt;atombomb format&lt;/a&gt; is quiet helpfull for this part)&lt;/li&gt;
+&lt;li&gt;run make to build a section&lt;/li&gt;
+&lt;li&gt;git submodules to add subsection&lt;/li&gt;
+&lt;li&gt;rsync or git to push on the server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;you can see all the revision by using a git browser (like the github one) and i plan to use an ajax call the powerfull &lt;a href="http://sympa.org"&gt;sympa list manager&lt;/a&gt; to run a discus-like comment system.&lt;/p&gt;
+&lt;p&gt;Months passed and it became clear i will not step back: those 62 LOC (it takes less than 5 minutes to understand the whole thing) never desapointed me.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the publishing process is faster and easier&lt;/li&gt;
+&lt;li&gt;i use the :make command of vim&lt;/li&gt;
+&lt;li&gt;my working directory is served by a local http server&lt;/li&gt;
+&lt;li&gt;everything is relative to the working directory: if it renders well here, it will render well offline. faster and easier local preview before pushing&lt;/li&gt;
+&lt;li&gt;so easy to extend i never was stuck by a new problem, i just had to write some few extra lines in the Makefile to get new features like&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.graphviz.org/"&gt;graphviz&lt;/a&gt; and &lt;a href="http://ditaa.sourceforge.net/"&gt;ditaa&lt;/a&gt;) support&lt;/li&gt;
+&lt;li&gt;beamer slides (using the theme of my university).&lt;/li&gt;
+&lt;li&gt;render html report from external sources (just use pandoc md as intermediate representation and run make)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Actually, even my todolist/notes system is now based on it (in combination with vim and mutt i'll explain in another post) and as always, i realized how happy i am when i follow the rules of the unix &lt;a href="http://en.wikipedia.org/wiki/KISS_principle"&gt;KISS principles&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;
+    # wc -l M* t* 
+      28 [Makefile](https://github.com/eiro/eiro.github.com/blob/master/Makefile)
+      27 [template.html5](https://github.com/eiro/eiro.github.com/blob/master/template.html5)
+       7 theme.css
+      62 total
+&lt;/pre&gt;
+&lt;p&gt;the only thing i was afraid was &amp;quot;all is relative to the working directory&amp;quot; thing: i copy the css files for each new section. suprisingly, it has benefic effects.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;i think twice before adding a section and it keep me aware of the content.&lt;/li&gt;
+&lt;li&gt;the local CSS actually import a stylesheet shared by all the sites i manage so i can easily&lt;br /&gt;
+maintain the whole stuff.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So another unix principle is at work here: &amp;quot;Premature optimization is the root of all evil&amp;quot;. Thanks Donald!&lt;/p&gt;
+&lt;h1 id="t2208520100-atom-bomb-first-test"&gt;(2014-01-18T22:08:52+01:00) atom bomb first test&lt;/h1&gt;
+&lt;p&gt;i decided to push a repository on github with all those tests and notes that can maybe become a project some day and named it &lt;a href="https://github.com/eiro/labo/"&gt;labo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;this feed is generated with &lt;a href="https://github.com/eiro/app-atombomb"&gt;atom bomb&lt;/a&gt; and the &lt;a href="https://github.com/eiro/app-atombomb/blob/master/t/feed"&gt;feed file&lt;/a&gt; i just maintain manually with vim and &lt;a href="https://github.com/eiro/uze/blob/master/atombomb"&gt;simple zsh helper&lt;/a&gt; to create headers.&lt;/p&gt;
+&lt;p&gt;atom bomb (i'm not sure about the name) is written in &lt;a href="http://www.perl.org/"&gt;perl5&lt;/a&gt; and &lt;a href="https://metacpan.org/pod/release/MARCC/eirotic-0.0/lib/Eirotic.pm"&gt;Eirotic.pm&lt;/a&gt; which replace my common boilerplate:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://metacpan.org/release/perlude"&gt;Perlude&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://metacpan.org/pod/Method::Signatures"&gt;Method::Signatures&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;perl 5.14 with strictures&lt;/li&gt;
+&lt;li&gt;YAML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;markdown conversion is made by &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;pandoc&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:eiro.github.com,2014-01-17:2014-01-17T13:24:08+01:00</id>
+    <title>new (experimental) atom feed</title>
+    <published>2014-01-17T13:24:08+01:00</published>
+    <updated>2014-01-17T13:24:08+01:00</updated>
+    <link href="posts/2014/new_experimental_atom_feed.html" rel="alternate" type="text/html"/>
+    <content type="html">&lt;p&gt;few months ago, i decided to experiment &lt;a href="http://pubs.opengroup.org/onlinepubs/009695399/utilities/make.html"&gt;make&lt;/a&gt; and &lt;a href="http://johnmacfarlane.net/pandoc/"&gt;pandoc&lt;/a&gt; and &lt;a href="http://git-scm.com/"&gt;git&lt;/a&gt; as a minimalistic blog/wiki engine (&lt;a href="http://werc.cat-v.org/"&gt;werc&lt;/a&gt; was on my list too) to replace jekyll (i was a fan of ruby until i tried it).&lt;/p&gt;
+&lt;p&gt;now i'm totally happy with the basics and i need to extend:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;comment posts via sending an email to the list&lt;/li&gt;
+&lt;li&gt;see comments by viewing archives&lt;/li&gt;
+&lt;li&gt;a simple way to maintain feeds. i wrote a little perl script to test it&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+</feed>
