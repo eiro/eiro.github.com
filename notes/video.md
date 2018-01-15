@@ -33,3 +33,11 @@ On peut jouer sur la taille du bs pour avoir plus ou moins de précision.
 
 pour utilisation des vieux camescopes
 
+# ffmpeg maps
+
+as [he said](https://grep.be/blog//en/computer/play/Adding_subtitles_with_FFmpeg/):
+
+    -map 0:v: this means to take the video stream from the first file (this is the default if you do not specify any mapping at all; but if you do specify a mapping, you need to be complete)
+    -map 0:a: take the audio stream from the first file as well (same as with the video).
+    -map 1:s: take the subtitle stream from the second (i.e., indexed 1) file.
+    -map 2:s: take the subtitle stream from the third (i.e., indexed 2) file.
