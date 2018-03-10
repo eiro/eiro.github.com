@@ -1,23 +1,36 @@
-% mes notes de sysops
+% sysop
 
-# security
+# liens
 
-* is [lynis](https://github.com/CISOfy/lynis) worth to test ? 
+## sécurité
 
-ces notes sont globalement toutes valides et testées sous ubuntu.
+## test
+
+* [lynis](https://github.com/CISOfy/lynis)
 
 # debian
 
-## my own dwm package
+## packaging
+
+## modifier un paquet existant
+
 
     mkdir /tmp/dwm
     cd /tmp/dwm
     apt-get source dwm
-    vim d*/config.def.h # the modifier for the windows key is 4
-    dpkg-source --commit # create a patch file
+    vim d*/config.def.h # the modifier for the windows key is 4
+    dpkg-source --commit # reate a patch file
     dch -i # edit the changelog: your debian version (-mc1 for me)
     dpkg-buildpackage -us -uc
     sudo dpkg -i ../*deb
+
+## depot local a 2 balles
+
+    echo file:///srv/paquets ./ > /etc/apt/sources.list.d/local.sources.list
+
+    cd /srv/paquets
+    dpkg-scanpackages . | gzip -c9 > Packages.gz
+    aptitude update
 
 ## packager
 
@@ -32,19 +45,19 @@ visiblement `dh-make-perl` cherche si le paquet existe avant de le construire
 WARNING: assurez-vous que toutes les variables d'environement en `$PERL*` soit
 virées avant d'utiliser les commandes suivantes
 
-    dh-make-perl --build . 
+    dh-make-perl --build .
     dh-make-perl --build --cpan Perlude
 
 notez que:
 
-* la création des paquets n'est pas récursive 
+* la création des paquets n'est pas récursive
 * si la création d'un paquet plante, allez dans le sous-répertoire de build et
   lancez `make test` pour tenter de comprendre l'erreur.
 
-### une liste de dépendances 
+### une liste de dépendances
 
     equivs-control unistra-sympa-perldeps
-    $EDITOR control 
+    $EDITOR control
     equivs-build
 
 ### modifier violement un package existant
@@ -53,29 +66,28 @@ interogation: comment ne pas rentrer en conflit avec le paquet offciel?
 pinning? prefixage du nom du paquet avec le nom de l'organisation? (genre sympa
 devient unistra-sympa?)
 
-### depot du pauvre
+## pourquoi aptitude et pas apt ?
 
-## questionnement
+déjà parceque les motifs! exemples de motifs qui m'ont deja servi
 
-aptitude me semble bien plus agréable:
+`~Dprovides:mail-transport-agent !~i` paquets installés dont le nom commence par perl ou finit par python
+`~i (~n perl$ | ~n ^python )`  les paquets qui pourraient servir d'alternative au mta actuel
+`~seditors` les editeurs et outils associés disponibles en paquet
+`~n ^fonts- !~i ~dprog` les ttf pour les développeurs
 
-* note conscienscieusement ce qu'il fait. du coup:
-  * les paquets proposés a la purge lors de l'appel de la subcommand ne sont pas délirants.
-  * `aptitude why`, que c'est bon …
-* les motifs de recherche sont clairement poussés, aptitude search ou show
-  permettent donc de chercher
-  * paquets installés dont le nom commence par perl ou finit par python: `~i (~n perl$ | ~n ^python )`
-  * les paquets qui pourraient servir d'alternative au mta actuel: '~Dprovides:mail-transport-agent !~i'
-  * …
+aussi parceque sans configuration, aptitude garde des traces de son passage. du coup
 
-pourtant il semble que debian fasse machine arrière: pourquoi ?
+* aptitude purge désinstalle bien plus de choses qu'on apt purge
+* `aptitude why` permet de savoir pourquoi un paquet est installé sur le système
+
+    aptitude why $(
+        dpkg -S $(which cpan-upload) |
+            cut -f1 -d:
+    )
+
+    i   dh-dist-zilla      Dépend libdist-zilla-perl
+    i A libdist-zilla-perl Dépend libcpan-uploader-perl (>= 0.103004)
 
 ## configurer automatiquement
 
 * `debconf-utils` produit debconf-get-selections
-
-## todo
-
-
-# guix et guix-sd
-
