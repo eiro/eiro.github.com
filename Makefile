@@ -4,6 +4,7 @@ include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
 
 all: $(basics) $(webpages) theme.css
+	(cd sympa && make)
 
 website: FORCE $(webpages)
 
