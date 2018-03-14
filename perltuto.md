@@ -7,12 +7,12 @@
             say if $F[-1] =~ /sh$/
         '
 
-_PERLDOC(perlrun,perlrun) et _PERLDOC(index-pragmas,les pragmas)
+_PERLDOC(perlrun,perlrun) et _PERLDOC(index-pragmas.html,les pragmas)
 par l'exemple et le lien.
 
     perl _PERLFLAG(w) _PERLFLAG(E,commandline) ' _PERLFUNC(say) "hello world"'
 
-ou plus simplement 
+ou plus simplement
 
     perl -wE' say "hello world"'
 
