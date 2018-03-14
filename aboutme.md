@@ -2,15 +2,13 @@
 
 As we all have to introduce ourselves when we join a community, i was bored to
 copy/paste partial descriptions of me, written with de mood of the day.
-This page are informations on me which was already usefull to tell.
+If you're interested in who i am (a technical perspective), this is the good page
+to read (i probably shoud maintain a resume at some point)
 
 # My live
 
 I'm maried and got 2 beloved children (pre-teenagers).
- 
-I live at Strasbourg, France (very close to a decent country)
-work as IT production manager at _UNISTRA, the local University.
-This is not a very technical position but my coworkers are awesome.
+I live at Strasbourg, France (close to Germany) and for the french
 
 I'm "ethical vegetarian" since 2008, wannabe vegan and activist at some point.
 [Earthlings](http://earthlings.com) reflects my position. But i don't judge
@@ -41,7 +39,7 @@ about _PERL, Unix and _ACMEISM at
 * _FOSDEM (2012)
 * _PYCONFR (2012,2013)
 * _YAPCEU (2011,2012)
-
+* _FOSDEM (2018)
 
 # my programming journey
 
@@ -107,4 +105,3 @@ including GUI/DataViz, low level (plan9 kernel?), functionnal programming
   (i actually found it much better than Mac)
 * under , i use _CYGWIN, _VIM, _PUTTY, powershell,
   [git extensions](https://git-extensions-documentation.readthedocs.org/en/latest/?)
-

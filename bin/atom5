@@ -1,5 +1,5 @@
 #! env perl
-use Eirotic;
+use Sympatic;
 use Rototo::Atom;
 use HTML::Entities;
 use List::UtilsBy qw( sort_by );

@@ -14,17 +14,15 @@
   * bases de logique != CPU instructions
   * It all went wrong at Xerox PARC
   * "over shoulder" effect
-    * de la tache a accomplir 
-    * des contraintes environementales (portabilité unices) 
+    * de la tache a accomplir
+    * des contraintes environementales (portabilité unices)
     * cookbooks vs stong bases
-  * intellectuellement, l'inertie est nécessaire, la résistance est dangeureuse 
+  * intellectuellement, l'inertie est nécessaire, la résistance est dangeureuse
   * Computers for Cynics - Ted Nelson comme introduction
 
-* programmation fonctionnelle 
+* programmation fonctionnelle
   * excel, le langage fonctionnel le plus utilisé au monde
   * unix shell (stateless et monadic)
   * no more Moore
 
 # links and stuff
-
-
