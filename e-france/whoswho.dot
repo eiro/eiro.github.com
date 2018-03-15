@@ -20,12 +20,18 @@ digraph "who's who" {
     // organismes privés
 
     // organismes publics
-    etalab ; renater ;
+    etalab ; renater ; apie ;
 
     // initiatives
     datagouv;
 
     // canaux
     linuxfr ; netlibre ; agendadulibre
+
+    adbu   ; // bibliothèques universitaires
+    csiesr ; // semble très "politisée"
+    esup   ; // semble très "politisée"
+    abes   ;
+    amue   ; // visiblement pas libre
 
 }
