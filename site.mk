@@ -12,7 +12,10 @@ basics= $(template_html) $(keywords_m4) menu
 
 htmlify = \
     { pandoc -Vdepth=$(depth) \
-	--toc --template $(template_html) -s -B menu |\
+	--toc \
+	-f markdown+pipe_tables \
+	--template $(template_html) \
+	-s -B menu |\
 	    m4 -I$(depth)/m4 post defs render - }
 
 .md.json: menu
