@@ -1,5 +1,5 @@
 .POSIX:
-.SUFFIXES: .md .html .json
+.SUFFIXES: .md .html .json .svg .dot
 SHELL=/bin/zsh
 
 mdpages  = $(wildcard *.md)

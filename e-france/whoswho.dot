@@ -1,0 +1,31 @@
+digraph "who's who" {
+
+    // ssll a l'esprit libre
+    hackcendo; majerti;
+
+    // ssll bons contacts
+    easter_eggs;
+
+    // ssll trust of trust L1
+    beartech;
+
+    // stay away
+    linagora;
+
+    // fondations
+    OW2 ;
+
+    // organismes associatifs
+    framasoft ; ffdn ;
+    // organismes privés
+
+    // organismes publics
+    etalab ; renater ;
+
+    // initiatives
+    datagouv;
+
+    // canaux
+    linuxfr ; netlibre ; agendadulibre
+
+}
