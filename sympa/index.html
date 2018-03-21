@@ -17,9 +17,12 @@
     <div class="grid-100"><h1>The silence of Plato</h1>
 </div></header>
   <main role="main" class="grid-container">
-  <div class="grid-20"><section><a href="mailto:blog-eiro@groups.perlists.pm?Subject=Re:%20posts.2018.index.md&In-Reply-To=posts.2018.index.md@eiro.github.com">comment this post</a><br/><a href="https://groups.perlists.pm/sympa/?action=arcsearch&subj=true&key_word=Re:%20posts.2018.index.md&list=blog-eiro&body=false">see other comments</a><br/><a href="https://groups.perlists.pm/sympa//subscribe/blog-eiro">stay tuned</a><br/><a href="/news.html">other news</a><br/><a href="/">the author</a></section><hr width="100%"/><nav id="TOC"><ul>
+  <div class="grid-20"><section><a href="mailto:blog-eiro@groups.perlists.pm?Subject=Re:%20posts.2018.index.md&In-Reply-To=posts.2018.index.md@eiro.github.com">comment this post</a><br/><a href="https://groups.perlists.pm/sympa/?key_word=Re:%20posts.2018.index.md&action=arcsearch&subj=true&body=false&list=blog-eiro">see other comments</a><br/><a href="https://groups.perlists.pm/sympa//subscribe/blog-eiro">stay tuned</a><br/><a href="/news.html">other news</a><br/><a href="/">the author</a></section><hr width="100%"/><nav id="TOC"><ul>
 <li><a href="#state">state</a></li>
-<li><a href="#tips">tips</a></li>
+<li><a href="#tips">tips</a><ul>
+<li><a href="#vim">vim</a></li>
+</ul></li>
+<li><a href="#others">others</a></li>
 <li><a href="#todo">todo ?</a></li>
 <li><a href="#installation-check-list">installation check list</a></li>
 </ul></nav>
@@ -46,6 +49,13 @@ documentation   wip</code></pre>
 opensmtpd
 nginx + (gazelle|Feersum|uwsgi)</code></pre>
 <h1 id="tips">tips</h1>
+<h2 id="vim">vim</h2>
+<ul>
+<li>if you add <code>src/lib</code> to your <code>$PERL5PATH̀</code>, you can <code>inex</code> is set so you can <code>gf</code> on a module name.</li>
+<li><p>you can create a tags file using</p>
+<p>ctags --R --language=perl</p></li>
+</ul>
+<h1 id="others">others</h1>
 <p>you can create the schema by using</p>
 <pre><code>sympa --health-check</code></pre>
 <p>the current schema is on its way to be wrapped to DBIxC.</p>
