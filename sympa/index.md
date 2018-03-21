@@ -22,6 +22,17 @@ current experiment
 
 # tips
 
+## vim
+
+* if you add `src/lib` to your `$PERL5PATH̀`, you can `inex` is
+  set so you can `gf` on a module name.
+* you can create a tags file using
+
+    ctags --R --language=perl
+
+
+# others
+
 you can create the schema by using
 
     sympa --health-check
