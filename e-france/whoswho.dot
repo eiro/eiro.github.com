@@ -1,4 +1,6 @@
 digraph "who's who" {
+    // ssll a l'esprit libre
+    adulact;
 
     // ssll a l'esprit libre
     hackcendo; majerti;
@@ -33,5 +35,28 @@ digraph "who's who" {
     esup   ; // semble très "politisée"
     abes   ;
     amue   ; // visiblement pas libre
+
+    // hebergeurs potentiels de hackathons
+    // hebergeurs potentiels de conferences
+
+    u_descartes ; // esupdays, openedx, ...
+    u_unistra   ; // semaine , we , contact DNUM puis dali
+    u_lyon      ; // prospection
+
+    // Institut de Recherche et d'innovation;
+    // Bernard Stiegler explique dans Thinkerview
+    // que
+    // * c'est l'open source qui l'a amené à l'économie contributive
+    // * contrairement a l'idée recue les grosses boites savent deja
+    //   que le modele actuel n'est solvable ni economiquement,
+    //   ni écologiquement, ni démographiquement
+
+    iri    ;
+
+    cri-paris; // motivations et financements ? locaux cools ...
+
+    comu-paris;
+
+
 
 }

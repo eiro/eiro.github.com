@@ -18,7 +18,7 @@ papers about it. Also, Rob Pike's talk on this subject are really inspiring.
 ## Choose your shell
 
 * if memory is a critical ressource, use mksh or rc
-* in all other situations, use zsh! 
+* in all other situations, use zsh!
 * "this shell is not the default one" is really not an excuse. frankly: do you
   only use tools provided by default on your system? of course not! The shell
   is something you'll use every day and you better choose a good one
@@ -35,7 +35,7 @@ Larry Wall is so right on that! As shell interpreters and other softwares of
 the toolchain doesn't complain so much when something is going wrong, portable
 shell scripting is the hell to write *and* debug. please don't.
 
-So choose a target architecture and stick with it! If you really need something 
+So choose a target architecture and stick with it! If you really need something
 portable, write in [perl](http://www.perl.org).
 
 You still want to try? You fool! So choose a portable complete portable
@@ -43,14 +43,14 @@ toolchain (9base for exemple) and stick with it on all the systems. yet will
 have to write and maintain wrappers around platform specific system
 administration tools and path ... but after all: you're a gambler.
 
-you could also have a look on [m4sh](http://www.gnu.org/software/autoconf/manual/autoconf-2.66/html_node/Programming-in-M4sh.html) :). 
+you could also have a look on [m4sh](http://www.gnu.org/software/autoconf/manual/autoconf-2.66/html_node/Programming-in-M4sh.html) :).
 
 # Coding Style
 
 ## Be sure there is no command to read your data
 
 A typical example of it is querying `/etc/passwd` to get infos on a user. the
-very first guess will be wrong: 
+very first guess will be wrong:
 
     grep $1 /etc/passwd
 
@@ -68,7 +68,7 @@ So please read the documentation of your system and you'll find `getent`
 
     getent john passswd
 
-was the good answer (on a linux box). 
+was the good answer (on a linux box).
 
 ## use long version of the flags (mostly)
 
@@ -119,13 +119,13 @@ you can also use line returns when using subshells
         echo $n
     } |
         sed -n '/[02468]$/' |
-        sed 5q 
+        sed 5q
 
-will take you an effort to read while 
+will take you an effort to read while
 
-    nat | keep_evens | sed 5q 
+    nat | keep_evens | sed 5q
 
-will not. please write 
+will not. please write
 
     nat () {
         local n=${1:-1}
@@ -134,11 +134,11 @@ will not. please write
 
     keep_evens () { sed -n '/[02468]$/' }
 
-but regexps are not the only thing to hide, uncommon expressions like 
+but regexps are not the only thing to hide, uncommon expressions like
 
     IFS=$'\n' read -d '' -A $1
 
-should be wrapped in a function 
+should be wrapped in a function
 
     slurp    () { IFS=$'\n' read -d '' -A $1 }
 
@@ -169,7 +169,7 @@ so use the -v flag instead
 
 keep in mind that every | introduce 2 forks and subprocesses will use read and
 write to communicate. So unless you hide filters on wrapped functions, please
-don't write things like 
+don't write things like
 
     cat foo |
         cut -d: -f1 |
@@ -177,7 +177,7 @@ don't write things like
         awk '{i+=$1} END { print i}'
 
 Because as you use awk in the process, you can ask it much more (if you spent
-some time to learn the basics). 
+some time to learn the basics).
 
     awk -F: -v x=1 '
         $x > -1 { n++ }
@@ -218,7 +218,7 @@ documentation.
 ## test your functions
 
 there are some TAP generators for zsh outthere like knock or devel/TAP: use
-them as you would use them when writting code in other languages. 
+them as you would use them when writting code in other languages.
 
 ## Use modern features of your shell
 
@@ -226,7 +226,7 @@ don't let your shell define global variables into functions or use unset values/
 
     setopt warncreateglobal nounset
 
-use brace expansions and extended globs 
+use brace expansions and extended globs
 
     setopt extendedglob braceccl
 
@@ -237,9 +237,9 @@ redefining a command will success silently. to avoid stupid bugs using this
 
     . mathlib
 
-would provide `  
+would provide `
 
-    mathlib/seq 
+    mathlib/seq
 
 not
 
@@ -248,12 +248,12 @@ not
 # use localoptions
 
 when you setopt something in the function, the setting is global so you'll
-change the behavior of all your script, introducing some weird bugs. 
+change the behavior of all your script, introducing some weird bugs.
 
     f () {
         setopt xtrace
         echo hello world
-    } 
+    }
     echo still xtracing now ...
 
 the options can be set for your function only
@@ -261,10 +261,10 @@ the options can be set for your function only
     f () {
         setopt localoptions xtrace
         echo hello world
-    } 
+    }
     echo no more xtrace here
 
-# use errexit or erreturn make your script stops at the first error 
+# use errexit or erreturn make your script stops at the first error
 
 instead of writing
 
@@ -273,12 +273,12 @@ instead of writing
     can_fail
     bang || exit
 
-setopt errexit so you can write 
+setopt errexit so you can write
 
-    foo 
-    bar 
-    can_fail || true 
-    bang 
+    foo
+    bar
+    can_fail || true
+    bang
 
 same with return
 
@@ -301,7 +301,7 @@ which could be used by your caller
     we_dont_care || echo "this is never called :)"
 
 be aware that 0 (as 0 error) is true and the rest (1 to 255) is false. so you
-can write your own version of true: so you 
+can write your own version of true: so you
 
     true () { return 0 }
     false () { return 1 }
@@ -311,19 +311,19 @@ can write your own version of true: so you
 instead of writing
 
     enable_compression=1
-    (( enable_compression == 1 )) && print "content will be gzipped" 
+    (( enable_compression == 1 )) && print "content will be gzipped"
 
 use the interpolation of true/false
 
     enable_compression=true
-    $enable_compression && print "content will be gzipped" 
+    $enable_compression && print "content will be gzipped"
 
 
-# iterate on globs, not command outputs 
+# iterate on globs, not command outputs
 
-    for f ($(ls *)) print $f 
+    for f ($(ls *)) print $f
 
-translate the output of ls into barewords (according IFS), not filenames! please use 
+translate the output of ls into barewords (according IFS), not filenames! please use
 
     for f (*) print $f
 
