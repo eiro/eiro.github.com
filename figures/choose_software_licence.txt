@@ -1,0 +1,11 @@
+ASK(bon alors, quel type de logiciel?)
+WHEN(service en ligne,canAGPL)
+WHEN(autre,canGPL)
+ASK(canAGPL,existe-t'il une raison pour ne pas utiliser AGPL?)
+YN(goAGPL,canGPL)
+ASK(canGPL,existe-t'il une raison pour ne pas utiliser GPL?)
+YN(goGPL,panic)
+PROC(goAGPL,utiliser AGPLv3)
+PROC(goGPL,utiliser GPLv3)
+panic [label="", shape="none", image="DenseZestyEyelashpitviper-size_restricted.gif"]
+THATSALLFOLKS

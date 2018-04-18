@@ -1,0 +1,18 @@
+digraph { 
+node [ fontname = "Bitstream Vera Sans", fontsize = 10 ]
+edge [ fontname = "Bitstream Vera Sans", fontsize = 10 ]
+
+labelloc=top;
+labeljust=left;
+
+ bon alors [shape=box, style=rounded, color=blue, label="quel type de logiciel?", ]
+bon alors -> canAGPL [label="service en ligne",]
+bon alors -> canGPL [label="autre",]
+canAGPL [shape=box, style=rounded, color=blue, label="existe-t'il une raison pour ne pas utiliser AGPL?", ]
+canAGPL -> goAGPL [label="oui"]; canAGPL -> canGPL [label="non"]
+canGPL [shape=box, style=rounded, color=blue, label="existe-t'il une raison pour ne pas utiliser GPL?", ]
+canGPL -> goGPL [label="oui"]; canGPL -> panic [label="non"]
+goAGPL [shape=box, label="utiliser AGPLv3", ]
+goGPL [shape=box, label="utiliser GPLv3", ]
+panic [label="", shape="none", image="DenseZestyEyelashpitviper-size_restricted.gif"]
+}
