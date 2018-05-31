@@ -1,4 +1,6 @@
-python to compete with perl 
+(unfinished notes)
+
+python to compete with perl
 * shift, unshift, pop, push
 
 weird python
@@ -12,13 +14,13 @@ but yet
 
 is invalid
 	div(class="button__pressed","test")   # BANG! class is a reserved word
-	div('class'="button__pressed","test") # BANG! because fuck you! 
+	div('class'="button__pressed","test") # BANG! because fuck you!
 
 is quiet ugly to read and write
 * implicit return
 * split lines for readability
   * line continuation introduced by operator? what about unaries
-  * indent! because they all know about indenting now 
+  * indent! because they all know about indenting now
 
 # python survival kit for mongers
 
@@ -53,10 +55,6 @@ arrogance. Most of the
 * Don't introduce yourself as a Perl monger.
 
 * For most of the members of the Python community, 
-
-
-
-
 
 because frankly, most of them 
   are hermetics to your vision of elegance 
