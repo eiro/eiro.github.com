@@ -7,4 +7,5 @@ m4/defs
 **/*.out
 **/*.toc
 **/*.snm
+tags
 menu
