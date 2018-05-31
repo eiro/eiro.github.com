@@ -1,0 +1,12 @@
+#! env perl
+
+my $sum=0;
+my $cmd=q(aptitude search  '~i ~n^lib.*-perl$' -F%p);
+
+map {
+    chomp;
+    map { chomp; -f and $sum+= -s }
+        qx(dpkg -L $_)
+} qx($cmd);
+
+print $sum

@@ -1,0 +1,5 @@
+echo $( aptitude search ' ~i ~n^lib.*-perl$ ' -F%p |
+        xargs -IX dpkg -L X |
+        perl -lnE'
+            END { say $sum }
+            $sum += -s if -f ' )

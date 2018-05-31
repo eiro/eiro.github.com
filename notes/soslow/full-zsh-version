@@ -1,0 +1,12 @@
+zmodload zsh/stat
+my% stat
+sum=12
+
+aptitude search ' ~i ~n^lib.*-perl$ ' -F%p |
+    xargs dpkg -L |
+    @- { [[ $it && -f $it ]] && {
+            zstat -H stat +size $it
+            (( sum+=stat[size] ))
+        }
+    }
+l $sum
