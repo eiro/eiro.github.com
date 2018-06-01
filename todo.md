@@ -1,4 +1,12 @@
-% some stuff to do on this site
+% some stuff to do
+
+# vrac
+
+## formation/peering
+
+* jean avait fait un POC (déterrer le mail "got working")
+* shellinthebox dans une frame ? jupiter kernel pour zsh ?
+* inclure le markdown dans le pdf cible
 
 # fix this site
 
