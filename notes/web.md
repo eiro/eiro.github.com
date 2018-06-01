@@ -39,15 +39,6 @@ i just installed it
 now need to play, now.  [this mojolicious gist](https://gist.github.com/jberger/4744482)
 is interesting as well as it shows the implementation of a client-side part. 
 
-# a voir
-
-* implementation light des  webcomponents?
-  [skate](https://github.com/skatejs/skatejs)
-
-* [redux](...)
-  * sandhose dit "ca fait ce que tu veux, ca fait 200 lignes et c'est une réécriture de flux"
-  * mobo dit "c'est inspiré par elm"
-
 # do not html !!!
 
 * hard to write and maintain
@@ -59,5 +50,9 @@ is interesting as well as it shows the implementation of a client-side part.
 * from vim
 
     .!xmlstarlet fo -H -o -D
+
+# security
+
+* [Side-channel attacking browsers through CSS3 features](https://www.evonide.com/side-channel-attacking-browsers-through-css3-features/)
 
 
