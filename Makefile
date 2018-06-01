@@ -1,4 +1,5 @@
 # depth is defined in subdirectories as .., ../.. and so on.
+# perl -lanE'print qq($F[0]\tkeywords\t$.) ' keywords > tags
 depth?=.
 include site.mk
 feed= news.html atom.xml unixtips.html unixtips.atom.xml
