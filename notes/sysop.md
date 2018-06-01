@@ -4,7 +4,7 @@
 
 ## sécurité
 
-## test
+## test (a tester)
 
 * [lynis](https://github.com/CISOfy/lynis)
 
@@ -13,7 +13,6 @@
 ## packaging
 
 ## modifier un paquet existant
-
 
     mkdir /tmp/dwm
     cd /tmp/dwm
@@ -74,6 +73,8 @@ déjà parceque les motifs! exemples de motifs qui m'ont deja servi
 `~i (~n perl$ | ~n ^python )`  les paquets qui pourraient servir d'alternative au mta actuel
 `~seditors` les editeurs et outils associés disponibles en paquet
 `~n ^fonts- !~i ~dprog` les ttf pour les développeurs
+'~i ~nvala !~o ' les paquets installés, non-obsolètes dont le nom contient vala
+'~b les paquets installés, non-obsolètes dont le nom contient vala
 
 aussi parceque sans configuration, aptitude garde des traces de son passage. du coup
 
