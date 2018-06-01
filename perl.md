@@ -3,13 +3,13 @@
 # first steps with Perl
 
 If you are totally newcommers to _PERL 5 (but confortable with programming at
-large) those are the steps. 
+large) those are the steps.
 
 ## understand that
 
 * perl is a very strong, well geared community: everything you
   need to learn, write, enjoy _PERL is provided by the _PERLDOC(perlcommunity)
-  itself. the official documentation (_PERLDOC) comes with very well written 
+  itself. the official documentation (_PERLDOC) comes with very well written
   references and tutorials (also available on your system, see `man perl`).
 
 * even if _PERL is a very modern dynamic langage,
@@ -34,14 +34,14 @@ typing `man perl`). Especially _PERLDOC(perlintro)
 
 # Parsing
 
-don't bet on recursive Regexps: as perl isn't 
+don't bet on recursive Regexps: as perl isn't
 
 this is not just about pattern matching:
 * to parse complex structures
 * to return rich nested datastructures like AST in result.
 
 while it isn't hard to write your own parser based on `//nxsmg` (i still do it
-for very simple cases) 
+for very simple cases)
 
 * I tried and succeeded it by myself using an experiment of mine
   called _PERSEC but there are now awesome _PEG modules outthere, each are
@@ -143,32 +143,32 @@ Les prérequis sont simples:
 
 * connaitre 1 editeur de texte. J'utilise [vim](http://vim.org) pour ma part
   mais il existe des IDEs Perl comme [padre](http://padre.perlide.org/) ou
-  [epic](http://www.epic-ide.org/). 
+  [epic](http://www.epic-ide.org/).
 
 * Avoir les bases de la syntaxe Perl et son ecosystème. le présent document
-  propose de bonnes pratiques et n'est en rien une initiation à la syntaxe. 
+  propose de bonnes pratiques et n'est en rien une initiation à la syntaxe.
   Vous devez donc savoir ce qu'est un module, le CPAN, un client CPAN.
 
 # Préparer son environement de développement
 
 Perl (et de manière induite tous les outils de l'écosystème Perl) repose sur
-des repertoires 
+des repertoires
 
 
-Perl et la plupart de ses outils repose sur des variables d'environement 
+Perl et la plupart de ses outils repose sur des variables d'environement
 
 
 There is more than one way to do it in Perl. It's not only about writting code
 but also setting up your developpement environement and deploy apps.
 
 
-This tutorial use my way from zero (well, 
+This tutorial use my way from zero (well,
 
 I have the same habits for many years now and I think it would help to share
 those to have a from zero to deployement tu
 
 This
-tutorial is about my way 
+tutorial is about my way
 
 
 this is a from-zero to Eirotic tutorial.
@@ -176,12 +176,16 @@ this is a from-zero to Eirotic tutorial.
 ## setup your working environment
 
 install the cpanm client to ease installation of CPAN dependencies. everything
-would work from your home directory, no root 
+would work from your home directory, no root
 
 	curl -L http://cpanmin.us | perl - App::cpanminus
 
-it install `local::lib` 
+it install `local::lib`
 
+# comment créer des recommendations ?
+# automatiser l'install des recommendations ?
+cpanm --reinstall --interactive .
+cpanm --look Dezi
 
 
 
