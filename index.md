@@ -8,7 +8,6 @@ More about "how" in the [readme](readme.html) (including todo list).
 
 You can be involved reading [the atom](atom.xml).
 
-
 # external links
 
 ## Rust
