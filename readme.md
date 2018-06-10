@@ -1,4 +1,13 @@
-% notes about this site
+# notes in this site
+
+## install dependencies
+
+    equivs-build eirotask-site-management
+    sudo dpkg -i eirotask-site-management_0.0.0_all.deb
+    sudo aptitude install
+
+## structure
+
 
     keywords    # keywords of the site, used by bin/keys
     m4/
