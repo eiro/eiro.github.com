@@ -92,3 +92,25 @@ aussi parceque sans configuration, aptitude garde des traces de son passage. du 
 ## configurer automatiquement
 
 * `debconf-utils` produit debconf-get-selections
+
+# gerer sa workstation debian
+
+* utiliser aptitude plutot que les autres apt-tools
+* n'utilisez pas directement aptitude install mais equivs
+
+    equivs-control eirotask-site-management
+    vi eirotask-site-management
+    # Depends:
+    #     pandoc, m4, make,liburi-encode-perl
+
+    equivs-build eirotask-site-management
+    sudo dpkg -i *.deb
+
+
+    sudo aptitude install # installation des dépendances manquantes
+    aptitude why pandoc   # eirotask-site-management Dépend pandoc
+
+* n'utilisez pas directement aptitude install mais equivs
+
+
+

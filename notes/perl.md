@@ -2,13 +2,13 @@
 
 # gestion du mail avec perl
 
-module a tester pour remplacer du code sympa ? 
+module a tester pour remplacer du code sympa ?
 
     https://metacpan.org/module/Email::MIME::Kit
 
 # dzil
 
-a explorer 
+a explorer
 
     https://metacpan.org/pod/Dist::Zilla::Plugin::Prereqs::Floor
     https://metacpan.org/module/Dist::Zilla::Plugin::Git::Init
