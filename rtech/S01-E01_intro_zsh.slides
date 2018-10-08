@@ -1,0 +1,669 @@
+  vim: ft=slides et ts=2 sts=2 sw=2
+
+› introduction
+
+  vous aussi ...
+
+› prérequis
+
+  apt install tilix zsh # installer le confort
+  getent passwd $UID    # verifier votre shell par défaut
+  ps hocmd $$           # vérifier si vous êtes bien sous zsh
+  exec zsh              # passer sous zsh
+  chsh -s $(which zsh)  # changer de shell
+
+› configuration
+
+   ~/.zshenv # pour tous les zsh → helpers, options
+   ~/.zshrc  # pour les zsh interactifs
+             # → paramètrage de la zle, ...
+
+  # oh-my-zsh: le hummer
+
+› zsh-newuser-install
+
+  0) Exit, creating the file ~/.zshrc containing
+     just a comment.
+     That will prevent this function being run again.
+
+  2) Populate your ~/.zshrc with the configuration
+     recommended
+
+  pour recommencer: rm ~/.zshrc
+
+› zsh
+
+  unix shell inspiré de rc, tcsh, mksh,...
+
+› unix shell
+
+  shell = interface homme machine (IHM)
+    ▶ GUI   = graphical user interface
+    ▶ NUI   = natural user interface
+    ▶ CLI   = command line interface
+      REPL  = read,eval,print loop
+
+      read/write sont des appels système bloquants
+      (man 2 read, man 2 write)
+
+› unix shell
+
+  faire des trucs │ rapidement
+                  │ à distance
+                  │ quand la GUI fait sa GUI
+                  │ compliqués
+                  │ pour étendre les trucs
+
+› demos ?
+
+  mkdir -p media/{1976..2018}/{images,videos,textes,misc}
+
+  media ─┬────────────┬──────────────┐
+         1976         ....           2018
+         ├─ images    ├─ images      ├─ images
+         ├─ videos    ├─ videos      ├─ videos
+         ├─ textes    ├─ textes      ├─ textes
+         └─ misc      └─ misc        └─ misc
+
+› demos ?
+
+  msg () mutt -H- -s "$@[2,-1]" $1
+  cpt () msg cpt "$@"
+
+› your langage before it was cool
+
+   async, promises, channels, ...
+   immutable
+   higher order
+   composition
+
+    shell   ▶  nat | filter is-prime | take 5 | sum
+    haskell ▶  take 5 $ filter is-prime nat
+    perl6   ▶  say [+] (0..∞).grep(*.is-prime)[^5]
+    JS.next ▶  nat()  |> is-prime |> take ???
+
+› pour être honnête ...
+
+  il y a *enfin* de la compétition
+
+   perl6   : whipuptitude++
+   haskell : securité++
+   crystal : performances++
+
+› zsh vs dash, rc, tcsh, mksh, bash ...
+
+   lancer une commande: dash
+   environements restreints: rc, mksh
+   tout confort: zsh
+
+  { for it ( ={mksh,dash,bash,zsh,zsh-static,9/rc}(:A) )
+    ls -s $it
+  } | sort -n
+
+  120 /bin/dash
+  136 /usr/lib/plan9/bin/rc
+  272 /bin/mksh
+  840 /bin/zsh
+  1092 /bin/bash
+  2528 /bin/zsh-static # avec toutes les extensions
+
+› bash (à mes yeux)
+
+   trop gros pour concurrencer mksh
+   pas assez riche pour concurrencer zsh
+   syntaxes parfois malheureuse
+   argument courant: le shell par defaut
+     c'est faux
+     c'est insuffisant
+
+  bash est peut-être devenu bien ...
+  j'attend toujours la demo!  (20 ans)
+
+› POSIX
+
+   portabilité hasardeuse
+   fonctionalités limitées
+
+  ⇒ implementations vs standards
+
+  zsh + ( 9base | GNU coreutils | sbase | ...)
+
+› exemple (POSIX style)
+
+  which vim                 # ⇒ /usr/bin/vim
+  realpath /usr/bin/vim     # ⇒ /usr/bin/vim.gtk3
+  dirname /usr/bin/vim.gtk3 # ⇒ /usr/bin
+  cd /usr/bin
+
+  cd $( dirname $( realpath $( which vim )))
+
+› donc
+
+  cd $( dirname $( realpath $( which vim )))
+
+   3 forks
+   2 dependences (GNU coreutils)
+   1 lecture pas simple
+
+› expansions
+
+  reconstruire la *liste* des paramètres avant execution
+
+› exemples
+
+  Brace Expansion:
+
+  touch {udp,tcp}_echo{,.{c,h}}
+  ⇒ touch udp_echo udp_echo.c udp_echo.h \
+        tcp_echo tcp_echo.c tcp_echo.h
+
+  Filename Expansion:
+
+  print -l *.h
+  ⇒ udp_echo.h tcp_echo.h
+
+› man zshexpn
+
+          ! │ History Expansion
+            │ Alias Expansion
+            │ Process Substitution
+          $ │ Parameter Expansion
+    $() =() │ Command Substitution
+   []  (()) │ Arithmetic Expansion
+         {} │ Brace Expansion
+  * ? = *() │ Filename Expansion
+        *:x │ Filename Generation
+
+› filename expansions
+
+  classiques
+
+  glob   │ regexp │
+         │        │
+  [a-z]  │ [a-z]  │ un métacaractère
+  ?      │ .      │ un symbole
+  *      │ .*     │ de 0 à n symbole
+
+  mais aussi quantifiers, atoms, motifs d'exclusions,
+  fonctions de filtrage, case sensitivité, captures,
+  ...
+
+› filename expansions
+
+  les motifs :
+   permettent de tester des chaines
+   peuvent être nommés
+
+  [[ aba == ab* ]] && echo ok
+
+  starts_with_ab='ab*'
+  [[ aba == $~starts_with_ab ]] && echo ok
+
+› modifiers de filename expansion
+
+    () à la fin d'une chaine
+
+    print *.txt
+    ⇒ zsh: no matches found: *.txt
+    print *.txt(N)
+    ⇒
+
+    print /etc/passwd(N)
+    ⇒ liste vide si /etc/passwd n'existe pas
+
+› exemples de filename expansion
+
+    touch {local,distant,new,old}.{txt,jpeg}
+
+    print *.txt
+    ⇒ distant.txt local.txt new.txt old.txt
+
+    print *.txt(:r)
+    ⇒ distant local new old
+
+› exemples de filename expansion
+
+    print *.txt
+    ⇒ distant.txt local.txt new.txt old.txt
+
+    print *.txt(:h)
+    ⇒ . . . .
+
+    print *.txt(:A:h)
+    ⇒ /tmp /tmp /tmp /tmp
+
+› POSIX vs zsh
+
+  cd $( dirname $( realpath $( which vim )))
+
+  which vim                 # =vim
+  realpath /usr/bin/vim     # /usr/bin/vim(:A)
+  dirname /usr/bin/vim.gtk3 # /usr/bin/vim(:h)
+
+  cd =vim(:A:h)
+
+› filename generation
+
+  a=/tmp/test/foo.txt  │
+  print :r = $a:r      │ r = /tmp/test/foo
+  print :e = $a:e      │ e = txt
+  print :t = $a:t      │ t = foo.txt
+  print :h = $a:h      │ h = /tmp/test
+
+› différence
+
+  $a:h    # substitution sur une chaine
+  $a(:h)  # recherche de fichier
+
+    ⇒ erreur si le path n'existe pas
+    ⇒ ajouter (N) pour renvoyer une liste vide
+
+› différence
+
+  a=/etc/passwd b=/foo/passwd
+  print chemin $a(N:h) $b(N:h)
+  ⇒ chemin /etc
+
+  setopt extendedglob ~/.zshenv
+
+  print subst  $a:h $b:h
+  ⇒ subst /etc /foo
+
+› unix culture  ...
+
+  :A :h :r : :t ... dispo dans d'autres outils.
+
+  exemple:
+  vi src/renater/unix/tools/current/tcp_echo.c
+
+    :cd %:h     # cd src/renater/unix/tools/current
+    :make %:r   # make tcp_echo
+
+› syntaxe
+
+   barewords
+   fonctions variadiques
+   interpolation ⇒ parameter expansion
+   échappement avec \, '' et ""
+
+› hello world
+
+  print hello   world # ici votre publicité
+    → "$*" =  join(" ", @_)
+    ⇒ hello world
+
+  print hello \ world # plus rien
+    ⇒ hello  world
+    # le 2ème paramètre vaut ' world'
+
+  print hello \ world \# plus rien
+    ⇒ hello  world # plus rien
+
+› quotes
+
+  print the \ \ \ $USER
+  ⇒ the   mc
+
+  print the "   $USER"
+  ⇒ the   mc
+
+  print the \ \ \$USER
+  ⇒ the   $USER
+
+  print the '  $USER'
+  ⇒ the   $USER
+
+› moar quotes
+
+  print "L'Insoutenable Légèreté de $USER"
+  ⇒ L'Insoutenable Légèreté de mc
+
+
+
+  print 'L'Insoutenable Légèreté de $USER'
+  ⇒ zsh: unmatched '
+
+› moar quotes
+
+  print "L'Insoutenable Légèreté de $USER"
+  ⇒ L'Insoutenable Légèreté de mc
+
+
+  print 'L'Insoutenable Légèreté de $USER'
+        ───────────────                  ^
+                           unmatched quote
+        $1 = LInsoutenable
+
+› moar quotes
+
+  print 'L´Insoutenable Légèreté de $USER'
+  ⇒ L´Insoutenable Légèreté de $USER
+  # compose + ''
+
+  print L\''Insoutenable Légèreté de $USER'
+  print L\'Insoutenable 'Légèreté de $USER'
+  ⇒ L'Insoutenable Légèreté de $USER
+
+  setopt rcquotes
+  print 'L''Insoutenable Légèreté de $USER'
+  ⇒ L'Insoutenable Légèreté de $USER
+
+› affectation
+
+  to=françis
+  print "To: $to"
+
+  ⇒ To: françis
+
+› plus y'a d'espace et moins je respire
+
+    to=françis  │    syntaxiquement correct
+   to= françis  │ 🔥 "
+  to = françis  │ 🔥 "
+   to =françis  │ 🔥 "
+
+› fonction
+
+  garos () print "rend la raquette à $to"
+
+  garos ()
+    print "rend la raquette à $to"
+
+  garos () { print "rend la raquette à $to" }
+
+  # POSIX compliant
+
+  garos () { print "rend la raquette à $to"; }
+  garos () {
+    print "rend la raquette à $to"
+  }
+
+› affectation, fonction, expansion, attention
+
+  garos () print "rend la raquette à $to"
+  to=yannick
+  garos
+
+  ⇒ rend la raquette à yannick
+
+› affectation, fonction, expansion, attention
+
+  garos () print "rend la raquette à $to"
+  to=yannick
+  to=roland garos
+  garos
+
+  │ rend la raquette à roland
+  │ rend la raquette à yannick
+
+› affectation, fonction, expansion, attention
+
+  to=yannick
+  garos () print "rend la raquette à $to"
+  to='roland garos'
+  garos
+
+  ⇒ rend la raquette à roland garos
+
+› affectation, fonction, expansion, attention
+
+  to () print mais alors pas du to: "\n* "$^@
+  to = day
+  to =vim
+
+  │ mais alors pas du to: 
+  │ * = 
+  │ * day
+  │ mais alors pas du to: 
+  │ * /usr/bin/vim
+
+› résumé
+
+    to=françis  │  affectation de to
+   to= françis  │  appelle françis en localisant to
+  to = françis  │  appelle to avec '=' 'françis'
+   to =françis  │  appelle to avec le path de françis
+
+› la rigueur
+
+  to=play
+  print toma$to   # ⇒ tomaplay
+  print $tomate   # ⇒
+
+› la rigueur
+
+  set -u          #1 setopt nounset
+  to=play         #2 affectation
+  print toma$to   #3 ⇒ tomaplay
+  print $tomate   #4 ⇒ zsh: tomate: parameter not set
+
+  set +u          #5 setopt unset
+  print toma$to   #6 ⇒ toma
+  print $tomate   #7 ⇒
+
+› échapper
+
+  to=play
+  print ${to}mate  # ⇒ playmate
+  print $to\mate   # ⇒ playmate
+  print $to\nate   # ⇒ playnate
+  print "$to\nate" # ⇒ play
+                   # ⇒ ate
+
+› flags
+
+  print hello world
+  # ⇒ hello world
+
+  print -O hello world
+  # ⇒ world hello
+
+  print -l hello world
+  # ⇒ hello
+  # ⇒ world
+
+› flags composition
+
+  print -lO hello world
+  # ⇒ world
+  # ⇒ hello
+
+› flags annulation
+
+  print -- -lO hello world
+  # ⇒ -lO hello world
+
+› tron legacy
+
+  mcp () print greetings, program
+  mcp from the computer
+
+  ⇒ greetings, program
+
+› paramètres nommés
+
+  print hello ' world'
+
+  la commande           │ 0 │ print
+  le paramètre 1        │ 1 │ hello
+  le paramètre 2        │ 2 │ ' world'
+  le dernier paramètre  │ _ │ ' world'
+  paramètres concaténés │ * │ 'hello  world'
+  nombre de paramètres  │ # │ 2
+  tous les paramètres   │ @ │ ( hello ' world' )
+
+› tron legacy
+
+  mcp () print greetings, $1
+  mcp
+
+  ⇒ mcp:3: 1: parameter not set
+
+› personaliser l'erreur
+
+  mcp () print greetings, $1
+  mcp () print greetings, ${1}
+  mcp () print greetings, ${1?the one to salute}
+  mcp
+
+  ⇒ mcp:2: 1: the one to salute
+
+› expansions conditionelles
+
+  # si unset
+  mcp () print greetings${1+, }${1-}
+  mcp ''     # ⇒ greetings, 
+  mcp        # ⇒ greetings
+  mcp flynn  # ⇒ greetings, flynn
+
+  # si unset ou vide
+  mcp () print greetings${1:+, }${1:-}
+  mcp ''     # greetings
+  mcp        # greetings
+  mcp flynn  # greetings, flynn
+
+› valeur par defaut
+
+  mcp () print greetings, ${1:-program}
+  mcp () print greetings, ${1:-${you:-program}}
+
+  mcp
+    # ⇒ greetings, program
+  mcp flynn
+    # ⇒ greetings, flynn
+  you=clu mcp
+    # ⇒ greetings, clu
+
+› export
+
+  you=clu
+  mcp
+    # ⇒ greetings, clu
+  sh -uc 'echo $you'
+    # ⇒ sh: 1: you: parameter not set
+  export you
+  sh -uc 'echo $you'
+    # ⇒ clu
+
+› quick scope
+
+  you=clu mcp
+    # ⇒ greetings, clu
+  print ${you-no one}
+    # ⇒ no one
+
+  you=clu
+  mcp
+    # ⇒ greetings, clu
+  print ${you-no one}
+    # ⇒ clu
+
+› for you
+
+  mcp () print greetings, ${1:-${you:-program}}
+  for you ( clu tron excel ) mcp
+  # ⇒ greetings, clu
+  # ⇒ greetings, tron
+  # ⇒ greetings, excel
+
+› all of you
+
+  mcp () print greetings, ${1:-${you:-program}}
+  for you (
+    clu '' tron
+    excel # really ?
+    awk sed vi
+  ) mcp
+
+  # ⇒ greetings, clu
+  # ⇒ greetings, program
+  # ⇒ greetings, tron
+  # ⇒ greetings, excel
+  # ⇒ greetings, awk
+  # ⇒ greetings, sed
+  # ⇒ greetings, vi
+
+› trouver l'erreur
+
+  mcp () print greetings, ${1:-${you:-program}}
+  all=(
+    clu '' tron
+    excel # really ?
+    awk sed vi
+  )
+  for you ($all) mcp
+
+  # ⇒ greetings, clu
+  # ⇒ greetings, tron
+  # ⇒ greetings, excel
+  # ⇒ greetings, awk
+  # ⇒ greetings, sed
+  # ⇒ greetings, vi
+
+› ghost in the shell
+
+  all=( clu '' tron )
+
+  print -l $all
+  # ⇒ clu
+  # ⇒ tron
+
+  print -l "$all"
+  # → clu | tron
+  # ⇒ clu  tron
+
+› modifiers
+
+  ${(modifiers)nom}
+
+› uppercase
+
+  print -l -- ${(U)USER}
+  ⇒ MC
+
+› split
+
+  print -l -- ${(s,:,)"$(getent passwd $USER )"}
+  ⇒ mc
+  ⇒ x
+  ⇒ 1000
+  ⇒ 1000
+  ⇒ Marc Chantreux,,,
+  ⇒ /home/mc
+  ⇒ /bin/zsh
+
+› quote
+
+  quote="upercase c'est mal !!!"
+  parrot="il a dit ${(qqq)quote/mal/bien}"
+  print -l ${(U)parrot}
+  ⇒ IL A DIT "UPPERCASE C'EST BIEN !!!"
+
+› contexte de liste
+
+  all=( clu '' tron )
+
+    $all        ⇒ clu tron
+    "$all"      ⇒ "clu  tron"
+    "${(@)all}" ⇒ "clu" ""  "tron"
+
+  print -l "${(@)all}"
+  # ⇒ clu
+  # ⇒
+  # ⇒ tron
+
+› argv
+
+  all=( clu '' tron )
+  print $#all
+
+  argv=( "${(@)all}" )
+  set -- "${(@)all}"
+  print $#
+
+  set --  a b
+  local -i i
+  i=1 ; for it ("$@") print $[i++] $it
+  i=1 ; for it {print $[i++] $it}
+
+
