@@ -7,10 +7,12 @@ alternates:
     http://eiro.github.io/atom.xml:  {rel: self, type: application/atom+xml}
 ...
 
+# 2018
+
+* [la gendarmerie a juste 20 ans d'avance](posts/2018/la_gendarmerie_a_juste_20_ans_d_avance.html) (2018-06-10, 02:17)
+
 # 2017
 
-* [](posts/2017/) ()
-* [](posts/2017/sympa_20th_birthday_hackathon.html) (2017-03-13, 13:01)
 
 # 2016
 

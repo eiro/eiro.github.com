@@ -8,15 +8,9 @@ header-includes: [ '\input{prelude}' ]
 
 \tikz{
     \node (v) {vous êtes ici};
-    \node [below =of v](i) {\textbullet};
+    \node [below=of v](i) {\textbullet};
     \draw [->] (v) -- (i);
 }
-
-<!--
-    commentaire ?
-    c'est un commentaire
-    HAHA
--->
 
 ca serait cool
 

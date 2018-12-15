@@ -2,8 +2,9 @@
 
 * la famille de systèmes d'exploitations\
   (macOS, les BSD, linux, android, ...)
-* culture (des symboles, des pratiques communes)
+* culture (des formalismes et pratiques presque communes)
 * des "standards" (POSIX, ...) et différents des degrés d'adoption
+
 
 # chaque diapo ...
 
@@ -19,7 +20,7 @@
   (si possible tels que définis par
   →[POSIX](http://pubs.opengroup.org/onlinepubs/9699919799/idx/xcu.html)).
 
-3 jours de modernité (distribution, parallèlisme, ...) dans un monde sans souris: 
+3 jours de modernité (distribution, parallèlisme, ...) dans un monde sans souris:
 bienvenu dans "le terminal"
 
 # "le terminal" ?

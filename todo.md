@@ -1,12 +1,20 @@
 % some stuff to do
 
+# sympa
+
+* repondre a thomas sur le seuil
+* maj l'enve
+
+
 # vrac
 
-## formation/peering
+# formation/peering
 
-* jean avait fait un POC (déterrer le mail "got working")
-* shellinthebox dans une frame ? jupiter kernel pour zsh ?
-* inclure le markdown dans le pdf cible
+## partager des mux
+
+* got, welcome_david et tmate  ?
+* shellinthebox dans une frame ?
+* jupiter kernel pour zsh ?
 
 # fix this site
 

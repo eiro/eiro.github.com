@@ -1,5 +1,8 @@
 % About me
 
+ils disent que je suis adulescent ... encore un concept pété inventé par des
+vieux ... c'est nawak! je me casse ...
+
 As we all have to introduce ourselves when we join a community, i was bored to
 copy/paste partial descriptions of me, written with de mood of the day.
 If you're interested in who i am (a technical perspective), this is the good page

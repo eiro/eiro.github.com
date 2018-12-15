@@ -46,9 +46,9 @@ ainsi
     users/mc/display: Marc Chantreux
     users/mc/uid: 1000
 
-# des logs a une liste de paquets debian 
+# des logs a une liste de paquets debian
 
-transformez 
+transormez
 
 
     SOME DEPENDENCIES WERE MISSING.
@@ -78,7 +78,7 @@ en
     perlio-eol
     dbd-pg
     dbix-searchbuilder
-    plack-middleware-test-stashwarnings  
+    plack-middleware-test-stashwarnings
 
 avec vim 
 

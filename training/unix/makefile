@@ -22,12 +22,5 @@ all: terminal.pdf cahier-exos.pdf sandbox.pdf
 
 terminal/yaml: prelude.tex
 terminal.md: $(FINAL)
-sandbox.md:  terminal/yaml sandbox/cours.md
+sandbox.md:  terminal/yaml
 cahier-exos.md: terminal/yaml exos.md
-
-terminal.md cahier-exos.md sandbox.md:
-	cat $^ > $@
-
-exos.tgz:
-	tar czf $@ exos
-

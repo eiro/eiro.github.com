@@ -1,4 +1,4 @@
-# hello world 
+# hello world
 
     echo hello world
     print hello world
@@ -11,7 +11,7 @@
 * les deux fonctionnent
 * j'ai tendance a préferer print
 
-# les instructions  
+# les instructions
 
 \cmdAnatomyWholeStory
 
@@ -34,7 +34,7 @@ les instructions sont séparées par des `;` ou des retours à la ligne
 ## regrouper les flags
 
 ~~~{.zsh}
-    print -l -O hello world 
+    print -l -O hello world
     print -lO hello world
 ~~~~
 

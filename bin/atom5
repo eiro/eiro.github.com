@@ -1,10 +1,10 @@
 #! env perl
-use Sympatic;
+use Eirotic;
 use Rototo::Atom;
 use HTML::Entities;
 use List::UtilsBy qw( sort_by );
 
-sub pan_html ($file) {
+fun pan_html ($file) {
     -e $file or die "$file isn't a file";
     encode_entities "".qx{m4 -Im4 post defs render $file |pandoc -t html5}
     , q(<>&);
@@ -12,16 +12,19 @@ sub pan_html ($file) {
 
 my %posts = map {
     my ( $index, $dirname, $year ) = ( $_, m{(posts/(.*))/} );
-    $year => [ map {
-        chomp;
-        my %r;
-        @r{qw( created file title )} =
-            split / +/, $_, 3;
-        @r{qw( source link )} =
-            map +(  $_, s/\.md$/.html/r )
-            , "$dirname/$r{file}";
-        \%r
-    } path($index)->lines  ]
+    $year => eval {
+        [ map {
+            chomp;
+            !/\S/ ? () : do {
+                my %r;
+                @r{qw( created file title )} = split / +/, $_, 3;
+                @r{qw( source link )} =
+                    map +(  $_, s/\.md$/.html/r )
+                    , "$dirname/$r{file}";
+                \%r
+            }
+        } path($index)->lines ]
+    } || die "$@ while parsing $index"
 } glob 'posts/*/index';
 
 my @entries = map +(
@@ -37,7 +40,7 @@ my @entries = map +(
 
 sub as_simple_xml;
 
-sub as_simple_xml ($struct) {
+fun as_simple_xml ($struct) {
     if ( my $r = ref $struct ) {
         if    ('ARRAY' eq $r ) { map +( as_simple_xml $_ ), @$struct }
         elsif ('HASH'  eq $r ) {
@@ -47,7 +50,7 @@ sub as_simple_xml ($struct) {
     } else { $struct }
 }
 
-sub atom (@entries) {
+fun atom (@entries) {
     '<?xml version="1.0" encoding="UTF-8"?>'
     , feed +{qw<xml:lang en-US xmlns http://www.w3.org/2005/Atom >}
     , ( link_ qw<rel self type application/atom+xml href http://eiro.github.io/atom.xml > )
@@ -69,7 +72,7 @@ sub atom (@entries) {
             } reverse sort_by {$$_{published}} @entries)
 }
 
-sub news (%posts) {
+fun news (%posts) {
 '---
 id: tag:eiro.github.com,2014:blog
 title: The silence of Plato
