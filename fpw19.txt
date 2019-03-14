@@ -1,0 +1,23 @@
+(no html version because of climate change)
+
+hello people,
+
+We [1] are planning to host the 2019 edition of the french perl workshop
+(aka Journées perl) at the atrium of the university of Strasbourg on June 13 to
+15 or 20 to 22 (please quickly tell us about your preferences).
+
+Perl(http://www.perl.org) is used in many huge projects who need more time to
+code together, not to attend conferences. So this time, we don't really bet on
+talks this time.  instead we want to gather people involved in the maintainance
+of huge perl projects to give everyone the opportunity to
+
+* team work on their projects (we setup your hackathon)
+* share ideas, skills, tools and many libraries
+* learn new things by running tutorials with experts over your shoulders
+
+[1] who are "we":
+
+* [Mongueurs de Perl](http://mongueurs.net/)
+* [Unistra](http://www.unistra.fr/)
+* [Renater](https://www.renater.fr/)
+* [Alsace Réseau Neutre ARN FAI](http://arn-fai.net/)
