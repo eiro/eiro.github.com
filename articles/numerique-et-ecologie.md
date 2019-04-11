@@ -15,6 +15,16 @@ reflète l'état de ma réflexion sur le sujet.
 rappeller les bases de l'infra internet et de l'ordinateur: ce qui consomme,
 quand et pourquoi?
 
+# les chiffres
+
+=> shift + ecoinfo
+
+# infra internet ideale
+
+  * proxy -> proxy -> on demand
+  * binary proto, txt  et minification
+  => changer toute la stack :'(
+
 # de la bonne pratique du mail
 
 ## webmail ou client lourd
