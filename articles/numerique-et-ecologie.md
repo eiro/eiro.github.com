@@ -144,3 +144,29 @@ isps a récuciter des services de proximisation des flux (nntp?)
 mais pour ca il faut que les users s'engagent dans une démarche
 citoyenne dans leurs votes, leurs achats, leurs pratiques...
 
+# Byte me
+
+Le projet
+
+* produire des matériels pédagogiques pour la sensibilisation
+  aux problèmes et aux solutions
+* préparer des cours d'autodéfense au greenwashing numérique qui a déjà
+  commencé (faire passer pour vert ce qui est en fait juste a peine
+  moins polluant qu'avant)
+* animer des ateliers pratiques exploitant ces matériels
+* structurer une offre de services régionale pour l'assistance à la
+  longévité des terminaux (a priori emmaus fait déjà?), la production
+  et l'hébergement de services locaux et low cost (au sens énergétique,
+  j'entends)
+* interagir avec les communautés du logiciel libre pour travailler
+  sur des plateformes et outils écologiques. Favoriser les échanges
+  entre les développeurs et utilisateurs.
+* lancer des réflexions sur nos moyens en temps que consommateurs pour
+  accompagner les changements comportementaux, sociaux et économiques
+  pour faciliter la transition des comportements numériques (fair
+  hardware, accès à l'administration système des terminaux,
+  la réorganisation de l'accès aux biens culturels numériques, enseignement
+  ...) et transformer cette réflexion en propositions/actions concrètes.
+* pour tout ou partie des objectifs: identifier les synergies possibles
+  avec les acteurs locaux, nationaux, internationaux
+
