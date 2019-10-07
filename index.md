@@ -38,7 +38,6 @@ if you want to know why IT people try to avoid meetings, the answer is [there](h
 des vidéos à voir ou à revoir ...
 
 * [2 degrés avant la fin du monde](https://www.youtube.com/watch?v=Hs-M1vgI_4A)
-* [Impact de l'Intelligence Artificielle sur l'économie - Laurent ALEXANDRE au Senat (HD)](https://www.youtube.com/watch?v=rJowm24piM4)
 * les conférences gesticulées de manière général et en particuler [L'éducation populaire, monsieur, ils n'en ont pas voulu (conférence gesticulée de Franck Lepage))](https://www.youtube.com/watch?v=9MCU7ALAq0Q&list=PLK3eqbh2LkXn16bgOdMlgVm9Ohe3NZ1DB), [l'idéologie médicale](https://www.youtube.com/watch?v=s9aInd_BO8Y), [vous êtes l'élite de l'élite de l'élite de la France](https://www.youtube.com/watch?v=cRdw9Wy2ViE)
 * [the fallen of WW2](https://www.youtube.com/watch?v=DwKPFT-RioU)
 * [le discours le plus important de votre vie, Gary Yourofsky](https://www.youtube.com/watch?v=9ivPJUypbVs),
