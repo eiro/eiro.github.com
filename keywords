@@ -36,7 +36,7 @@ _ZSH                    https://en.wikipedia.org/wiki/Z_shell zsh
 _UZE                    https://github.com/eiro/uze/ zsh uze
 _DEBIAN                 https://debian.org/ debian
 _ARCH                   https://www.archlinux.org/ arch linux
-_NIXOS                  http://nixos.org/ nixos 
+_NIXOS                  http://nixos.org/ nixos
 _DWM                    http://dwm.suckless.org/ dwm
 _GNOME                  https://www.gnome.org/ GNOME
 _NETBSD                 https://www.netbsd.org/ NetBSD
