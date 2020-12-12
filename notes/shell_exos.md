@@ -1,4 +1,14 @@
-# transformer une liste de scripts en fichier startup 
+
+# commands
+
+| spreadsheet | awk, [miller](https://github.com/johnkerl/miller), cut, perl -F, sort, join, paste, xargs |
+| math  | hoc, dc,bc,  |
+| datastructures | xmlstarlet, jq |
+| video | ffmpeg, blind, [mlt](https://tracker.debian.org/pkg/mlt) |
+| storage | redis, sqlite |
+
+
+# transformer une liste de scripts en fichier startup
 
      ls scripts |
         sed 's/^/script load /' > startup  
