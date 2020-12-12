@@ -1,26 +1,76 @@
-(unfinished notes)
+# mongers classic (and so frustrating) python mistakes
 
-python to compete with perl
-* shift, unshift, pop, push
+* python don't warn when returning something in the void context
+* the 'return' keyword is required to return something
+* bare words don't call, they return fonction references
 
-weird python
+so those valid python lines are just all traps for perl mongers
 
-	x=12
-	point("origin",x=0)
+    def add(x,y): x + y
+    print(add(3,4))
+    # just prints 'None'
 
-but yet
+compiles but just prints `None`. Fix this:
 
-	point(x=0,"origin")
+    def add(x,y): return x + y
+    print(add(3,4))
 
-is invalid
-	div(class="button__pressed","test")   # BANG! class is a reserved word
-	div('class'="button__pressed","test") # BANG! because fuck you!
+and this one don't even print something
 
-is quiet ugly to read and write
-* implicit return
-* split lines for readability
-  * line continuation introduced by operator? what about unaries
-  * indent! because they all know about indenting now
+    def hello(): print("hello world")
+    hello
+
+this is ironic for someone who comes from a langage with so many lisp
+inspirations but you need to get lost in stupid parentheses. python just helps
+you to get lost faster because of the places of the parentheses:
+
+    def hello(): print("hello world")
+    hello()
+
+when perl is that cool with parentheses:
+
+    sub hello ()        { say "hello world" }
+    sub add   ($x , $y) { $x + $y }
+    hello;    # perl way
+    hello();  # python way
+    (hello);  # lisp way
+    say add 1, 3;
+    say(add(1,3));
+    (say (add 1, 3));
+    say (add 1, 3);
+    say add(1, 3);
+
+how about this one?
+
+    add(add(1,2),add(3,5));
+
+you probably want to write
+
+    add (add 1,2), (add 3,5);
+
+but it doesn't work because it's actually
+
+    (add(add 1,2)), (add 3,5);
+
+you can use unary + to explicit the first term so those ones are ok:
+
+    add +(add 1,2), +(add 3,5);
+    add +(add 1,2), (add 3,5);
+    add +(add 1,2), add 3,5;
+
+so
+
+    @doubles = map $_ + 4      , 5..8;
+    @twice   = map +( $_ , $_ ), 5..8;
+
+also: perl makes you free about indenting and spliting expressions
+on multiple lines: use it.
+
+    (add
+        +(add 3, 4)
+        +(add
+            +add(add 4,5),
+            +add(add 2,6)))
 
 # python survival kit for mongers
 
@@ -46,47 +96,54 @@ Read the
 
 #### With the community
 
-Don't be frontal with the Python community
+Don't be frontal with the Python community: they are pretty sure they use the
+best language ever designed so don't express yourself in terms of something you
+prefer in other languages.
 
+so when you actually have in mind
 
-and don't reply to arrogance with
-arrogance. Most of the 
+> this perl feature really ease my life, is there something at least close in python?
 
-* Don't introduce yourself as a Perl monger.
+and just write it that way, you'll feed your box with a lot of useless and
+condescendant answers and some "perl is dead" bullshit.
 
-* For most of the members of the Python community, 
+asking this way would raise much more constructive mindset:
 
-because frankly, most of them 
-  are hermetics to your vision of elegance 
+> python is so awesome i wonder if i can do things this way or if there is another
+> awesome pythonic way to get those super python power.
 
-    * don't troll the python community: most of its members will
-      just reject your arguments (some misconceptions about Perl are hilarious: just give it away)
-    * when something is missing in the core, can you write a module?
+Also: don't introduce yourself as a Perl monger or other langage fan: if you're
+stupid enough to prefer another langage but python, you don't deserve attention
+from them and frankly: most of them are hermetic to your vision of elegance.
 
-# python tricks for mongers
+If any of them finds out you're a perl monger: don't troll: most of them will
+just reject your arguments (some misconceptions about Perl are hilarious: just
+give it away. about that:
+if you want to see the stupidest conference ever made about perl,
+watch "[The Perl Jam: Exploiting a 20 Year-old Vulnerability](https://media.ccc.de/v/31c3_-_6243_-_en_-_saal_1_-_201412292200_-_the_perl_jam_exploiting_a_20_year-old_vulnerability_-_netanel_rubin)".  i never saw anyone bragging with *that* level of ignorance).
 
-## the dogballs inferno
+Of course: there are exceptions and some people in the python community are
+both technically impressive and very nice persons. some of my very dearest friends
+are members of this community.
 
-Python has a very curious way
+# ARGV
 
+not built-in but it could be a module to provide a context.
 
-* the very last version of python (for code sake, )
+# PEPs that can save your life
 
-
-
-so be sure you're using the very last stable version
-of python and check those docs
+some python coding styles are very python2 inspired but if you use the last versions
+of python, you'll be happy to know that those PEP exist:
 
 * [https://docs.python.org/3.5/whatsnew/3.5.html#whatsnew-pep-448](https://www.python.org/dev/peps/pep-0448/)
-* []
+* TODO: the others (can't find them right now. including `:=`)
 
 ## tools
 
 |Perl|Python|
 |-:|:-|
 |[Dist::Zilla](https://metacpan.org/pod/Dist::Zilla)|[flit]()|
+|cpanm|pip|
+|carton|pip?|
+|dh-make-perl|[dh-virtualenv](http://dh-virtualenv.readthedocs.org/en/0.10/usage.html)?|
 
-http://perlgeek.de/blog-en/automating-deployments/2016-004-debian-packaging.html
-https://github.com/lihaoyi/macropy
-http://perlgeek.de/blog-en/automating-deployments/2016-003-simplistic-deployment-git-pull.html
-http://dh-virtualenv.readthedocs.org/en/0.10/usage.html
