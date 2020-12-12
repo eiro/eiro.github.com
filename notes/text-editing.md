@@ -15,9 +15,6 @@ et ![logo de latex, le système de composition de documents](../../img/latex.svg
 
 Et récement, j'ai eu droit à une sensibilisation à la 
 
-Aussi, je saisis une soustraction comme ça
-
-
 Les limites technologiques introduisent des mauvaises pratiques qui leur
 survivent. Ainsi
 
@@ -37,34 +34,24 @@ la discipline nécessaire pour accepter le surplus de travail et d'attention
 que réclament les bonnes pratiques est souvent difficile à accepter. D'autant
 plus lorsqu'elle est perçue comme de la sophistication inutile.
 
-
-
-Les avantages de 
 La précision typographique ,par exemple, est une bonne pratique dont l'intéret
-a été peu perceptible
-
-
-
-
-Les bonnes pratiques ont souvent un cout (temps, ressources, contraintes
-techniques) qu'il faut réussir à faire entendre par des raisons pragmatiques
-(présentes ou futures) d'abord à nous même mais aussi autour de nous
-(étant donné que souvent, les t)
+est peu perceptible immédiatement. Les bonnes pratiques ont souvent un cout
+(temps, ressources, contraintes techniques) qu'il faut réussir à faire entendre
+par des raisons pragmatiques (présentes ou futures) d'abord à nous même mais
+aussi autour de nous (étant donné que souvent, les t)
 
 -
 -
 -
-
-a
-‾
-
+un truc
 10 − 5
 10 - 5
+‾‾‾‾‾‾‾
 
 digraphs:
 * RFC 1345
 
-1.    ⒈ 
+1.    ⒈
 ...   …
 
 char  digraph	hex	dec	official name ~
@@ -80,12 +67,8 @@ char  digraph	hex	dec	official name ~
 
 https://github.com/eiro/rcfiles/blob/master/vim/vimfiles/plugin/mydigraphs.vim
 
-1_000_000 lu correctement par la synthèse mais 
+1_000_000 lu correctement par la synthèse mais
 1.000.000 lu "1 point zéro, zéro, zéro ..."
-
-
-
-
 
 * elles ont un sens et que son intéret est entendu et par le milieu culturel
   dans lequel vous évoluez. Difficile d'expliquer à un supérieur hiérarchique
@@ -121,14 +104,7 @@ les symbôles -,‐,−. Ces bonnes pratiques se sont perdues pour deux raisons.
 
 
 perl6 -e 'say 3 − 1'
-print 3 - 1 
+print 3 - 1
 
 avantage: 1_000_000 et les accents.
-
-
-Même si la partie technique m'échappait totalement, ma réflexion sur le sujet
-n'est pas nouvelle et 
-
-sub counter ($start) { sub {$start++} }
-
 
