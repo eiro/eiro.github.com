@@ -1,24 +1,26 @@
 % About me
 
-ils disent que je suis adulescent ... encore un concept pété inventé par des
-vieux ... c'est nawak! je me casse ...
+> on me traite d'adulescent! encore un concept pété inventé par des grands.
 
-As we all have to introduce ourselves when we join a community, i was bored to
-copy/paste partial descriptions of me, written with de mood of the day.
-If you're interested in who i am (a technical perspective), this is the good page
-to read (i probably shoud maintain a resume at some point)
+As we all have to introduce ourselves when we join a community, i decided to
+maintain a single, up to date reference about me.
 
 # My live
 
-I'm maried and got 2 beloved children (pre-teenagers).
-I live at Strasbourg, France (close to Germany) and for the french
+I live at Strasbourg, France (close to Germany), got maried and 2 almost bachelors.
 
-I'm "ethical vegetarian" since 2008, wannabe vegan and activist at some point.
+I'm "ethical vegetarian" since 2008, wannabe vegan and kinda activist.
 [Earthlings](http://earthlings.com) reflects my position. But i don't judge
 anyone as i'm guitly, myself, not beeing vegan.
 
-I am linux user and member of free software community since circa 1995 (both
-for ethical and technical reasons).
+I grew up in open innovation (comupter clubs worked this way) and learned about
+GPL onlyin 90's (linux, perl, vi, ... since circa 1995). Nothing competes with
+vim in my heart. i'm in the process of replacing perl with raku and linux with
+openbsd.
+
+To me, free software is not only about the obvious superiority of open inovation
+to build good software: it's also about my political points of view about
+convivialism and freedom.
 
 # As member of the OSS community
 
@@ -27,6 +29,10 @@ I authored and i maintain some modules on _CPAN, wrote
 as a helper while installing [koha](http://koha-community.org/)
 on mac using [macports](https://www.macports.org/)
 (i worked at [Biblibrel](http://www.biblibre.com/en) then).
+
+i wrote some parts of [koha](http://koha-community.org/),
+[sympa](http://sympa.org/), and patches to many open source
+projects (dh-make-perl, zsh, sqlite, perl, raku documentation, ...).
 
 I got some projects, modules and rcfiles on _GHEIRO.
 
@@ -50,7 +56,7 @@ today, i'm aware that
 
 * there is _NOSILVERBULLET and we all have to be polyglot.
 * _ACMEISM is a good thing
-* documentations and tests must preceed implementation
+* documentation and tests must preceed implementation
 * if you want to learn to program, learn to "not program" instead
   (i mean: are you sure you're already a poweruser of the already available tools?)
 
@@ -82,7 +88,7 @@ it started long time ago
   rise of functionnal paradigm. I jumped in playing with _HASKELL and i have to
   admit i'm not productive with it but i changed the way i write my programs.
   i wrote _PERLUDE. [Nils](https://github.com/ngrunwald) introduced me to _CLOJURE
-  and now i keep a eye on _LIVESCRIPT and _ELM.
+  and now i keep a eye on _PURESCRIPT, haskell, ...
 
 Now i'm not a developper anymore and i code for fun (when i have enought time
 and motivation). The [Ted Nelson](https://en.wikipedia.org/wiki/Ted_Nelson)'s
@@ -90,7 +96,7 @@ _COMPUTERCYNICS lectures also changed the way i think computer industry.
 
 i'm interested improving skills in many fields without having enought time.
 including GUI/DataViz, low level (plan9 kernel?), functionnal programming
-(finally be productive with haskell, clojure and so on). 
+(finally be productive with haskell, clojure and so on).
 
 # the tools i use
 
@@ -99,7 +105,7 @@ including GUI/DataViz, low level (plan9 kernel?), functionnal programming
 * my prefered linux distributions are _DEBIAN when the main purpose
   is stability and _ARCH to experiment very new stuff. rpm based distributions
   desapointed me every time i tried them and the next distro i'll give a chance
-  to will be _NIXOS. If i have an opportunity to work with a BSD again
+  to will be _GUIX. If i have an opportunity to work with a BSD again
   (i loved the experience), it would be _NETBSD.
 * _VIM is my only one editor for much more than editing (i use it as
   interactive client for RT, SQL and LDAP servers, mail composition, ...).
